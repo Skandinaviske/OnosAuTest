@@ -1,0 +1,173 @@
+Welcome to Ubuntu 18.04.4 LTS (GNU/Linux 4.15.0-74-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Wed Jul  8 20:03:59 UTC 2020
+
+  System load:  0.72               Processes:           168
+  Usage of /:   47.9% of 19.21GB   Users logged in:     2
+  Memory usage: 4%                 IP address for ens3: 192.168.171.27
+  Swap usage:   0%
+
+ * "If you've been waiting for the perfect Kubernetes dev solution for
+   macOS, the wait is over. Learn how to install Microk8s on macOS."
+
+   https://www.techrepublic.com/article/how-to-install-microk8s-on-macos/
+
+ * Canonical Livepatch is available for installation.
+   - Reduce system reboots and improve kernel security. Activate at:
+     https://ubuntu.com/livepatch
+
+2 packages can be updated.
+0 updates are security updates.
+
+
+*** System restart required ***
+Last login: Wed Jul  8 20:03:36 2020 from 174.114.234.237
+ubuntu@manage:~$ cell oneNodeDemo; cd ~/OnosSystemTest/TestON/bin/; ./cli.py run  SAMPstartTemplate_1node
+[01;31m[KONOS_CELL[m[K=oneNodeDemo
+OCC1=192.168.171.28
+OC1=192.168.171.28
+OCI=192.168.171.28
+OCN=192.168.171.17
+ONOS_APPS=gui,drivers,openflow,proxyarp
+ONOS_GROUP=sdn
+ONOS_MN_PY=/home/ubuntu/onos/tools/dev/mininet/onos.py
+ONOS_SCENARIOS=/home/ubuntu/onos/tools/test/scenarios
+ONOS_USER=sdn
+ONOS_WEB_PASS=rocks
+ONOS_WEB_USER=onos
+
+                                +----------------+
+------------------------------ { Script And Files }  ------------------------------
+                                +----------------+
+
+	Script Log File : /home/ubuntu/OnosSystemTest/TestON/logs/SAMPstartTemplate_1node_08_Jul_2020_20_04_00/SAMPstartTemplate_1node_08_Jul_2020_20_04_00.log
+	Report Log File : /home/ubuntu/OnosSystemTest/TestON/logs/SAMPstartTemplate_1node_08_Jul_2020_20_04_00/SAMPstartTemplate_1node_08_Jul_2020_20_04_00.rpt
+	Mininet1 Session Log : /home/ubuntu/OnosSystemTest/TestON/logs/SAMPstartTemplate_1node_08_Jul_2020_20_04_00/Mininet1.session
+	ONOScell Session Log : /home/ubuntu/OnosSystemTest/TestON/logs/SAMPstartTemplate_1node_08_Jul_2020_20_04_00/ONOScell.session
+	Test Script : /home/ubuntu/OnosSystemTest/TestON/tests/SAMP/SAMPstartTemplate_1node/SAMPstartTemplate_1node.py
+	Test Params : /home/ubuntu/OnosSystemTest/TestON/tests/SAMP/SAMPstartTemplate_1node/SAMPstartTemplate_1node.params
+	Topology : /home/ubuntu/OnosSystemTest/TestON/tests/SAMP/SAMPstartTemplate_1node/SAMPstartTemplate_1node.topo
+                              +------------------+
+---------------------------  { Script Exec Params }  ---------------------------
+                              +------------------+
+
+	
+	'CASE11': 
+	'topo': 'mn --topo tree
+	3
+	3'
+	
+	 'CASE10': 
+	'ONOS_Configuration': 
+	'org.onosproject.net.intent.impl.compiler.IntentConfigurableRegistrator': 
+	'useFlowObjectives': 'true'
+	
+	
+	 'restartCluster': 'True'
+	 'Apps': 'org.onosproject.openflow'
+	 'numNodes': '1'
+	
+	 'testcases': '0
+	1
+	10
+	11
+	12
+	22
+	2
+	32'
+	 'GIT': 
+	'pull': 'False'
+	 'branch': 'master'
+	
+	 'CASE0': ''
+	 'CASE32': ''
+	 'CASE1': 
+	'SleepTimers': 
+	'mnCfg': '10'
+	 'onosCfg': '5'
+	 'mnStartup': '15'
+	 'onosStartup': '60'
+	
+	 'NodeList': 'OC1'
+	
+	 'GRAPH': 
+	'nodeCluster': 'VM'
+	 'builds': '20'
+	
+	 'CASE12': ''
+	 'CASE22': ''
+	
+
+                               +---------------+
+----------------------------- { Components Used }  -----------------------------
+                               +---------------+
+	Mininet1
+	ONOScell
+
+
+                              +--------+
+---------------------------- { Topology }  ----------------------------
+                              +--------+
+
+	
+	'Mininet1': 
+	'connect_order': '2'
+	 'host': 'OCN'
+	 'user': 'sdn'
+	 'COMPONENTS': 
+	'home': '~/mininet/custom/'
+	 'prompt': None
+	
+	 'password': 'rocks'
+	 'type': 'MininetCliDriver'
+	
+	 'ONOScell': 
+	'connect_order': '1'
+	 'host': 'localhost'
+	 'user': 'sdn'
+	 'COMPONENTS': 
+	'web_user': None
+	 'diff_clihost': None
+	 'web_pass': None
+	 'prompt': None
+	 'cluster_name': None
+	 'onos_home': None
+	 'nodes': '1'
+	 'karaf_password': None
+	 'karaf_username': None
+	 'rest_port': None
+	
+	 'home': None
+	 'password': 'rocks'
+	 'type': 'OnosClusterDriver'
+	
+	
+------------------------------------------------------------
+
+
+******************************
+ CASE INIT 
+******************************
+
+['ONOScell', 'Mininet1']
+2020-07-08 20:04:00,640 - SAMPstartTemplate_1node - INFO - Creating component Handle: ONOScell
+2020-07-08 20:04:00,647 - SAMPstartTemplate_1node - INFO - ONOScell: Found ['192.168.171.28'] ONOS IPs
+2020-07-08 20:04:00,647 - SAMPstartTemplate_1node - INFO - ONOScell: Trying to connect to localhost
+2020-07-08 20:04:01,302 - SAMPstartTemplate_1node - INFO - Password not required logged in
+[95m2020-07-08 20:04:01,606 - SAMPstartTemplate_1node - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '1', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosCliDriver', 'host': 'localhost'}[0m
+2020-07-08 20:04:01,606 - SAMPstartTemplate_1node - INFO - Creating component Handle: ONOScli1
+2020-07-08 20:04:01,614 - SAMPstartTemplate_1node - INFO - ONOScli1: Trying to connect to localhost
+2020-07-08 20:04:02,270 - SAMPstartTemplate_1node - INFO - Password not required logged in
+[95m2020-07-08 20:04:02,575 - SAMPstartTemplate_1node - DEBUG - {'connect_order': '1', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '1', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosClusterDriver', 'host': 'localhost'}[0m
+[95m2020-07-08 20:04:02,575 - SAMPstartTemplate_1node - DEBUG - {'connect_order': '2', 'user': 'onos', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '1', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosRestDriver', 'host': '192.168.171.28', 'port': '8181'}[0m
+2020-07-08 20:04:02,575 - SAMPstartTemplate_1node - INFO - Creating component Handle: ONOSrest1
+2020-07-08 20:04:02,624 - SAMPstartTemplate_1node - INFO - ONOSrest1: ip set to 192.168.171.28
+[95m2020-07-08 20:04:02,624 - SAMPstartTemplate_1node - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '1', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': 'localhost'}[0m
+2020-07-08 20:04:02,624 - SAMPstartTemplate_1node - INFO - Creating component Handle: ONOSbench1
+2020-07-08 20:04:02,630 - SAMPstartTemplate_1node - INFO - ONOSbench1: Found ['192.168.171.28'] ONOS IPs
+2020-07-08 20:04:02,630 - SAMPstartTemplate_1node - INFO - ONOSbench1: Trying to connect to localhost
+2020-07-08 20:04:03,293 - SAMPstartTemplate_1node - INFO - Password not required logged in
