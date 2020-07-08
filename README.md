@@ -1,7 +1,7 @@
 # OnosAuTest
 How to setup the environment and run the test script with 1 node?
 
-##　On the compute Canada cloud
+## On the compute Canada cloud
 １．Create 3 VMS manually (1 manage machine, 1 mininet machine, 1 target machine).
 ２．Make sure the private key in your computer can ssh to the manage machine, mininet machine and target machine without password. So the public key you upload in Compute Canada Cloud should match the private key in your computer.
 
