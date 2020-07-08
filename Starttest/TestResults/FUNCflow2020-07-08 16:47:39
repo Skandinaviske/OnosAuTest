@@ -1,0 +1,259 @@
+Last login: Wed Jul  8 20:47:35 2020 from 174.114.234.237
+ubuntu@manage:~$ cell oneNodeDemo; cd ~/OnosSystemTest/TestON/bin/; ./cli.py run  FUNCflow
+[01;31m[KONOS_CELL[m[K=oneNodeDemo
+OCC1=192.168.171.28
+OC1=192.168.171.28
+OCI=192.168.171.28
+OCN=192.168.171.17
+ONOS_APPS=gui,drivers,openflow,proxyarp
+ONOS_GROUP=sdn
+ONOS_MN_PY=/home/ubuntu/onos/tools/dev/mininet/onos.py
+ONOS_SCENARIOS=/home/ubuntu/onos/tools/test/scenarios
+ONOS_USER=sdn
+ONOS_WEB_PASS=rocks
+ONOS_WEB_USER=onos
+
+                                +----------------+
+------------------------------ { Script And Files }  ------------------------------
+                                +----------------+
+
+	Script Log File : /home/ubuntu/OnosSystemTest/TestON/logs/FUNCflow_08_Jul_2020_20_47_39/FUNCflow_08_Jul_2020_20_47_39.log
+	Report Log File : /home/ubuntu/OnosSystemTest/TestON/logs/FUNCflow_08_Jul_2020_20_47_39/FUNCflow_08_Jul_2020_20_47_39.rpt
+	Scapy Session Log : /home/ubuntu/OnosSystemTest/TestON/logs/FUNCflow_08_Jul_2020_20_47_39/Scapy.session
+	Mininet1 Session Log : /home/ubuntu/OnosSystemTest/TestON/logs/FUNCflow_08_Jul_2020_20_47_39/Mininet1.session
+	ONOScell Session Log : /home/ubuntu/OnosSystemTest/TestON/logs/FUNCflow_08_Jul_2020_20_47_39/ONOScell.session
+	Test Script : /home/ubuntu/OnosSystemTest/TestON/tests/FUNC/FUNCflow/FUNCflow.py
+	Test Params : /home/ubuntu/OnosSystemTest/TestON/tests/FUNC/FUNCflow/FUNCflow.params
+	Topology : /home/ubuntu/OnosSystemTest/TestON/tests/FUNC/FUNCflow/FUNCflow.topo
+                              +------------------+
+---------------------------  { Script Exec Params }  ---------------------------
+                              +------------------+
+
+	
+	'SCALE': 
+	'max': '1'
+	
+	 'CTRL': 
+	'port': '6653'
+	
+	 'GRAPH': 
+	'nodeCluster': 'VM'
+	 'builds': '20'
+	
+	 'SCAPY': 
+	'HOSTNAMES': 'h1
+	h2
+	h3
+	h4
+	h5
+	h6'
+	
+	 'testcases': '1
+	2
+	10
+	11
+	1000
+	3000
+	1100
+	3000
+	1200
+	3000
+	1300
+	3000
+	1400
+	3000
+	1500
+	3000
+	1600
+	3000
+	1700
+	3000
+	1800
+	3000
+	1900
+	3000
+	2000
+	12
+	100'
+	 'GIT': 
+	'pull': 'False'
+	 'branch': 'master'
+	
+	 'ENV': 
+	'cellApps': 'drivers
+	openflow'
+	 'cellName': 'productionCell'
+	
+	 'DEBUG': 'on'
+	 'DEPENDENCY': 
+	'wrapper2': 'topo'
+	 'path': '/tests/FUNC/FUNCflow/dependencies/'
+	 'wrapper1': 'startUp'
+	 'topology': 'topo-flow.py'
+	
+	 'SLEEP': 
+	'delFlow': '10'
+	 'startMN': '5'
+	 'startup': '15'
+	 'addFlow': '10'
+	
+	 'TEST': 
+	'udpDst': '40051'
+	 'sctpDst': '40001'
+	 'mpls': '22'
+	 'ip4Type': '2048'
+	 'vlan': '10'
+	 'arpType': '2054'
+	 'tcpProto': '6'
+	 'ip6Type': '34525'
+	 'icmpProto': '1'
+	 'icmp6Proto': '58'
+	 'swDPID': 'of:0000000000000001'
+	 'mplsType': '34887'
+	 'sctpProto': '132'
+	 'tcpDst': '40001'
+	 'udpProto': '17'
+	 'vlanType': '33024'
+	
+	
+
+                               +---------------+
+----------------------------- { Components Used }  -----------------------------
+                               +---------------+
+	Scapy
+	Mininet1
+	ONOScell
+
+
+                              +--------+
+---------------------------- { Topology }  ----------------------------
+                              +--------+
+
+	
+	'Scapy': 
+	'connect_order': '3'
+	 'host': 'OCN'
+	 'user': 'sdn'
+	 'COMPONENTS': 
+	'prompt': None
+	
+	 'password': 'rocks'
+	 'type': 'MininetScapyCliDriver'
+	
+	 'Mininet1': 
+	'connect_order': '2'
+	 'host': 'OCN'
+	 'user': 'sdn'
+	 'COMPONENTS': 
+	'prompt': None
+	
+	 'password': 'rocks'
+	 'type': 'MininetCliDriver'
+	
+	 'ONOScell': 
+	'connect_order': '1'
+	 'host': 'localhost'
+	 'user': 'sdn'
+	 'COMPONENTS': 
+	'web_user': None
+	 'diff_clihost': None
+	 'web_pass': None
+	 'prompt': None
+	 'cluster_name': None
+	 'onos_home': None
+	 'nodes': '1'
+	 'karaf_password': None
+	 'karaf_username': None
+	 'rest_port': None
+	
+	 'home': None
+	 'password': 'rocks'
+	 'type': 'OnosClusterDriver'
+	
+	
+------------------------------------------------------------
+
+
+******************************
+ CASE INIT 
+******************************
+
+['ONOScell', 'Mininet1', 'Scapy']
+2020-07-08 20:47:39,881 - FUNCflow - INFO - Creating component Handle: ONOScell
+2020-07-08 20:47:39,888 - FUNCflow - INFO - ONOScell: Found ['192.168.171.28'] ONOS IPs
+2020-07-08 20:47:39,888 - FUNCflow - INFO - ONOScell: Trying to connect to localhost
+2020-07-08 20:47:39,907 - FUNCflow - INFO - ssh key confirmation received, send yes
+2020-07-08 20:47:40,641 - FUNCflow - INFO - Password not required logged in
+[95m2020-07-08 20:47:40,944 - FUNCflow - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '1', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosCliDriver', 'host': 'localhost'}[0m
+2020-07-08 20:47:40,944 - FUNCflow - INFO - Creating component Handle: ONOScli1
+2020-07-08 20:47:40,952 - FUNCflow - INFO - ONOScli1: Trying to connect to localhost
+2020-07-08 20:47:41,614 - FUNCflow - INFO - Password not required logged in
+[95m2020-07-08 20:47:41,917 - FUNCflow - DEBUG - {'connect_order': '1', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '1', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosClusterDriver', 'host': 'localhost'}[0m
+[95m2020-07-08 20:47:41,917 - FUNCflow - DEBUG - {'connect_order': '2', 'user': 'onos', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '1', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosRestDriver', 'host': '192.168.171.28', 'port': '8181'}[0m
+2020-07-08 20:47:41,917 - FUNCflow - INFO - Creating component Handle: ONOSrest1
+2020-07-08 20:47:41,965 - FUNCflow - INFO - ONOSrest1: ip set to 192.168.171.28
+[95m2020-07-08 20:47:41,965 - FUNCflow - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '1', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': 'localhost'}[0m
+2020-07-08 20:47:41,965 - FUNCflow - INFO - Creating component Handle: ONOSbench1
+2020-07-08 20:47:41,970 - FUNCflow - INFO - ONOSbench1: Found ['192.168.171.28'] ONOS IPs
+2020-07-08 20:47:41,970 - FUNCflow - INFO - ONOSbench1: Trying to connect to localhost
+2020-07-08 20:47:42,630 - FUNCflow - INFO - Password not required logged in
+[95m2020-07-08 20:47:42,933 - FUNCflow - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '1', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': '192.168.171.28'}[0m
+2020-07-08 20:47:42,934 - FUNCflow - INFO - Creating component Handle: ONOSserver1
+2020-07-08 20:47:42,937 - FUNCflow - INFO - ONOSserver1: Found ['192.168.171.28'] ONOS IPs
+2020-07-08 20:47:42,938 - FUNCflow - INFO - ONOSserver1: Trying to connect to 192.168.171.28
+2020-07-08 20:47:42,965 - FUNCflow - INFO - ssh key confirmation received, send yes
+2020-07-08 20:47:43,783 - FUNCflow - INFO - Password not required logged in
+2020-07-08 20:47:44,088 - FUNCflow - INFO - Creating component Handle: Mininet1
+2020-07-08 20:47:44,119 - FUNCflow - INFO - ssh key confirmation received, send yes
+2020-07-08 20:47:44,882 - FUNCflow - INFO - Password not required logged in
+2020-07-08 20:47:45,086 - FUNCflow - INFO - Connection successful to the host sdn@192.168.171.17
+2020-07-08 20:47:45,086 - FUNCflow - INFO - Creating component Handle: Scapy
+2020-07-08 20:47:45,737 - FUNCflow - INFO - Password not required logged in
+2020-07-08 20:47:45,940 - FUNCflow - INFO - Connection successful to the host sdn@192.168.171.17
+
+******************************
+ Result summary for Testcase1
+******************************
+
+[95m2020-07-08 20:47:45,948 - FUNCflow - DEBUG - Case Executed       : [1][0m
+[95m2020-07-08 20:47:45,948 - FUNCflow - DEBUG - Case to be executed : [2, 10, 11, 1000, 3000, 1100, 3000, 1200, 3000, 1300, 3000, 1400, 3000, 1500, 3000, 1600, 3000, 1700, 3000, 1800, 3000, 1900, 3000, 2000, 12, 100][0m
+[2020-07-08 20:47:45.949353] [FUNCflow] [CASE]  Constructing test variables and building ONOS package
+[2020-07-08 20:47:45.949963] [FUNCflow] [STEP]  1.1: Constructing test variables
+2020-07-08 20:47:45,951 - FUNCflow - INFO - Sending: scp /home/ubuntu/OnosSystemTest/TestON/tests/FUNC/FUNCflow/dependencies/topo-flow.py sdn@192.168.171.17:~/mininet/custom/
+2020-07-08 20:47:46,072 - FUNCflow - INFO - ssh key confirmation received, sending yes
+2020-07-08 20:47:46,743 - FUNCflow - INFO - Secure copy successful
+2020-07-08 20:47:46,745 - FUNCflow - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-08 20:47:46,745 - FUNCflow - INFO - Successfully copy test variables 
+2020-07-08 20:47:46,745 - FUNCflow - INFO - Assertion Passed
+[2020-07-08 20:47:46.746104] [FUNCflow] [CASE]  Pull onos branch and build onos on Teststation.
+2020-07-08 20:47:46,746 - FUNCflow - INFO - Skipped git checkout and pull as they are disabled in params file
+2020-07-08 20:47:46,746 - FUNCflow - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-08 20:47:46,746 - FUNCflow - INFO - Successfully construct test variables 
+2020-07-08 20:47:46,746 - FUNCflow - INFO - Assertion Passed
+2020-07-08 20:47:46,747 - FUNCflow - INFO - ONOSbench1 home is ~/onos
+ONOSbench1: 
+
+commit 88f801035c901a6976016fc204da35c4ff3d943f (HEAD -> master, origin/master, origin/HEAD)
+Author:     nosignal <howard_hsu@edge-core.com>
+AuthorDate: Mon Jun 29 22:01:37 2020 +0800
+Commit:     Pier Luigi Ventre <pier@opennetworking.org>
+CommitDate: Mon Jul 6 10:15:11 2020 +0000
+
+    Fix for stratum profile deps
+sdn@manage:~/onos$
+
+*****************************
+ Result: Pass 
+*****************************
+
+
+******************************
+ Result summary for Testcase2
+******************************
+
+[95m2020-07-08 20:47:47,278 - FUNCflow - DEBUG - Case Executed       : [1, 2][0m
+[95m2020-07-08 20:47:47,278 - FUNCflow - DEBUG - Case to be executed : [10, 11, 1000, 3000, 1100, 3000, 1200, 3000, 1300, 3000, 1400, 3000, 1500, 3000, 1600, 3000, 1700, 3000, 1800, 3000, 1900, 3000, 2000, 12, 100][0m
+[2020-07-08 20:47:47.278824] [FUNCflow] [CASE]  Starting up 1 node(s) ONOS cluster
+2020-07-08 20:47:47,279 - FUNCflow - INFO - ONOS cluster size = 1
+[95m2020-07-08 20:47:47,279 - FUNCflow - DEBUG - Apps: drivers,openflow[0m
+2020-07-08 20:47:47,279 - FUNCflow - INFO - Atomix Cluster Size = 1 

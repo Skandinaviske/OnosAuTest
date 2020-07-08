@@ -1,0 +1,9 @@
+# LXC demo environment for oneping tutorial
+  
+export OC1="IPadd1"
+export OCN="IPadd2"
+
+export ONOS_APPS=gui,drivers,openflow,proxyarp
+
+alias sshnet="ssh onos@$OCN"
+
