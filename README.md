@@ -57,7 +57,7 @@ The source code of Starttest.jar has a little bit different from **Starttest** f
 This file is used in onosAuTest1node.jar and onosAuTest3node.jar, it will install the required softwares and create user sdn in the mininet machine from the manage machine. The source code of SetupMininetMachine.jar is in **SetupMininetMachine** folder．
 
 #### SetupTargetMachine.jar
-This file is used in onosAuTest1node.jar and onosAuTest3node.jar, it will install the required softwares and create user sdn in the target machines from the manage machine. The source code of SetupMininetMachine.jar is in **SetupTargetMachine ** folder．
+This file is used in onosAuTest1node.jar and onosAuTest3node.jar, it will install the required softwares and create user sdn in the target machines from the manage machine. The source code of SetupMininetMachine.jar is in **SetupTargetMachine** folder．
 
 #### CleanupMachine.jar
 This file is used in Starttest.jar, it will delete the ~/.ssh/known_hosts and ~/.ssh/known_hosts.old files in the target machines. Because I find it sometimes will cause some errors when we run the testcases. The source code of CleanupMachine.jar is in **CleanupMachine** folder．
