@@ -20,10 +20,8 @@ We can run it by input “java -jar onosAuTest1node.jar”. Then we input 3 ip a
 
 #### Starttest.jar: 
 After run onosAuTest1nodes.jar, we use this one to run the testcase we choose.
+We can run it by input “java -jar Starttest.jar”. Then we input the ip address of the manage machine (public network ip) and the name of the testcase we want to run. The result will be recorded in TestResults folder.
 
-We can run it by input “java -jar Starttest.jar”. Then we input the ip address of the manage machine (public network ip) and the name of the testcase we want to run like the following image.  The result will be recorded in TestResults folder.
-
-You can get the source code from onosAuTest1node　folder and Starttest　folder
 
 ## Setup test script with 3 node:
 How to setup the environment and run the test script with 3 nodes?
@@ -41,9 +39,7 @@ We can run it by input “java -jar onosAuTest3node.jar”. Then we input 5 ip a
 
 #### Starttest.jar: 
 After run onosAuTest3nodes.jar, we use this one to run the testcase we choose.
-
-We can run it by input “java -jar Starttest.jar”. Then we input the ip address of the manage machine (public network ip) and the name of the testcase we want to run like the following image.  The result will be recorded in TestResults folder.
-
+We can run it by input “java -jar Starttest.jar”. Then we input the ip address of the manage machine (public network ip) and the name of the testcase we want to run. The result will be recorded in TestResults folder.
 
 
 You can get the source code from onosAuTest1node folder, onosAuTest3node folder and Starttest　folder.
