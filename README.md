@@ -42,4 +42,4 @@ After run onosAuTest3nodes.jar, we use this one to run the testcase we choose.
 We can run it by input “java -jar Starttest.jar”. Then we input the ip address of the manage machine (public network ip) and the name of the testcase we want to run. The result will be recorded in TestResults folder.
 
 
-You can get the source code from onosAuTest1node folder, onosAuTest3node folder and Starttest　folder.
+You can get the source code from onosAuTest1node folder, onosAuTest3node folder and Starttest folder.
