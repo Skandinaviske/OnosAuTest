@@ -24,14 +24,18 @@ How to setup the environment and run the test script with 1 node?
 We use this one to setup all the test environments. It will install the all softwares on the manage machine, mininet machine and target machine. And it will also create user sdn on all those machines. After that it will try to run the sample testcase with 1 node (*SAMPstartTemplate_1node*) on the manage machine and record  the result in TestResults folder. 
 
 We can run it by input the following command:  
+
 `java -jar onosAuTest1node.jar`  
+
 Then we input 3 ip addresses (the public network ip for manage machine and the intranet ip for the other machines) and the location of the public key and private key.  
 The source code of onosAuTest1node.jar is in **onosAuTest1node** folder．  
 
 #### Starttest.jar: 
 After run onosAuTest1nodes.jar, we use this one to run the testcase we choose.
 We can run it by input the following command:  
+
 `java -jar Starttest.jar`  
+
 Then we input the ip address of the manage machine (public network ip) and the name of the testcase we want to run. The result will be recorded in TestResults folder.    
 The source code of Starttest.jar is in **Starttest** folder．  
 
@@ -48,14 +52,18 @@ How to setup the environment and run the test script with 3 nodes?
 We use this one to setup all the test environments. It will install all the softwares on the manage machine, mininet machine and target machines. And it will also create user sdn on all those machines. After that it will try to run the sample testcase with 3 node (*SAMPstartTemplate_3node*) on the manage machine and record  the result in TestResults folder. 
 
 We can run it by input the following command:  
+
 `java -jar onosAuTest3node.jar`  
+
 Then we input 5 ip addresses (the public network ip for manage machine and the intranet ip for the other machines) and the location of the public key and private key.  
 The source code of onosAuTest3nodes.jar is in **onosAuTest3nodes** folder.  
 
 #### Starttest.jar: 
 After run onosAuTest3nodes.jar, we use this one to run the testcase we choose.  
 We can run it by input the following command:   
+
 `java -jar Starttest.jar`  
+
 Then we input the ip address of the manage machine (public network ip) and the name of the testcase we want to run. The result will be recorded in TestResults folder.  
 The source code of Starttest.jar has a little bit different from **Starttest** folder.  
 
