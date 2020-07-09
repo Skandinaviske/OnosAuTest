@@ -69,10 +69,10 @@ This file is used in onosAuTest1node.jar and onosAuTest3node.jar, it will instal
 This file is used in Starttest.jar, it will delete the *~/.ssh/known_hosts* and *~/.ssh/known_hosts.old* files in the target machines. Because I find it sometimes will cause some errors when we run the testcases. The source code of CleanupMachine.jar is in **CleanupMachine** folder．
 
 ## Notices
-1.If you first run 3 node testcases and then you want to run 1 node testcases, please **Shut off instance** which you don't need. It sometimes affect the test results.  
-2.Don't delete id_rsa, id_rsa.pub, oneNodeDemo, threeNodeDemo after run onosAuTest1node.jar or onosAuTest3nodes.jar, because they will be used when you run Starttest.jar.  
-3.If you want to know the structure of the test scripts, please read **Tutorial of one node test.odp**.   
-4.I will add the 7 node scripts after it runs properly with IOS.  
+1. If you first run 3 node testcases and then you want to run 1 node testcases, please **Shut off instance** which you don't need. It sometimes affect the test results.  
+2. Don't delete id_rsa, id_rsa.pub, oneNodeDemo, threeNodeDemo after run onosAuTest1node.jar or onosAuTest3nodes.jar, because they will be used when you run Starttest.jar.  
+3. If you want to know the structure of the test scripts, please read **Tutorial of one node test.odp**.   
+4. I will add the 7 node scripts after it runs properly with IOS.  
 
 ## Author:
 Ailwyn
