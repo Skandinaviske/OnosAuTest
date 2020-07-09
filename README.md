@@ -3,7 +3,7 @@
 This README file shows how to run ONOS System testcases with 1 node, 3 nodes.  
 For basic information of ONOS System test, please read:  
 https://wiki.onosproject.org/display/ONOS/System+Testing+Guide  
-Note that You don't need install any softwares or create user on VMs becasue the script will do it automatically. You only need to create the VMs manually.  
+*Note that You don't need install any softwares or create user on VMs becasue the script will do it automatically. You only need to create the VMs manually.*  
 
 
 ## Environment:
