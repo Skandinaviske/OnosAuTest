@@ -1,5 +1,9 @@
 # OnosAuTest
 
+This README file will show how to run ONOS System test with 1 node, 3nodes and 7 nodes.
+For basic information of ONOS System test, please read:
+https://wiki.onosproject.org/display/ONOS/System+Testing+Guide
+
 ## Setup test script with 1 node:
 How to setup the environment and run the test script with 1 node?
 
@@ -40,4 +44,6 @@ After run onosAuTest3nodes.jar, we use this one to run the testcase we choose.
 
 We can run it by input “java -jar Starttest.jar”. Then we input the ip address of the manage machine (public network ip) and the name of the testcase we want to run like the following image.  The result will be recorded in TestResults folder.
 
-You can get the source code from onosAuTest1node　folder and Starttest　folder
+
+
+You can get the source code from onosAuTest1node folder, onosAuTest3node folder and Starttest　folder.
