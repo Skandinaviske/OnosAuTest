@@ -1,6 +1,6 @@
 # OnosAuTest
 
-This README file will show how to run ONOS System test with 1 node, 3nodes and 7 nodes.
+This README file shows how to run ONOS System testcases with 1 node, 3nodes and 7 nodes.
 For basic information of ONOS System test, please read:
 https://wiki.onosproject.org/display/ONOS/System+Testing+Guide
 
