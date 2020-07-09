@@ -34,7 +34,7 @@ We can run it by input the following command:
 Then we input the ip address of the manage machine (public network ip) and the name of the testcase we want to run. The result will be recorded in TestResults folder.    
 The source code of Starttest.jar is in **Starttest** folder．  
 
-## Setup test script with 3 node:
+## Setup test script with 3 nodes:
 How to setup the environment and run the test script with 3 nodes?
 
 ### On the compute Canada cloud
