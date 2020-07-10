@@ -32,16 +32,16 @@ public class main{
 
         String projectPath = ShellUtils.getrelativePath();
 
-        ShellUtils.execShell("sudo cp "+privatekeyLocation+" "+projectPath+"/id_rsa");
-        ShellUtils.execShell("sudo cp "+publickeyLocation+" "+projectPath+"/id_rsa.pub");
+        ShellUtils.execShell("cp "+privatekeyLocation+" "+projectPath+"/id_rsa");
+        ShellUtils.execShell("cp "+publickeyLocation+" "+projectPath+"/id_rsa.pub");
 
         privatekeyLocation = projectPath+"/id_rsa";
         publickeyLocation = projectPath+"/id_rsa.pub";
 
-        ShellUtils.execShell("sudo chgrp " + System.getProperty("user.name") + " " + privatekeyLocation);
-        ShellUtils.execShell("sudo chown " + System.getProperty("user.name") + " " + privatekeyLocation);
-        ShellUtils.execShell("sudo chown " + System.getProperty("user.name") + " " + publickeyLocation);
-        ShellUtils.execShell("sudo chgrp " + System.getProperty("user.name") + " " + publickeyLocation);
+        //ShellUtils.execShell("sudo chgrp " + System.getProperty("user.name") + " " + privatekeyLocation);
+        //ShellUtils.execShell("sudo chown " + System.getProperty("user.name") + " " + privatekeyLocation);
+        //ShellUtils.execShell("sudo chown " + System.getProperty("user.name") + " " + publickeyLocation);
+        //ShellUtils.execShell("sudo chgrp " + System.getProperty("user.name") + " " + publickeyLocation);
 
         SshServerUtils sshobj = new SshServerUtils();
 
