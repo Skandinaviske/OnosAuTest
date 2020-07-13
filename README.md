@@ -20,10 +20,17 @@ IntelliJ IDEA
 How to setup the environment and run the test script with 1 node?
 
 ### On the compute Canada cloud
+1. First check if you have ssh key in ~/.ssh, if you don't have one, please generate by using the following command:
 
-１．Create 3 VMs manually (1 manage machine, 1 mininet machine, 1 target machine).
+`ssh-keygen -t rsa -m PEM`
 
-２．Make sure the private key in your computer can ssh to the manage machine, mininet machine and target machine without password. So the public key you upload in Compute Canada Cloud should match the private key in your computer.
+*Note that don't setup the password here.*
+
+After that you need to upload your public key to your Compute Canada cloud's **Key Pairs**.
+
+If you have one, please upload your public key to your Compute Canada cloud's **Key Pairs**.
+
+2．Create 3 VMs manually (1 manage machine, 1 mininet machine, 1 target machine).
 
 ### Open Test1node folder:
 
@@ -54,9 +61,17 @@ How to setup the environment and run the test script with 3 nodes?
 
 ### On the compute Canada cloud
 
-１．Create 5 VMs manually (1 manage machine, 1 mininet machine, 3 target machines).
+1. First check if you have ssh key in ~/.ssh, if you don't have one, please generate by using the following command:
 
-２．Make sure the private key in your computer can ssh to the manage machine, mininet machine and target machines without password. So the public key you upload in Compute Canada Cloud should match the private key in your computer.
+`ssh-keygen -t rsa -m PEM`
+
+*Note that don't setup the password here.*
+
+After that you need to upload your public key to your Compute Canada cloud's **Key Pairs**.
+
+If you have one, please upload your public key to your Compute Canada cloud's **Key Pairs**.
+
+2．Create 5 VMs manually (1 manage machine, 1 mininet machine, 3 target machines).
 
 ### Open Test3nodes folder:
 #### onosAuTest3nodes.jar: 
