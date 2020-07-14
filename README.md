@@ -101,6 +101,9 @@ The source code of Starttest.jar has a little bit different from **Starttest** f
 
 ## Uses of other jar packages in Test1node folder and Test3nodes folder:
 
+
+**Note that we don't use them directly.**
+
 #### SetupMininetMachine.jar
 
 This file is used in onosAuTest1node.jar and onosAuTest3node.jar, it will install the required softwares and create user sdn in the mininet machine from the manage machine. The source code of SetupMininetMachine.jar is in **SetupMininetMachine** folder．
