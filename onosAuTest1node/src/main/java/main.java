@@ -18,11 +18,11 @@ public class main{
 
         System.out.println("Please enter the ip address for target 1 machine:");
         String targetMachineIP1=input.next();
-
-        System.out.println("Please enter the private key location:");
+        
+        System.out.println("Please enter the absolute file path of your private key:");
         String privatekeyLocation=input.next();
 
-        System.out.println("Please enter the public key location:");
+        System.out.println("Please enter the absolute file path of your public key:");
         String publickeyLocation=input.next();
 
         String projectPath = ShellUtils.getrelativePath();
