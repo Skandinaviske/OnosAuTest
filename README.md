@@ -26,7 +26,7 @@ How to setup the environment and run the test script with 1 node?
 
 `ssh-keygen -t rsa -m PEM`
 
-*Note that don't setup the password here.*
+**Note that don't setup the password here.**
 
 After that you need to upload your public key to your Compute Canada cloud's **Key Pairs**.
 
