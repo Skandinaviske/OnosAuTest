@@ -21,7 +21,8 @@ IntelliJ IDEA
 
 How to setup the environment and run the test script with 1 node?
 
-### On the compute Canada cloud
+### On the compute Canada cloud  
+
 1. First check if you have ssh key in ~/.ssh, if you don't have one, please generate it by using the following command:
 
 `ssh-keygen -t rsa -m PEM`
