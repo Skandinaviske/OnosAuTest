@@ -64,8 +64,7 @@ public class main {
         //Clean up target machine 1
         sshobj.shellCmd("cd OnosSystemTest; java -jar CleanupMachine.jar " + targetMachineIP1);
 //        String targetMachineIP2 = arrayList.get(1);
-//        sshobj.shellCmd("cd OnosSystemTest; java -jar CleanupMachine.jar " + targetMachineIP2);
-//        String targetMachineIP3 = arrayList.get(2);
+////        String targetMachineIP3 = arrayList.get(2);
 //        sshobj.shellCmd("cd OnosSystemTest; java -jar CleanupMachine.jar " + targetMachineIP3);
 //        String targetMachineIP4 = arrayList.get(3);
 //        sshobj.shellCmd("cd OnosSystemTest; java -jar CleanupMachine.jar " + targetMachineIP4);
