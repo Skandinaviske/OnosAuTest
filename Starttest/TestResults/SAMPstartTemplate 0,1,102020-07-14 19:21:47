@@ -1,0 +1,20 @@
+Last login: Tue Jul 14 23:21:43 2020 from 174.114.234.237
+ubuntu@manage:~$ cell oneNodeDemo; cd ~/OnosSystemTest/TestON/bin/; ./cli.py run  SAMPstartTemplate testcases 0,1,10
+[01;31m[KONOS_CELL[m[K=oneNodeDemo
+OCC1=192.168.171.28
+OC1=192.168.171.28
+OCI=192.168.171.28
+OCN=192.168.171.17
+ONOS_APPS=gui,drivers,openflow,proxyarp
+ONOS_GROUP=sdn
+ONOS_MN_PY=/home/ubuntu/onos/tools/dev/mininet/onos.py
+ONOS_SCENARIOS=/home/ubuntu/onos/tools/test/scenarios
+ONOS_USER=sdn
+ONOS_WEB_PASS=rocks
+ONOS_WEB_USER=onos
+
+There is no "SAMPstartTemplate" test script.
+Please provide a Python or OpenSpeak test script in the tests folder: /SAMPstartTemplate/
+ubuntu@manage:~/OnosSystemTest/TestON/bin$ 
+ubuntu@manage:~/OnosSystemTest/TestON/bin$ exit
+logout

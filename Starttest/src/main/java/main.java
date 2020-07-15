@@ -11,12 +11,24 @@ public class main {
     public static Log LOG = LogFactory.getLog(main.class);
 
     public static void main(String[] args) throws Exception {
+        String testcaseNumber = "";
         Scanner input = new Scanner(System.in);
         System.out.println("Please enter the ip address for manage machine:");
         String manageMachineIP = input.next();
 
         System.out.println("Please enter testcase name:");
         String testcase = input.next();
+
+        System.out.println("Do you want to run the part of testcase ?( Input Y to represent yes or any other key to represent no, if you input Y, you will choose the testcases you want to run in "+ testcase +")");
+        String booleanResult= input.next();
+
+        boolean runTestcaseSeparately = booleanResult.equals("Y") ||booleanResult.equals("Yes")||booleanResult.equals("y")||booleanResult.equals("yes")||booleanResult.equals("YES");
+        if(runTestcaseSeparately){
+            System.out.println("Please input the testcase number you want to run in "+testcase+". Please Separate them by ',', like '0,1,10'");
+            testcaseNumber= input.next();
+        }
+
+        System.out.println("testcaseNumber="+testcaseNumber);
 
         String projectPath = ShellUtils.getrelativePath();
         String privatekeyLocation = projectPath+"/id_rsa";
@@ -71,7 +83,13 @@ public class main {
         sshobj.execCmd(Constants.installScapy);
 
         //Run testcase
-        sshobj.shellCmdandLogResult("cell oneNodeDemo; cd ~/OnosSystemTest/TestON/bin/; ./cli.py run " + testcase, testcase);
+        if (runTestcaseSeparately){
+            sshobj.shellCmdandLogResult("cell oneNodeDemo; cd ~/OnosSystemTest/TestON/bin/; ./cli.py run " + testcase +" testcases "+testcaseNumber, testcase +" "+testcaseNumber);
+        }else {
+            sshobj.shellCmdandLogResult("cell oneNodeDemo; cd ~/OnosSystemTest/TestON/bin/; ./cli.py run " + testcase, testcase);
+            //sshobj.shellCmd("cell oneNodeDemo; cd ~/OnosSystemTest/TestON/bin/; ./cleanup.sh ");
+        }
+        //sshobj.shellCmd("cell oneNodeDemo; cd ~/OnosSystemTest/TestON/bin/; ./cleanup.sh");
         sshobj.closeSession();
     }
 }
