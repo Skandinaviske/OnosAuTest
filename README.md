@@ -57,6 +57,14 @@ We can run it by input the following command:
 Then we input the ip address of the manage machine (public network ip) and the name of the testcase we want to run. The result will be recorded in TestResults folder.    
 The source code of Starttest.jar is in **Starttest** folder．  
 
+#### Cleanup.jar:
+
+**NOTE: If you stop a test while running (by ^C or ^D), make sure to clean up before running a new test:**
+
+`java -jar Cleanup.jar`
+
+This will run various scripts to clean up any currently running ONOS, TestON, and Mininet.  
+The source code of Starttest.jar is in **Cleanup** folder．  
 
 ## Setup test script with 3 nodes:
 
@@ -98,6 +106,14 @@ We can run it by input the following command:
 Then we input the ip address of the manage machine (public network ip) and the name of the testcase we want to run. The result will be recorded in TestResults folder.  
 The source code of Starttest.jar has a little bit different from **Starttest** folder.  
 
+#### Cleanup.jar:
+
+**NOTE: If you stop a test while running (by ^C or ^D), make sure to clean up before running a new test:**
+
+`java -jar Cleanup.jar`
+
+This will run various scripts to clean up any currently running ONOS, TestON, and Mininet.  
+The source code of Starttest.jar is in **Cleanup** folder．  
 
 ## Uses of other jar packages in Test1node folder and Test3nodes folder:
 
