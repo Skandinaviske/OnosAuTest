@@ -71,8 +71,8 @@ public class main{
             sshobj.execCmd(Constants.setsudowithoutpassword);
 
             //Upload the private key and public key to the manage machine
-            sshobj.sftpUpload("/home/ubuntu/.ssh", "/home/"+System.getProperty("user.name")+"/.ssh/id_rsa");
-            sshobj.sftpUpload("/home/ubuntu/.ssh", "/home/"+System.getProperty("user.name")+"/.ssh/id_rsa.pub");
+            sshobj.sftpUpload("/home/ubuntu/.ssh", privatekeyLocation);
+            sshobj.sftpUpload("/home/ubuntu/.ssh", publickeyLocation);
 
             sshobj.execCmd("sudo chmod 600 .ssh/id_rsa");
             sshobj.execCmd("sudo chmod 644 .ssh/id_rsa.pub");
