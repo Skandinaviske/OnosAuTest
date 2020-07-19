@@ -172,11 +172,11 @@ The source code of Starttest.jar is in **Cleanup** folder．
 
 #### SetupMininetMachine.jar
 
-This file is used in onosAuTest1node.jar and onosAuTest3node.jar, it will install the required softwares and create user sdn in the mininet machine from the manage machine. The source code of SetupMininetMachine.jar is in **SetupMininetMachine** folder．
+This file is used in onosAuTest1node.jar and onosAuTest3nodes.jar, onosAuTest7nodes.jar it will install the required softwares and create user sdn in the mininet machine from the manage machine. The source code of SetupMininetMachine.jar is in **SetupMininetMachine** folder．
 
 #### SetupTargetMachine.jar
 
-This file is used in onosAuTest1node.jar and onosAuTest3node.jar, it will install the required softwares and create user sdn in the target machines from the manage machine. The source code of SetupMininetMachine.jar is in **SetupTargetMachine** folder．
+This file is used in onosAuTest1node.jar and onosAuTest3nodes.jar, onosAuTest7nodes.jar it will install the required softwares and create user sdn in the target machines from the manage machine. The source code of SetupMininetMachine.jar is in **SetupTargetMachine** folder．
 
 #### CleanupMachine.jar
 
@@ -189,6 +189,10 @@ This file is used in Starttest.jar, it will delete the *~/.ssh/known_hosts* and 
 For example, if you first run 3 node testcases and then you want to run 1 node testcases, please **Shut off instance** which you don't need. It sometimes affect the test results.  
 2. Don't delete id_rsa, id_rsa.pub, oneNodeDemo, threeNodeDemo, sevenNodeDemo after run onosAuTest1node.jar or onosAuTest3nodes.jar or onosAuTest7nodes.jar, because they will be used when you run Starttest.jar.  
 3. If you want to know the structure of the test scripts, please read **Tutorial of one node test.odp**.   
+
+## Troubleshooting:
+
+1.If you fail to run 1-node sample testcase, 3-node sample testcase and 7-node sample testcase when use onosAuTest1node.jar and onosAuTest3nodes.jar, onosAuTest7nodes.jar. Please use ssh to login to your sdn@<manage machine's ip address>, try to ssh to login to all sdn@<target machine's ip address> and input yes there. Then go back to try to run the testcase again.
 
 ## Author:
 
