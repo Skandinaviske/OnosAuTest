@@ -183,7 +183,7 @@ This file is used in onosAuTest1node.jar and onosAuTest3node.jar, it will instal
 This file is used in Starttest.jar, it will delete the *~/.ssh/known_hosts* and *~/.ssh/known_hosts.old* files in the target machines. Because I find it sometimes will cause some errors when we run the testcases. The source code of CleanupMachine.jar is in **CleanupMachine** folder．
 
 
-## Noticmo
+## Notice
 
 1. Turn off unused instances.  
 For example, if you first run 3 node testcases and then you want to run 1 node testcases, please **Shut off instance** which you don't need. It sometimes affect the test results.  
