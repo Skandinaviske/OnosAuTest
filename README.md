@@ -116,8 +116,57 @@ The source code of Starttest.jar has a little bit different from **Starttest** f
 This will run various scripts to clean up any currently running ONOS, TestON, and Mininet.  
 The source code of Starttest.jar is in **Cleanup** folder．  
 
-## Uses of other jar packages in Test1node folder and Test3nodes folder:
 
+## Setup test script with 7 nodes:
+
+How to setup the environment and run the test script with 7 nodes?
+
+### On the compute Canada cloud
+
+1. First check if you have ssh key in ~/.ssh, if you don't have one, please generate it by using the following command:
+
+`ssh-keygen -t rsa -m PEM`
+
+*Note that don't setup the password here.*
+
+After that you need to upload your public key to your Compute Canada cloud's **Key Pairs**.
+
+If you have one, please upload your public key to your Compute Canada cloud's **Key Pairs**.
+
+2．Create 9 VMs manually (1 manage machine, 1 mininet machine, 7 target machines).
+
+### Open Test7nodes folder:
+#### onosAuTest7nodes.jar: 
+
+We use this one to setup all the test environments. It will install all the softwares on the manage machine, mininet machine and target machines. And it will also create user sdn on all those machines. After that it will try to run the sample testcase with 7 nodes (*HAsingleInstanceRestart*) on the manage machine and record  the result in TestResults folder. 
+
+We can run it by input the following command:  
+
+`java -jar onosAuTest3node.jar`  
+
+Then we input 7 ip addresses (the public network ip for manage machine and the intranet ip for the other machines) and the location of the public key and private key.  
+The source code of onosAuTest7nodes.jar is in **onosAuTest7nodes** folder.  
+
+#### Starttest.jar: 
+
+After run onosAuTest7nodes.jar, we use this one to run the testcase we choose.  
+We can run it by input the following command:   
+
+`java -jar Starttest.jar`  
+
+Then we input the ip address of the manage machine (public network ip) and the name of the testcase we want to run. The result will be recorded in TestResults folder.  
+The source code of Starttest.jar has a little bit different from **Starttest** folder.  
+
+#### Cleanup.jar:
+
+**NOTE: If you stop a test while running (by ^C or ^D), make sure to clean up before running a new test:**
+
+`java -jar Cleanup.jar`
+
+This will run various scripts to clean up any currently running ONOS, TestON, and Mininet.  
+The source code of Starttest.jar is in **Cleanup** folder．  
+
+## Uses of other jar packages in Test1node folder, Test3nodes folder, Test7nodes folder:
 
 **Note that we don't use them directly.**
 
@@ -139,8 +188,6 @@ This file is used in Starttest.jar, it will delete the *~/.ssh/known_hosts* and 
 1. If you first run 3 node testcases and then you want to run 1 node testcases, please **Shut off instance** which you don't need. It sometimes affect the test results.  
 2. Don't delete id_rsa, id_rsa.pub, oneNodeDemo, threeNodeDemo after run onosAuTest1node.jar or onosAuTest3nodes.jar, because they will be used when you run Starttest.jar.  
 3. If you want to know the structure of the test scripts, please read **Tutorial of one node test.odp**.   
-4. I will add the 7 node scripts after it runs properly with IOS.  
-
 
 ## Author:
 
