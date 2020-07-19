@@ -50,7 +50,7 @@ public class main {
 
         //Connect to manage machine (ubuntu user)
         if (sshobj.connect("ubuntu", "", manageMachineIP, 22, privatekeyLocation)) {
-            arrayList = SshServerUtils.sftpgetIP(Constants.cellPath + "/sevenNodeDemo");
+            arrayList = SshServerUtils.sftpgetIP(Constants.cellPath + "/threeNodeDemo");
         } else {
             LOG.error("Check your ipaddress or username");
         }
@@ -67,14 +67,14 @@ public class main {
         sshobj.shellCmd("cd OnosSystemTest; java -jar CleanupMachine.jar " + targetMachineIP2);
         String targetMachineIP3 = arrayList.get(2);
         sshobj.shellCmd("cd OnosSystemTest; java -jar CleanupMachine.jar " + targetMachineIP3);
-        String targetMachineIP4 = arrayList.get(3);
-        sshobj.shellCmd("cd OnosSystemTest; java -jar CleanupMachine.jar " + targetMachineIP4);
-        String targetMachineIP5 = arrayList.get(4);
-        sshobj.shellCmd("cd OnosSystemTest; java -jar CleanupMachine.jar " + targetMachineIP5);
-        String targetMachineIP6 = arrayList.get(5);
-        sshobj.shellCmd("cd OnosSystemTest; java -jar CleanupMachine.jar " + targetMachineIP6);
-        String targetMachineIP7 = arrayList.get(6);
-        sshobj.shellCmd("cd OnosSystemTest; java -jar CleanupMachine.jar " + targetMachineIP7);
+//        String targetMachineIP4 = arrayList.get(3);
+//        sshobj.shellCmd("cd OnosSystemTest; java -jar CleanupMachine.jar " + targetMachineIP4);
+//        String targetMachineIP5 = arrayList.get(4);
+//        sshobj.shellCmd("cd OnosSystemTest; java -jar CleanupMachine.jar " + targetMachineIP5);
+//        String targetMachineIP6 = arrayList.get(5);
+//        sshobj.shellCmd("cd OnosSystemTest; java -jar CleanupMachine.jar " + targetMachineIP6);
+//        String targetMachineIP7 = arrayList.get(6);
+//        sshobj.shellCmd("cd OnosSystemTest; java -jar CleanupMachine.jar " + targetMachineIP7);
 
         sshobj.execCmd(Constants.installvlan);
         sshobj.execCmd(Constants.configurationofvlan);
@@ -83,9 +83,9 @@ public class main {
 
         //Run testcase
         if (runTestcaseSeparately){
-            sshobj.shellCmdandLogResult("cell sevenNodeDemo; cd ~/OnosSystemTest/TestON/bin/; ./cli.py run " + testcase +" testcases "+testcaseNumber, testcase +" "+testcaseNumber);
+            sshobj.shellCmdandLogResult("cell threeNodeDemo; cd ~/OnosSystemTest/TestON/bin/; ./cli.py run " + testcase +" testcases "+testcaseNumber, testcase +" "+testcaseNumber);
         }else {
-            sshobj.shellCmdandLogResult("cell sevenNodeDemo; cd ~/OnosSystemTest/TestON/bin/; ./cli.py run " + testcase, testcase);
+            sshobj.shellCmdandLogResult("cell threeNodeDemo; cd ~/OnosSystemTest/TestON/bin/; ./cli.py run " + testcase, testcase);
             //sshobj.shellCmd("cell oneNodeDemo; cd ~/OnosSystemTest/TestON/bin/; ./cleanup.sh ");
         }
         //sshobj.shellCmd("cell oneNodeDemo; cd ~/OnosSystemTest/TestON/bin/; ./cleanup.sh");
