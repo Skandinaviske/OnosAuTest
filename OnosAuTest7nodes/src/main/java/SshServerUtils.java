@@ -7,27 +7,27 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Properties;
-import java.util.UUID;
 
 public class SshServerUtils {
     private static Session session;
+    //Set up log information
     public static Log LOG = LogFactory.getLog(SshServerUtils.class);
-    //连接服务器
+
+    //Connect to the server,establish a session
     public static boolean connect(String username, String passwd, String host, int port, String privatekeyLocation) {
         try {
             JSch jsch = new JSch();
-            //获取sshSession
+            //Get sshSession
             //jsch.setKnownHosts("/home/liang/.ssh/known_hosts");
             jsch.addIdentity(privatekeyLocation, passwd);
             session = jsch.getSession(username, host, port);
 
-            //添加密码
+            //Add password
             //session.setPassword(passwd);
             Properties sshConfig = new Properties();
-            //严格主机密钥检查
             sshConfig.put("StrictHostKeyChecking", "no");
             session.setConfig(sshConfig);
-            //开启sshSession连接
+            //Start sshSession connect
             session.connect(4000);
             LOG.info("Server connection successful.");
             return true;
@@ -42,15 +42,13 @@ public class SshServerUtils {
     public static void execCmd(String command) {
 
         BufferedReader reader = null;
-
         String resultJson = null;
         ChannelExec channelExec = null;
         if (command != null) {
             try {
                 //connect(username, passwd, host, port);
-                //System.out.println(session.get);
                 channelExec = (ChannelExec) session.openChannel("exec");
-                // 设置需要执行的shell命令replaceSelected
+                // Set the shell command to be executed
                 channelExec.setCommand(command);
                 //System.out.println("linux命令:" + command);
                 channelExec.setInputStream(null);
@@ -68,21 +66,19 @@ public class SshServerUtils {
                 }
                 LOG.info("The command runs successfully");
                 reader.close();
-                //resultJson = getServerData(host, port, username, passwd, outFilePath);
             } catch (JSchException | IOException e) {
                 e.printStackTrace();
                 LOG.error(e.getMessage());
             } finally {
                 if (null != channelExec) {
                     channelExec.disconnect();
-                    //session.disconnect();
                 }
             }
         }
         return;
     }
 
-
+    //Upload file by using SFTP
     public static void sftpUpload(String directory, String uploadFile) {
 
         BufferedReader reader = null;
@@ -119,6 +115,7 @@ public class SshServerUtils {
         return;
     }
 
+    //Execute shell commands
     public static int shellCmd(String command) throws Exception {
         String content = ShellUtils.getrelativePath();
         String time =dateFormatStr();
@@ -160,6 +157,7 @@ public class SshServerUtils {
         return returnCode;
     }
 
+    //Execute shell commands and log information in TestResults
     public static int shellCmdandLogResult(String command, String testcase) {
         String time =dateFormatStr();
         LOG.info("Start the shell command:" + command);
@@ -206,14 +204,15 @@ public class SshServerUtils {
         return returnCode;
     }
 
+    //Close session
     public static void closeSession() {
         if (session != null) {
             session.disconnect();
             LOG.info("Server disconnect successfully.");
         }
-
     }
 
+    //Write file
     public static void addinFile(String file, String conent) throws IOException {
         File inputfile = new File(file);
         if (!inputfile.exists()) {
@@ -237,6 +236,7 @@ public class SshServerUtils {
         }
     }
 
+    //Get current time
     private static String dateFormatStr(){
         Date date = new Date();
         DateFormat format=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");

@@ -5,8 +5,11 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
+//Shell command utils.
+
 public class ShellUtils {
 
+    //Execute shell commands under current user
     public static void execShell(String shell){
         try {
             Runtime.getRuntime().exec(shell);
@@ -16,6 +19,7 @@ public class ShellUtils {
         }
     }
 
+    //Return the project path
     public static void replaceSelected(String replaceWith, String replacedContent) {
 
         Path path = Paths.get(System.getProperty("user.dir") + "/sevenNodeDemo");
@@ -31,6 +35,7 @@ public class ShellUtils {
         }
     }
 
+    //Return the project path
     public static String getrelativePath() {
         String relativelyPath = System.getProperty("user.dir");
         //System.out.println(relativelyPath);

@@ -3,8 +3,10 @@ import org.apache.commons.logging.LogFactory;
 
 import java.util.Scanner;
 
+//Main class
 public class main{
 
+    //Set up log information
     public static Log LOG = LogFactory.getLog(main.class);
     public static void main(String[] args) throws Exception {
         Scanner input = new Scanner (System.in);
@@ -56,6 +58,8 @@ public class main{
 
         Thread.sleep(2000);
         if(sshobj.connect("ubuntu","",manageMachineIP,22,privatekeyLocation)) {
+
+            //Install softwares on the manage machine
             sshobj.execCmd(Constants.update);
             sshobj.execCmd(Constants.upgrade);
             sshobj.execCmd(Constants.installgit);
@@ -75,6 +79,7 @@ public class main{
             sshobj.execCmd(Constants.changeshelltoSH);
             sshobj.execCmd(Constants.setsudowithoutpassword);
 
+            //Upload the private key and public key to the manage machine
             sshobj.sftpUpload("/home/ubuntu/.ssh", privatekeyLocation);
             sshobj.sftpUpload("/home/ubuntu/.ssh", publickeyLocation);
 
@@ -93,16 +98,13 @@ public class main{
             sshobj.execCmd(Constants.installconfigObj);
             sshobj.execCmd(Constants.gitOnosSystemtest);
             sshobj.execCmd("cd OnosSystemTest/TestON/ ; ./install.sh");
-            //sshobj.execCmd(Constants.gitMininet);
 
-            //String projectPath = ShellUtils.getrelativePath();
+            //Create sevenNodeDemo
 
-            //System.out.println("sudo cp "+ projectPath + "/src/main/resources/SevenNodeDemo "+projectPath+"/src/main/resources/sevenNodeDemo");
-
-            //.shellCmd("if [ -f \"/home/ubuntu/.ssh/known_hosts\" ]; then sudo rm /home/ubuntu/.ssh/known_hosts; fi");
             ShellUtils.execShell("cp "+ projectPath + "/SevenNodeDemo "+projectPath+"/sevenNodeDemo");
             Thread.sleep(2000);
 
+            //Write the ip addresses in sevenNodeDemo
             ShellUtils.replaceSelected(targetMachineIP1,"IPadd1");
             ShellUtils.replaceSelected(targetMachineIP2,"IPadd2");
             ShellUtils.replaceSelected(targetMachineIP3,"IPadd3");
@@ -112,12 +114,17 @@ public class main{
             ShellUtils.replaceSelected(targetMachineIP7,"IPadd7");
             ShellUtils.replaceSelected(mininetMachineIP,"IPadd8");
 
+            //Upload sevenNodeDemo under cell
             sshobj.sftpUpload(Constants.cellPath, projectPath + "/sevenNodeDemo");
 
+            //Upload SetupMininetMachine.jar and SetupTargetMachine.jar to the manage machine
             sshobj.sftpUpload("/home/ubuntu/OnosSystemTest", projectPath + "/SetupMininetMachine.jar");
-            sshobj.sftpUpload("/home/ubuntu/OnosSystemTest", projectPath + "/SetupTargetMachine.jar");
+            sshobj.sftpUpload("/home/ubuntu/OnosSystemTest",projectPath + "/SetupTargetMachine.jar");
 
+            //Set up mininet machine
             sshobj.shellCmd("cd OnosSystemTest; java -jar SetupMininetMachine.jar ubuntu "+mininetMachineIP);
+
+            //Set up target machine
             sshobj.shellCmd("cd OnosSystemTest; java -jar SetupTargetMachine.jar ubuntu "+targetMachineIP1);
             sshobj.shellCmd("cd OnosSystemTest; java -jar SetupTargetMachine.jar ubuntu "+targetMachineIP2);
             sshobj.shellCmd("cd OnosSystemTest; java -jar SetupTargetMachine.jar ubuntu "+targetMachineIP3);
@@ -127,7 +134,8 @@ public class main{
             sshobj.shellCmd("cd OnosSystemTest; java -jar SetupTargetMachine.jar ubuntu "+targetMachineIP7);
 
             sshobj.closeSession();
-//
+
+            //Connect to Manage machine(sdn user)
             sshobj.connect("sdn","",manageMachineIP,22,privatekeyLocation);
             sshobj.execCmd("sudo chmod 700 /home/sdn/.ssh");
             sshobj.execCmd("sudo chmod 644 /home/sdn/.ssh/authorized_keys");
@@ -136,8 +144,8 @@ public class main{
             sshobj.execCmd("echo 'source $ONOS_ROOT/tools/dev/bash_profile' | sudo tee --append /home/sdn/.bashrc");
             sshobj.execCmd("source .bashrc");
             sshobj.closeSession();
-//
 
+            //Connect to Manage machine(sdn user)
             sshobj.connect("sdn","",manageMachineIP,22,privatekeyLocation);
             sshobj.shellCmd("cd onos; bazel build onos");
             sshobj.execCmd("sudo chgrp sdn /home/sdn/.ssh/id_rsa");
@@ -148,7 +156,9 @@ public class main{
             sshobj.execCmd("sudo chown sdn /home/sdn/.ssh/authorized_keys");
             sshobj.closeSession();
 
+            //Connect to Manage machine(ubuntu user)
             sshobj.connect("ubuntu","",manageMachineIP,22,privatekeyLocation);
+            //Run the start sample test commands
             sshobj.shellCmdandLogResult("cell sevenNodeDemo; cd ~/OnosSystemTest/TestON/bin/; ./cli.py run HAsingleInstanceRestart","HAsingleInstanceRestart");
             sshobj.closeSession();
         }else{
