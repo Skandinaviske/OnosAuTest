@@ -1,0 +1,229 @@
+Last login: Sat Aug  1 22:40:07 2020 from 174.114.234.237
+cell oneNodeDemo; cd ~/OnosSystemTest/TestON/bin/; ./cli.py run PLATdockertest
+
+exit
+
+ubuntu@manage:~$ cell oneNodeDemo; cd ~/OnosSystemTest/TestON/bin/; ./cli.py run  PLATdockertest
+[01;31m[KONOS_CELL[m[K=oneNodeDemo
+OCC1=192.168.171.28
+OC1=192.168.171.28
+OCI=192.168.171.28
+OCN=192.168.171.17
+ONOS_APPS=gui,drivers,openflow,proxyarp
+ONOS_GROUP=sdn
+ONOS_MN_PY=/home/ubuntu/onos/tools/dev/mininet/onos.py
+ONOS_SCENARIOS=/home/ubuntu/onos/tools/test/scenarios
+ONOS_USER=sdn
+ONOS_WEB_PASS=rocks
+ONOS_WEB_USER=onos
+
+                                +----------------+
+------------------------------ { Script And Files }  ------------------------------
+                                +----------------+
+
+	Script Log File : /home/ubuntu/OnosSystemTest/TestON/logs/PLATdockertest_01_Aug_2020_22_40_11/PLATdockertest_01_Aug_2020_22_40_11.log
+	Report Log File : /home/ubuntu/OnosSystemTest/TestON/logs/PLATdockertest_01_Aug_2020_22_40_11/PLATdockertest_01_Aug_2020_22_40_11.rpt
+	ONOSbenchDocker Session Log : /home/ubuntu/OnosSystemTest/TestON/logs/PLATdockertest_01_Aug_2020_22_40_11/ONOSbenchDocker.session
+	Mininet1 Session Log : /home/ubuntu/OnosSystemTest/TestON/logs/PLATdockertest_01_Aug_2020_22_40_11/Mininet1.session
+	ONOSbenchCli Session Log : /home/ubuntu/OnosSystemTest/TestON/logs/PLATdockertest_01_Aug_2020_22_40_11/ONOSbenchCli.session
+	ONOSbenchRest Session Log : /home/ubuntu/OnosSystemTest/TestON/logs/PLATdockertest_01_Aug_2020_22_40_11/ONOSbenchRest.session
+	Test Script : /home/ubuntu/OnosSystemTest/TestON/tests/PLAT/PLATdockertest/PLATdockertest.py
+	Test Params : /home/ubuntu/OnosSystemTest/TestON/tests/PLAT/PLATdockertest/PLATdockertest.params
+	Topology : /home/ubuntu/OnosSystemTest/TestON/tests/PLAT/PLATdockertest/PLATdockertest.topo
+                              +------------------+
+---------------------------  { Script Exec Params }  ---------------------------
+                              +------------------+
+
+{
+    "CASE110": {
+        "apps": "org.onosproject.proxyarp,org.onosproject.fwd,org.onosproject.openflow", 
+        "clustercmdpath": "../tests/PLAT/PLATdockertest/dependencies", 
+        "debug": "on", 
+        "mnCmd": "mn --topo tree,2 --controller remote,ip=", 
+        "swDPID": "of:0000000000000002"
+    }, 
+    "CTRL": {
+        "port": "6653"
+    }, 
+    "DOCKER": {
+        "password": "karaf", 
+        "repo": "onosproject/onos", 
+        "tag": "latest", 
+        "user": "karaf"
+    }, 
+    "ENV": {
+        "cellApps": "drivers,openflow,proxyarp,mobility", 
+        "cellName": "productionCell"
+    }, 
+    "GIT": {
+        "branch": "master", 
+        "pull": "False"
+    }, 
+    "GRAPH": {
+        "builds": "20", 
+        "nodeCluster": "BM"
+    }, 
+    "SCALE": {
+        "nodelist": "onos1,onos2,onos3"
+    }, 
+    "SLEEP": {
+        "startup": "60"
+    }, 
+    "testcases": "0,[1,1000,10,110,120,130,140,299,900,1000]*12,1001"
+}
+
+                               +---------------+
+----------------------------- { Components Used }  -----------------------------
+                               +---------------+
+	ONOSbenchDocker
+	Mininet1
+	ONOSbenchCli
+	ONOSbenchRest
+
+
+                              +--------+
+---------------------------- { Topology }  ----------------------------
+                              +--------+
+
+[
+    [
+        "ONOSbenchCli", 
+        {
+            "connect_order": "1", 
+            "host": "localhost", 
+            "user": "sdn", 
+            "COMPONENTS": {
+                "karaf_username": null, 
+                "karaf_password": null, 
+                "prompt": null
+            }, 
+            "password": "rocks", 
+            "type": "OnosCliDriver"
+        }
+    ], 
+    [
+        "ONOSbenchRest", 
+        {
+            "connect_order": "2", 
+            "host": "localhost", 
+            "user": "karaf", 
+            "COMPONENTS": {
+                "prompt": null
+            }, 
+            "password": "karaf", 
+            "type": "OnosRestDriver", 
+            "port": "8181"
+        }
+    ], 
+    [
+        "ONOSbenchDocker", 
+        {
+            "connect_order": "3", 
+            "host": "localhost", 
+            "user": "sdn", 
+            "COMPONENTS": {
+                "prompt": null
+            }, 
+            "password": "rocks", 
+            "type": "DockerApiDriver"
+        }
+    ], 
+    [
+        "Mininet1", 
+        {
+            "connect_order": "5", 
+            "host": "OCN", 
+            "user": "sdn", 
+            "COMPONENTS": {
+                "home": "~/mininet/custom/", 
+                "prompt": null
+            }, 
+            "password": "rocks", 
+            "type": "MininetCliDriver"
+        }
+    ]
+]
+------------------------------------------------------------
+
+
+******************************
+ CASE INIT 
+******************************
+
+['ONOSbenchCli', 'ONOSbenchRest', 'ONOSbenchDocker', 'Mininet1']
+2020-08-01 22:40:11,782 - PLATdockertest - INFO - Creating component Handle: ONOSbenchCli
+2020-08-01 22:40:11,792 - PLATdockertest - INFO - ONOSbenchCli: Trying to connect to localhost
+2020-08-01 22:40:11,833 - PLATdockertest - INFO - ssh key confirmation received, send yes
+2020-08-01 22:40:12,782 - PLATdockertest - INFO - Password not required logged in
+2020-08-01 22:40:13,088 - PLATdockertest - INFO - Creating component Handle: ONOSbenchRest
+2020-08-01 22:40:13,145 - PLATdockertest - INFO - ONOSbenchRest: ip set to localhost
+2020-08-01 22:40:13,145 - PLATdockertest - INFO - Creating component Handle: ONOSbenchDocker
+2020-08-01 22:40:13,302 - PLATdockertest - INFO - Creating component Handle: Mininet1
+2020-08-01 22:40:13,339 - PLATdockertest - INFO - ssh key confirmation received, send yes
+2020-08-01 22:40:14,208 - PLATdockertest - INFO - Password not required logged in
+2020-08-01 22:40:14,412 - PLATdockertest - INFO - Connection successful to the host sdn@192.168.171.17
+
+******************************
+ Result summary for Testcase0
+******************************
+
+[95m2020-08-01 22:40:14,567 - PLATdockertest - DEBUG - Case Executed       : [0][0m
+[95m2020-08-01 22:40:14,567 - PLATdockertest - DEBUG - Case to be executed : [1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1001][0m
+[2020-08-01 22:40:14.567432] [PLATdockertest] [CASE]  Pull all docker images and get a list of image tags
+sh: 1: docker: not found
+[91m2020-08-01 22:40:14,959 - PLATdockertest - ERROR - ('Connection aborted.', error(2, 'No such file or directory'))[0m
+Traceback (most recent call last):
+  File "/home/ubuntu/OnosSystemTest/TestON/drivers/common/api/dockerapidriver.py", line 68, in getListOfImages
+    imageList = list( self.dockerClient.images( name=repo ) )
+  File "/usr/local/lib/python2.7/dist-packages/docker/api/image.py", line 40, in images
+    res = self._result(self._get(self._url("/images/json"), params=params),
+  File "/usr/local/lib/python2.7/dist-packages/docker/utils/decorators.py", line 47, in inner
+    return f(self, *args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/docker/client.py", line 139, in _get
+    return self.get(url, **self._set_request_timeout(kwargs))
+  File "/usr/local/lib/python2.7/dist-packages/requests/sessions.py", line 476, in get
+    return self.request('GET', url, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/requests/sessions.py", line 464, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/requests/sessions.py", line 576, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/requests/adapters.py", line 415, in send
+    raise ConnectionError(err, request=request)
+ConnectionError: ('Connection aborted.', error(2, 'No such file or directory'))
+[93m2020-08-01 22:40:14,961 - PLATdockertest - WARNING - Error trying to get step number. It is likely between step 0 and step 1[0m
+[91m2020-08-01 22:40:14,961 - PLATdockertest - ERROR - 
+Exception in the following section of code: 0.<IndexError>: <IndexError>[0m
+[91m2020-08-01 22:40:14,961 - PLATdockertest - ERROR - <type 'exceptions.TypeError'>'NoneType' object is not iterable[0m
+
+ *****************************
+
+ Result: No Assertion Called 
+*****************************
+
+
+
+*************************************
+	Test Execution Summary
+
+************************************* 
+
+ Test Start           : 01 Aug 2020 22:40:11
+ Test End             : 01 Aug 2020 22:40:14
+ Execution Time       : 0:00:03.180882
+ Total Tests Planned  : 122
+ Total Tests Run      : 1
+ Total Pass           : 0
+ Total Fail           : 0
+ Total No Result      : 1
+ Success Percentage   : 0%
+ Execution Percentage : 0%
+
+ Case Executed        : [0]
+ Case Not Executed    : [1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1001]
+Disconnecting from Mininet1: <class 'drivers.common.cli.emulator.mininetclidriver.MininetCliDriver'>
+Disconnecting from ONOSbenchDocker: <class 'drivers.common.api.dockerapidriver.DockerApiDriver'>
+Disconnecting from ONOSbenchRest: <class 'drivers.common.api.controller.onosrestdriver.OnosRestDriver'>
+Disconnecting from ONOSbenchCli: <class 'drivers.common.cli.onosclidriver.OnosCliDriver'>
+ubuntu@manage:~/OnosSystemTest/TestON/bin$ 
+ubuntu@manage:~/OnosSystemTest/TestON/bin$ exit
+logout
