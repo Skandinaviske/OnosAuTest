@@ -1,0 +1,2410 @@
+Last login: Fri Jul 31 00:18:23 2020 from 174.114.234.237
+
+cell sevenNodeDemo; cd ~/OnosSystemTest/TestON/bin/; ./cli.py run SCPFhostLat
+
+exit
+
+ubuntu@manage:~$ cell sevenNodeDemo; cd ~/OnosSystemTest/TestON/bin/; ./cli.py ru
+un SCPFhostLat
+[01;31m[KONOS_CELL[m[K=sevenNodeDemo
+OCC1=192.168.171.28
+OCC2=192.168.171.5
+OCC3=192.168.171.24
+OCC4=192.168.171.13
+OCC5=192.168.171.14
+OCC6=192.168.171.15
+OCC7=192.168.171.7
+OC1=192.168.171.28
+OC2=192.168.171.5
+OC3=192.168.171.24
+OC4=192.168.171.13
+OC5=192.168.171.14
+OC6=192.168.171.15
+OC7=192.168.171.7
+OCI=192.168.171.28
+OCN=192.168.171.17
+ONOS_APPS=gui,drivers,openflow,proxyarp
+ONOS_GROUP=sdn
+ONOS_MN_PY=/home/ubuntu/onos/tools/dev/mininet/onos.py
+ONOS_SCENARIOS=/home/ubuntu/onos/tools/test/scenarios
+ONOS_USER=sdn
+ONOS_WEB_PASS=rocks
+ONOS_WEB_USER=onos
+
+                                +----------------+
+------------------------------ { Script And Files }  ------------------------------
+                                +----------------+
+
+	Script Log File : /home/ubuntu/OnosSystemTest/TestON/logs/SCPFhostLat_31_Jul_2020_00_18_27/SCPFhostLat_31_Jul_2020_00_18_27.log
+	Report Log File : /home/ubuntu/OnosSystemTest/TestON/logs/SCPFhostLat_31_Jul_2020_00_18_27/SCPFhostLat_31_Jul_2020_00_18_27.rpt
+	Mininet1 Session Log : /home/ubuntu/OnosSystemTest/TestON/logs/SCPFhostLat_31_Jul_2020_00_18_27/Mininet1.session
+	ONOScell Session Log : /home/ubuntu/OnosSystemTest/TestON/logs/SCPFhostLat_31_Jul_2020_00_18_27/ONOScell.session
+	Test Script : /home/ubuntu/OnosSystemTest/TestON/tests/SCPF/SCPFhostLat/SCPFhostLat.py
+	Test Params : /home/ubuntu/OnosSystemTest/TestON/tests/SCPF/SCPFhostLat/SCPFhostLat.params
+	Topology : /home/ubuntu/OnosSystemTest/TestON/tests/SCPF/SCPFhostLat/SCPFhostLat.topo
+                              +------------------+
+---------------------------  { Script Exec Params }  ---------------------------
+                              +------------------+
+
+{
+    "ALARM": {
+        "maxLat": "5.5,5.5,5.5"
+    }, 
+    "CTRL": {
+        "port": "6653"
+    }, 
+    "DATABASE": {
+        "file": "/tmp/HostAddLatency", 
+        "nic": "1gig", 
+        "node": "baremetal"
+    }, 
+    "DEPENDENCY": {
+        "path": "/tests/SCPF/SCPFhostLat/dependencies/", 
+        "topology": "topo-perf-1h1s.py"
+    }, 
+    "ENV": {
+        "cellApps": "drivers,metrics,openflow", 
+        "cellName": "topo_perf_test"
+    }, 
+    "GIT": {
+        "branch": "master", 
+        "pull": "False"
+    }, 
+    "GRAPH": {
+        "builds": "20", 
+        "nodeCluster": "BM"
+    }, 
+    "SCALE": "1,3,5", 
+    "SLEEP": {
+        "install": "10", 
+        "measurement": "5", 
+        "startup": "10", 
+        "timeout": "10"
+    }, 
+    "TEST": {
+        "hostTimestamp": "topologyHostEventTimestamp", 
+        "iterIgnore": "5", 
+        "numIter": "25", 
+        "singleSwThreshold": "0,1000"
+    }, 
+    "TSHARK": {
+        "tsharkPacketIn": "OpenFlow 150 Type: OFPT_PACKET_IN", 
+        "tsharkPath": "/tmp/hostLatTshark"
+    }, 
+    "testcases": "0,2,11,20,2,11,20,2,11,20"
+}
+
+                               +---------------+
+----------------------------- { Components Used }  -----------------------------
+                               +---------------+
+	Mininet1
+	ONOScell
+
+
+                              +--------+
+---------------------------- { Topology }  ----------------------------
+                              +--------+
+
+[
+    [
+        "ONOScell", 
+        {
+            "connect_order": "1", 
+            "host": "localhost", 
+            "user": "sdn", 
+            "COMPONENTS": {
+                "web_user": null, 
+                "diff_clihost": null, 
+                "web_pass": null, 
+                "prompt": null, 
+                "cluster_name": null, 
+                "onos_home": null, 
+                "nodes": "7", 
+                "karaf_password": null, 
+                "karaf_username": null, 
+                "rest_port": null
+            }, 
+            "home": null, 
+            "password": "rocks", 
+            "type": "OnosClusterDriver"
+        }
+    ], 
+    [
+        "Mininet1", 
+        {
+            "connect_order": "16", 
+            "host": "OCN", 
+            "user": "sdn", 
+            "COMPONENTS": {
+                "prompt": null
+            }, 
+            "password": "rocks", 
+            "type": "MininetCliDriver"
+        }
+    ]
+]
+------------------------------------------------------------
+
+
+******************************
+ CASE INIT 
+******************************
+
+['ONOScell', 'Mininet1']
+2020-07-31 00:18:27,597 - SCPFhostLat - INFO - Creating component Handle: ONOScell
+2020-07-31 00:18:27,608 - SCPFhostLat - INFO - ONOScell: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5', '192.168.171.14', '192.168.171.13', '192.168.171.7', '192.168.171.15'] ONOS IPs
+2020-07-31 00:18:27,609 - SCPFhostLat - INFO - ONOScell: Trying to connect to localhost
+2020-07-31 00:18:27,653 - SCPFhostLat - INFO - ssh key confirmation received, send yes
+2020-07-31 00:18:28,627 - SCPFhostLat - INFO - Password not required logged in
+[95m2020-07-31 00:18:28,933 - SCPFhostLat - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosCliDriver', 'host': 'localhost'}[0m
+2020-07-31 00:18:28,933 - SCPFhostLat - INFO - Creating component Handle: ONOScli1
+2020-07-31 00:18:28,945 - SCPFhostLat - INFO - ONOScli1: Trying to connect to localhost
+2020-07-31 00:18:29,861 - SCPFhostLat - INFO - Password not required logged in
+[95m2020-07-31 00:18:30,167 - SCPFhostLat - DEBUG - {'connect_order': '1', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosClusterDriver', 'host': 'localhost'}[0m
+[95m2020-07-31 00:18:30,167 - SCPFhostLat - DEBUG - {'connect_order': '2', 'user': 'onos', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosRestDriver', 'host': '192.168.171.28', 'port': '8181'}[0m
+2020-07-31 00:18:30,168 - SCPFhostLat - INFO - Creating component Handle: ONOSrest1
+2020-07-31 00:18:30,227 - SCPFhostLat - INFO - ONOSrest1: ip set to 192.168.171.28
+[95m2020-07-31 00:18:30,227 - SCPFhostLat - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': 'localhost'}[0m
+2020-07-31 00:18:30,227 - SCPFhostLat - INFO - Creating component Handle: ONOSbench1
+2020-07-31 00:18:30,235 - SCPFhostLat - INFO - ONOSbench1: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5', '192.168.171.14', '192.168.171.13', '192.168.171.7', '192.168.171.15'] ONOS IPs
+2020-07-31 00:18:30,235 - SCPFhostLat - INFO - ONOSbench1: Trying to connect to localhost
+2020-07-31 00:18:31,112 - SCPFhostLat - INFO - Password not required logged in
+[95m2020-07-31 00:18:31,418 - SCPFhostLat - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': '192.168.171.28'}[0m
+2020-07-31 00:18:31,418 - SCPFhostLat - INFO - Creating component Handle: ONOSserver1
+2020-07-31 00:18:31,426 - SCPFhostLat - INFO - ONOSserver1: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5', '192.168.171.14', '192.168.171.13', '192.168.171.7', '192.168.171.15'] ONOS IPs
+2020-07-31 00:18:31,427 - SCPFhostLat - INFO - ONOSserver1: Trying to connect to 192.168.171.28
+2020-07-31 00:18:31,477 - SCPFhostLat - INFO - ssh key confirmation received, send yes
+2020-07-31 00:18:32,338 - SCPFhostLat - INFO - Password not required logged in
+[95m2020-07-31 00:18:32,644 - SCPFhostLat - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosCliDriver', 'host': 'localhost'}[0m
+2020-07-31 00:18:32,644 - SCPFhostLat - INFO - Creating component Handle: ONOScli2
+2020-07-31 00:18:32,653 - SCPFhostLat - INFO - ONOScli2: Trying to connect to localhost
+2020-07-31 00:18:33,561 - SCPFhostLat - INFO - Password not required logged in
+[95m2020-07-31 00:18:33,866 - SCPFhostLat - DEBUG - {'connect_order': '1', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosClusterDriver', 'host': 'localhost'}[0m
+[95m2020-07-31 00:18:33,866 - SCPFhostLat - DEBUG - {'connect_order': '2', 'user': 'onos', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosRestDriver', 'host': '192.168.171.5', 'port': '8181'}[0m
+2020-07-31 00:18:33,867 - SCPFhostLat - INFO - Creating component Handle: ONOSrest2
+2020-07-31 00:18:33,875 - SCPFhostLat - INFO - ONOSrest2: ip set to 192.168.171.5
+[95m2020-07-31 00:18:33,876 - SCPFhostLat - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': 'localhost'}[0m
+2020-07-31 00:18:33,876 - SCPFhostLat - INFO - Creating component Handle: ONOSbench2
+2020-07-31 00:18:33,884 - SCPFhostLat - INFO - ONOSbench2: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5', '192.168.171.14', '192.168.171.13', '192.168.171.7', '192.168.171.15'] ONOS IPs
+2020-07-31 00:18:33,885 - SCPFhostLat - INFO - ONOSbench2: Trying to connect to localhost
+2020-07-31 00:18:34,782 - SCPFhostLat - INFO - Password not required logged in
+[95m2020-07-31 00:18:35,088 - SCPFhostLat - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': '192.168.171.5'}[0m
+2020-07-31 00:18:35,088 - SCPFhostLat - INFO - Creating component Handle: ONOSserver2
+2020-07-31 00:18:35,096 - SCPFhostLat - INFO - ONOSserver2: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5', '192.168.171.14', '192.168.171.13', '192.168.171.7', '192.168.171.15'] ONOS IPs
+2020-07-31 00:18:35,097 - SCPFhostLat - INFO - ONOSserver2: Trying to connect to 192.168.171.5
+2020-07-31 00:18:35,144 - SCPFhostLat - INFO - ssh key confirmation received, send yes
+2020-07-31 00:18:35,967 - SCPFhostLat - INFO - Password not required logged in
+[95m2020-07-31 00:18:36,273 - SCPFhostLat - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosCliDriver', 'host': 'localhost'}[0m
+2020-07-31 00:18:36,273 - SCPFhostLat - INFO - Creating component Handle: ONOScli3
+2020-07-31 00:18:36,282 - SCPFhostLat - INFO - ONOScli3: Trying to connect to localhost
+2020-07-31 00:18:37,194 - SCPFhostLat - INFO - Password not required logged in
+[95m2020-07-31 00:18:37,500 - SCPFhostLat - DEBUG - {'connect_order': '1', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosClusterDriver', 'host': 'localhost'}[0m
+[95m2020-07-31 00:18:37,500 - SCPFhostLat - DEBUG - {'connect_order': '2', 'user': 'onos', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosRestDriver', 'host': '192.168.171.24', 'port': '8181'}[0m
+2020-07-31 00:18:37,500 - SCPFhostLat - INFO - Creating component Handle: ONOSrest3
+2020-07-31 00:18:37,509 - SCPFhostLat - INFO - ONOSrest3: ip set to 192.168.171.24
+[95m2020-07-31 00:18:37,510 - SCPFhostLat - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': 'localhost'}[0m
+2020-07-31 00:18:37,510 - SCPFhostLat - INFO - Creating component Handle: ONOSbench3
+2020-07-31 00:18:37,518 - SCPFhostLat - INFO - ONOSbench3: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5', '192.168.171.14', '192.168.171.13', '192.168.171.7', '192.168.171.15'] ONOS IPs
+2020-07-31 00:18:37,519 - SCPFhostLat - INFO - ONOSbench3: Trying to connect to localhost
+2020-07-31 00:18:38,415 - SCPFhostLat - INFO - Password not required logged in
+[95m2020-07-31 00:18:38,721 - SCPFhostLat - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': '192.168.171.24'}[0m
+2020-07-31 00:18:38,721 - SCPFhostLat - INFO - Creating component Handle: ONOSserver3
+2020-07-31 00:18:38,728 - SCPFhostLat - INFO - ONOSserver3: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5', '192.168.171.14', '192.168.171.13', '192.168.171.7', '192.168.171.15'] ONOS IPs
+2020-07-31 00:18:38,728 - SCPFhostLat - INFO - ONOSserver3: Trying to connect to 192.168.171.24
+2020-07-31 00:18:38,767 - SCPFhostLat - INFO - ssh key confirmation received, send yes
+2020-07-31 00:18:39,574 - SCPFhostLat - INFO - Password not required logged in
+[95m2020-07-31 00:18:39,880 - SCPFhostLat - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosCliDriver', 'host': 'localhost'}[0m
+2020-07-31 00:18:39,880 - SCPFhostLat - INFO - Creating component Handle: ONOScli4
+2020-07-31 00:18:39,888 - SCPFhostLat - INFO - ONOScli4: Trying to connect to localhost
+2020-07-31 00:18:40,789 - SCPFhostLat - INFO - Password not required logged in
+[95m2020-07-31 00:18:41,095 - SCPFhostLat - DEBUG - {'connect_order': '1', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosClusterDriver', 'host': 'localhost'}[0m
+[95m2020-07-31 00:18:41,095 - SCPFhostLat - DEBUG - {'connect_order': '2', 'user': 'onos', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosRestDriver', 'host': '192.168.171.13', 'port': '8181'}[0m
+2020-07-31 00:18:41,096 - SCPFhostLat - INFO - Creating component Handle: ONOSrest4
+2020-07-31 00:18:41,102 - SCPFhostLat - INFO - ONOSrest4: ip set to 192.168.171.13
+[95m2020-07-31 00:18:41,103 - SCPFhostLat - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': 'localhost'}[0m
+2020-07-31 00:18:41,103 - SCPFhostLat - INFO - Creating component Handle: ONOSbench4
+2020-07-31 00:18:41,111 - SCPFhostLat - INFO - ONOSbench4: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5', '192.168.171.14', '192.168.171.13', '192.168.171.7', '192.168.171.15'] ONOS IPs
+2020-07-31 00:18:41,112 - SCPFhostLat - INFO - ONOSbench4: Trying to connect to localhost
+2020-07-31 00:18:42,007 - SCPFhostLat - INFO - Password not required logged in
+[95m2020-07-31 00:18:42,313 - SCPFhostLat - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': '192.168.171.13'}[0m
+2020-07-31 00:18:42,313 - SCPFhostLat - INFO - Creating component Handle: ONOSserver4
+2020-07-31 00:18:42,321 - SCPFhostLat - INFO - ONOSserver4: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5', '192.168.171.14', '192.168.171.13', '192.168.171.7', '192.168.171.15'] ONOS IPs
+2020-07-31 00:18:42,322 - SCPFhostLat - INFO - ONOSserver4: Trying to connect to 192.168.171.13
+2020-07-31 00:18:42,348 - SCPFhostLat - INFO - ssh key confirmation received, send yes
+2020-07-31 00:18:43,066 - SCPFhostLat - INFO - Password not required logged in
+[95m2020-07-31 00:18:43,371 - SCPFhostLat - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosCliDriver', 'host': 'localhost'}[0m
+2020-07-31 00:18:43,372 - SCPFhostLat - INFO - Creating component Handle: ONOScli5
+2020-07-31 00:18:43,380 - SCPFhostLat - INFO - ONOScli5: Trying to connect to localhost
+2020-07-31 00:18:44,317 - SCPFhostLat - INFO - Password not required logged in
+[95m2020-07-31 00:18:44,622 - SCPFhostLat - DEBUG - {'connect_order': '1', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosClusterDriver', 'host': 'localhost'}[0m
+[95m2020-07-31 00:18:44,623 - SCPFhostLat - DEBUG - {'connect_order': '2', 'user': 'onos', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosRestDriver', 'host': '192.168.171.14', 'port': '8181'}[0m
+2020-07-31 00:18:44,623 - SCPFhostLat - INFO - Creating component Handle: ONOSrest5
+2020-07-31 00:18:44,630 - SCPFhostLat - INFO - ONOSrest5: ip set to 192.168.171.14
+[95m2020-07-31 00:18:44,631 - SCPFhostLat - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': 'localhost'}[0m
+2020-07-31 00:18:44,631 - SCPFhostLat - INFO - Creating component Handle: ONOSbench5
+2020-07-31 00:18:44,639 - SCPFhostLat - INFO - ONOSbench5: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5', '192.168.171.14', '192.168.171.13', '192.168.171.7', '192.168.171.15'] ONOS IPs
+2020-07-31 00:18:44,640 - SCPFhostLat - INFO - ONOSbench5: Trying to connect to localhost
+2020-07-31 00:18:45,590 - SCPFhostLat - INFO - Password not required logged in
+[95m2020-07-31 00:18:45,896 - SCPFhostLat - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': '192.168.171.14'}[0m
+2020-07-31 00:18:45,896 - SCPFhostLat - INFO - Creating component Handle: ONOSserver5
+2020-07-31 00:18:45,903 - SCPFhostLat - INFO - ONOSserver5: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5', '192.168.171.14', '192.168.171.13', '192.168.171.7', '192.168.171.15'] ONOS IPs
+2020-07-31 00:18:45,904 - SCPFhostLat - INFO - ONOSserver5: Trying to connect to 192.168.171.14
+2020-07-31 00:18:45,945 - SCPFhostLat - INFO - ssh key confirmation received, send yes
+2020-07-31 00:18:47,389 - SCPFhostLat - INFO - Password not required logged in
+[95m2020-07-31 00:18:47,696 - SCPFhostLat - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosCliDriver', 'host': 'localhost'}[0m
+2020-07-31 00:18:47,696 - SCPFhostLat - INFO - Creating component Handle: ONOScli6
+2020-07-31 00:18:47,703 - SCPFhostLat - INFO - ONOScli6: Trying to connect to localhost
+2020-07-31 00:18:48,625 - SCPFhostLat - INFO - Password not required logged in
+[95m2020-07-31 00:18:48,931 - SCPFhostLat - DEBUG - {'connect_order': '1', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosClusterDriver', 'host': 'localhost'}[0m
+[95m2020-07-31 00:18:48,931 - SCPFhostLat - DEBUG - {'connect_order': '2', 'user': 'onos', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosRestDriver', 'host': '192.168.171.15', 'port': '8181'}[0m
+2020-07-31 00:18:48,931 - SCPFhostLat - INFO - Creating component Handle: ONOSrest6
+2020-07-31 00:18:48,938 - SCPFhostLat - INFO - ONOSrest6: ip set to 192.168.171.15
+[95m2020-07-31 00:18:48,939 - SCPFhostLat - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': 'localhost'}[0m
+2020-07-31 00:18:48,940 - SCPFhostLat - INFO - Creating component Handle: ONOSbench6
+2020-07-31 00:18:48,947 - SCPFhostLat - INFO - ONOSbench6: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5', '192.168.171.14', '192.168.171.13', '192.168.171.7', '192.168.171.15'] ONOS IPs
+2020-07-31 00:18:48,948 - SCPFhostLat - INFO - ONOSbench6: Trying to connect to localhost
+2020-07-31 00:18:49,839 - SCPFhostLat - INFO - Password not required logged in
+[95m2020-07-31 00:18:50,144 - SCPFhostLat - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': '192.168.171.15'}[0m
+2020-07-31 00:18:50,145 - SCPFhostLat - INFO - Creating component Handle: ONOSserver6
+2020-07-31 00:18:50,155 - SCPFhostLat - INFO - ONOSserver6: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5', '192.168.171.14', '192.168.171.13', '192.168.171.7', '192.168.171.15'] ONOS IPs
+2020-07-31 00:18:50,155 - SCPFhostLat - INFO - ONOSserver6: Trying to connect to 192.168.171.15
+2020-07-31 00:18:50,197 - SCPFhostLat - INFO - ssh key confirmation received, send yes
+2020-07-31 00:18:51,022 - SCPFhostLat - INFO - Password not required logged in
+[95m2020-07-31 00:18:51,330 - SCPFhostLat - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosCliDriver', 'host': 'localhost'}[0m
+2020-07-31 00:18:51,330 - SCPFhostLat - INFO - Creating component Handle: ONOScli7
+2020-07-31 00:18:51,336 - SCPFhostLat - INFO - ONOScli7: Trying to connect to localhost
+2020-07-31 00:18:52,231 - SCPFhostLat - INFO - Password not required logged in
+[95m2020-07-31 00:18:52,537 - SCPFhostLat - DEBUG - {'connect_order': '1', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosClusterDriver', 'host': 'localhost'}[0m
+[95m2020-07-31 00:18:52,537 - SCPFhostLat - DEBUG - {'connect_order': '2', 'user': 'onos', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosRestDriver', 'host': '192.168.171.7', 'port': '8181'}[0m
+2020-07-31 00:18:52,537 - SCPFhostLat - INFO - Creating component Handle: ONOSrest7
+2020-07-31 00:18:52,543 - SCPFhostLat - INFO - ONOSrest7: ip set to 192.168.171.7
+[95m2020-07-31 00:18:52,544 - SCPFhostLat - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': 'localhost'}[0m
+2020-07-31 00:18:52,545 - SCPFhostLat - INFO - Creating component Handle: ONOSbench7
+2020-07-31 00:18:52,552 - SCPFhostLat - INFO - ONOSbench7: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5', '192.168.171.14', '192.168.171.13', '192.168.171.7', '192.168.171.15'] ONOS IPs
+2020-07-31 00:18:52,552 - SCPFhostLat - INFO - ONOSbench7: Trying to connect to localhost
+2020-07-31 00:18:53,511 - SCPFhostLat - INFO - Password not required logged in
+[95m2020-07-31 00:18:53,817 - SCPFhostLat - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': '192.168.171.7'}[0m
+2020-07-31 00:18:53,817 - SCPFhostLat - INFO - Creating component Handle: ONOSserver7
+2020-07-31 00:18:53,823 - SCPFhostLat - INFO - ONOSserver7: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5', '192.168.171.14', '192.168.171.13', '192.168.171.7', '192.168.171.15'] ONOS IPs
+2020-07-31 00:18:53,824 - SCPFhostLat - INFO - ONOSserver7: Trying to connect to 192.168.171.7
+2020-07-31 00:18:53,856 - SCPFhostLat - INFO - ssh key confirmation received, send yes
+2020-07-31 00:18:54,592 - SCPFhostLat - INFO - Password not required logged in
+2020-07-31 00:18:54,898 - SCPFhostLat - INFO - Creating component Handle: Mininet1
+2020-07-31 00:18:54,970 - SCPFhostLat - INFO - ssh key confirmation received, send yes
+2020-07-31 00:18:56,411 - SCPFhostLat - INFO - Password not required logged in
+2020-07-31 00:18:56,625 - SCPFhostLat - INFO - Connection successful to the host sdn@192.168.171.17
+
+******************************
+ Result summary for Testcase0
+******************************
+
+[95m2020-07-31 00:18:56,795 - SCPFhostLat - DEBUG - Case Executed       : [0][0m
+[95m2020-07-31 00:18:56,795 - SCPFhostLat - DEBUG - Case to be executed : [2, 11, 20, 2, 11, 20, 2, 11, 20][0m
+[2020-07-31 00:18:56.797710] [SCPFhostLat] [CASE]  Constructing test variables and building ONOS package
+[2020-07-31 00:18:56.800076] [SCPFhostLat] [STEP]  0.1: Constructing test variables
+2020-07-31 00:18:56,802 - SCPFhostLat - INFO - Cresting DB file
+[2020-07-31 00:18:56.802717] [SCPFhostLat] [CASE]  Pull onos branch and build onos on Teststation.
+2020-07-31 00:18:56,803 - SCPFhostLat - INFO - Skipped git checkout and pull as they are disabled in params file
+2020-07-31 00:18:56,804 - SCPFhostLat - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-31 00:18:56,804 - SCPFhostLat - INFO - Successfully construct test variables 
+2020-07-31 00:18:56,804 - SCPFhostLat - INFO - Assertion Passed
+2020-07-31 00:18:56,804 - SCPFhostLat - INFO - ONOSbench1 home is ~/onos
+ONOSbench1: 
+
+commit 12bfd3d32d808e9590d1d3d70bc0cbd4b320575c (HEAD -> master, origin/master, origin/HEAD)
+Author:     Parvathi MH <parvathi.mh@samsung.com>
+AuthorDate: Thu Jan 30 10:31:10 2020 +0530
+Commit:     Thomas Vachuska <tom@opennetworking.org>
+CommitDate: Tue Jul 28 18:17:54 2020 +0000
+
+    Fix to get onos pid in onos-jpenable
+sdn@manage:~/onos$
+
+*****************************
+ Result: Pass 
+*****************************
+
+
+******************************
+ Result summary for Testcase2
+******************************
+
+[95m2020-07-31 00:18:57,350 - SCPFhostLat - DEBUG - Case Executed       : [0, 2][0m
+[95m2020-07-31 00:18:57,350 - SCPFhostLat - DEBUG - Case to be executed : [11, 20, 2, 11, 20, 2, 11, 20][0m
+[2020-07-31 00:18:57.351202] [SCPFhostLat] [CASE]  Starting up 1 node(s) ONOS cluster
+2020-07-31 00:18:57,353 - SCPFhostLat - INFO - ONOS cluster size = 1
+[95m2020-07-31 00:18:57,354 - SCPFhostLat - DEBUG - Apps: drivers,metrics,openflow[0m
+2020-07-31 00:18:57,354 - SCPFhostLat - INFO - Atomix Cluster Size = 1 
+
+topo_perf_test                                  0%    0     0.0KB/s   --:-- ETA
+topo_perf_test                                100%  241   408.2KB/s   00:00    
+[2020-07-31 00:18:58.172759] [SCPFhostLat] [STEP]  2.1: Apply cell to environment
+2020-07-31 00:18:58,406 - SCPFhostLat - INFO - ONOSbench5: Successfully set cell:  cell topo_perf_test
+
+[01;31m[KONOS_CELL[m[K=topo_perf_test
+
+OCC1=192.168.171.28
+
+OC1=192.168.171.28
+
+OCI=192.168.171.28
+
+OCN=192.168.171.17
+
+ONOS_APPS=drivers,metrics,openflow
+
+ONOS_GROUP=sdn
+
+ONOS_MN_PY=/home/sdn/onos/tools/dev/mininet/onos.py
+
+ONOS_NIC=192.168.171.*
+
+ONOS_SCENARIOS=/home/sdn/onos/tools/test/scenarios
+
+ONOS_USER=sdn
+
+ONOS_USE_SSH=true
+
+ONOS_WEB_PASS=rocks
+
+ONOS_WEB_USER=onos
+
+sdn@manage:~/onos$
+2020-07-31 00:18:58,408 - SCPFhostLat - INFO - ONOSbench1: Successfully set cell:  cell topo_perf_test
+
+[01;31m[KONOS_CELL[m[K=topo_perf_test
+
+OCC1=192.168.171.28
+
+OC1=192.168.171.28
+
+OCI=192.168.171.28
+
+OCN=192.168.171.17
+
+ONOS_APPS=drivers,metrics,openflow
+
+ONOS_GROUP=sdn
+
+ONOS_MN_PY=/home/sdn/onos/tools/dev/mininet/onos.py
+
+ONOS_NIC=192.168.171.*
+
+ONOS_SCENARIOS=/home/sdn/onos/tools/test/scenarios
+
+ONOS_USER=sdn
+
+ONOS_USE_SSH=true
+
+ONOS_WEB_PASS=rocks
+
+ONOS_WEB_USER=onos
+
+sdn@manage:~/onos$
+2020-07-31 00:18:58,409 - SCPFhostLat - INFO - ONOSbench3: Successfully set cell:  cell topo_perf_test
+
+[01;31m[KONOS_CELL[m[K=topo_perf_test
+
+OCC1=192.168.171.28
+
+OC1=192.168.171.28
+
+OCI=192.168.171.28
+
+OCN=192.168.171.17
+
+ONOS_APPS=drivers,metrics,openflow
+
+ONOS_GROUP=sdn
+
+ONOS_MN_PY=/home/sdn/onos/tools/dev/mininet/onos.py
+
+ONOS_NIC=192.168.171.*
+
+ONOS_SCENARIOS=/home/sdn/onos/tools/test/scenarios
+
+ONOS_USER=sdn
+
+ONOS_USE_SSH=true
+
+ONOS_WEB_PASS=rocks
+
+ONOS_WEB_USER=onos
+
+sdn@manage:~/onos$
+2020-07-31 00:18:58,411 - SCPFhostLat - INFO - ONOSbench7: Successfully set cell:  cell topo_perf_test
+
+[01;31m[KONOS_CELL[m[K=topo_perf_test
+
+OCC1=192.168.171.28
+
+OC1=192.168.171.28
+
+OCI=192.168.171.28
+
+OCN=192.168.171.17
+
+ONOS_APPS=drivers,metrics,openflow
+
+ONOS_GROUP=sdn
+
+ONOS_MN_PY=/home/sdn/onos/tools/dev/mininet/onos.py
+
+ONOS_NIC=192.168.171.*
+
+ONOS_SCENARIOS=/home/sdn/onos/tools/test/scenarios
+
+ONOS_USER=sdn
+
+ONOS_USE_SSH=true
+
+ONOS_WEB_PASS=rocks
+
+ONOS_WEB_USER=onos
+
+sdn@manage:~/onos$
+2020-07-31 00:18:58,413 - SCPFhostLat - INFO - ONOSbench4: Successfully set cell:  cell topo_perf_test
+
+[01;31m[KONOS_CELL[m[K=topo_perf_test
+
+OCC1=192.168.171.28
+
+OC1=192.168.171.28
+
+OCI=192.168.171.28
+
+OCN=192.168.171.17
+
+ONOS_APPS=drivers,metrics,openflow
+
+ONOS_GROUP=sdn
+
+ONOS_MN_PY=/home/sdn/onos/tools/dev/mininet/onos.py
+
+ONOS_NIC=192.168.171.*
+
+ONOS_SCENARIOS=/home/sdn/onos/tools/test/scenarios
+
+ONOS_USER=sdn
+
+ONOS_USE_SSH=true
+
+ONOS_WEB_PASS=rocks
+
+ONOS_WEB_USER=onos
+
+sdn@manage:~/onos$
+2020-07-31 00:18:58,418 - SCPFhostLat - INFO - ONOSbench6: Successfully set cell:  cell topo_perf_test
+
+[01;31m[KONOS_CELL[m[K=topo_perf_test
+
+OCC1=192.168.171.28
+
+OC1=192.168.171.28
+
+OCI=192.168.171.28
+
+OCN=192.168.171.17
+
+ONOS_APPS=drivers,metrics,openflow
+
+ONOS_GROUP=sdn
+
+ONOS_MN_PY=/home/sdn/onos/tools/dev/mininet/onos.py
+
+ONOS_NIC=192.168.171.*
+
+ONOS_SCENARIOS=/home/sdn/onos/tools/test/scenarios
+
+ONOS_USER=sdn
+
+ONOS_USE_SSH=true
+
+ONOS_WEB_PASS=rocks
+
+ONOS_WEB_USER=onos
+
+sdn@manage:~/onos$
+2020-07-31 00:18:58,421 - SCPFhostLat - INFO - ONOSbench2: Successfully set cell:  cell topo_perf_test
+
+[01;31m[KONOS_CELL[m[K=topo_perf_test
+
+OCC1=192.168.171.28
+
+OC1=192.168.171.28
+
+OCI=192.168.171.28
+
+OCN=192.168.171.17
+
+ONOS_APPS=drivers,metrics,openflow
+
+ONOS_GROUP=sdn
+
+ONOS_MN_PY=/home/sdn/onos/tools/dev/mininet/onos.py
+
+ONOS_NIC=192.168.171.*
+
+ONOS_SCENARIOS=/home/sdn/onos/tools/test/scenarios
+
+ONOS_USER=sdn
+
+ONOS_USE_SSH=true
+
+ONOS_WEB_PASS=rocks
+
+ONOS_WEB_USER=onos
+
+sdn@manage:~/onos$
+2020-07-31 00:18:58,711 - SCPFhostLat - INFO - ONOSbench1: Successfully set cell:  cell topo_perf_test
+
+[01;31m[KONOS_CELL[m[K=topo_perf_test
+
+OCC1=192.168.171.28
+
+OC1=192.168.171.28
+
+OCI=192.168.171.28
+
+OCN=192.168.171.17
+
+ONOS_APPS=drivers,metrics,openflow
+
+ONOS_GROUP=sdn
+
+ONOS_MN_PY=/home/sdn/onos/tools/dev/mininet/onos.py
+
+ONOS_NIC=192.168.171.*
+
+ONOS_SCENARIOS=/home/sdn/onos/tools/test/scenarios
+
+ONOS_TOPO=default
+
+ONOS_USER=sdn
+
+ONOS_USE_SSH=true
+
+ONOS_WEB_PASS=rocks
+
+ONOS_WEB_USER=onos
+
+sdn@manage:~/onos$
+2020-07-31 00:19:01,627 - SCPFhostLat - INFO - Verify cell returned:  onos-verify-cell
+
+192.168.171.17: node
+
+192.168.171.28: node-1
+
+sdn@manage:~/onos$
+2020-07-31 00:19:01,628 - SCPFhostLat - INFO - Verify cell returned:  onos-verify-cell
+
+192.168.171.17: node
+
+192.168.171.28: node-1
+
+sdn@manage:~/onos$
+2020-07-31 00:19:01,643 - SCPFhostLat - INFO - Verify cell returned:  onos-verify-cell
+
+192.168.171.17: node
+
+192.168.171.28: node-1
+
+sdn@manage:~/onos$
+2020-07-31 00:19:01,654 - SCPFhostLat - INFO - Verify cell returned:  onos-verify-cell
+
+192.168.171.17: node
+
+192.168.171.28: node-1
+
+sdn@manage:~/onos$
+2020-07-31 00:19:01,663 - SCPFhostLat - INFO - Verify cell returned:  onos-verify-cell
+
+192.168.171.17: node
+
+192.168.171.28: node-1
+
+sdn@manage:~/onos$
+2020-07-31 00:19:01,671 - SCPFhostLat - INFO - Verify cell returned:  onos-verify-cell
+
+192.168.171.17: node
+
+192.168.171.28: node-1
+
+sdn@manage:~/onos$
+2020-07-31 00:19:01,730 - SCPFhostLat - INFO - Verify cell returned:  onos-verify-cell
+
+192.168.171.17: node
+
+192.168.171.28: node-1
+
+sdn@manage:~/onos$
+2020-07-31 00:19:01,731 - SCPFhostLat - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-31 00:19:01,731 - SCPFhostLat - INFO - Successfully applied cell to environment
+2020-07-31 00:19:01,732 - SCPFhostLat - INFO - Assertion Passed
+2020-07-31 00:19:01,732 - SCPFhostLat - INFO - Safety check, killing all Atomix processes
+2020-07-31 00:19:02,684 - SCPFhostLat - INFO - Atomix instance 192.168.171.28 was killed
+2020-07-31 00:19:02,685 - SCPFhostLat - INFO - Safety check, killing all ONOS processes
+2020-07-31 00:19:03,635 - SCPFhostLat - INFO - ONOS instance 192.168.171.28 was killed
+[2020-07-31 00:19:03.636800] [SCPFhostLat] [STEP]  2.2: Uninstalling Atomix
+2020-07-31 00:19:04,507 - SCPFhostLat - INFO - Atomix 192.168.171.28 was uninstalled
+2020-07-31 00:19:04,508 - SCPFhostLat - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-31 00:19:04,508 - SCPFhostLat - INFO - Successfully uninstalled Atomix
+2020-07-31 00:19:04,508 - SCPFhostLat - INFO - Assertion Passed
+[2020-07-31 00:19:04.509186] [SCPFhostLat] [STEP]  2.3: Uninstalling ONOS package
+2020-07-31 00:20:40,617 - SCPFhostLat - INFO - ONOS 192.168.171.28 was uninstalled
+2020-07-31 00:20:40,618 - SCPFhostLat - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-31 00:20:40,618 - SCPFhostLat - INFO - Successfully uninstalled ONOS package
+2020-07-31 00:20:40,619 - SCPFhostLat - INFO - Assertion Passed
+[2020-07-31 00:20:40.619301] [SCPFhostLat] [STEP]  2.4: Creating ONOS package
+[95m2020-07-31 00:20:41,746 - SCPFhostLat - DEBUG - 
+
+[32mLoading:[0m 
+
+
+[1A[K[32mLoading:[0m 0 packages loaded
+
+
+[1A[K[32mAnalyzing:[0m target //:onos (0 packages loaded, 0 targets configured)
+
+
+[1A[K[32mINFO: [0mAnalyzed target //:onos (0 packages loaded, 0 targets configured).
+
+
+
+
+[1A[K[32mINFO: [0mFound 1 target...
+
+
+
+
+[1A[K[32m[0 / 2][0m [Prepa] BazelWorkspaceStatusAction stable-status.txt
+
+
+[1A[KTarget //:onos up-to-date:
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/utils/osgiwrap/osgi-jar.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/utils/osgiwrap/osgi-jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/utils/osgi/libonlab-osgi.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/utils/junit/libonlab-junit.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/utils/misc/libonlab-misc.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/utils/rest/libonlab-rest.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/core/api/libonos-api.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/core/net/libonos-core-net.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/core/common/libonos-core-common.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/core/protobuf/models/libonos-core-protobuf-models.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/core/protobuf/models/proto/libonos-core-protobuf-models-proto.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/core/store/primitives/libonos-core-primitives.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/core/store/serializers/libonos-core-serializers.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/core/store/dist/libonos-core-dist.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/core/store/persistence/libonos-core-persistence.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/cli/libonos-cli.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/utilities/libonos-drivers-utilities.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/general/device/libonos-providers-general-device.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/web/api/libonos-rest.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/tools/build/conf/libonos-build-conf.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/onos-admin.tar.gz
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/onos-test.tar.gz
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/onos.tar.gz
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/bgp/bgpio/libonos-protocols-bgp-bgpio.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/bgp/api/libonos-protocols-bgp-api.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/bgp/ctl/libonos-protocols-bgp-ctl.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/isis/api/libonos-protocols-isis-api.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/isis/ctl/libonos-protocols-isis-ctl.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/isis/isisio/libonos-protocols-isis-isisio.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/lisp/api/libonos-protocols-lisp-api.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/lisp/ctl/libonos-protocols-lisp-ctl.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/lisp/msg/libonos-protocols-lisp-msg.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/netconf/api/libonos-protocols-netconf-api.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/netconf/ctl/libonos-protocols-netconf-ctl.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/openflow/api/libonos-protocols-openflow-api.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/openflow/ctl/libonos-protocols-openflow-ctl.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/ospf/api/libonos-protocols-ospf-api.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/ospf/protocol/libonos-protocols-ospf-protocol.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/ospf/ctl/libonos-protocols-ospf-ctl.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/ovsdb/rfc/libonos-protocols-ovsdb-rfc.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/ovsdb/api/libonos-protocols-ovsdb-api.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/ovsdb/ctl/libonos-protocols-ovsdb-ctl.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/p4runtime/api/libonos-protocols-p4runtime-api.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/p4runtime/model/libonos-protocols-p4runtime-model.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/pcep/pcepio/libonos-protocols-pcep-pcepio.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/pcep/server/api/libonos-protocols-pcep-server-api.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/pcep/server/ctl/libonos-protocols-pcep-server-ctl.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/rest/api/libonos-protocols-rest-api.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/rest/ctl/libonos-protocols-rest-ctl.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/restconf/client/api/libonos-protocols-restconf-client-api.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/restconf/client/ctl/libonos-protocols-restconf-client-ctl.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/snmp/api/libonos-protocols-snmp-api.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/snmp/ctl/libonos-protocols-snmp-ctl.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/tl1/api/libonos-protocols-tl1-api.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/tl1/ctl/libonos-protocols-tl1-ctl.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/xmpp/core/api/libonos-protocols-xmpp-core-api.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/xmpp/core/ctl/libonos-protocols-xmpp-core-ctl.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/netconf/device/libonos-providers-netconf-device.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/openflow/device/libonos-providers-openflow-device.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/openflow/packet/libonos-providers-openflow-packet.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/openflow/flow/libonos-providers-openflow-flow.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/openflow/group/libonos-providers-openflow-group.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/openflow/meter/libonos-providers-openflow-meter.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/ovsdb/device/libonos-providers-ovsdb-device.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/ovsdb/tunnel/libonos-providers-ovsdb-tunnel.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/p4runtime/packet/libonos-providers-p4runtime-packet.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/rest/device/libonos-providers-rest-device.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/snmp/device/libonos-providers-snmp-device.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/isis/cfg/libonos-providers-isis-cfg.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/isis/topology/libonos-providers-isis-topology.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/lisp/device/libonos-providers-lisp-device.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/tl1/device/libonos-providers-tl1-device.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/grpc/onos-protocols-grpc-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/gnmi/onos-protocols-gnmi-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/gnoi/onos-protocols-gnoi-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/p4runtime/onos-protocols-p4runtime-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/restconf/server/onos-protocols-restconf-server-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/xmpp/core/onos-protocols-xmpp-core-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/xmpp/pubsub/onos-protocols-xmpp-pubsub-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/general/onos-providers-general-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/bgp/onos-providers-bgp-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/bgpcep/onos-providers-bgpcep-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/host/onos-providers-host-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/hostprobing/onos-providers-hostprobing-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/isis/onos-providers-isis-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/link/onos-providers-link-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/lldp/onos-providers-lldp-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/netcfghost/onos-providers-netcfghost-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/netcfglinks/onos-providers-netcfglinks-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/netconf/onos-providers-netconf-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/null/onos-providers-null-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/openflow/app/onos-providers-openflow-app-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/openflow/base/onos-providers-openflow-base-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/openflow/message/onos-providers-openflow-message-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/ovsdb/onos-providers-ovsdb-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/ovsdb/host/onos-providers-ovsdb-host-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/ovsdb/base/onos-providers-ovsdb-base-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/p4runtime/onos-providers-p4runtime-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/pcep/onos-providers-pcep-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/rest/onos-providers-rest-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/snmp/onos-providers-snmp-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/lisp/onos-providers-lisp-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/tl1/onos-providers-tl1-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/xmpp/device/onos-providers-xmpp-device-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/default/onos-drivers-default-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/arista/onos-drivers-arista-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/bmv2/onos-drivers-bmv2-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/barefoot/onos-drivers-barefoot-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/ciena/waveserver/onos-drivers-ciena-waveserver-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/ciena/c5162/onos-drivers-ciena-c5162-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/ciena/c5170/onos-drivers-ciena-c5170-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/ciena/waveserverai/onos-drivers-ciena-waveserverai-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/cisco/netconf/onos-drivers-cisco-netconf-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/cisco/rest/onos-drivers-cisco-rest-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/corsa/onos-drivers-corsa-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/czechlight/onos-drivers-czechlight-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/flowspec/onos-drivers-flowspec-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/fujitsu/onos-drivers-fujitsu-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/gnmi/onos-drivers-gnmi-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/gnoi/onos-drivers-gnoi-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/hp/onos-drivers-hp-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/huawei/onos-drivers-huawei-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/juniper/onos-drivers-juniper-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/lisp/onos-drivers-lisp-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/lumentum/onos-drivers-lumentum-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/mellanox/onos-drivers-mellanox-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/netconf/onos-drivers-netconf-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/odtn-driver/onos-drivers-odtn-driver-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/oplink/onos-drivers-oplink-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/optical/onos-drivers-optical-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/ovsdb/onos-drivers-ovsdb-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/p4runtime/onos-drivers-p4runtime-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/polatis/netconf/onos-drivers-polatis-netconf-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/polatis/openflow/onos-drivers-polatis-openflow-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/server/onos-drivers-server-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/stratum/onos-drivers-stratum-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/zte/onos-drivers-zte-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/acl/onos-apps-acl-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/artemis/onos-apps-artemis-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/bgprouter/onos-apps-bgprouter-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/castor/onos-apps-castor-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/cfm/onos-apps-cfm-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/cip/onos-apps-cip-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/config/onos-apps-config-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/configsync-netconf/onos-apps-configsync-netconf-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/configsync/onos-apps-configsync-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/cord-support/onos-apps-cord-support-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/cpman/app/onos-apps-cpman-app-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/dhcp/onos-apps-dhcp-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/dhcprelay/onos-apps-dhcprelay-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/drivermatrix/onos-apps-drivermatrix-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/events/onos-apps-events-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/evpn-route-service/onos-apps-evpn-route-service-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/evpnopenflow/onos-apps-evpnopenflow-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/faultmanagement/onos-apps-faultmanagement-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/flowanalyzer/onos-apps-flowanalyzer-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/flowspec-api/onos-apps-flowspec-api-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/fwd/onos-apps-fwd-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/gangliametrics/onos-apps-gangliametrics-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/gluon/onos-apps-gluon-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/graphitemetrics/onos-apps-graphitemetrics-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/imr/onos-apps-imr-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/inbandtelemetry/onos-apps-inbandtelemetry-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/influxdbmetrics/onos-apps-influxdbmetrics-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/intentsync/onos-apps-intentsync-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/k8s-networking/onos-apps-k8s-networking-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/k8s-node/onos-apps-k8s-node-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/kafka-integration/onos-apps-kafka-integration-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/l3vpn/onos-apps-l3vpn-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/layout/onos-apps-layout-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/linkprops/onos-apps-linkprops-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/mappingmanagement/onos-apps-mappingmanagement-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/mcast/onos-apps-mcast-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/metrics/onos-apps-metrics-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/mfwd/onos-apps-mfwd-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/mlb/onos-apps-mlb-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/mobility/onos-apps-mobility-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/netconf/client/onos-apps-netconf-client-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/network-troubleshoot/onos-apps-network-troubleshoot-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/newoptical/onos-apps-newoptical-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/nodemetrics/onos-apps-nodemetrics-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/node-diagnosis/onos-apps-node-diagnosis-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/odtn/api/onos-apps-odtn-api-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/odtn/service/onos-apps-odtn-service-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/ofagent/onos-apps-ofagent-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/onlp-demo/onos-apps-onlp-demo-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/onos-topo/onos-apps-onos-topo-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/openroadm/onos-apps-openroadm-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/openstacknetworking/onos-apps-openstacknetworking-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/openstacknetworkingui/onos-apps-openstacknetworkingui-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/openstacknode/onos-apps-openstacknode-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/openstacktelemetry/onos-apps-openstacktelemetry-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/openstacktroubleshoot/onos-apps-openstacktroubleshoot-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/openstackvtap/onos-apps-openstackvtap-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/optical-model/onos-apps-optical-model-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/optical-rest/onos-apps-optical-rest-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/p4-tutorial/mytunnel/onos-apps-p4-tutorial-mytunnel-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/p4-tutorial/pipeconf/onos-apps-p4-tutorial-pipeconf-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/packet-stats/onos-apps-packet-stats-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/packet-throttle/onos-apps-packet-throttle-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/pathpainter/onos-apps-pathpainter-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/pcep-api/onos-apps-pcep-api-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/pim/onos-apps-pim-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/portloadbalancer/onos-apps-portloadbalancer-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/powermanagement/onos-apps-powermanagement-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/proxyarp/onos-apps-proxyarp-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/rabbitmq/onos-apps-rabbitmq-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/reactive-routing/onos-apps-reactive-routing-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/restconf/onos-apps-restconf-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/roadm/onos-apps-roadm-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/route-service/onos-apps-route-service-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/routeradvertisement/onos-apps-routeradvertisement-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/routing/cpr/onos-apps-routing-cpr-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/routing/fibinstaller/onos-apps-routing-fibinstaller-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/routing/fpm/onos-apps-routing-fpm-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/scalablegateway/onos-apps-scalablegateway-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/sdnip/onos-apps-sdnip-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/simplefabric/onos-apps-simplefabric-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/test/cluster-ha/onos-apps-test-cluster-ha-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/test/demo/onos-apps-test-demo-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/test/distributed-primitives/onos-apps-test-distributed-primitives-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/test/election/onos-apps-test-election-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/test/flow-perf/onos-apps-test-flow-perf-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/test/intent-perf/onos-apps-test-intent-perf-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/test/loadtest/onos-apps-test-loadtest-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/test/messaging-perf/onos-apps-test-messaging-perf-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/test/netcfg-monitor/onos-apps-test-netcfg-monitor-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/test/primitive-perf/onos-apps-test-primitive-perf-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/test/route-scale/onos-apps-test-route-scale-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/test/transaction-perf/onos-apps-test-transaction-perf-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/tetopology/onos-apps-tetopology-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/tetunnel/onos-apps-tetunnel-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/tunnel/onos-apps-tunnel-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/virtual/onos-apps-virtual-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/virtualbng/onos-apps-virtualbng-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/vpls/onos-apps-vpls-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/vrouter/onos-apps-vrouter-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/vtn/onos-apps-vtn-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/workflow/ofoverlay/onos-apps-workflow-ofoverlay-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/workflow/onos-apps-workflow-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/yang-gui/onos-apps-yang-gui-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/yang/onos-apps-yang-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/web/gui/onos-web-gui-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/web/gui2/onos-web-gui2-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/cpman/api/libonos-apps-cpman-api.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/routing-api/libonos-apps-routing-api.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/dhcp/api/libonos-apps-dhcp-api.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/dhcp/app/libonos-apps-dhcp-app.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/imr/api/libonos-apps-imr-api.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/imr/app/libonos-apps-imr-app.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/dhcprelay/app/libonos-apps-dhcprelay-app.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/dhcprelay/web/libonos-apps-dhcprelay-web.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/fwd/libonos-apps-fwd.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/iptopology-api/libonos-apps-iptopology-api.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/kafka-integration/api/libonos-apps-kafka-integration-api.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/kafka-integration/app/libonos-apps-kafka-integration-app.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/routing/common/libonos-apps-routing-common.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/vtn/vtnrsc/libonos-apps-vtn-vtnrsc.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/vtn/sfcmgr/libonos-apps-vtn-sfcmgr.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/vtn/vtnmgr/libonos-apps-vtn-vtnmgr.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/vtn/vtnweb/libonos-apps-vtn-vtnweb.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/pipelines/basic/onos-pipelines-basic-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/pipelines/fabric/onos-pipelines-fabric-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/models/ietf/onos-models-ietf-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/models/common/onos-models-common-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/models/huawei/onos-models-huawei-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/models/openconfig/onos-models-openconfig-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/models/openconfig-infinera/onos-models-openconfig-infinera-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/models/openconfig-odtn/onos-models-openconfig-odtn-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/models/openroadm/onos-models-openroadm-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/models/tapi/onos-models-tapi-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/models/l3vpn/onos-models-l3vpn-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/models/polatis/onos-models-polatis-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/models/ciena/waveserverai/onos-models-ciena-waveserverai-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K[32mINFO: [0mElapsed time: 0.994s, Critical Path: 0.01s
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K[32mINFO: [0m0 processes.
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K[32mINFO:[0m Build completed successfully, 1 total action
+
+
+[1A[K[32mINFO:[0m Build completed successfully, 1 total action
+
+[0msdn@manage:~/onos$[0m
+2020-07-31 00:20:41,748 - SCPFhostLat - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-31 00:20:41,748 - SCPFhostLat - INFO - Successfully created ONOS package
+2020-07-31 00:20:41,748 - SCPFhostLat - INFO - Assertion Passed
+[2020-07-31 00:20:41.748503] [SCPFhostLat] [STEP]  2.5: Installing Atomix
+2020-07-31 00:20:46,717 - SCPFhostLat - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-31 00:20:46,717 - SCPFhostLat - INFO - Successfully installed Atomix
+2020-07-31 00:20:46,718 - SCPFhostLat - INFO - Assertion Passed
+[2020-07-31 00:20:46.718317] [SCPFhostLat] [STEP]  2.6: Installing ONOS package
+2020-07-31 00:21:12,963 - SCPFhostLat - INFO - ONOS was installed on 192.168.171.28 and started.
+2020-07-31 00:21:12,964 - SCPFhostLat - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-31 00:21:12,964 - SCPFhostLat - INFO - Successfully installed ONOS package
+2020-07-31 00:21:12,964 - SCPFhostLat - INFO - Assertion Passed
+[2020-07-31 00:21:12.964789] [SCPFhostLat] [STEP]  2.7: Set up ONOS secure SSH
+2020-07-31 00:21:13,193 - SCPFhostLat - INFO - ONOSbench1: Secure SSH performed on 192.168.171.28
+2020-07-31 00:21:13,193 - SCPFhostLat - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-31 00:21:13,194 - SCPFhostLat - INFO - Secured ONOS ssh
+2020-07-31 00:21:13,194 - SCPFhostLat - INFO - Assertion Passed
+[2020-07-31 00:21:13.194345] [SCPFhostLat] [STEP]  2.8: Checking ONOS service
+2020-07-31 00:21:20,439 - SCPFhostLat - INFO - ONOSbench1: 192.168.171.28 is up
+2020-07-31 00:21:25,445 - SCPFhostLat - INFO - ONOS1 is up and ready
+2020-07-31 00:21:25,446 - SCPFhostLat - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-31 00:21:25,446 - SCPFhostLat - INFO - ONOS service is ready on all nodes
+2020-07-31 00:21:25,447 - SCPFhostLat - INFO - Assertion Passed
+[2020-07-31 00:21:25.447620] [SCPFhostLat] [STEP]  2.9: Starting ONOS CLI sessions
+2020-07-31 00:21:26,814 - SCPFhostLat - INFO - 192.168.171.28 CLI Started successfully
+[95m2020-07-31 00:21:26,815 - SCPFhostLat - DEBUG -  onos 192.168.171.28
+
+Welcome to Open Network Operating System (ONOS)!
+
+
+[1;31m     ____  _  ______  ____     [0m
+
+
+[1;31m    / __ \/ |/ / __ \/ __/   [0m
+
+
+[1;31m   / /_/ /    / /_/ /\ \     [0m
+
+
+[1;31m   \____/_/|_/\____/___/     [0m
+
+
+[1;31m                               [0m
+
+
+Documentation: wiki.onosproject.org      
+
+
+Tutorials:     tutorials.onosproject.org 
+
+
+Mailing lists: lists.onosproject.org     
+
+
+
+
+
+Come help out! Find out how at: contribute.onosproject.org 
+
+
+
+
+
+Hit '[1m<tab>[0m' for a list of available commands
+
+
+and '[1m[cmd] --help[0m' for help on a specific command.
+
+
+Hit '[1m<ctrl-d>[0m' or type '[1mlogout[0m' to exit ONOS session.
+
+
+
+
+[?1h=[90m~[0m                                                                               
+ 
+[?2004h[0m
+2020-07-31 00:21:26,815 - SCPFhostLat - INFO - Successful CLI startup
+2020-07-31 00:21:26,816 - SCPFhostLat - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-31 00:21:26,816 - SCPFhostLat - INFO - Successfully start ONOS cli
+2020-07-31 00:21:26,816 - SCPFhostLat - INFO - Assertion Passed
+[2020-07-31 00:21:26.816745] [SCPFhostLat] [STEP]  2.10: Checking ONOS nodes
+2020-07-31 00:21:27,123 - SCPFhostLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-31 00:21:27,126 - SCPFhostLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-31 00:21:27,126 - SCPFhostLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[93m2020-07-31 00:21:27,233 - SCPFhostLat - WARNING - ['192.168.171.28'] != [][0m
+2020-07-31 00:21:28,494 - SCPFhostLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-31 00:21:28,495 - SCPFhostLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-31 00:21:28,495 - SCPFhostLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[93m2020-07-31 00:21:28,618 - SCPFhostLat - WARNING - ['192.168.171.28'] != [][0m
+2020-07-31 00:21:29,878 - SCPFhostLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-31 00:21:29,878 - SCPFhostLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-31 00:21:29,879 - SCPFhostLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[93m2020-07-31 00:21:29,988 - SCPFhostLat - WARNING - ['192.168.171.28'] != [][0m
+2020-07-31 00:21:31,250 - SCPFhostLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-31 00:21:31,251 - SCPFhostLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-31 00:21:31,251 - SCPFhostLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-31 00:21:31,363 - SCPFhostLat - DEBUG - <bound method Cluster.nodesCheck of Cluster[{ONOS1:192.168.171.28, Configured - Active}, {ONOS2:192.168.171.5, Not Configured - Inactive}, {ONOS3:192.168.171.24, Not Configured - Inactive}, {ONOS4:192.168.171.13, Not Configured - Inactive}, {ONOS5:192.168.171.14, Not Configured - Inactive}, {ONOS6:192.168.171.15, Not Configured - Inactive}, {ONOS7:192.168.171.7, Not Configured - Inactive}; Atomix Nodes:{ONOS1:192.168.171.28}]> was retried 3 times.[0m
+2020-07-31 00:21:31,363 - SCPFhostLat - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-31 00:21:31,364 - SCPFhostLat - INFO - All ONOS nodes are in READY state
+2020-07-31 00:21:31,364 - SCPFhostLat - INFO - Assertion Passed
+[2020-07-31 00:21:31.364430] [SCPFhostLat] [STEP]  2.11: Checking ONOS applications
+2020-07-31 00:21:31,742 - SCPFhostLat - INFO - Command 'onos:apps -j' sent to ONOScli1.
+[95m2020-07-31 00:21:31,760 - SCPFhostLat - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[95m2020-07-31 00:21:31,761 - SCPFhostLat - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[93m2020-07-31 00:21:31,761 - SCPFhostLat - WARNING - Relaxed Regex: Searching for a json string amongst the output[0m
+2020-07-31 00:21:31,876 - SCPFhostLat - INFO - ONOS1: org.onosproject.drivers is activated
+2020-07-31 00:21:32,218 - SCPFhostLat - INFO - Command 'onos:apps -j' sent to ONOScli1.
+[95m2020-07-31 00:21:32,236 - SCPFhostLat - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[95m2020-07-31 00:21:32,236 - SCPFhostLat - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[93m2020-07-31 00:21:32,236 - SCPFhostLat - WARNING - Relaxed Regex: Searching for a json string amongst the output[0m
+2020-07-31 00:21:32,351 - SCPFhostLat - INFO - ONOS1: org.onosproject.metrics is activated
+2020-07-31 00:21:32,686 - SCPFhostLat - INFO - Command 'onos:apps -j' sent to ONOScli1.
+[95m2020-07-31 00:21:32,703 - SCPFhostLat - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[95m2020-07-31 00:21:32,703 - SCPFhostLat - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[93m2020-07-31 00:21:32,703 - SCPFhostLat - WARNING - Relaxed Regex: Searching for a json string amongst the output[0m
+2020-07-31 00:21:32,817 - SCPFhostLat - INFO - ONOS1: org.onosproject.openflow is activated
+2020-07-31 00:21:32,817 - SCPFhostLat - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-31 00:21:32,817 - SCPFhostLat - INFO - All ONOS apps are activated
+2020-07-31 00:21:32,818 - SCPFhostLat - INFO - Assertion Passed
+
+*****************************
+ Result: Pass 
+*****************************
+
+
+******************************
+ Result summary for Testcase11
+******************************
+
+[95m2020-07-31 00:21:32,822 - SCPFhostLat - DEBUG - Case Executed       : [0, 2, 11][0m
+[95m2020-07-31 00:21:32,822 - SCPFhostLat - DEBUG - Case to be executed : [20, 2, 11, 20, 2, 11, 20][0m
+2020-07-31 00:21:32,823 - SCPFhostLat - INFO - set and configure Application
+[2020-07-31 00:21:42.834189] [SCPFhostLat] [STEP]  11.1: Activating org.onosproject.proxyarp
+[93m2020-07-31 00:21:42,837 - SCPFhostLat - WARNING - No ip given, reverting to ip from topo file[0m
+[93m2020-07-31 00:21:42,837 - SCPFhostLat - WARNING - No port given, reverting to port from topo file[0m
+2020-07-31 00:21:42,837 - SCPFhostLat - INFO - user/passwd is: onos/rocks
+2020-07-31 00:21:42,837 - SCPFhostLat - INFO - Sending request http://192.168.171.28:8181/onos/v1/applications/org.onosproject.proxyarp/active using POST method.
+2020-07-31 00:21:43,440 - SCPFhostLat - INFO - ONOSrest1: org.onosproject.proxyarp application is in ACTIVE state
+2020-07-31 00:21:43,441 - SCPFhostLat - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-31 00:21:43,441 - SCPFhostLat - INFO - Successfully activated proxyarp
+2020-07-31 00:21:43,441 - SCPFhostLat - INFO - Assertion Passed
+[2020-07-31 00:21:43.441863] [SCPFhostLat] [STEP]  11.2: Set up Default Topology Provider
+2020-07-31 00:21:43,705 - SCPFhostLat - INFO - Command 'cfg set org.onosproject.net.topology.impl.DefaultTopologyProvider maxEvents 1' sent to ONOScli1.
+[95m2020-07-31 00:21:43,706 - SCPFhostLat - DEBUG - REGEX PATTERN SET TO: 'cfg set org.onosproject.net.topology.impl.DefaultTopologyProvider maxEvents 1'
+SENT COMMAND STRING WAS: 'cfg set org.onosproject.net.topology.impl.DefaultTopologyProvider maxEvents 1'[0m
+[95m2020-07-31 00:21:43,706 - SCPFhostLat - DEBUG - REGEX PATTERN SET TO: 'cfg set org.onosproject.net.topology.impl.DefaultTopologyProvider maxEvents 1'
+SENT COMMAND STRING WAS: 'cfg set org.onosproject.net.topology.impl.DefaultTopologyProvider maxEvents 1'[0m
+2020-07-31 00:21:44,086 - SCPFhostLat - INFO - Command 'cfg -j get org.onosproject.net.topology.impl.DefaultTopologyProvider maxEvents' sent to ONOScli1.
+[95m2020-07-31 00:21:44,086 - SCPFhostLat - DEBUG - REGEX PATTERN SET TO: 'cfg -j get org.onosproject.net.topology.impl.DefaultTopologyProvider maxEvents'
+SENT COMMAND STRING WAS: 'cfg -j get org.onosproject.net.topology.impl.DefaultTopologyProvider maxEvents'[0m
+[95m2020-07-31 00:21:44,086 - SCPFhostLat - DEBUG - REGEX PATTERN SET TO: 'cfg -j get org.onosproject.net.topology.impl.DefaultTopologyProvider maxEvents'
+SENT COMMAND STRING WAS: 'cfg -j get org.onosproject.net.topology.impl.DefaultTopologyProvider maxEvents'[0m
+[93m2020-07-31 00:21:44,086 - SCPFhostLat - WARNING - Relaxed Regex: Searching for a json string amongst the output[0m
+2020-07-31 00:21:44,478 - SCPFhostLat - INFO - Command 'cfg set org.onosproject.net.topology.impl.DefaultTopologyProvider maxBatchMs 0' sent to ONOScli1.
+[95m2020-07-31 00:21:44,478 - SCPFhostLat - DEBUG - REGEX PATTERN SET TO: 'cfg set org.onosproject.net.topology.impl.DefaultTopologyProvider maxBatchMs 0'
+SENT COMMAND STRING WAS: 'cfg set org.onosproject.net.topology.impl.DefaultTopologyProvider maxBatchMs 0'[0m
+[95m2020-07-31 00:21:44,478 - SCPFhostLat - DEBUG - REGEX PATTERN SET TO: 'cfg set org.onosproject.net.topology.impl.DefaultTopologyProvider maxBatchMs 0'
+SENT COMMAND STRING WAS: 'cfg set org.onosproject.net.topology.impl.DefaultTopologyProvider maxBatchMs 0'[0m
+2020-07-31 00:21:44,857 - SCPFhostLat - INFO - Command 'cfg -j get org.onosproject.net.topology.impl.DefaultTopologyProvider maxBatchMs' sent to ONOScli1.
+[95m2020-07-31 00:21:44,858 - SCPFhostLat - DEBUG - REGEX PATTERN SET TO: 'cfg -j get org.onosproject.net.topology.impl.DefaultTopologyProvider maxBatchMs'
+SENT COMMAND STRING WAS: 'cfg -j get org.onosproject.net.topology.impl.DefaultTopologyProvider maxBatchMs'[0m
+[95m2020-07-31 00:21:44,858 - SCPFhostLat - DEBUG - REGEX PATTERN SET TO: 'cfg -j get org.onosproject.net.topology.impl.DefaultTopologyProvider maxBatchMs'
+SENT COMMAND STRING WAS: 'cfg -j get org.onosproject.net.topology.impl.DefaultTopologyProvider maxBatchMs'[0m
+[93m2020-07-31 00:21:44,858 - SCPFhostLat - WARNING - Relaxed Regex: Searching for a json string amongst the output[0m
+2020-07-31 00:21:45,202 - SCPFhostLat - INFO - Command 'cfg set org.onosproject.net.topology.impl.DefaultTopologyProvider maxIdleMs 0' sent to ONOScli1.
+[95m2020-07-31 00:21:45,202 - SCPFhostLat - DEBUG - REGEX PATTERN SET TO: 'cfg set org.onosproject.net.topology.impl.DefaultTopologyProvider maxIdleMs 0'
+SENT COMMAND STRING WAS: 'cfg set org.onosproject.net.topology.impl.DefaultTopologyProvider maxIdleMs 0'[0m
+[95m2020-07-31 00:21:45,202 - SCPFhostLat - DEBUG - REGEX PATTERN SET TO: 'cfg set org.onosproject.net.topology.impl.DefaultTopologyProvider maxIdleMs 0'
+SENT COMMAND STRING WAS: 'cfg set org.onosproject.net.topology.impl.DefaultTopologyProvider maxIdleMs 0'[0m
+2020-07-31 00:21:45,582 - SCPFhostLat - INFO - Command 'cfg -j get org.onosproject.net.topology.impl.DefaultTopologyProvider maxIdleMs' sent to ONOScli1.
+[95m2020-07-31 00:21:45,582 - SCPFhostLat - DEBUG - REGEX PATTERN SET TO: 'cfg -j get org.onosproject.net.topology.impl.DefaultTopologyProvider maxIdleMs'
+SENT COMMAND STRING WAS: 'cfg -j get org.onosproject.net.topology.impl.DefaultTopologyProvider maxIdleMs'[0m
+[95m2020-07-31 00:21:45,582 - SCPFhostLat - DEBUG - REGEX PATTERN SET TO: 'cfg -j get org.onosproject.net.topology.impl.DefaultTopologyProvider maxIdleMs'
+SENT COMMAND STRING WAS: 'cfg -j get org.onosproject.net.topology.impl.DefaultTopologyProvider maxIdleMs'[0m
+[93m2020-07-31 00:21:45,582 - SCPFhostLat - WARNING - Relaxed Regex: Searching for a json string amongst the output[0m
+2020-07-31 00:21:45,690 - SCPFhostLat - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-31 00:21:45,690 - SCPFhostLat - INFO - Successfully set DefaultTopologyProvider
+2020-07-31 00:21:45,691 - SCPFhostLat - INFO - Assertion Passed
+[2020-07-31 00:21:55.702003] [SCPFhostLat] [STEP]  11.3: Starting mininet topology
+2020-07-31 00:21:55,705 - SCPFhostLat - INFO - Mininet1: Clearing any residual state or processes
+2020-07-31 00:21:57,253 - SCPFhostLat - INFO - Mininet1: Clean
+2020-07-31 00:21:57,253 - SCPFhostLat - INFO - Mininet1: building fresh Mininet
+2020-07-31 00:21:57,354 - SCPFhostLat - INFO - Sending 'sudo mn --topo=linear,1  --controller remote,ip=192.168.171.28' to Mininet1
+2020-07-31 00:21:57,623 - SCPFhostLat - INFO -  Creating network
+
+2020-07-31 00:21:57,624 - SCPFhostLat - INFO -  Adding controller
+
+2020-07-31 00:21:57,652 - SCPFhostLat - INFO -  Adding hosts:
+
+2020-07-31 00:21:57,675 - SCPFhostLat - INFO -  Adding switches:
+
+2020-07-31 00:21:57,712 - SCPFhostLat - INFO -  Adding links:
+
+2020-07-31 00:21:57,726 - SCPFhostLat - INFO -  Configuring hosts
+
+2020-07-31 00:21:57,739 - SCPFhostLat - INFO -  Starting controller
+
+2020-07-31 00:21:57,739 - SCPFhostLat - INFO -  Starting 1 switches
+
+2020-07-31 00:21:57,766 - SCPFhostLat - INFO -  Starting CLI:
+
+2020-07-31 00:21:57,774 - SCPFhostLat - INFO - Mininet1: Mininet built
+Time Took : 0.319220066071
+2020-07-31 00:21:57,774 - SCPFhostLat - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-31 00:21:57,775 - SCPFhostLat - INFO - Successfully started Mininet
+2020-07-31 00:21:57,775 - SCPFhostLat - INFO - Assertion Passed
+[2020-07-31 00:21:57.775938] [SCPFhostLat] [STEP]  11.4: Assinging masters to switches
+2020-07-31 00:21:57,779 - SCPFhostLat - INFO - Updating MN port information
+2020-07-31 00:21:58,096 - SCPFhostLat - INFO - Mininet1: Dump node info
+2020-07-31 00:21:58,200 - SCPFhostLat - INFO - Executed :dump 		 Expected Prompt 'mininet>' Found
+2020-07-31 00:21:58,307 - SCPFhostLat - INFO - Executed :py s1.dpid 		 Expected Prompt 'mininet>' Found
+2020-07-31 00:21:58,532 - SCPFhostLat - INFO - Executed :sh ovs-vsctl set-controller s1 tcp:192.168.171.28:6653 		 Expected Prompt 'mininet>' Found
+2020-07-31 00:21:58,533 - SCPFhostLat - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-31 00:21:58,533 - SCPFhostLat - INFO - Successfully assigned switches to masters
+2020-07-31 00:21:58,533 - SCPFhostLat - INFO - Assertion Passed
+
+*****************************
+ Result: Pass 
+*****************************
+
+
+******************************
+ Result summary for Testcase20
+******************************
+
+[95m2020-07-31 00:22:08,548 - SCPFhostLat - DEBUG - Case Executed       : [0, 2, 11, 20][0m
+[95m2020-07-31 00:22:08,548 - SCPFhostLat - DEBUG - Case to be executed : [2, 11, 20, 2, 11, 20][0m
+
+[REPORT] [31 Jul 2020 00:22:08] Latency of adding one host to ONOS
+
+[REPORT] [31 Jul 2020 00:22:08] First 5 iterations ignored for jvm warmup time
+
+[REPORT] [31 Jul 2020 00:22:08] Total iterations of test: 25
+2020-07-31 00:22:08,591 - SCPFhostLat - INFO - Clean up data file
+2020-07-31 00:22:08,591 - SCPFhostLat - INFO - Starting tshark capture
+2020-07-31 00:22:08,893 - SCPFhostLat - INFO - sudo tshark -i eth0 -t e | grep --line-buffered "OpenFlow 150 Type: OFPT_PACKET_IN" >/tmp/hostLatTshark &
+2020-07-31 00:22:14,739 - SCPFhostLat - INFO - host 1 arping...
+2020-07-31 00:22:14,739 - SCPFhostLat - INFO - Sending: h1 arping -c1 10.0.0.2
+[93m2020-07-31 00:22:14,862 - SCPFhostLat - WARNING - Error sending arping, output was:  h1 arping -c1 10.0.0.2
+
+bash: arping: command not found
+
+
+mininet>[0m
+2020-07-31 00:22:19,868 - SCPFhostLat - INFO - Stopping all Tshark processes
+2020-07-31 00:22:19,969 - SCPFhostLat - INFO - Executed :sudo rm /tmp/wireshark* 		 Expected Prompt '.*[$>\#]' Found
+2020-07-31 00:22:20,271 - SCPFhostLat - INFO - Tshark stopped
+2020-07-31 00:22:25,277 - SCPFhostLat - INFO - Capture result:
+[91m2020-07-31 00:22:25,277 - SCPFhostLat - ERROR - Tshark output file for packet_in returned unexpected results[0m
+2020-07-31 00:22:25,541 - SCPFhostLat - INFO - Command 'topology-events-metrics -j' sent to ONOScli1.
+[95m2020-07-31 00:22:25,542 - SCPFhostLat - DEBUG - REGEX PATTERN SET TO: 'topology-events-metrics -j'
+SENT COMMAND STRING WAS: 'topology-events-metrics -j'[0m
+[95m2020-07-31 00:22:25,542 - SCPFhostLat - DEBUG - REGEX PATTERN SET TO: 'topology-events-metrics -j'
+SENT COMMAND STRING WAS: 'topology-events-metrics -j'[0m
+2020-07-31 00:22:25,649 - SCPFhostLat - INFO - ONOS topology event matrics timestemp: 0
+[93m2020-07-31 00:22:25,650 - SCPFhostLat - WARNING - Error trying to get step number. It is likely between step 0 and step 1[0m
+[91m2020-07-31 00:22:25,650 - SCPFhostLat - ERROR - 
+Exception in the following section of code: 20.<IndexError>: <IndexError>[0m
+[91m2020-07-31 00:22:25,650 - SCPFhostLat - ERROR - <type 'exceptions.NameError'>name 'tsharkResultTime' is not defined[0m
+
+ *****************************
+
+ Result: No Assertion Called 
+*****************************
+
+
+
+*************************************
+	Test Execution Summary
+
+************************************* 
+
+ Test Start           : 31 Jul 2020 00:18:27
+ Test End             : 31 Jul 2020 00:22:25
+ Execution Time       : 0:03:58.055791
+ Total Tests Planned  : 10
+ Total Tests Run      : 4
+ Total Pass           : 3
+ Total Fail           : 0
+ Total No Result      : 1
+ Success Percentage   : 75%
+ Execution Percentage : 40%
+
+ Case Executed        : [0, 2, 11, 20]
+ Case Not Executed    : [2, 11, 20, 2, 11, 20]
+Disconnecting from ONOSbench5: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from ONOSbench4: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from ONOSbench7: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from ONOSbench6: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from ONOSbench1: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from ONOSbench3: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from ONOSbench2: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from ONOSserver3: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from ONOSserver2: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from ONOSserver1: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from ONOSserver7: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from ONOSserver6: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from ONOSserver5: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from ONOSserver4: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from ONOScli7: <class 'drivers.common.cli.onosclidriver.OnosCliDriver'>
+Disconnecting from ONOScli6: <class 'drivers.common.cli.onosclidriver.OnosCliDriver'>
+Disconnecting from ONOScli5: <class 'drivers.common.cli.onosclidriver.OnosCliDriver'>
+Disconnecting from ONOScli4: <class 'drivers.common.cli.onosclidriver.OnosCliDriver'>
+Disconnecting from ONOScli3: <class 'drivers.common.cli.onosclidriver.OnosCliDriver'>
+Disconnecting from ONOScli2: <class 'drivers.common.cli.onosclidriver.OnosCliDriver'>
+Disconnecting from ONOScli1: <class 'drivers.common.cli.onosclidriver.OnosCliDriver'>
+Disconnecting from ONOSrest4: <class 'drivers.common.api.controller.onosrestdriver.OnosRestDriver'>
+Disconnecting from ONOSrest5: <class 'drivers.common.api.controller.onosrestdriver.OnosRestDriver'>
+Disconnecting from ONOSrest6: <class 'drivers.common.api.controller.onosrestdriver.OnosRestDriver'>
+Disconnecting from ONOSrest7: <class 'drivers.common.api.controller.onosrestdriver.OnosRestDriver'>
+Disconnecting from ONOSrest1: <class 'drivers.common.api.controller.onosrestdriver.OnosRestDriver'>
+Disconnecting from ONOSrest2: <class 'drivers.common.api.controller.onosrestdriver.OnosRestDriver'>
+Disconnecting from ONOSrest3: <class 'drivers.common.api.controller.onosrestdriver.OnosRestDriver'>
+Disconnecting from Mininet1: <class 'drivers.common.cli.emulator.mininetclidriver.MininetCliDriver'>
+2020-07-31 00:22:31,005 - SCPFhostLat - INFO - Mininet1: Stopping mininet...
+2020-07-31 00:22:31,110 - SCPFhostLat - INFO - Exiting mininet..
+2020-07-31 00:22:31,211 - SCPFhostLat - INFO - Mininet1: Stopped
+Time Took : 0.100271940231
+Disconnecting from ONOScell: <class 'drivers.common.cli.onosclusterdriver.OnosClusterDriver'>
+ubuntu@manage:~/OnosSystemTest/TestON/bin$ 
+ubuntu@manage:~/OnosSystemTest/TestON/bin$ exit
+logout
