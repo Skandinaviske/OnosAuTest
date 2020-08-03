@@ -1,10 +1,12 @@
-Last login: Mon Jul 27 21:11:45 2020 from 174.114.234.237
+Last login: Mon Jul 27 21:11:45 2020 from 174.114.234.237
+
 cell threeNodeDemo; cd ~/OnosSystemTest/TestON/bin/; ./cli.py run PLATdockertest
 
 exit
 
-ubuntu@manage:~$ cell threeNodeDemo; cd ~/OnosSystemTest/TestON/bin/; ./cli.py ruun PLATdockertest
-[01;31m[KONOS_CELL[m[K=threeNodeDemo
+ubuntu@manage:~$ cell threeNodeDemo; cd ~/OnosSystemTest/TestON/bin/; ./cli.py ru
+un PLATdockertest
+[01;31m[KONOS_CELL[m[K=threeNodeDemo
 OCC1=192.168.171.28
 OCC2=192.168.171.5
 OCC3=192.168.171.24
@@ -177,11 +179,11 @@ ONOS_WEB_USER=onos
  Result summary for Testcase0
 ******************************
 
-[95m2020-07-27 21:11:52,429 - PLATdockertest - DEBUG - Case Executed       : [0][0m
-[95m2020-07-27 21:11:52,429 - PLATdockertest - DEBUG - Case to be executed : [1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1001][0m
+[95m2020-07-27 21:11:52,429 - PLATdockertest - DEBUG - Case Executed       : [0][0m
+[95m2020-07-27 21:11:52,429 - PLATdockertest - DEBUG - Case to be executed : [1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1001][0m
 [2020-07-27 21:11:52.429779] [PLATdockertest] [CASE]  Pull all docker images and get a list of image tags
 Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post http://%2Fvar%2Frun%2Fdocker.sock/v1.40/images/create?fromImage=onosproject%2Fonos: dial unix /var/run/docker.sock: connect: permission denied
-[91m2020-07-27 21:11:52,537 - PLATdockertest - ERROR - ('Connection aborted.', error(13, 'Permission denied'))[0m
+[91m2020-07-27 21:11:52,537 - PLATdockertest - ERROR - ('Connection aborted.', error(13, 'Permission denied'))[0m
 Traceback (most recent call last):
   File "/home/ubuntu/OnosSystemTest/TestON/drivers/common/api/dockerapidriver.py", line 68, in getListOfImages
     imageList = list( self.dockerClient.images( name=repo ) )
@@ -200,10 +202,10 @@ Traceback (most recent call last):
   File "/usr/local/lib/python2.7/dist-packages/requests/adapters.py", line 415, in send
     raise ConnectionError(err, request=request)
 ConnectionError: ('Connection aborted.', error(13, 'Permission denied'))
-[93m2020-07-27 21:11:52,539 - PLATdockertest - WARNING - Error trying to get step number. It is likely between step 0 and step 1[0m
-[91m2020-07-27 21:11:52,539 - PLATdockertest - ERROR - 
-Exception in the following section of code: 0.<IndexError>: <IndexError>[0m
-[91m2020-07-27 21:11:52,539 - PLATdockertest - ERROR - <type 'exceptions.TypeError'>'NoneType' object is not iterable[0m
+[93m2020-07-27 21:11:52,539 - PLATdockertest - WARNING - Error trying to get step number. It is likely between step 0 and step 1[0m
+[91m2020-07-27 21:11:52,539 - PLATdockertest - ERROR - 
+Exception in the following section of code: 0.<IndexError>: <IndexError>[0m
+[91m2020-07-27 21:11:52,539 - PLATdockertest - ERROR - <type 'exceptions.TypeError'>'NoneType' object is not iterable[0m
 
  *****************************
 
