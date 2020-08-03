@@ -1,0 +1,1935 @@
+Last login: Mon Jul 27 03:25:10 2020 from 174.114.234.237
+cell threeNodeDemo; cd ~/OnosSystemTest/TestON/bin/; ./cli.py run SCPFintentInstallWithdrawLat
+
+exit
+
+ubuntu@manage:~$ cell threeNodeDemo; cd ~/OnosSystemTest/TestON/bin/; ./cli.py ruun SCPFintentInstallWithdrawLat
+[01;31m[KONOS_CELL[m[K=threeNodeDemo
+OCC1=192.168.171.28
+OCC2=192.168.171.5
+OCC3=192.168.171.24
+OC1=192.168.171.28
+OC2=192.168.171.5
+OC3=192.168.171.24
+OCI=192.168.171.28
+OCN=192.168.171.17
+ONOS_APPS=gui,drivers,openflow,proxyarp
+ONOS_GROUP=sdn
+ONOS_MN_PY=/home/ubuntu/onos/tools/dev/mininet/onos.py
+ONOS_SCENARIOS=/home/ubuntu/onos/tools/test/scenarios
+ONOS_USER=sdn
+ONOS_WEB_PASS=rocks
+ONOS_WEB_USER=onos
+
+                                +----------------+
+------------------------------ { Script And Files }  ------------------------------
+                                +----------------+
+
+	Script Log File : /home/ubuntu/OnosSystemTest/TestON/logs/SCPFintentInstallWithdrawLat_27_Jul_2020_03_25_15/SCPFintentInstallWithdrawLat_27_Jul_2020_03_25_15.log
+	Report Log File : /home/ubuntu/OnosSystemTest/TestON/logs/SCPFintentInstallWithdrawLat_27_Jul_2020_03_25_15/SCPFintentInstallWithdrawLat_27_Jul_2020_03_25_15.rpt
+	ONOScell Session Log : /home/ubuntu/OnosSystemTest/TestON/logs/SCPFintentInstallWithdrawLat_27_Jul_2020_03_25_15/ONOScell.session
+	Test Script : /home/ubuntu/OnosSystemTest/TestON/tests/SCPF/SCPFintentInstallWithdrawLat/SCPFintentInstallWithdrawLat.py
+	Test Params : /home/ubuntu/OnosSystemTest/TestON/tests/SCPF/SCPFintentInstallWithdrawLat/SCPFintentInstallWithdrawLat.params
+	Topology : /home/ubuntu/OnosSystemTest/TestON/tests/SCPF/SCPFintentInstallWithdrawLat/SCPFintentInstallWithdrawLat.topo
+                              +------------------+
+---------------------------  { Script Exec Params }  ---------------------------
+                              +------------------+
+
+	
+	'max': '3'
+	 'SCALE': '1
+	3'
+	 'DATABASE': 
+	'dbFlowObj': '/tmp/IntentInstallWithdrawLatDBWFO'
+	 'dbName': '/tmp/IntentInstallWithdrawLatDB'
+	
+	 'GRAPH': 
+	'nodeCluster': 'BM'
+	 'builds': '20'
+	
+	 'ALARM': 
+	'maxWithdrawLat': '16
+	18
+	40
+	40
+	45
+	90
+	40
+	45
+	80'
+	 'maxInstallLat': '20
+	22
+	50
+	45
+	50
+	120
+	41
+	50
+	100'
+	 'maxWithdrawLatFlowObj': '30
+	900
+	5500
+	60
+	300
+	3000
+	55
+	200
+	1700'
+	 'maxInstallLatFlowObj': '30
+	700
+	7000
+	60
+	500
+	3100
+	60
+	200
+	1800'
+	
+	 'CTRL': 
+	'ip2': 'OC2'
+	 'ip3': 'OC3'
+	 'ip1': 'OC1'
+	 'USER': 'sdn'
+	 'port2': '6653'
+	 'port3': '6653'
+	 'port1': '6653'
+	
+	 'testcases': '0
+	1
+	2
+	1
+	2'
+	 'BENCH': 
+	'ip1': 'localhost'
+	 'user': 'sdn'
+	
+	 'DEPENDENCY': 
+	'PATH': '/tests/SCPF/SCPFintentInstallWithdrawLat/dependencies/'
+	 'FILE1': 'intentInstallLatFuncs'
+	
+	 'ATTEMPTS': 
+	'verify': '6'
+	 'maxInvalidRun': '5'
+	 'cfg': '5'
+	
+	 'GIT': 
+	'pull': 'False'
+	 'branch': 'master'
+	
+	 'SLEEP': 
+	'verify': '5'
+	 'startup': '10'
+	 'install': '10'
+	 'timeout': '300'
+	 'reroute': '3'
+	
+	 'ENV': 
+	'cellApps': 'drivers
+	null'
+	 'cellName': 'IntentInstallWithdrawCell'
+	
+	 'CFG': 
+	'nullProvider': 'org.onosproject.provider.nil.NullProviders'
+	 'intentManager': 'org.onosproject.net.intent.impl.IntentManager'
+	 'intentConfigRegi': 'org.onosproject.net.intent.impl.compiler.IntentConfigurableRegistrator'
+	
+	 'TEST': 
+	'deviceCount': '7'
+	 'debug': 'False'
+	 'intents': '1
+	100
+	1000'
+	 'egress': 'null:0000000000000007/5'
+	 'warmUp': '5'
+	 'flowObj': 'False'
+	 'sampleSize': '20'
+	 'ingress': 'null:0000000000000001/6'
+	
+	 'MN': 
+	'ip1': 'OCN'
+	
+	
+
+                               +---------------+
+----------------------------- { Components Used }  -----------------------------
+                               +---------------+
+	ONOScell
+
+
+                              +--------+
+---------------------------- { Topology }  ----------------------------
+                              +--------+
+
+	
+	'ONOScell': 
+	'connect_order': '1'
+	 'host': 'localhost'
+	 'user': 'sdn'
+	 'COMPONENTS': 
+	'web_user': None
+	 'diff_clihost': None
+	 'web_pass': None
+	 'prompt': None
+	 'cluster_name': None
+	 'onos_home': None
+	 'nodes': '3'
+	 'karaf_password': None
+	 'karaf_username': None
+	 'rest_port': None
+	
+	 'home': None
+	 'password': 'rocks'
+	 'type': 'OnosClusterDriver'
+	
+	
+------------------------------------------------------------
+
+
+******************************
+ CASE INIT 
+******************************
+
+['ONOScell']
+2020-07-27 03:25:15,431 - SCPFintentInstallWithdrawLat - INFO - Creating component Handle: ONOScell
+2020-07-27 03:25:15,441 - SCPFintentInstallWithdrawLat - INFO - ONOScell: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5'] ONOS IPs
+2020-07-27 03:25:15,441 - SCPFintentInstallWithdrawLat - INFO - ONOScell: Trying to connect to localhost
+2020-07-27 03:25:16,598 - SCPFintentInstallWithdrawLat - INFO - Password not required logged in
+[95m2020-07-27 03:25:16,904 - SCPFintentInstallWithdrawLat - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '3', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosCliDriver', 'host': 'localhost'}[0m
+2020-07-27 03:25:16,904 - SCPFintentInstallWithdrawLat - INFO - Creating component Handle: ONOScli1
+2020-07-27 03:25:16,913 - SCPFintentInstallWithdrawLat - INFO - ONOScli1: Trying to connect to localhost
+2020-07-27 03:25:17,939 - SCPFintentInstallWithdrawLat - INFO - Password not required logged in
+[95m2020-07-27 03:25:18,254 - SCPFintentInstallWithdrawLat - DEBUG - {'connect_order': '1', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '3', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosClusterDriver', 'host': 'localhost'}[0m
+[95m2020-07-27 03:25:18,254 - SCPFintentInstallWithdrawLat - DEBUG - {'connect_order': '2', 'user': 'onos', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '3', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosRestDriver', 'host': '192.168.171.28', 'port': '8181'}[0m
+2020-07-27 03:25:18,255 - SCPFintentInstallWithdrawLat - INFO - Creating component Handle: ONOSrest1
+2020-07-27 03:25:18,326 - SCPFintentInstallWithdrawLat - INFO - ONOSrest1: ip set to 192.168.171.28
+[95m2020-07-27 03:25:18,326 - SCPFintentInstallWithdrawLat - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '3', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': 'localhost'}[0m
+2020-07-27 03:25:18,326 - SCPFintentInstallWithdrawLat - INFO - Creating component Handle: ONOSbench1
+2020-07-27 03:25:18,335 - SCPFintentInstallWithdrawLat - INFO - ONOSbench1: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5'] ONOS IPs
+2020-07-27 03:25:18,335 - SCPFintentInstallWithdrawLat - INFO - ONOSbench1: Trying to connect to localhost
+2020-07-27 03:25:19,342 - SCPFintentInstallWithdrawLat - INFO - Password not required logged in
+[95m2020-07-27 03:25:19,648 - SCPFintentInstallWithdrawLat - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '3', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': '192.168.171.28'}[0m
+2020-07-27 03:25:19,648 - SCPFintentInstallWithdrawLat - INFO - Creating component Handle: ONOSserver1
+2020-07-27 03:25:19,654 - SCPFintentInstallWithdrawLat - INFO - ONOSserver1: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5'] ONOS IPs
+2020-07-27 03:25:19,654 - SCPFintentInstallWithdrawLat - INFO - ONOSserver1: Trying to connect to 192.168.171.28
+2020-07-27 03:25:20,469 - SCPFintentInstallWithdrawLat - INFO - Password not required logged in
+[95m2020-07-27 03:25:20,778 - SCPFintentInstallWithdrawLat - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '3', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosCliDriver', 'host': 'localhost'}[0m
+2020-07-27 03:25:20,778 - SCPFintentInstallWithdrawLat - INFO - Creating component Handle: ONOScli2
+2020-07-27 03:25:20,784 - SCPFintentInstallWithdrawLat - INFO - ONOScli2: Trying to connect to localhost
+2020-07-27 03:25:21,880 - SCPFintentInstallWithdrawLat - INFO - Password not required logged in
+[95m2020-07-27 03:25:22,191 - SCPFintentInstallWithdrawLat - DEBUG - {'connect_order': '1', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '3', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosClusterDriver', 'host': 'localhost'}[0m
+[95m2020-07-27 03:25:22,191 - SCPFintentInstallWithdrawLat - DEBUG - {'connect_order': '2', 'user': 'onos', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '3', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosRestDriver', 'host': '192.168.171.5', 'port': '8181'}[0m
+2020-07-27 03:25:22,191 - SCPFintentInstallWithdrawLat - INFO - Creating component Handle: ONOSrest2
+2020-07-27 03:25:22,197 - SCPFintentInstallWithdrawLat - INFO - ONOSrest2: ip set to 192.168.171.5
+[95m2020-07-27 03:25:22,197 - SCPFintentInstallWithdrawLat - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '3', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': 'localhost'}[0m
+2020-07-27 03:25:22,198 - SCPFintentInstallWithdrawLat - INFO - Creating component Handle: ONOSbench2
+2020-07-27 03:25:22,202 - SCPFintentInstallWithdrawLat - INFO - ONOSbench2: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5'] ONOS IPs
+2020-07-27 03:25:22,202 - SCPFintentInstallWithdrawLat - INFO - ONOSbench2: Trying to connect to localhost
+2020-07-27 03:25:23,187 - SCPFintentInstallWithdrawLat - INFO - Password not required logged in
+[95m2020-07-27 03:25:23,492 - SCPFintentInstallWithdrawLat - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '3', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': '192.168.171.5'}[0m
+2020-07-27 03:25:23,492 - SCPFintentInstallWithdrawLat - INFO - Creating component Handle: ONOSserver2
+2020-07-27 03:25:23,499 - SCPFintentInstallWithdrawLat - INFO - ONOSserver2: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5'] ONOS IPs
+2020-07-27 03:25:23,499 - SCPFintentInstallWithdrawLat - INFO - ONOSserver2: Trying to connect to 192.168.171.5
+2020-07-27 03:25:24,362 - SCPFintentInstallWithdrawLat - INFO - Password not required logged in
+[95m2020-07-27 03:25:24,670 - SCPFintentInstallWithdrawLat - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '3', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosCliDriver', 'host': 'localhost'}[0m
+2020-07-27 03:25:24,670 - SCPFintentInstallWithdrawLat - INFO - Creating component Handle: ONOScli3
+2020-07-27 03:25:24,676 - SCPFintentInstallWithdrawLat - INFO - ONOScli3: Trying to connect to localhost
+2020-07-27 03:25:25,749 - SCPFintentInstallWithdrawLat - INFO - Password not required logged in
+[95m2020-07-27 03:25:26,053 - SCPFintentInstallWithdrawLat - DEBUG - {'connect_order': '1', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '3', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosClusterDriver', 'host': 'localhost'}[0m
+[95m2020-07-27 03:25:26,053 - SCPFintentInstallWithdrawLat - DEBUG - {'connect_order': '2', 'user': 'onos', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '3', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosRestDriver', 'host': '192.168.171.24', 'port': '8181'}[0m
+2020-07-27 03:25:26,053 - SCPFintentInstallWithdrawLat - INFO - Creating component Handle: ONOSrest3
+2020-07-27 03:25:26,057 - SCPFintentInstallWithdrawLat - INFO - ONOSrest3: ip set to 192.168.171.24
+[95m2020-07-27 03:25:26,058 - SCPFintentInstallWithdrawLat - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '3', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': 'localhost'}[0m
+2020-07-27 03:25:26,058 - SCPFintentInstallWithdrawLat - INFO - Creating component Handle: ONOSbench3
+2020-07-27 03:25:26,061 - SCPFintentInstallWithdrawLat - INFO - ONOSbench3: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5'] ONOS IPs
+2020-07-27 03:25:26,061 - SCPFintentInstallWithdrawLat - INFO - ONOSbench3: Trying to connect to localhost
+2020-07-27 03:25:27,081 - SCPFintentInstallWithdrawLat - INFO - Password not required logged in
+[95m2020-07-27 03:25:27,389 - SCPFintentInstallWithdrawLat - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '3', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': '192.168.171.24'}[0m
+2020-07-27 03:25:27,389 - SCPFintentInstallWithdrawLat - INFO - Creating component Handle: ONOSserver3
+2020-07-27 03:25:27,395 - SCPFintentInstallWithdrawLat - INFO - ONOSserver3: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5'] ONOS IPs
+2020-07-27 03:25:27,395 - SCPFintentInstallWithdrawLat - INFO - ONOSserver3: Trying to connect to 192.168.171.24
+2020-07-27 03:25:28,132 - SCPFintentInstallWithdrawLat - INFO - Password not required logged in
+
+******************************
+ Result summary for Testcase0
+******************************
+
+[95m2020-07-27 03:25:28,444 - SCPFintentInstallWithdrawLat - DEBUG - Case Executed       : [0][0m
+[95m2020-07-27 03:25:28,444 - SCPFintentInstallWithdrawLat - DEBUG - Case to be executed : [1, 2, 1, 2][0m
+[2020-07-27 03:25:28.445954] [SCPFintentInstallWithdrawLat] [CASE]  Constructing test variables and building ONOS package
+[2020-07-27 03:25:28.446690] [SCPFintentInstallWithdrawLat] [STEP]  0.1: Constructing test variables
+[2020-07-27 03:25:28.447954] [SCPFintentInstallWithdrawLat] [CASE]  Pull onos branch and build onos on Teststation.
+2020-07-27 03:25:28,448 - SCPFintentInstallWithdrawLat - INFO - Skipped git checkout and pull as they are disabled in params file
+2020-07-27 03:25:28,448 - SCPFintentInstallWithdrawLat - INFO - Create Database file /tmp/IntentInstallWithdrawLatDB
+2020-07-27 03:25:28,713 - SCPFintentInstallWithdrawLat - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-27 03:25:28,713 - SCPFintentInstallWithdrawLat - INFO - Successfully construct test variables 
+2020-07-27 03:25:28,713 - SCPFintentInstallWithdrawLat - INFO - Assertion Passed
+2020-07-27 03:25:28,713 - SCPFintentInstallWithdrawLat - INFO - ONOSbench1 home is ~/onos
+ONOSbench1: 
+
+commit aa5a3af99f6c0558c6e3f923036c0ef3a0d9bd12 (HEAD -> master, origin/master, origin/HEAD)
+Author:     pierventre <pier@opennetworking.org>
+AuthorDate: Tue Jun 30 22:04:16 2020 +0200
+Commit:     pierventre <pier@opennetworking.org>
+CommitDate: Thu Jul 9 10:56:21 2020 +0200
+
+    [AETHER-255] Tost profile for bazel build (onos and onos-package)
+sdn@manage:~/onos$
+
+*****************************
+ Result: Pass 
+*****************************
+
+
+******************************
+ Result summary for Testcase1
+******************************
+
+[95m2020-07-27 03:25:29,257 - SCPFintentInstallWithdrawLat - DEBUG - Case Executed       : [0, 1][0m
+[95m2020-07-27 03:25:29,257 - SCPFintentInstallWithdrawLat - DEBUG - Case to be executed : [2, 1, 2][0m
+[2020-07-27 03:25:29.258112] [SCPFintentInstallWithdrawLat] [CASE]  Starting up 1 node(s) ONOS cluster
+2020-07-27 03:25:29,259 - SCPFintentInstallWithdrawLat - INFO - ONOS cluster size = 1
+[95m2020-07-27 03:25:29,259 - SCPFintentInstallWithdrawLat - DEBUG - Apps: drivers,null[0m
+2020-07-27 03:25:29,259 - SCPFintentInstallWithdrawLat - INFO - Atomix Cluster Size = 1 
+IntentInstallWithdrawCell                       0%    0     0.0KB/s   --:-- ETAIntentInstallWithdrawCell                     100%  224   481.4KB/s   00:00    
+[2020-07-27 03:25:30.276762] [SCPFintentInstallWithdrawLat] [STEP]  1.1: Apply cell to environment
+2020-07-27 03:25:30,558 - SCPFintentInstallWithdrawLat - INFO - ONOSbench1: Successfully set cell:  cell IntentInstallWithdrawCell
+[01;31m[KONOS_CELL[m[K=IntentInstallWithdrawCell
+OCC1=192.168.171.28
+OC1=192.168.171.28
+OCI=192.168.171.28
+OCN=localhost
+ONOS_APPS=drivers,null
+ONOS_GROUP=sdn
+ONOS_MN_PY=/home/sdn/onos/tools/dev/mininet/onos.py
+ONOS_NIC=192.168.171.*
+ONOS_SCENARIOS=/home/sdn/onos/tools/test/scenarios
+ONOS_USER=sdn
+ONOS_USE_SSH=true
+ONOS_WEB_PASS=rocks
+ONOS_WEB_USER=onos
+sdn@manage:~/onos$
+2020-07-27 03:25:30,559 - SCPFintentInstallWithdrawLat - INFO - ONOSbench3: Successfully set cell:  cell IntentInstallWithdrawCell
+[01;31m[KONOS_CELL[m[K=IntentInstallWithdrawCell
+OCC1=192.168.171.28
+OC1=192.168.171.28
+OCI=192.168.171.28
+OCN=localhost
+ONOS_APPS=drivers,null
+ONOS_GROUP=sdn
+ONOS_MN_PY=/home/sdn/onos/tools/dev/mininet/onos.py
+ONOS_NIC=192.168.171.*
+ONOS_SCENARIOS=/home/sdn/onos/tools/test/scenarios
+ONOS_USER=sdn
+ONOS_USE_SSH=true
+ONOS_WEB_PASS=rocks
+ONOS_WEB_USER=onos
+sdn@manage:~/onos$
+2020-07-27 03:25:30,559 - SCPFintentInstallWithdrawLat - INFO - ONOSbench2: Successfully set cell:  cell IntentInstallWithdrawCell
+[01;31m[KONOS_CELL[m[K=IntentInstallWithdrawCell
+OCC1=192.168.171.28
+OC1=192.168.171.28
+OCI=192.168.171.28
+OCN=localhost
+ONOS_APPS=drivers,null
+ONOS_GROUP=sdn
+ONOS_MN_PY=/home/sdn/onos/tools/dev/mininet/onos.py
+ONOS_NIC=192.168.171.*
+ONOS_SCENARIOS=/home/sdn/onos/tools/test/scenarios
+ONOS_USER=sdn
+ONOS_USE_SSH=true
+ONOS_WEB_PASS=rocks
+ONOS_WEB_USER=onos
+sdn@manage:~/onos$
+2020-07-27 03:25:30,786 - SCPFintentInstallWithdrawLat - INFO - ONOSbench1: Successfully set cell:  cell IntentInstallWithdrawCell
+[01;31m[KONOS_CELL[m[K=IntentInstallWithdrawCell
+OCC1=192.168.171.28
+OC1=192.168.171.28
+OCI=192.168.171.28
+OCN=localhost
+ONOS_APPS=drivers,null
+ONOS_GROUP=sdn
+ONOS_MN_PY=/home/sdn/onos/tools/dev/mininet/onos.py
+ONOS_NIC=192.168.171.*
+ONOS_SCENARIOS=/home/sdn/onos/tools/test/scenarios
+ONOS_TOPO=default
+ONOS_USER=sdn
+ONOS_USE_SSH=true
+ONOS_WEB_PASS=rocks
+ONOS_WEB_USER=onos
+sdn@manage:~/onos$
+2020-07-27 03:25:32,802 - SCPFintentInstallWithdrawLat - INFO - Verify cell returned:  onos-verify-cell
+localhost: manage
+192.168.171.28: node-1
+sdn@manage:~/onos$
+2020-07-27 03:25:32,814 - SCPFintentInstallWithdrawLat - INFO - Verify cell returned:  onos-verify-cell
+localhost: manage
+192.168.171.28: node-1
+sdn@manage:~/onos$
+2020-07-27 03:25:32,869 - SCPFintentInstallWithdrawLat - INFO - Verify cell returned:  onos-verify-cell
+localhost: manage
+192.168.171.28: node-1
+sdn@manage:~/onos$
+2020-07-27 03:25:32,870 - SCPFintentInstallWithdrawLat - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-27 03:25:32,870 - SCPFintentInstallWithdrawLat - INFO - Successfully applied cell to environment
+2020-07-27 03:25:32,870 - SCPFintentInstallWithdrawLat - INFO - Assertion Passed
+2020-07-27 03:25:32,871 - SCPFintentInstallWithdrawLat - INFO - Safety check, killing all Atomix processes
+2020-07-27 03:25:33,861 - SCPFintentInstallWithdrawLat - INFO - Atomix instance 192.168.171.28 was killed
+2020-07-27 03:25:33,862 - SCPFintentInstallWithdrawLat - INFO - Safety check, killing all ONOS processes
+2020-07-27 03:25:34,844 - SCPFintentInstallWithdrawLat - INFO - ONOS instance 192.168.171.28 was killed
+[2020-07-27 03:25:34.844872] [SCPFintentInstallWithdrawLat] [STEP]  1.2: Uninstalling Atomix
+2020-07-27 03:25:35,775 - SCPFintentInstallWithdrawLat - INFO - Atomix 192.168.171.28 was uninstalled
+2020-07-27 03:25:35,776 - SCPFintentInstallWithdrawLat - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-27 03:25:35,776 - SCPFintentInstallWithdrawLat - INFO - Successfully uninstalled Atomix
+2020-07-27 03:25:35,776 - SCPFintentInstallWithdrawLat - INFO - Assertion Passed
+[2020-07-27 03:25:35.776791] [SCPFintentInstallWithdrawLat] [STEP]  1.3: Uninstalling ONOS package
+2020-07-27 03:25:52,805 - SCPFintentInstallWithdrawLat - INFO - ONOS 192.168.171.28 was uninstalled
+2020-07-27 03:25:52,805 - SCPFintentInstallWithdrawLat - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-27 03:25:52,805 - SCPFintentInstallWithdrawLat - INFO - Successfully uninstalled ONOS package
+2020-07-27 03:25:52,805 - SCPFintentInstallWithdrawLat - INFO - Assertion Passed
+[2020-07-27 03:25:52.806162] [SCPFintentInstallWithdrawLat] [STEP]  1.4: Creating ONOS package
+[95m2020-07-27 03:25:55,368 - SCPFintentInstallWithdrawLat - DEBUG - 
+[32mLoading:[0m 
+[1A[K[32mLoading:[0m 0 packages loaded
+[1A[K[32mAnalyzing:[0m target //:onos (1 packages loaded, 0 targets configured)
+[1A[K[32mINFO: [0mAnalyzed target //:onos (1 packages loaded, 417 targets configured).
+
+[1A[K[32mINFO: [0mFound 1 target...
+
+[1A[K
+[1A[K[32m[0 / 1][0m [Prepa] BazelWorkspaceStatusAction stable-status.txt
+[1A[KTarget //:onos up-to-date:
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/utils/osgiwrap/osgi-jar.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/utils/osgiwrap/osgi-jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/utils/osgi/libonlab-osgi.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/utils/junit/libonlab-junit.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/utils/misc/libonlab-misc.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/utils/rest/libonlab-rest.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/core/api/libonos-api.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/core/net/libonos-core-net.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/core/common/libonos-core-common.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/core/protobuf/models/libonos-core-protobuf-models.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/core/protobuf/models/proto/libonos-core-protobuf-models-proto.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/core/store/primitives/libonos-core-primitives.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/core/store/serializers/libonos-core-serializers.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/core/store/dist/libonos-core-dist.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/core/store/persistence/libonos-core-persistence.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/cli/libonos-cli.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/drivers/utilities/libonos-drivers-utilities.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/general/device/libonos-providers-general-device.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/web/api/libonos-rest.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/tools/build/conf/libonos-build-conf.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/onos-admin.tar.gz
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/onos-test.tar.gz
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/onos.tar.gz
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/bgp/bgpio/libonos-protocols-bgp-bgpio.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/bgp/api/libonos-protocols-bgp-api.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/bgp/ctl/libonos-protocols-bgp-ctl.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/isis/api/libonos-protocols-isis-api.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/isis/ctl/libonos-protocols-isis-ctl.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/isis/isisio/libonos-protocols-isis-isisio.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/lisp/api/libonos-protocols-lisp-api.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/lisp/ctl/libonos-protocols-lisp-ctl.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/lisp/msg/libonos-protocols-lisp-msg.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/netconf/api/libonos-protocols-netconf-api.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/netconf/ctl/libonos-protocols-netconf-ctl.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/openflow/api/libonos-protocols-openflow-api.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/openflow/ctl/libonos-protocols-openflow-ctl.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/ospf/api/libonos-protocols-ospf-api.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/ospf/protocol/libonos-protocols-ospf-protocol.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/ospf/ctl/libonos-protocols-ospf-ctl.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/ovsdb/rfc/libonos-protocols-ovsdb-rfc.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/ovsdb/api/libonos-protocols-ovsdb-api.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/ovsdb/ctl/libonos-protocols-ovsdb-ctl.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/p4runtime/api/libonos-protocols-p4runtime-api.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/p4runtime/model/libonos-protocols-p4runtime-model.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/pcep/pcepio/libonos-protocols-pcep-pcepio.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/pcep/server/api/libonos-protocols-pcep-server-api.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/pcep/server/ctl/libonos-protocols-pcep-server-ctl.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/rest/api/libonos-protocols-rest-api.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/rest/ctl/libonos-protocols-rest-ctl.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/restconf/client/api/libonos-protocols-restconf-client-api.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/restconf/client/ctl/libonos-protocols-restconf-client-ctl.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/snmp/api/libonos-protocols-snmp-api.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/snmp/ctl/libonos-protocols-snmp-ctl.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/tl1/api/libonos-protocols-tl1-api.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/tl1/ctl/libonos-protocols-tl1-ctl.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/xmpp/core/api/libonos-protocols-xmpp-core-api.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/xmpp/core/ctl/libonos-protocols-xmpp-core-ctl.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/netconf/device/libonos-providers-netconf-device.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/openflow/device/libonos-providers-openflow-device.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/openflow/packet/libonos-providers-openflow-packet.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/openflow/flow/libonos-providers-openflow-flow.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/openflow/group/libonos-providers-openflow-group.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/openflow/meter/libonos-providers-openflow-meter.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/ovsdb/device/libonos-providers-ovsdb-device.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/ovsdb/tunnel/libonos-providers-ovsdb-tunnel.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/p4runtime/packet/libonos-providers-p4runtime-packet.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/rest/device/libonos-providers-rest-device.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/snmp/device/libonos-providers-snmp-device.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/isis/cfg/libonos-providers-isis-cfg.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/isis/topology/libonos-providers-isis-topology.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/lisp/device/libonos-providers-lisp-device.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/tl1/device/libonos-providers-tl1-device.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/grpc/onos-protocols-grpc-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/gnmi/onos-protocols-gnmi-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/gnoi/onos-protocols-gnoi-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/p4runtime/onos-protocols-p4runtime-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/restconf/server/onos-protocols-restconf-server-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/xmpp/core/onos-protocols-xmpp-core-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/xmpp/pubsub/onos-protocols-xmpp-pubsub-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/general/onos-providers-general-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/bgp/onos-providers-bgp-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/bgpcep/onos-providers-bgpcep-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/host/onos-providers-host-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/hostprobing/onos-providers-hostprobing-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/isis/onos-providers-isis-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/link/onos-providers-link-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/lldp/onos-providers-lldp-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/netcfghost/onos-providers-netcfghost-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/netcfglinks/onos-providers-netcfglinks-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/netconf/onos-providers-netconf-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/null/onos-providers-null-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/openflow/app/onos-providers-openflow-app-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/openflow/base/onos-providers-openflow-base-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/openflow/message/onos-providers-openflow-message-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/ovsdb/onos-providers-ovsdb-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/ovsdb/host/onos-providers-ovsdb-host-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/ovsdb/base/onos-providers-ovsdb-base-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/p4runtime/onos-providers-p4runtime-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/pcep/onos-providers-pcep-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/rest/onos-providers-rest-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/snmp/onos-providers-snmp-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/lisp/onos-providers-lisp-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/tl1/onos-providers-tl1-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/xmpp/device/onos-providers-xmpp-device-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/drivers/default/onos-drivers-default-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/drivers/arista/onos-drivers-arista-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/drivers/bmv2/onos-drivers-bmv2-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/drivers/barefoot/onos-drivers-barefoot-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/drivers/ciena/waveserver/onos-drivers-ciena-waveserver-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/drivers/ciena/c5162/onos-drivers-ciena-c5162-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/drivers/ciena/c5170/onos-drivers-ciena-c5170-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/drivers/ciena/waveserverai/onos-drivers-ciena-waveserverai-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/drivers/cisco/netconf/onos-drivers-cisco-netconf-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/drivers/cisco/rest/onos-drivers-cisco-rest-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/drivers/corsa/onos-drivers-corsa-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/drivers/czechlight/onos-drivers-czechlight-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/drivers/flowspec/onos-drivers-flowspec-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/drivers/fujitsu/onos-drivers-fujitsu-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/drivers/gnmi/onos-drivers-gnmi-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/drivers/gnoi/onos-drivers-gnoi-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/drivers/hp/onos-drivers-hp-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/drivers/huawei/onos-drivers-huawei-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/drivers/juniper/onos-drivers-juniper-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/drivers/lisp/onos-drivers-lisp-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/drivers/lumentum/onos-drivers-lumentum-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/drivers/mellanox/onos-drivers-mellanox-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/drivers/netconf/onos-drivers-netconf-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/drivers/odtn-driver/onos-drivers-odtn-driver-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/drivers/oplink/onos-drivers-oplink-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/drivers/optical/onos-drivers-optical-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/drivers/ovsdb/onos-drivers-ovsdb-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/drivers/p4runtime/onos-drivers-p4runtime-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/drivers/polatis/netconf/onos-drivers-polatis-netconf-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/drivers/polatis/openflow/onos-drivers-polatis-openflow-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/drivers/server/onos-drivers-server-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/drivers/stratum/onos-drivers-stratum-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/drivers/zte/onos-drivers-zte-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/acl/onos-apps-acl-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/artemis/onos-apps-artemis-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/bgprouter/onos-apps-bgprouter-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/castor/onos-apps-castor-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/cfm/onos-apps-cfm-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/cip/onos-apps-cip-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/config/onos-apps-config-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/configsync-netconf/onos-apps-configsync-netconf-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/configsync/onos-apps-configsync-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/cord-support/onos-apps-cord-support-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/cpman/app/onos-apps-cpman-app-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/dhcp/onos-apps-dhcp-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/dhcprelay/onos-apps-dhcprelay-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/drivermatrix/onos-apps-drivermatrix-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/events/onos-apps-events-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/evpn-route-service/onos-apps-evpn-route-service-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/evpnopenflow/onos-apps-evpnopenflow-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/faultmanagement/onos-apps-faultmanagement-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/flowanalyzer/onos-apps-flowanalyzer-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/flowspec-api/onos-apps-flowspec-api-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/fwd/onos-apps-fwd-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/gangliametrics/onos-apps-gangliametrics-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/gluon/onos-apps-gluon-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/graphitemetrics/onos-apps-graphitemetrics-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/imr/onos-apps-imr-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/inbandtelemetry/onos-apps-inbandtelemetry-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/influxdbmetrics/onos-apps-influxdbmetrics-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/intentsync/onos-apps-intentsync-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/k8s-networking/onos-apps-k8s-networking-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/k8s-node/onos-apps-k8s-node-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/kafka-integration/onos-apps-kafka-integration-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/l3vpn/onos-apps-l3vpn-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/layout/onos-apps-layout-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/linkprops/onos-apps-linkprops-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/mappingmanagement/onos-apps-mappingmanagement-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/mcast/onos-apps-mcast-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/metrics/onos-apps-metrics-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/mfwd/onos-apps-mfwd-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/mlb/onos-apps-mlb-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/mobility/onos-apps-mobility-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/netconf/client/onos-apps-netconf-client-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/network-troubleshoot/onos-apps-network-troubleshoot-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/newoptical/onos-apps-newoptical-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/nodemetrics/onos-apps-nodemetrics-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/node-diagnosis/onos-apps-node-diagnosis-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/odtn/api/onos-apps-odtn-api-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/odtn/service/onos-apps-odtn-service-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/ofagent/onos-apps-ofagent-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/onlp-demo/onos-apps-onlp-demo-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/onos-topo/onos-apps-onos-topo-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/openroadm/onos-apps-openroadm-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/openstacknetworking/onos-apps-openstacknetworking-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/openstacknetworkingui/onos-apps-openstacknetworkingui-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/openstacknode/onos-apps-openstacknode-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/openstacktelemetry/onos-apps-openstacktelemetry-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/openstacktroubleshoot/onos-apps-openstacktroubleshoot-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/openstackvtap/onos-apps-openstackvtap-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/optical-model/onos-apps-optical-model-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/optical-rest/onos-apps-optical-rest-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/p4-tutorial/mytunnel/onos-apps-p4-tutorial-mytunnel-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/p4-tutorial/pipeconf/onos-apps-p4-tutorial-pipeconf-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/packet-stats/onos-apps-packet-stats-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/packet-throttle/onos-apps-packet-throttle-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/pathpainter/onos-apps-pathpainter-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/pcep-api/onos-apps-pcep-api-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/pim/onos-apps-pim-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/portloadbalancer/onos-apps-portloadbalancer-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/powermanagement/onos-apps-powermanagement-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/proxyarp/onos-apps-proxyarp-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/rabbitmq/onos-apps-rabbitmq-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/reactive-routing/onos-apps-reactive-routing-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/restconf/onos-apps-restconf-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/roadm/onos-apps-roadm-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/route-service/onos-apps-route-service-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/routeradvertisement/onos-apps-routeradvertisement-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/routing/cpr/onos-apps-routing-cpr-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/routing/fibinstaller/onos-apps-routing-fibinstaller-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/routing/fpm/onos-apps-routing-fpm-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/scalablegateway/onos-apps-scalablegateway-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/sdnip/onos-apps-sdnip-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/simplefabric/onos-apps-simplefabric-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/test/cluster-ha/onos-apps-test-cluster-ha-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/test/demo/onos-apps-test-demo-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/test/distributed-primitives/onos-apps-test-distributed-primitives-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/test/election/onos-apps-test-election-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/test/flow-perf/onos-apps-test-flow-perf-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/test/intent-perf/onos-apps-test-intent-perf-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/test/loadtest/onos-apps-test-loadtest-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/test/messaging-perf/onos-apps-test-messaging-perf-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/test/netcfg-monitor/onos-apps-test-netcfg-monitor-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/test/primitive-perf/onos-apps-test-primitive-perf-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/test/route-scale/onos-apps-test-route-scale-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/test/transaction-perf/onos-apps-test-transaction-perf-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/tetopology/onos-apps-tetopology-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/tetunnel/onos-apps-tetunnel-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/tunnel/onos-apps-tunnel-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/virtual/onos-apps-virtual-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/virtualbng/onos-apps-virtualbng-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/vpls/onos-apps-vpls-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/vrouter/onos-apps-vrouter-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/vtn/onos-apps-vtn-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/workflow/ofoverlay/onos-apps-workflow-ofoverlay-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/workflow/onos-apps-workflow-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/yang-gui/onos-apps-yang-gui-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/yang/onos-apps-yang-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/web/gui/onos-web-gui-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/web/gui2/onos-web-gui2-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/cpman/api/libonos-apps-cpman-api.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/routing-api/libonos-apps-routing-api.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/dhcp/api/libonos-apps-dhcp-api.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/dhcp/app/libonos-apps-dhcp-app.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/imr/api/libonos-apps-imr-api.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/imr/app/libonos-apps-imr-app.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/dhcprelay/app/libonos-apps-dhcprelay-app.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/dhcprelay/web/libonos-apps-dhcprelay-web.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/fwd/libonos-apps-fwd.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/iptopology-api/libonos-apps-iptopology-api.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/kafka-integration/api/libonos-apps-kafka-integration-api.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/kafka-integration/app/libonos-apps-kafka-integration-app.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/routing/common/libonos-apps-routing-common.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/vtn/vtnrsc/libonos-apps-vtn-vtnrsc.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/vtn/sfcmgr/libonos-apps-vtn-sfcmgr.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/vtn/vtnmgr/libonos-apps-vtn-vtnmgr.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/vtn/vtnweb/libonos-apps-vtn-vtnweb.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/pipelines/basic/onos-pipelines-basic-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/pipelines/fabric/onos-pipelines-fabric-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/models/ietf/onos-models-ietf-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/models/common/onos-models-common-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/models/huawei/onos-models-huawei-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/models/openconfig/onos-models-openconfig-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/models/openconfig-infinera/onos-models-openconfig-infinera-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/models/openconfig-odtn/onos-models-openconfig-odtn-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/models/openroadm/onos-models-openroadm-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/models/tapi/onos-models-tapi-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/models/l3vpn/onos-models-l3vpn-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/models/polatis/onos-models-polatis-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/models/ciena/waveserverai/onos-models-ciena-waveserverai-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K[32mINFO: [0mElapsed time: 2.363s, Critical Path: 0.17s
+[32m[5 / 5][0m checking cached actions
+[1A[K[32mINFO: [0m1 process: 1 linux-sandbox.
+[32m[5 / 5][0m checking cached actions
+[1A[K[32mINFO:[0m Build completed successfully, 2 total actions
+[1A[K[32mINFO:[0m Build completed successfully, 2 total actions
+[0msdn@manage:~/onos$[0m
+2020-07-27 03:25:55,371 - SCPFintentInstallWithdrawLat - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-27 03:25:55,371 - SCPFintentInstallWithdrawLat - INFO - Successfully created ONOS package
+2020-07-27 03:25:55,371 - SCPFintentInstallWithdrawLat - INFO - Assertion Passed
+[2020-07-27 03:25:55.371682] [SCPFintentInstallWithdrawLat] [STEP]  1.5: Installing Atomix
+2020-07-27 03:26:00,277 - SCPFintentInstallWithdrawLat - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-27 03:26:00,277 - SCPFintentInstallWithdrawLat - INFO - Successfully installed Atomix
+2020-07-27 03:26:00,278 - SCPFintentInstallWithdrawLat - INFO - Assertion Passed
+[2020-07-27 03:26:00.278291] [SCPFintentInstallWithdrawLat] [STEP]  1.6: Installing ONOS package
+2020-07-27 03:26:29,277 - SCPFintentInstallWithdrawLat - INFO - ONOS was installed on 192.168.171.28 and started.
+2020-07-27 03:26:29,278 - SCPFintentInstallWithdrawLat - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-27 03:26:29,278 - SCPFintentInstallWithdrawLat - INFO - Successfully installed ONOS package
+2020-07-27 03:26:29,278 - SCPFintentInstallWithdrawLat - INFO - Assertion Passed
+[2020-07-27 03:26:29.278644] [SCPFintentInstallWithdrawLat] [STEP]  1.7: Set up ONOS secure SSH
+2020-07-27 03:26:29,492 - SCPFintentInstallWithdrawLat - INFO - ONOSbench1: Secure SSH performed on 192.168.171.28
+2020-07-27 03:26:29,493 - SCPFintentInstallWithdrawLat - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-27 03:26:29,493 - SCPFintentInstallWithdrawLat - INFO - Secured ONOS ssh
+2020-07-27 03:26:29,493 - SCPFintentInstallWithdrawLat - INFO - Assertion Passed
+[2020-07-27 03:26:29.493944] [SCPFintentInstallWithdrawLat] [STEP]  1.8: Checking ONOS service
+2020-07-27 03:26:35,535 - SCPFintentInstallWithdrawLat - INFO - ONOSbench1: 192.168.171.28 is up
+2020-07-27 03:26:40,542 - SCPFintentInstallWithdrawLat - INFO - ONOS1 is up and ready
+2020-07-27 03:26:40,542 - SCPFintentInstallWithdrawLat - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-27 03:26:40,543 - SCPFintentInstallWithdrawLat - INFO - ONOS service is ready on all nodes
+2020-07-27 03:26:40,543 - SCPFintentInstallWithdrawLat - INFO - Assertion Passed
+[2020-07-27 03:26:40.543455] [SCPFintentInstallWithdrawLat] [STEP]  1.9: Starting ONOS CLI sessions
+2020-07-27 03:26:41,164 - SCPFintentInstallWithdrawLat - INFO - 192.168.171.28 CLI Started successfully
+[95m2020-07-27 03:26:41,164 - SCPFintentInstallWithdrawLat - DEBUG -  onos 192.168.171.28
+Welcome to Open Network Operating System (ONOS)!
+[1;31m     ____  _  ______  ____     [0m
+[1;31m    / __ \/ |/ / __ \/ __/   [0m
+[1;31m   / /_/ /    / /_/ /\ \     [0m
+[1;31m   \____/_/|_/\____/___/     [0m
+[1;31m                               [0m
+Documentation: wiki.onosproject.org      
+Tutorials:     tutorials.onosproject.org 
+Mailing lists: lists.onosproject.org     
+
+Come help out! Find out how at: contribute.onosproject.org 
+
+Hit '[1m<tab>[0m' for a list of available commands
+and '[1m[cmd] --help[0m' for help on a specific command.
+Hit '[1m<ctrl-d>[0m' or type '[1mlogout[0m' to exit ONOS session.
+
+[?1h=[90m~[0m                                                                                [?2004h[0m
+2020-07-27 03:26:41,165 - SCPFintentInstallWithdrawLat - INFO - Successful CLI startup
+2020-07-27 03:26:41,165 - SCPFintentInstallWithdrawLat - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-27 03:26:41,165 - SCPFintentInstallWithdrawLat - INFO - Successfully start ONOS cli
+2020-07-27 03:26:41,165 - SCPFintentInstallWithdrawLat - INFO - Assertion Passed
+[2020-07-27 03:26:41.165828] [SCPFintentInstallWithdrawLat] [STEP]  1.10: Checking ONOS nodes
+2020-07-27 03:26:41,437 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:26:41,439 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:26:41,439 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:26:41,549 - SCPFintentInstallWithdrawLat - ERROR - [0m
+Traceback (most recent call last):
+  File "/home/ubuntu/OnosSystemTest/TestON/drivers/common/cli/onosclidriver.py", line 790, in nodes
+    assert "Command not found:" not in output, output
+AssertionError: Command not found: nodes
+[91m2020-07-27 03:26:41,553 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:26:41,553 - SCPFintentInstallWithdrawLat - WARNING - None[0m
+2020-07-27 03:26:42,814 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:26:42,814 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:26:42,814 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:26:42,928 - SCPFintentInstallWithdrawLat - ERROR - [0m
+Traceback (most recent call last):
+  File "/home/ubuntu/OnosSystemTest/TestON/drivers/common/cli/onosclidriver.py", line 790, in nodes
+    assert "Command not found:" not in output, output
+AssertionError: Command not found: nodes
+[91m2020-07-27 03:26:42,928 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:26:42,928 - SCPFintentInstallWithdrawLat - WARNING - None[0m
+2020-07-27 03:26:44,189 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:26:44,189 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:26:44,189 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:26:44,298 - SCPFintentInstallWithdrawLat - ERROR - [0m
+Traceback (most recent call last):
+  File "/home/ubuntu/OnosSystemTest/TestON/drivers/common/cli/onosclidriver.py", line 790, in nodes
+    assert "Command not found:" not in output, output
+AssertionError: Command not found: nodes
+[91m2020-07-27 03:26:44,299 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:26:44,299 - SCPFintentInstallWithdrawLat - WARNING - None[0m
+2020-07-27 03:26:45,521 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:26:45,522 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:26:45,522 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:26:45,628 - SCPFintentInstallWithdrawLat - ERROR - [0m
+Traceback (most recent call last):
+  File "/home/ubuntu/OnosSystemTest/TestON/drivers/common/cli/onosclidriver.py", line 790, in nodes
+    assert "Command not found:" not in output, output
+AssertionError: Command not found: nodes
+[91m2020-07-27 03:26:45,629 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:26:45,629 - SCPFintentInstallWithdrawLat - WARNING - None[0m
+2020-07-27 03:26:46,885 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:26:46,885 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:26:46,886 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:26:46,996 - SCPFintentInstallWithdrawLat - ERROR - [0m
+Traceback (most recent call last):
+  File "/home/ubuntu/OnosSystemTest/TestON/drivers/common/cli/onosclidriver.py", line 790, in nodes
+    assert "Command not found:" not in output, output
+AssertionError: Command not found: nodes
+[91m2020-07-27 03:26:46,996 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:26:46,996 - SCPFintentInstallWithdrawLat - WARNING - None[0m
+2020-07-27 03:26:48,253 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:26:48,254 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:26:48,254 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:26:48,361 - SCPFintentInstallWithdrawLat - ERROR - [0m
+Traceback (most recent call last):
+  File "/home/ubuntu/OnosSystemTest/TestON/drivers/common/cli/onosclidriver.py", line 790, in nodes
+    assert "Command not found:" not in output, output
+AssertionError: Command not found: nodes
+[91m2020-07-27 03:26:48,361 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:26:48,362 - SCPFintentInstallWithdrawLat - WARNING - None[0m
+2020-07-27 03:26:49,621 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:26:49,621 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:26:49,622 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:26:49,731 - SCPFintentInstallWithdrawLat - ERROR - [0m
+Traceback (most recent call last):
+  File "/home/ubuntu/OnosSystemTest/TestON/drivers/common/cli/onosclidriver.py", line 790, in nodes
+    assert "Command not found:" not in output, output
+AssertionError: Command not found: nodes
+[91m2020-07-27 03:26:49,731 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:26:49,731 - SCPFintentInstallWithdrawLat - WARNING - None[0m
+2020-07-27 03:26:50,989 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:26:50,989 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:26:50,990 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:26:51,098 - SCPFintentInstallWithdrawLat - ERROR - [0m
+Traceback (most recent call last):
+  File "/home/ubuntu/OnosSystemTest/TestON/drivers/common/cli/onosclidriver.py", line 790, in nodes
+    assert "Command not found:" not in output, output
+AssertionError: Command not found: nodes
+[91m2020-07-27 03:26:51,098 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:26:51,099 - SCPFintentInstallWithdrawLat - WARNING - None[0m
+2020-07-27 03:26:52,357 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:26:52,357 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:26:52,357 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:26:52,468 - SCPFintentInstallWithdrawLat - ERROR - [0m
+Traceback (most recent call last):
+  File "/home/ubuntu/OnosSystemTest/TestON/drivers/common/cli/onosclidriver.py", line 790, in nodes
+    assert "Command not found:" not in output, output
+AssertionError: Command not found: nodes
+[91m2020-07-27 03:26:52,468 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:26:52,469 - SCPFintentInstallWithdrawLat - WARNING - None[0m
+2020-07-27 03:26:53,725 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:26:53,725 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:26:53,725 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:26:53,833 - SCPFintentInstallWithdrawLat - ERROR - [0m
+Traceback (most recent call last):
+  File "/home/ubuntu/OnosSystemTest/TestON/drivers/common/cli/onosclidriver.py", line 790, in nodes
+    assert "Command not found:" not in output, output
+AssertionError: Command not found: nodes
+[91m2020-07-27 03:26:53,834 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:26:53,834 - SCPFintentInstallWithdrawLat - WARNING - None[0m
+2020-07-27 03:26:55,089 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:26:55,090 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:26:55,090 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:26:55,198 - SCPFintentInstallWithdrawLat - ERROR - [0m
+Traceback (most recent call last):
+  File "/home/ubuntu/OnosSystemTest/TestON/drivers/common/cli/onosclidriver.py", line 790, in nodes
+    assert "Command not found:" not in output, output
+AssertionError: Command not found: nodes
+[91m2020-07-27 03:26:55,198 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:26:55,199 - SCPFintentInstallWithdrawLat - WARNING - None[0m
+2020-07-27 03:26:56,465 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:26:56,465 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:26:56,466 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:26:56,570 - SCPFintentInstallWithdrawLat - ERROR - [0m
+Traceback (most recent call last):
+  File "/home/ubuntu/OnosSystemTest/TestON/drivers/common/cli/onosclidriver.py", line 790, in nodes
+    assert "Command not found:" not in output, output
+AssertionError: Command not found: nodes
+[91m2020-07-27 03:26:56,571 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:26:56,571 - SCPFintentInstallWithdrawLat - WARNING - None[0m
+2020-07-27 03:26:57,829 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:26:57,829 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:26:57,830 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:26:57,938 - SCPFintentInstallWithdrawLat - ERROR - [0m
+Traceback (most recent call last):
+  File "/home/ubuntu/OnosSystemTest/TestON/drivers/common/cli/onosclidriver.py", line 790, in nodes
+    assert "Command not found:" not in output, output
+AssertionError: Command not found: nodes
+[91m2020-07-27 03:26:57,938 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:26:57,939 - SCPFintentInstallWithdrawLat - WARNING - None[0m
+2020-07-27 03:26:59,197 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:26:59,197 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:26:59,197 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:26:59,306 - SCPFintentInstallWithdrawLat - ERROR - [0m
+Traceback (most recent call last):
+  File "/home/ubuntu/OnosSystemTest/TestON/drivers/common/cli/onosclidriver.py", line 790, in nodes
+    assert "Command not found:" not in output, output
+AssertionError: Command not found: nodes
+[91m2020-07-27 03:26:59,307 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:26:59,307 - SCPFintentInstallWithdrawLat - WARNING - None[0m
+2020-07-27 03:27:00,565 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:27:00,565 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:27:00,565 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:27:00,672 - SCPFintentInstallWithdrawLat - ERROR - [0m
+Traceback (most recent call last):
+  File "/home/ubuntu/OnosSystemTest/TestON/drivers/common/cli/onosclidriver.py", line 790, in nodes
+    assert "Command not found:" not in output, output
+AssertionError: Command not found: nodes
+[91m2020-07-27 03:27:00,673 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:27:00,673 - SCPFintentInstallWithdrawLat - WARNING - None[0m
+2020-07-27 03:27:01,890 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:27:01,890 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:27:01,890 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:27:01,998 - SCPFintentInstallWithdrawLat - ERROR - [0m
+Traceback (most recent call last):
+  File "/home/ubuntu/OnosSystemTest/TestON/drivers/common/cli/onosclidriver.py", line 790, in nodes
+    assert "Command not found:" not in output, output
+AssertionError: Command not found: nodes
+[91m2020-07-27 03:27:01,998 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:27:01,998 - SCPFintentInstallWithdrawLat - WARNING - None[0m
+2020-07-27 03:27:03,257 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:27:03,257 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:27:03,257 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:27:03,365 - SCPFintentInstallWithdrawLat - ERROR - [0m
+Traceback (most recent call last):
+  File "/home/ubuntu/OnosSystemTest/TestON/drivers/common/cli/onosclidriver.py", line 790, in nodes
+    assert "Command not found:" not in output, output
+AssertionError: Command not found: nodes
+[91m2020-07-27 03:27:03,366 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:27:03,366 - SCPFintentInstallWithdrawLat - WARNING - None[0m
+2020-07-27 03:27:04,625 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:27:04,625 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:27:04,625 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:27:04,732 - SCPFintentInstallWithdrawLat - ERROR - [0m
+Traceback (most recent call last):
+  File "/home/ubuntu/OnosSystemTest/TestON/drivers/common/cli/onosclidriver.py", line 790, in nodes
+    assert "Command not found:" not in output, output
+AssertionError: Command not found: nodes
+[91m2020-07-27 03:27:04,733 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:27:04,733 - SCPFintentInstallWithdrawLat - WARNING - None[0m
+2020-07-27 03:27:05,989 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:27:05,989 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:27:05,989 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:27:06,096 - SCPFintentInstallWithdrawLat - ERROR - [0m
+Traceback (most recent call last):
+  File "/home/ubuntu/OnosSystemTest/TestON/drivers/common/cli/onosclidriver.py", line 790, in nodes
+    assert "Command not found:" not in output, output
+AssertionError: Command not found: nodes
+[91m2020-07-27 03:27:06,096 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:27:06,097 - SCPFintentInstallWithdrawLat - WARNING - None[0m
+2020-07-27 03:27:07,318 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:27:07,318 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:27:07,318 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:27:07,424 - SCPFintentInstallWithdrawLat - ERROR - [0m
+Traceback (most recent call last):
+  File "/home/ubuntu/OnosSystemTest/TestON/drivers/common/cli/onosclidriver.py", line 790, in nodes
+    assert "Command not found:" not in output, output
+AssertionError: Command not found: nodes
+[91m2020-07-27 03:27:07,425 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:27:07,425 - SCPFintentInstallWithdrawLat - WARNING - None[0m
+2020-07-27 03:27:08,681 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:27:08,681 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:27:08,681 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:27:08,788 - SCPFintentInstallWithdrawLat - ERROR - [0m
+Traceback (most recent call last):
+  File "/home/ubuntu/OnosSystemTest/TestON/drivers/common/cli/onosclidriver.py", line 790, in nodes
+    assert "Command not found:" not in output, output
+AssertionError: Command not found: nodes
+[91m2020-07-27 03:27:08,788 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:27:08,789 - SCPFintentInstallWithdrawLat - WARNING - None[0m
+2020-07-27 03:27:10,045 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:27:10,045 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:27:10,045 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:27:10,153 - SCPFintentInstallWithdrawLat - ERROR - [0m
+Traceback (most recent call last):
+  File "/home/ubuntu/OnosSystemTest/TestON/drivers/common/cli/onosclidriver.py", line 790, in nodes
+    assert "Command not found:" not in output, output
+AssertionError: Command not found: nodes
+[91m2020-07-27 03:27:10,154 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:27:10,154 - SCPFintentInstallWithdrawLat - WARNING - None[0m
+2020-07-27 03:27:11,417 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:27:11,417 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:27:11,417 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:27:11,524 - SCPFintentInstallWithdrawLat - ERROR - [0m
+Traceback (most recent call last):
+  File "/home/ubuntu/OnosSystemTest/TestON/drivers/common/cli/onosclidriver.py", line 790, in nodes
+    assert "Command not found:" not in output, output
+AssertionError: Command not found: nodes
+[91m2020-07-27 03:27:11,525 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:27:11,525 - SCPFintentInstallWithdrawLat - WARNING - None[0m
+2020-07-27 03:27:12,781 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:27:12,781 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:27:12,781 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:27:12,892 - SCPFintentInstallWithdrawLat - ERROR - [0m
+Traceback (most recent call last):
+  File "/home/ubuntu/OnosSystemTest/TestON/drivers/common/cli/onosclidriver.py", line 790, in nodes
+    assert "Command not found:" not in output, output
+AssertionError: Command not found: nodes
+[91m2020-07-27 03:27:12,893 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:27:12,893 - SCPFintentInstallWithdrawLat - WARNING - None[0m
+2020-07-27 03:27:14,149 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:27:14,150 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:27:14,150 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:27:14,256 - SCPFintentInstallWithdrawLat - ERROR - [0m
+Traceback (most recent call last):
+  File "/home/ubuntu/OnosSystemTest/TestON/drivers/common/cli/onosclidriver.py", line 790, in nodes
+    assert "Command not found:" not in output, output
+AssertionError: Command not found: nodes
+[91m2020-07-27 03:27:14,257 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:27:14,257 - SCPFintentInstallWithdrawLat - WARNING - None[0m
+2020-07-27 03:27:15,482 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:27:15,482 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:27:15,482 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:27:15,587 - SCPFintentInstallWithdrawLat - ERROR - [0m
+Traceback (most recent call last):
+  File "/home/ubuntu/OnosSystemTest/TestON/drivers/common/cli/onosclidriver.py", line 790, in nodes
+    assert "Command not found:" not in output, output
+AssertionError: Command not found: nodes
+[91m2020-07-27 03:27:15,587 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:27:15,588 - SCPFintentInstallWithdrawLat - WARNING - None[0m
+2020-07-27 03:27:16,804 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:27:16,805 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:27:16,805 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:27:16,919 - SCPFintentInstallWithdrawLat - ERROR - [0m
+Traceback (most recent call last):
+  File "/home/ubuntu/OnosSystemTest/TestON/drivers/common/cli/onosclidriver.py", line 790, in nodes
+    assert "Command not found:" not in output, output
+AssertionError: Command not found: nodes
+[91m2020-07-27 03:27:16,919 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:27:16,920 - SCPFintentInstallWithdrawLat - WARNING - None[0m
+2020-07-27 03:27:18,173 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:27:18,173 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:27:18,174 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:27:18,281 - SCPFintentInstallWithdrawLat - ERROR - [0m
+Traceback (most recent call last):
+  File "/home/ubuntu/OnosSystemTest/TestON/drivers/common/cli/onosclidriver.py", line 790, in nodes
+    assert "Command not found:" not in output, output
+AssertionError: Command not found: nodes
+[91m2020-07-27 03:27:18,282 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:27:18,282 - SCPFintentInstallWithdrawLat - WARNING - None[0m
+2020-07-27 03:27:19,502 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:27:19,502 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:27:19,502 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:27:19,608 - SCPFintentInstallWithdrawLat - ERROR - [0m
+Traceback (most recent call last):
+  File "/home/ubuntu/OnosSystemTest/TestON/drivers/common/cli/onosclidriver.py", line 790, in nodes
+    assert "Command not found:" not in output, output
+AssertionError: Command not found: nodes
+[91m2020-07-27 03:27:19,609 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:27:19,609 - SCPFintentInstallWithdrawLat - WARNING - None[0m
+2020-07-27 03:27:20,829 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:27:20,830 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:27:20,830 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:27:20,936 - SCPFintentInstallWithdrawLat - ERROR - [0m
+Traceback (most recent call last):
+  File "/home/ubuntu/OnosSystemTest/TestON/drivers/common/cli/onosclidriver.py", line 790, in nodes
+    assert "Command not found:" not in output, output
+AssertionError: Command not found: nodes
+[91m2020-07-27 03:27:20,937 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:27:20,937 - SCPFintentInstallWithdrawLat - WARNING - None[0m
+2020-07-27 03:27:22,153 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:27:22,153 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:27:22,153 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:27:22,259 - SCPFintentInstallWithdrawLat - ERROR - [0m
+Traceback (most recent call last):
+  File "/home/ubuntu/OnosSystemTest/TestON/drivers/common/cli/onosclidriver.py", line 790, in nodes
+    assert "Command not found:" not in output, output
+AssertionError: Command not found: nodes
+[91m2020-07-27 03:27:22,260 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:27:22,260 - SCPFintentInstallWithdrawLat - WARNING - None[0m
+2020-07-27 03:27:23,478 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:27:23,478 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:27:23,479 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:27:23,586 - SCPFintentInstallWithdrawLat - ERROR - [0m
+Traceback (most recent call last):
+  File "/home/ubuntu/OnosSystemTest/TestON/drivers/common/cli/onosclidriver.py", line 790, in nodes
+    assert "Command not found:" not in output, output
+AssertionError: Command not found: nodes
+[91m2020-07-27 03:27:23,587 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:27:23,587 - SCPFintentInstallWithdrawLat - WARNING - None[0m
+2020-07-27 03:27:24,801 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:27:24,802 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:27:24,802 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:27:24,908 - SCPFintentInstallWithdrawLat - ERROR - [0m
+Traceback (most recent call last):
+  File "/home/ubuntu/OnosSystemTest/TestON/drivers/common/cli/onosclidriver.py", line 790, in nodes
+    assert "Command not found:" not in output, output
+AssertionError: Command not found: nodes
+[91m2020-07-27 03:27:24,909 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:27:24,909 - SCPFintentInstallWithdrawLat - WARNING - None[0m
+2020-07-27 03:27:26,165 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:27:26,165 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:27:26,165 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:27:26,272 - SCPFintentInstallWithdrawLat - ERROR - [0m
+Traceback (most recent call last):
+  File "/home/ubuntu/OnosSystemTest/TestON/drivers/common/cli/onosclidriver.py", line 790, in nodes
+    assert "Command not found:" not in output, output
+AssertionError: Command not found: nodes
+[91m2020-07-27 03:27:26,273 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:27:26,273 - SCPFintentInstallWithdrawLat - WARNING - None[0m
+2020-07-27 03:27:27,533 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:27:27,533 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:27:27,533 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:27:27,640 - SCPFintentInstallWithdrawLat - ERROR - [0m
+Traceback (most recent call last):
+  File "/home/ubuntu/OnosSystemTest/TestON/drivers/common/cli/onosclidriver.py", line 790, in nodes
+    assert "Command not found:" not in output, output
+AssertionError: Command not found: nodes
+[91m2020-07-27 03:27:27,641 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:27:27,641 - SCPFintentInstallWithdrawLat - WARNING - None[0m
+2020-07-27 03:27:28,860 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:27:28,860 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:27:28,860 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:27:28,967 - SCPFintentInstallWithdrawLat - ERROR - [0m
+Traceback (most recent call last):
+  File "/home/ubuntu/OnosSystemTest/TestON/drivers/common/cli/onosclidriver.py", line 790, in nodes
+    assert "Command not found:" not in output, output
+AssertionError: Command not found: nodes
+[91m2020-07-27 03:27:28,967 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:27:28,968 - SCPFintentInstallWithdrawLat - WARNING - None[0m
+2020-07-27 03:27:30,225 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:27:30,225 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:27:30,225 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:27:30,332 - SCPFintentInstallWithdrawLat - ERROR - [0m
+Traceback (most recent call last):
+  File "/home/ubuntu/OnosSystemTest/TestON/drivers/common/cli/onosclidriver.py", line 790, in nodes
+    assert "Command not found:" not in output, output
+AssertionError: Command not found: nodes
+[91m2020-07-27 03:27:30,333 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:27:30,333 - SCPFintentInstallWithdrawLat - WARNING - None[0m
+2020-07-27 03:27:31,589 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:27:31,589 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:27:31,590 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:27:31,696 - SCPFintentInstallWithdrawLat - ERROR - [0m
+Traceback (most recent call last):
+  File "/home/ubuntu/OnosSystemTest/TestON/drivers/common/cli/onosclidriver.py", line 790, in nodes
+    assert "Command not found:" not in output, output
+AssertionError: Command not found: nodes
+[91m2020-07-27 03:27:31,697 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:27:31,697 - SCPFintentInstallWithdrawLat - WARNING - None[0m
+2020-07-27 03:27:32,953 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:27:32,953 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:27:32,954 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:27:33,060 - SCPFintentInstallWithdrawLat - ERROR - [0m
+Traceback (most recent call last):
+  File "/home/ubuntu/OnosSystemTest/TestON/drivers/common/cli/onosclidriver.py", line 790, in nodes
+    assert "Command not found:" not in output, output
+AssertionError: Command not found: nodes
+[91m2020-07-27 03:27:33,060 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:27:33,060 - SCPFintentInstallWithdrawLat - WARNING - None[0m
+2020-07-27 03:27:34,273 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:27:34,274 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:27:34,274 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:27:34,381 - SCPFintentInstallWithdrawLat - ERROR - [0m
+Traceback (most recent call last):
+  File "/home/ubuntu/OnosSystemTest/TestON/drivers/common/cli/onosclidriver.py", line 790, in nodes
+    assert "Command not found:" not in output, output
+AssertionError: Command not found: nodes
+[91m2020-07-27 03:27:34,382 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:27:34,382 - SCPFintentInstallWithdrawLat - WARNING - None[0m
+2020-07-27 03:27:35,601 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:27:35,601 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:27:35,601 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:27:35,708 - SCPFintentInstallWithdrawLat - ERROR - [0m
+Traceback (most recent call last):
+  File "/home/ubuntu/OnosSystemTest/TestON/drivers/common/cli/onosclidriver.py", line 790, in nodes
+    assert "Command not found:" not in output, output
+AssertionError: Command not found: nodes
+[91m2020-07-27 03:27:35,708 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:27:35,708 - SCPFintentInstallWithdrawLat - WARNING - None[0m
+2020-07-27 03:27:36,965 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:27:36,965 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:27:36,966 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:27:37,073 - SCPFintentInstallWithdrawLat - ERROR - [0m
+Traceback (most recent call last):
+  File "/home/ubuntu/OnosSystemTest/TestON/drivers/common/cli/onosclidriver.py", line 790, in nodes
+    assert "Command not found:" not in output, output
+AssertionError: Command not found: nodes
+[91m2020-07-27 03:27:37,074 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:27:37,074 - SCPFintentInstallWithdrawLat - WARNING - None[0m
+2020-07-27 03:27:38,333 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:27:38,333 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:27:38,333 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:27:38,438 - SCPFintentInstallWithdrawLat - ERROR - [0m
+Traceback (most recent call last):
+  File "/home/ubuntu/OnosSystemTest/TestON/drivers/common/cli/onosclidriver.py", line 790, in nodes
+    assert "Command not found:" not in output, output
+AssertionError: Command not found: nodes
+[91m2020-07-27 03:27:38,439 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:27:38,439 - SCPFintentInstallWithdrawLat - WARNING - None[0m
+2020-07-27 03:27:39,656 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:27:39,656 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:27:39,656 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:27:39,763 - SCPFintentInstallWithdrawLat - ERROR - [0m
+Traceback (most recent call last):
+  File "/home/ubuntu/OnosSystemTest/TestON/drivers/common/cli/onosclidriver.py", line 790, in nodes
+    assert "Command not found:" not in output, output
+AssertionError: Command not found: nodes
+[91m2020-07-27 03:27:39,764 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:27:39,764 - SCPFintentInstallWithdrawLat - WARNING - None[0m
+2020-07-27 03:27:41,021 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:27:41,021 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:27:41,021 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:27:41,127 - SCPFintentInstallWithdrawLat - ERROR - [0m
+Traceback (most recent call last):
+  File "/home/ubuntu/OnosSystemTest/TestON/drivers/common/cli/onosclidriver.py", line 790, in nodes
+    assert "Command not found:" not in output, output
+AssertionError: Command not found: nodes
+[91m2020-07-27 03:27:41,128 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:27:41,128 - SCPFintentInstallWithdrawLat - WARNING - None[0m
+2020-07-27 03:27:42,345 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:27:42,346 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:27:42,346 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:27:42,452 - SCPFintentInstallWithdrawLat - ERROR - [0m
+Traceback (most recent call last):
+  File "/home/ubuntu/OnosSystemTest/TestON/drivers/common/cli/onosclidriver.py", line 790, in nodes
+    assert "Command not found:" not in output, output
+AssertionError: Command not found: nodes
+[91m2020-07-27 03:27:42,452 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:27:42,452 - SCPFintentInstallWithdrawLat - WARNING - None[0m
+2020-07-27 03:27:43,668 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:27:43,668 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:27:43,668 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:27:43,774 - SCPFintentInstallWithdrawLat - ERROR - [0m
+Traceback (most recent call last):
+  File "/home/ubuntu/OnosSystemTest/TestON/drivers/common/cli/onosclidriver.py", line 790, in nodes
+    assert "Command not found:" not in output, output
+AssertionError: Command not found: nodes
+[91m2020-07-27 03:27:43,775 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:27:43,775 - SCPFintentInstallWithdrawLat - WARNING - None[0m
+2020-07-27 03:27:45,027 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:27:45,027 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:27:45,027 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:27:45,133 - SCPFintentInstallWithdrawLat - ERROR - [0m
+Traceback (most recent call last):
+  File "/home/ubuntu/OnosSystemTest/TestON/drivers/common/cli/onosclidriver.py", line 790, in nodes
+    assert "Command not found:" not in output, output
+AssertionError: Command not found: nodes
+[91m2020-07-27 03:27:45,134 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:27:45,134 - SCPFintentInstallWithdrawLat - WARNING - None[0m
+2020-07-27 03:27:46,393 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:27:46,393 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:27:46,393 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:27:46,498 - SCPFintentInstallWithdrawLat - ERROR - [0m
+Traceback (most recent call last):
+  File "/home/ubuntu/OnosSystemTest/TestON/drivers/common/cli/onosclidriver.py", line 790, in nodes
+    assert "Command not found:" not in output, output
+AssertionError: Command not found: nodes
+[91m2020-07-27 03:27:46,499 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:27:46,499 - SCPFintentInstallWithdrawLat - WARNING - None[0m
+2020-07-27 03:27:47,779 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:27:47,779 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:27:47,779 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:27:47,884 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:27:47,885 - SCPFintentInstallWithdrawLat - WARNING - 'Service org.onosproject.security.AuditService not found'[0m
+2020-07-27 03:27:49,145 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:27:49,146 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:27:49,146 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:27:49,255 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:27:49,255 - SCPFintentInstallWithdrawLat - WARNING - ''[0m
+2020-07-27 03:27:50,513 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:27:50,513 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:27:50,513 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:27:50,623 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:27:50,623 - SCPFintentInstallWithdrawLat - WARNING - ''[0m
+2020-07-27 03:27:51,850 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:27:51,850 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:27:51,850 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:27:51,958 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:27:51,958 - SCPFintentInstallWithdrawLat - WARNING - 'Service org.onosproject.security.AuditService not found'[0m
+2020-07-27 03:27:53,221 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:27:53,221 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:27:53,221 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:27:53,329 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:27:53,330 - SCPFintentInstallWithdrawLat - WARNING - ''[0m
+2020-07-27 03:27:54,585 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:27:54,585 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:27:54,585 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:27:54,692 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:27:54,693 - SCPFintentInstallWithdrawLat - WARNING - ''[0m
+2020-07-27 03:27:55,953 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:27:55,953 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:27:55,953 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:27:56,059 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:27:56,059 - SCPFintentInstallWithdrawLat - WARNING - ''[0m
+2020-07-27 03:27:57,317 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:27:57,317 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:27:57,318 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:27:57,423 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:27:57,424 - SCPFintentInstallWithdrawLat - WARNING - ''[0m
+2020-07-27 03:27:58,647 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:27:58,648 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:27:58,648 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:27:58,754 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:27:58,754 - SCPFintentInstallWithdrawLat - WARNING - 'Service org.onosproject.security.AuditService not found'[0m
+2020-07-27 03:27:59,974 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:27:59,974 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:27:59,974 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:28:00,080 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:28:00,081 - SCPFintentInstallWithdrawLat - WARNING - 'Service org.onosproject.security.AuditService not found'[0m
+2020-07-27 03:28:01,297 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:28:01,298 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:28:01,298 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:28:01,405 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:28:01,405 - SCPFintentInstallWithdrawLat - WARNING - 'Service org.onosproject.security.AuditService not found'[0m
+2020-07-27 03:28:02,630 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:28:02,631 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:28:02,631 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:28:02,740 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:28:02,740 - SCPFintentInstallWithdrawLat - WARNING - 'Service org.onosproject.security.AuditService not found'[0m
+2020-07-27 03:28:03,997 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:28:03,998 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:28:03,998 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:28:04,104 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:28:04,105 - SCPFintentInstallWithdrawLat - WARNING - ''[0m
+2020-07-27 03:28:05,361 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:28:05,361 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:28:05,362 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:28:05,469 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:28:05,470 - SCPFintentInstallWithdrawLat - WARNING - ''[0m
+2020-07-27 03:28:06,729 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:28:06,729 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:28:06,729 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:28:06,836 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:28:06,836 - SCPFintentInstallWithdrawLat - WARNING - ''[0m
+2020-07-27 03:28:08,101 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:28:08,101 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:28:08,101 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:28:08,209 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:28:08,209 - SCPFintentInstallWithdrawLat - WARNING - ''[0m
+2020-07-27 03:28:09,465 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:28:09,466 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:28:09,466 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:28:09,573 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:28:09,574 - SCPFintentInstallWithdrawLat - WARNING - ''[0m
+2020-07-27 03:28:10,833 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:28:10,834 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:28:10,834 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:28:10,939 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:28:10,940 - SCPFintentInstallWithdrawLat - WARNING - ''[0m
+2020-07-27 03:28:12,197 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:28:12,197 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:28:12,197 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:28:12,305 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:28:12,305 - SCPFintentInstallWithdrawLat - WARNING - ''[0m
+2020-07-27 03:28:13,565 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:28:13,565 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:28:13,565 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:28:13,672 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:28:13,673 - SCPFintentInstallWithdrawLat - WARNING - ''[0m
+2020-07-27 03:28:14,933 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:28:14,933 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:28:14,934 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:28:15,040 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:28:15,040 - SCPFintentInstallWithdrawLat - WARNING - ''[0m
+2020-07-27 03:28:16,297 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:28:16,297 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:28:16,297 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:28:16,404 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:28:16,404 - SCPFintentInstallWithdrawLat - WARNING - ''[0m
+2020-07-27 03:28:17,661 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:28:17,662 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:28:17,662 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:28:17,768 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:28:17,768 - SCPFintentInstallWithdrawLat - WARNING - ''[0m
+2020-07-27 03:28:19,025 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:28:19,025 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:28:19,025 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:28:19,132 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:28:19,132 - SCPFintentInstallWithdrawLat - WARNING - ''[0m
+2020-07-27 03:28:20,389 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:28:20,390 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:28:20,390 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:28:20,497 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:28:20,497 - SCPFintentInstallWithdrawLat - WARNING - ''[0m
+2020-07-27 03:28:21,753 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:28:21,753 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:28:21,753 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:28:21,860 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:28:21,861 - SCPFintentInstallWithdrawLat - WARNING - ''[0m
+2020-07-27 03:28:23,117 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:28:23,117 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:28:23,117 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:28:23,224 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:28:23,224 - SCPFintentInstallWithdrawLat - WARNING - ''[0m
+2020-07-27 03:28:24,491 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:28:24,491 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:28:24,491 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:28:24,606 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:28:24,606 - SCPFintentInstallWithdrawLat - WARNING - ''[0m
+2020-07-27 03:28:25,865 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:28:25,865 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:28:25,865 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:28:25,972 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:28:25,972 - SCPFintentInstallWithdrawLat - WARNING - ''[0m
+2020-07-27 03:28:27,229 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:28:27,229 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:28:27,229 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:28:27,336 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:28:27,336 - SCPFintentInstallWithdrawLat - WARNING - ''[0m
+2020-07-27 03:28:28,593 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:28:28,594 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:28:28,594 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:28:28,700 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:28:28,701 - SCPFintentInstallWithdrawLat - WARNING - ''[0m
+2020-07-27 03:28:29,957 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:28:29,957 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:28:29,957 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:28:30,064 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:28:30,065 - SCPFintentInstallWithdrawLat - WARNING - ''[0m
+2020-07-27 03:28:31,321 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:28:31,321 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:28:31,321 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:28:31,428 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:28:31,429 - SCPFintentInstallWithdrawLat - WARNING - ''[0m
+2020-07-27 03:28:32,689 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:28:32,689 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:28:32,689 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:28:32,796 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:28:32,797 - SCPFintentInstallWithdrawLat - WARNING - ''[0m
+2020-07-27 03:28:34,065 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:28:34,065 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:28:34,065 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:28:34,172 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:28:34,172 - SCPFintentInstallWithdrawLat - WARNING - ''[0m
+2020-07-27 03:28:35,429 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:28:35,429 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:28:35,429 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:28:35,539 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:28:35,540 - SCPFintentInstallWithdrawLat - WARNING - ''[0m
+2020-07-27 03:28:36,797 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:28:36,797 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:28:36,797 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:28:36,904 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:28:36,904 - SCPFintentInstallWithdrawLat - WARNING - ''[0m
+2020-07-27 03:28:38,124 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:28:38,124 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:28:38,124 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:28:38,232 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:28:38,233 - SCPFintentInstallWithdrawLat - WARNING - 'Service org.onosproject.security.AuditService not found'[0m
+2020-07-27 03:28:39,489 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:28:39,489 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:28:39,489 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:28:39,596 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:28:39,597 - SCPFintentInstallWithdrawLat - WARNING - ''[0m
+2020-07-27 03:28:40,861 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:28:40,861 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:28:40,861 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:28:40,968 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:28:40,968 - SCPFintentInstallWithdrawLat - WARNING - ''[0m
+2020-07-27 03:28:42,225 - SCPFintentInstallWithdrawLat - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 03:28:42,225 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 03:28:42,226 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-27 03:28:42,332 - SCPFintentInstallWithdrawLat - ERROR - Error parsing nodes output[0m
+[93m2020-07-27 03:28:42,332 - SCPFintentInstallWithdrawLat - WARNING - ''[0m
+[95m2020-07-27 03:28:43,335 - SCPFintentInstallWithdrawLat - DEBUG - <bound method Cluster.nodesCheck of Cluster[{ONOS1:192.168.171.28, Configured - Active}, {ONOS2:192.168.171.5, Not Configured - Inactive}, {ONOS3:192.168.171.24, Not Configured - Inactive}; Atomix Nodes:{ONOS1:192.168.171.28}]> was retried 89 times.[0m
+2020-07-27 03:28:43,335 - SCPFintentInstallWithdrawLat - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+[91m2020-07-27 03:28:43,335 - SCPFintentInstallWithdrawLat - ERROR - Not all ONOS nodes are in READY state[0m
+
+[REPORT] [27 Jul 2020 03:28:43] Not all ONOS nodes are in READY state
+[93m2020-07-27 03:28:43,336 - SCPFintentInstallWithdrawLat - WARNING - Assertion Failed[0m
+2020-07-27 03:28:43,589 - SCPFintentInstallWithdrawLat - INFO - Command 'onos:scr-list | grep -v ACTIVE' sent to ONOScli1.
+[95m2020-07-27 03:28:43,589 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'onos:scr-list | grep -v ACTIVE'
+SENT COMMAND STRING WAS: 'onos:scr-list | grep -v ACTIVE'[0m
+[95m2020-07-27 03:28:43,590 - SCPFintentInstallWithdrawLat - DEBUG - REGEX PATTERN SET TO: 'grep -v ACTIVE'
+SENT COMMAND STRING WAS: 'onos:scr-list | grep -v ACTIVE'[0m
+[95m2020-07-27 03:28:43,697 - SCPFintentInstallWithdrawLat - DEBUG - ONOS1 components not ACTIVE: 
+[0m
+[91m2020-07-27 03:28:43,697 - SCPFintentInstallWithdrawLat - ERROR - Failed to start ONOS, stopping test[0m
+
+*****************************
+ Result: Failed 
+*****************************
+
+
+
+*************************************
+	Test Execution Summary
+
+************************************* 
+
+ Test Start           : 27 Jul 2020 03:25:15
+ Test End             : 27 Jul 2020 03:28:43
+ Execution Time       : 0:03:28.268780
+ Total Tests Planned  : 5
+ Total Tests Run      : 2
+ Total Pass           : 1
+ Total Fail           : 1
+ Total No Result      : 0
+ Success Percentage   : 50%
+ Execution Percentage : 40%
+
+ Case Failed          : [1]
+ Case Executed        : [0, 1]
+ Case Not Executed    : [2, 1, 2]
+Disconnecting from ONOScli3: <class 'drivers.common.cli.onosclidriver.OnosCliDriver'>
+Disconnecting from ONOSserver3: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from ONOSserver2: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from ONOSserver1: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from ONOSrest2: <class 'drivers.common.api.controller.onosrestdriver.OnosRestDriver'>
+Disconnecting from ONOSrest1: <class 'drivers.common.api.controller.onosrestdriver.OnosRestDriver'>
+Disconnecting from ONOSbench3: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from ONOSrest3: <class 'drivers.common.api.controller.onosrestdriver.OnosRestDriver'>
+Disconnecting from ONOSbench1: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from ONOScli2: <class 'drivers.common.cli.onosclidriver.OnosCliDriver'>
+Disconnecting from ONOScli1: <class 'drivers.common.cli.onosclidriver.OnosCliDriver'>
+Disconnecting from ONOSbench2: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from ONOScell: <class 'drivers.common.cli.onosclusterdriver.OnosClusterDriver'>
+ubuntu@manage:~/OnosSystemTest/TestON/bin$ 
+ubuntu@manage:~/OnosSystemTest/TestON/bin$ exit
+logout

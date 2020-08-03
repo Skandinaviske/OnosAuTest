@@ -1,0 +1,239 @@
+Last login: Mon Jul 27 21:11:45 2020 from 174.114.234.237
+cell threeNodeDemo; cd ~/OnosSystemTest/TestON/bin/; ./cli.py run PLATdockertest
+
+exit
+
+ubuntu@manage:~$ cell threeNodeDemo; cd ~/OnosSystemTest/TestON/bin/; ./cli.py ruun PLATdockertest
+[01;31m[KONOS_CELL[m[K=threeNodeDemo
+OCC1=192.168.171.28
+OCC2=192.168.171.5
+OCC3=192.168.171.24
+OC1=192.168.171.28
+OC2=192.168.171.5
+OC3=192.168.171.24
+OCI=192.168.171.28
+OCN=192.168.171.17
+ONOS_APPS=gui,drivers,openflow,proxyarp
+ONOS_GROUP=sdn
+ONOS_MN_PY=/home/ubuntu/onos/tools/dev/mininet/onos.py
+ONOS_SCENARIOS=/home/ubuntu/onos/tools/test/scenarios
+ONOS_USER=sdn
+ONOS_WEB_PASS=rocks
+ONOS_WEB_USER=onos
+
+                                +----------------+
+------------------------------ { Script And Files }  ------------------------------
+                                +----------------+
+
+	Script Log File : /home/ubuntu/OnosSystemTest/TestON/logs/PLATdockertest_27_Jul_2020_21_11_49/PLATdockertest_27_Jul_2020_21_11_49.log
+	Report Log File : /home/ubuntu/OnosSystemTest/TestON/logs/PLATdockertest_27_Jul_2020_21_11_49/PLATdockertest_27_Jul_2020_21_11_49.rpt
+	ONOSbenchDocker Session Log : /home/ubuntu/OnosSystemTest/TestON/logs/PLATdockertest_27_Jul_2020_21_11_49/ONOSbenchDocker.session
+	Mininet1 Session Log : /home/ubuntu/OnosSystemTest/TestON/logs/PLATdockertest_27_Jul_2020_21_11_49/Mininet1.session
+	ONOSbenchCli Session Log : /home/ubuntu/OnosSystemTest/TestON/logs/PLATdockertest_27_Jul_2020_21_11_49/ONOSbenchCli.session
+	ONOSbenchRest Session Log : /home/ubuntu/OnosSystemTest/TestON/logs/PLATdockertest_27_Jul_2020_21_11_49/ONOSbenchRest.session
+	Test Script : /home/ubuntu/OnosSystemTest/TestON/tests/PLAT/PLATdockertest/PLATdockertest.py
+	Test Params : /home/ubuntu/OnosSystemTest/TestON/tests/PLAT/PLATdockertest/PLATdockertest.params
+	Topology : /home/ubuntu/OnosSystemTest/TestON/tests/PLAT/PLATdockertest/PLATdockertest.topo
+                              +------------------+
+---------------------------  { Script Exec Params }  ---------------------------
+                              +------------------+
+
+	
+	'GIT': 
+	'pull': 'False'
+	 'branch': 'master'
+	
+	 'testcases': '0
+	[1
+	1000
+	10
+	110
+	120
+	130
+	140
+	299
+	900
+	1000]*12
+	1001'
+	 'SCALE': 
+	'nodelist': 'onos1
+	onos2
+	onos3'
+	
+	 'SLEEP': 
+	'startup': '60'
+	
+	 'CASE110': 
+	'debug': 'on'
+	 'apps': 'org.onosproject.proxyarp
+	org.onosproject.fwd
+	org.onosproject.openflow'
+	 'clustercmdpath': '../tests/PLAT/PLATdockertest/dependencies'
+	 'mnCmd': 'mn --topo tree
+	2 --controller remote
+	ip='
+	 'swDPID': 'of:0000000000000002'
+	
+	 'ENV': 
+	'cellApps': 'drivers
+	openflow
+	proxyarp
+	mobility'
+	 'cellName': 'productionCell'
+	
+	 'CTRL': 
+	'port': '6653'
+	
+	 'GRAPH': 
+	'nodeCluster': 'BM'
+	 'builds': '20'
+	
+	 'DOCKER': 
+	'repo': 'onosproject/onos'
+	 'password': 'karaf'
+	 'tag': 'latest'
+	 'user': 'karaf'
+	
+	
+
+                               +---------------+
+----------------------------- { Components Used }  -----------------------------
+                               +---------------+
+	ONOSbenchDocker
+	Mininet1
+	ONOSbenchCli
+	ONOSbenchRest
+
+
+                              +--------+
+---------------------------- { Topology }  ----------------------------
+                              +--------+
+
+	
+	'ONOSbenchDocker': 
+	'connect_order': '3'
+	 'host': 'localhost'
+	 'user': 'sdn'
+	 'COMPONENTS': 
+	'prompt': None
+	
+	 'password': 'rocks'
+	 'type': 'DockerApiDriver'
+	
+	 'Mininet1': 
+	'connect_order': '5'
+	 'host': 'OCN'
+	 'user': 'sdn'
+	 'COMPONENTS': 
+	'home': '~/mininet/custom/'
+	 'prompt': None
+	
+	 'password': 'rocks'
+	 'type': 'MininetCliDriver'
+	
+	 'ONOSbenchCli': 
+	'connect_order': '1'
+	 'host': 'localhost'
+	 'user': 'sdn'
+	 'COMPONENTS': 
+	'karaf_username': None
+	 'karaf_password': None
+	 'prompt': None
+	
+	 'password': 'rocks'
+	 'type': 'OnosCliDriver'
+	
+	 'ONOSbenchRest': 
+	'connect_order': '2'
+	 'host': 'localhost'
+	 'user': 'karaf'
+	 'COMPONENTS': 
+	'prompt': None
+	
+	 'password': 'karaf'
+	 'type': 'OnosRestDriver'
+	 'port': '8181'
+	
+	
+------------------------------------------------------------
+
+
+******************************
+ CASE INIT 
+******************************
+
+['ONOSbenchCli', 'ONOSbenchRest', 'ONOSbenchDocker', 'Mininet1']
+2020-07-27 21:11:49,748 - PLATdockertest - INFO - Creating component Handle: ONOSbenchCli
+2020-07-27 21:11:49,763 - PLATdockertest - INFO - ONOSbenchCli: Trying to connect to localhost
+2020-07-27 21:11:50,786 - PLATdockertest - INFO - Password not required logged in
+2020-07-27 21:11:51,093 - PLATdockertest - INFO - Creating component Handle: ONOSbenchRest
+2020-07-27 21:11:51,168 - PLATdockertest - INFO - ONOSbenchRest: ip set to localhost
+2020-07-27 21:11:51,169 - PLATdockertest - INFO - Creating component Handle: ONOSbenchDocker
+2020-07-27 21:11:51,209 - PLATdockertest - INFO - Creating component Handle: Mininet1
+2020-07-27 21:11:52,210 - PLATdockertest - INFO - Password not required logged in
+2020-07-27 21:11:52,419 - PLATdockertest - INFO - Connection successful to the host sdn@192.168.171.17
+
+******************************
+ Result summary for Testcase0
+******************************
+
+[95m2020-07-27 21:11:52,429 - PLATdockertest - DEBUG - Case Executed       : [0][0m
+[95m2020-07-27 21:11:52,429 - PLATdockertest - DEBUG - Case to be executed : [1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1001][0m
+[2020-07-27 21:11:52.429779] [PLATdockertest] [CASE]  Pull all docker images and get a list of image tags
+Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post http://%2Fvar%2Frun%2Fdocker.sock/v1.40/images/create?fromImage=onosproject%2Fonos: dial unix /var/run/docker.sock: connect: permission denied
+[91m2020-07-27 21:11:52,537 - PLATdockertest - ERROR - ('Connection aborted.', error(13, 'Permission denied'))[0m
+Traceback (most recent call last):
+  File "/home/ubuntu/OnosSystemTest/TestON/drivers/common/api/dockerapidriver.py", line 68, in getListOfImages
+    imageList = list( self.dockerClient.images( name=repo ) )
+  File "/usr/local/lib/python2.7/dist-packages/docker/api/image.py", line 40, in images
+    res = self._result(self._get(self._url("/images/json"), params=params),
+  File "/usr/local/lib/python2.7/dist-packages/docker/utils/decorators.py", line 47, in inner
+    return f(self, *args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/docker/client.py", line 139, in _get
+    return self.get(url, **self._set_request_timeout(kwargs))
+  File "/usr/local/lib/python2.7/dist-packages/requests/sessions.py", line 476, in get
+    return self.request('GET', url, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/requests/sessions.py", line 464, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/requests/sessions.py", line 576, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/requests/adapters.py", line 415, in send
+    raise ConnectionError(err, request=request)
+ConnectionError: ('Connection aborted.', error(13, 'Permission denied'))
+[93m2020-07-27 21:11:52,539 - PLATdockertest - WARNING - Error trying to get step number. It is likely between step 0 and step 1[0m
+[91m2020-07-27 21:11:52,539 - PLATdockertest - ERROR - 
+Exception in the following section of code: 0.<IndexError>: <IndexError>[0m
+[91m2020-07-27 21:11:52,539 - PLATdockertest - ERROR - <type 'exceptions.TypeError'>'NoneType' object is not iterable[0m
+
+ *****************************
+
+ Result: No Assertion Called 
+*****************************
+
+
+
+*************************************
+	Test Execution Summary
+
+************************************* 
+
+ Test Start           : 27 Jul 2020 21:11:49
+ Test End             : 27 Jul 2020 21:11:52
+ Execution Time       : 0:00:02.793106
+ Total Tests Planned  : 122
+ Total Tests Run      : 1
+ Total Pass           : 0
+ Total Fail           : 0
+ Total No Result      : 1
+ Success Percentage   : 0%
+ Execution Percentage : 0%
+
+ Case Executed        : [0]
+ Case Not Executed    : [1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1, 1000, 10, 110, 120, 130, 140, 299, 900, 1000, 1001]
+Disconnecting from Mininet1: <class 'drivers.common.cli.emulator.mininetclidriver.MininetCliDriver'>
+Disconnecting from ONOSbenchDocker: <class 'drivers.common.api.dockerapidriver.DockerApiDriver'>
+Disconnecting from ONOSbenchRest: <class 'drivers.common.api.controller.onosrestdriver.OnosRestDriver'>
+Disconnecting from ONOSbenchCli: <class 'drivers.common.cli.onosclidriver.OnosCliDriver'>
+ubuntu@manage:~/OnosSystemTest/TestON/bin$ 
+ubuntu@manage:~/OnosSystemTest/TestON/bin$ exit
+logout

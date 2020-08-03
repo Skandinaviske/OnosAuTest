@@ -1,0 +1,2802 @@
+Last login: Fri Jul 24 22:07:04 2020 from 174.114.234.237
+cell threeNodeDemo; cd ~/OnosSystemTest/TestON/bin/; ./cli.py run VPLSBasic
+
+exit
+
+ubuntu@manage:~$ cell threeNodeDemo; cd ~/OnosSystemTest/TestON/bin/; ./cli.py ruun VPLSBasic
+[01;31m[KONOS_CELL[m[K=threeNodeDemo
+OCC1=192.168.171.28
+OCC2=192.168.171.5
+OCC3=192.168.171.24
+OC1=192.168.171.28
+OC2=192.168.171.5
+OC3=192.168.171.24
+OCI=192.168.171.28
+OCN=192.168.171.17
+ONOS_APPS=gui,drivers,openflow,proxyarp
+ONOS_GROUP=sdn
+ONOS_MN_PY=/home/ubuntu/onos/tools/dev/mininet/onos.py
+ONOS_SCENARIOS=/home/ubuntu/onos/tools/test/scenarios
+ONOS_USER=sdn
+ONOS_WEB_PASS=rocks
+ONOS_WEB_USER=onos
+
+                                +----------------+
+------------------------------ { Script And Files }  ------------------------------
+                                +----------------+
+
+	Script Log File : /home/ubuntu/OnosSystemTest/TestON/logs/VPLSBasic_24_Jul_2020_22_07_09/VPLSBasic_24_Jul_2020_22_07_09.log
+	Report Log File : /home/ubuntu/OnosSystemTest/TestON/logs/VPLSBasic_24_Jul_2020_22_07_09/VPLSBasic_24_Jul_2020_22_07_09.rpt
+	Mininet1 Session Log : /home/ubuntu/OnosSystemTest/TestON/logs/VPLSBasic_24_Jul_2020_22_07_09/Mininet1.session
+	ONOScell Session Log : /home/ubuntu/OnosSystemTest/TestON/logs/VPLSBasic_24_Jul_2020_22_07_09/ONOScell.session
+	Test Script : /home/ubuntu/OnosSystemTest/TestON/tests/USECASE/VPLS/VPLSBasic/VPLSBasic.py
+	Test Params : /home/ubuntu/OnosSystemTest/TestON/tests/USECASE/VPLS/VPLSBasic/VPLSBasic.params
+	Topology : /home/ubuntu/OnosSystemTest/TestON/tests/USECASE/VPLS/VPLSBasic/VPLSBasic.topo
+                              +------------------+
+---------------------------  { Script Exec Params }  ---------------------------
+                              +------------------+
+
+	
+	'wrapper2': 'vpls'
+	 'GIT': 
+	'pull': 'False'
+	 'branch': 'master'
+	
+	 'CTRL': 
+	'port': '6653'
+	
+	 'GRAPH': 
+	'nodeCluster': 'BM'
+	 'builds': '20'
+	
+	 'testcases': '1
+	2
+	10
+	11
+	12
+	13
+	14
+	15
+	16
+	11'
+	 'ENV': 
+	'cellApps': 'drivers
+	openflow
+	vpls'
+	 'cellName': 'vpls'
+	 'cellUser': 'sdn'
+	
+	 'path': '/tests/USECASE/VPLS/VPLSfailsafe/dependencies/'
+	 'num_controllers': '3'
+	 'DEPENDENCY': 
+	'wrapper1': 'startUp'
+	 'topology': '~/onos/tools/test/topos/vpls.json'
+	
+	 'SLEEP': 
+	'netcfg': '10'
+	 'startup': '10'
+	
+	 'vpls': 
+	'hosts': '6'
+	 'name': 'org.onosproject.vpls'
+	
+	
+
+                               +---------------+
+----------------------------- { Components Used }  -----------------------------
+                               +---------------+
+	Mininet1
+	ONOScell
+
+
+                              +--------+
+---------------------------- { Topology }  ----------------------------
+                              +--------+
+
+	
+	'Mininet1': 
+	'connect_order': '2'
+	 'host': 'OCN'
+	 'user': 'sdn'
+	 'COMPONENTS': 
+	'home': '~/mininet/custom/'
+	 'prompt': None
+	
+	 'password': 'rocks'
+	 'type': 'MininetCliDriver'
+	
+	 'ONOScell': 
+	'connect_order': '1'
+	 'host': 'localhost'
+	 'user': 'sdn'
+	 'COMPONENTS': 
+	'web_user': None
+	 'diff_clihost': None
+	 'web_pass': None
+	 'prompt': None
+	 'cluster_name': None
+	 'onos_home': None
+	 'nodes': '3'
+	 'karaf_password': None
+	 'karaf_username': None
+	 'rest_port': None
+	
+	 'home': None
+	 'password': 'rocks'
+	 'type': 'OnosClusterDriver'
+	
+	
+------------------------------------------------------------
+
+
+******************************
+ CASE INIT 
+******************************
+
+['ONOScell', 'Mininet1']
+2020-07-24 22:07:09,047 - VPLSBasic - INFO - Creating component Handle: ONOScell
+2020-07-24 22:07:09,053 - VPLSBasic - INFO - ONOScell: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5'] ONOS IPs
+2020-07-24 22:07:09,053 - VPLSBasic - INFO - ONOScell: Trying to connect to localhost
+2020-07-24 22:07:10,058 - VPLSBasic - INFO - Password not required logged in
+[95m2020-07-24 22:07:10,376 - VPLSBasic - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '3', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosCliDriver', 'host': 'localhost'}[0m
+2020-07-24 22:07:10,376 - VPLSBasic - INFO - Creating component Handle: ONOScli1
+2020-07-24 22:07:10,387 - VPLSBasic - INFO - ONOScli1: Trying to connect to localhost
+2020-07-24 22:07:11,528 - VPLSBasic - INFO - Password not required logged in
+[95m2020-07-24 22:07:11,835 - VPLSBasic - DEBUG - {'connect_order': '1', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '3', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosClusterDriver', 'host': 'localhost'}[0m
+[95m2020-07-24 22:07:11,835 - VPLSBasic - DEBUG - {'connect_order': '2', 'user': 'onos', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '3', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosRestDriver', 'host': '192.168.171.28', 'port': '8181'}[0m
+2020-07-24 22:07:11,835 - VPLSBasic - INFO - Creating component Handle: ONOSrest1
+2020-07-24 22:07:11,918 - VPLSBasic - INFO - ONOSrest1: ip set to 192.168.171.28
+[95m2020-07-24 22:07:11,918 - VPLSBasic - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '3', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': 'localhost'}[0m
+2020-07-24 22:07:11,918 - VPLSBasic - INFO - Creating component Handle: ONOSbench1
+2020-07-24 22:07:11,927 - VPLSBasic - INFO - ONOSbench1: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5'] ONOS IPs
+2020-07-24 22:07:11,927 - VPLSBasic - INFO - ONOSbench1: Trying to connect to localhost
+2020-07-24 22:07:13,089 - VPLSBasic - INFO - Password not required logged in
+[95m2020-07-24 22:07:13,411 - VPLSBasic - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '3', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': '192.168.171.28'}[0m
+2020-07-24 22:07:13,411 - VPLSBasic - INFO - Creating component Handle: ONOSserver1
+2020-07-24 22:07:13,417 - VPLSBasic - INFO - ONOSserver1: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5'] ONOS IPs
+2020-07-24 22:07:13,417 - VPLSBasic - INFO - ONOSserver1: Trying to connect to 192.168.171.28
+2020-07-24 22:07:14,230 - VPLSBasic - INFO - Password not required logged in
+[95m2020-07-24 22:07:14,550 - VPLSBasic - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '3', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosCliDriver', 'host': 'localhost'}[0m
+2020-07-24 22:07:14,550 - VPLSBasic - INFO - Creating component Handle: ONOScli2
+2020-07-24 22:07:14,555 - VPLSBasic - INFO - ONOScli2: Trying to connect to localhost
+2020-07-24 22:07:15,671 - VPLSBasic - INFO - Password not required logged in
+[95m2020-07-24 22:07:15,978 - VPLSBasic - DEBUG - {'connect_order': '1', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '3', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosClusterDriver', 'host': 'localhost'}[0m
+[95m2020-07-24 22:07:15,978 - VPLSBasic - DEBUG - {'connect_order': '2', 'user': 'onos', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '3', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosRestDriver', 'host': '192.168.171.5', 'port': '8181'}[0m
+2020-07-24 22:07:15,978 - VPLSBasic - INFO - Creating component Handle: ONOSrest2
+2020-07-24 22:07:15,984 - VPLSBasic - INFO - ONOSrest2: ip set to 192.168.171.5
+[95m2020-07-24 22:07:15,985 - VPLSBasic - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '3', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': 'localhost'}[0m
+2020-07-24 22:07:15,985 - VPLSBasic - INFO - Creating component Handle: ONOSbench2
+2020-07-24 22:07:15,991 - VPLSBasic - INFO - ONOSbench2: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5'] ONOS IPs
+2020-07-24 22:07:15,991 - VPLSBasic - INFO - ONOSbench2: Trying to connect to localhost
+2020-07-24 22:07:17,115 - VPLSBasic - INFO - Password not required logged in
+[95m2020-07-24 22:07:17,420 - VPLSBasic - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '3', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': '192.168.171.5'}[0m
+2020-07-24 22:07:17,420 - VPLSBasic - INFO - Creating component Handle: ONOSserver2
+2020-07-24 22:07:17,425 - VPLSBasic - INFO - ONOSserver2: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5'] ONOS IPs
+2020-07-24 22:07:17,426 - VPLSBasic - INFO - ONOSserver2: Trying to connect to 192.168.171.5
+2020-07-24 22:07:18,221 - VPLSBasic - INFO - Password not required logged in
+[95m2020-07-24 22:07:18,527 - VPLSBasic - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '3', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosCliDriver', 'host': 'localhost'}[0m
+2020-07-24 22:07:18,528 - VPLSBasic - INFO - Creating component Handle: ONOScli3
+2020-07-24 22:07:18,532 - VPLSBasic - INFO - ONOScli3: Trying to connect to localhost
+2020-07-24 22:07:19,440 - VPLSBasic - INFO - Password not required logged in
+[95m2020-07-24 22:07:19,745 - VPLSBasic - DEBUG - {'connect_order': '1', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '3', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosClusterDriver', 'host': 'localhost'}[0m
+[95m2020-07-24 22:07:19,746 - VPLSBasic - DEBUG - {'connect_order': '2', 'user': 'onos', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '3', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosRestDriver', 'host': '192.168.171.24', 'port': '8181'}[0m
+2020-07-24 22:07:19,746 - VPLSBasic - INFO - Creating component Handle: ONOSrest3
+2020-07-24 22:07:19,752 - VPLSBasic - INFO - ONOSrest3: ip set to 192.168.171.24
+[95m2020-07-24 22:07:19,753 - VPLSBasic - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '3', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': 'localhost'}[0m
+2020-07-24 22:07:19,753 - VPLSBasic - INFO - Creating component Handle: ONOSbench3
+2020-07-24 22:07:19,758 - VPLSBasic - INFO - ONOSbench3: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5'] ONOS IPs
+2020-07-24 22:07:19,758 - VPLSBasic - INFO - ONOSbench3: Trying to connect to localhost
+2020-07-24 22:07:20,976 - VPLSBasic - INFO - Password not required logged in
+[95m2020-07-24 22:07:21,294 - VPLSBasic - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '3', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': '192.168.171.24'}[0m
+2020-07-24 22:07:21,294 - VPLSBasic - INFO - Creating component Handle: ONOSserver3
+2020-07-24 22:07:21,300 - VPLSBasic - INFO - ONOSserver3: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5'] ONOS IPs
+2020-07-24 22:07:21,300 - VPLSBasic - INFO - ONOSserver3: Trying to connect to 192.168.171.24
+2020-07-24 22:07:22,053 - VPLSBasic - INFO - Password not required logged in
+2020-07-24 22:07:22,360 - VPLSBasic - INFO - Creating component Handle: Mininet1
+2020-07-24 22:07:23,489 - VPLSBasic - INFO - Password not required logged in
+2020-07-24 22:07:23,694 - VPLSBasic - INFO - Connection successful to the host sdn@192.168.171.17
+
+******************************
+ Result summary for Testcase1
+******************************
+
+[95m2020-07-24 22:07:23,700 - VPLSBasic - DEBUG - Case Executed       : [1][0m
+[95m2020-07-24 22:07:23,700 - VPLSBasic - DEBUG - Case to be executed : [2, 10, 11, 12, 13, 14, 15, 16, 11][0m
+[2020-07-24 22:07:23.701722] [VPLSBasic] [CASE]  Constructing test variables and building ONOS package
+[2020-07-24 22:07:23.702752] [VPLSBasic] [STEP]  1.1: Constructing test variables
+[2020-07-24 22:07:23.704424] [VPLSBasic] [CASE]  Pull onos branch and build onos on Teststation.
+2020-07-24 22:07:23,705 - VPLSBasic - INFO - Skipped git checkout and pull as they are disabled in params file
+2020-07-24 22:07:23,706 - VPLSBasic - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-24 22:07:23,706 - VPLSBasic - INFO - Successfully construct test variables 
+2020-07-24 22:07:23,706 - VPLSBasic - INFO - Assertion Passed
+2020-07-24 22:07:23,706 - VPLSBasic - INFO - ONOSbench1 home is ~/onos
+ONOSbench1: 
+
+commit aa5a3af99f6c0558c6e3f923036c0ef3a0d9bd12 (HEAD -> master, origin/master, origin/HEAD)
+Author:     pierventre <pier@opennetworking.org>
+AuthorDate: Tue Jun 30 22:04:16 2020 +0200
+Commit:     pierventre <pier@opennetworking.org>
+CommitDate: Thu Jul 9 10:56:21 2020 +0200
+
+    [AETHER-255] Tost profile for bazel build (onos and onos-package)
+sdn@manage:~/onos$
+[2020-07-24 22:07:24.258606] [VPLSBasic] [CASE]  Starting up 3 node(s) ONOS cluster
+2020-07-24 22:07:24,259 - VPLSBasic - INFO - ONOS cluster size = 3
+[95m2020-07-24 22:07:24,259 - VPLSBasic - DEBUG - Apps: drivers,openflow,vpls[0m
+2020-07-24 22:07:24,260 - VPLSBasic - INFO - Atomix Cluster Size = 3 
+vpls                                            0%    0     0.0KB/s   --:-- ETAvpls                                          100%  350   726.5KB/s   00:00    
+vpls                                            0%    0     0.0KB/s   --:-- ETAvpls                                          100%  350   819.8KB/s   00:00    
+vpls                                            0%    0     0.0KB/s   --:-- ETAvpls                                          100%  350   565.9KB/s   00:00    
+[2020-07-24 22:07:25.681996] [VPLSBasic] [STEP]  1.2: Apply cell to environment
+2020-07-24 22:07:25,958 - VPLSBasic - INFO - ONOSbench1: Successfully set cell:  cell vpls
+[01;31m[KONOS_CELL[m[K=vpls
+OCC1=192.168.171.28
+OCC2=192.168.171.5
+OCC3=192.168.171.24
+OC1=192.168.171.28
+OC2=192.168.171.5
+OC3=192.168.171.24
+OCI=192.168.171.28
+OCN=192.168.171.17
+ONOS_APPS=drivers,openflow,vpls
+ONOS_GROUP=sdn
+ONOS_MN_PY=/home/sdn/onos/tools/dev/mininet/onos.py
+ONOS_NIC=192.168.171.*
+ONOS_SCENARIOS=/home/sdn/onos/tools/test/scenarios
+ONOS_USER=sdn
+ONOS_USE_SSH=true
+ONOS_WEB_PASS=rocks
+ONOS_WEB_USER=onos
+sdn@manage:~/onos$
+2020-07-24 22:07:25,959 - VPLSBasic - INFO - ONOSbench2: Successfully set cell:  cell vpls
+[01;31m[KONOS_CELL[m[K=vpls
+OCC1=192.168.171.28
+OCC2=192.168.171.5
+OCC3=192.168.171.24
+OC1=192.168.171.28
+OC2=192.168.171.5
+OC3=192.168.171.24
+OCI=192.168.171.28
+OCN=192.168.171.17
+ONOS_APPS=drivers,openflow,vpls
+ONOS_GROUP=sdn
+ONOS_MN_PY=/home/sdn/onos/tools/dev/mininet/onos.py
+ONOS_NIC=192.168.171.*
+ONOS_SCENARIOS=/home/sdn/onos/tools/test/scenarios
+ONOS_USER=sdn
+ONOS_USE_SSH=true
+ONOS_WEB_PASS=rocks
+ONOS_WEB_USER=onos
+sdn@manage:~/onos$
+2020-07-24 22:07:26,012 - VPLSBasic - INFO - ONOSbench3: Successfully set cell:  cell vpls
+[01;31m[KONOS_CELL[m[K=vpls
+OCC1=192.168.171.28
+OCC2=192.168.171.5
+OCC3=192.168.171.24
+OC1=192.168.171.28
+OC2=192.168.171.5
+OC3=192.168.171.24
+OCI=192.168.171.28
+OCN=192.168.171.17
+ONOS_APPS=drivers,openflow,vpls
+ONOS_GROUP=sdn
+ONOS_MN_PY=/home/sdn/onos/tools/dev/mininet/onos.py
+ONOS_NIC=192.168.171.*
+ONOS_SCENARIOS=/home/sdn/onos/tools/test/scenarios
+ONOS_USER=sdn
+ONOS_USE_SSH=true
+ONOS_WEB_PASS=rocks
+ONOS_WEB_USER=onos
+sdn@manage:~/onos$
+2020-07-24 22:07:26,260 - VPLSBasic - INFO - ONOSbench1: Successfully set cell:  cell vpls
+[01;31m[KONOS_CELL[m[K=vpls
+OCC1=192.168.171.28
+OCC2=192.168.171.5
+OCC3=192.168.171.24
+OC1=192.168.171.28
+OC2=192.168.171.5
+OC3=192.168.171.24
+OCI=192.168.171.28
+OCN=192.168.171.17
+ONOS_APPS=drivers,openflow,vpls
+ONOS_GROUP=sdn
+ONOS_MN_PY=/home/sdn/onos/tools/dev/mininet/onos.py
+ONOS_NIC=192.168.171.*
+ONOS_SCENARIOS=/home/sdn/onos/tools/test/scenarios
+ONOS_TOPO=default
+ONOS_USER=sdn
+ONOS_USE_SSH=true
+ONOS_WEB_PASS=rocks
+ONOS_WEB_USER=onos
+sdn@manage:~/onos$
+2020-07-24 22:07:29,489 - VPLSBasic - INFO - Verify cell returned:  onos-verify-cell
+192.168.171.17: node
+192.168.171.24: node-3
+192.168.171.28: node-1
+192.168.171.5: node-2
+sdn@manage:~/onos$
+2020-07-24 22:07:29,586 - VPLSBasic - INFO - Verify cell returned:  onos-verify-cell
+192.168.171.17: node
+192.168.171.24: node-3
+192.168.171.28: node-1
+192.168.171.5: node-2
+sdn@manage:~/onos$
+2020-07-24 22:07:29,593 - VPLSBasic - INFO - Verify cell returned:  onos-verify-cell
+192.168.171.17: node
+192.168.171.24: node-3
+192.168.171.28: node-1
+192.168.171.5: node-2
+sdn@manage:~/onos$
+2020-07-24 22:07:29,593 - VPLSBasic - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-24 22:07:29,594 - VPLSBasic - INFO - Successfully applied cell to environment
+2020-07-24 22:07:29,594 - VPLSBasic - INFO - Assertion Passed
+2020-07-24 22:07:29,594 - VPLSBasic - INFO - Safety check, killing all Atomix processes
+2020-07-24 22:07:30,512 - VPLSBasic - INFO - Atomix instance 192.168.171.24 was killed
+2020-07-24 22:07:30,563 - VPLSBasic - INFO - Atomix instance 192.168.171.28 was killed
+2020-07-24 22:07:30,573 - VPLSBasic - INFO - Atomix instance 192.168.171.5 was killed
+2020-07-24 22:07:30,574 - VPLSBasic - INFO - Safety check, killing all ONOS processes
+2020-07-24 22:07:31,466 - VPLSBasic - INFO - ONOS instance 192.168.171.24 was killed
+2020-07-24 22:07:31,541 - VPLSBasic - INFO - ONOS instance 192.168.171.28 was killed
+2020-07-24 22:07:31,560 - VPLSBasic - INFO - ONOS instance 192.168.171.5 was killed
+[2020-07-24 22:07:31.560916] [VPLSBasic] [STEP]  1.3: Uninstalling Atomix
+2020-07-24 22:07:32,447 - VPLSBasic - INFO - Atomix 192.168.171.24 was uninstalled
+2020-07-24 22:07:32,482 - VPLSBasic - INFO - Atomix 192.168.171.28 was uninstalled
+2020-07-24 22:07:32,596 - VPLSBasic - INFO - Atomix 192.168.171.5 was uninstalled
+2020-07-24 22:07:32,596 - VPLSBasic - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-24 22:07:32,597 - VPLSBasic - INFO - Successfully uninstalled Atomix
+2020-07-24 22:07:32,597 - VPLSBasic - INFO - Assertion Passed
+[2020-07-24 22:07:32.597409] [VPLSBasic] [STEP]  1.4: Uninstalling ONOS package
+2020-07-24 22:07:34,015 - VPLSBasic - INFO - ONOS 192.168.171.24 was uninstalled
+2020-07-24 22:07:34,140 - VPLSBasic - INFO - ONOS 192.168.171.5 was uninstalled
+2020-07-24 22:09:08,510 - VPLSBasic - INFO - ONOS 192.168.171.28 was uninstalled
+2020-07-24 22:09:08,511 - VPLSBasic - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-24 22:09:08,511 - VPLSBasic - INFO - Successfully uninstalled ONOS package
+2020-07-24 22:09:08,511 - VPLSBasic - INFO - Assertion Passed
+[2020-07-24 22:09:08.511749] [VPLSBasic] [STEP]  1.5: Creating ONOS package
+[95m2020-07-24 22:09:12,761 - VPLSBasic - DEBUG - 
+[32mLoading:[0m 
+[1A[K[32mLoading:[0m 0 packages loaded
+[1A[K[32mAnalyzing:[0m target //:onos (1 packages loaded, 0 targets configured)
+[1A[K[32mINFO: [0mAnalyzed target //:onos (1 packages loaded, 416 targets configured).
+
+[1A[K[32mINFO: [0mFound 1 target...
+
+[1A[K
+[1A[K[32m[0 / 1][0m [Prepa] BazelWorkspaceStatusAction stable-status.txt
+[1A[K[32m[3 / 5][0m checking cached actions
+[1A[KTarget //:onos up-to-date:
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/utils/osgiwrap/osgi-jar.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/utils/osgiwrap/osgi-jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/utils/osgi/libonlab-osgi.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/utils/junit/libonlab-junit.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/utils/misc/libonlab-misc.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/utils/rest/libonlab-rest.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/core/api/libonos-api.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/core/net/libonos-core-net.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/core/common/libonos-core-common.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/core/protobuf/models/libonos-core-protobuf-models.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/core/protobuf/models/proto/libonos-core-protobuf-models-proto.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/core/store/primitives/libonos-core-primitives.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/core/store/serializers/libonos-core-serializers.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/core/store/dist/libonos-core-dist.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/core/store/persistence/libonos-core-persistence.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/cli/libonos-cli.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/drivers/utilities/libonos-drivers-utilities.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/general/device/libonos-providers-general-device.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/web/api/libonos-rest.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/tools/build/conf/libonos-build-conf.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/onos-admin.tar.gz
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/onos-test.tar.gz
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/onos.tar.gz
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/bgp/bgpio/libonos-protocols-bgp-bgpio.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/bgp/api/libonos-protocols-bgp-api.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/bgp/ctl/libonos-protocols-bgp-ctl.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/isis/api/libonos-protocols-isis-api.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/isis/ctl/libonos-protocols-isis-ctl.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/isis/isisio/libonos-protocols-isis-isisio.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/lisp/api/libonos-protocols-lisp-api.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/lisp/ctl/libonos-protocols-lisp-ctl.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/lisp/msg/libonos-protocols-lisp-msg.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/netconf/api/libonos-protocols-netconf-api.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/netconf/ctl/libonos-protocols-netconf-ctl.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/openflow/api/libonos-protocols-openflow-api.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/openflow/ctl/libonos-protocols-openflow-ctl.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/ospf/api/libonos-protocols-ospf-api.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/ospf/protocol/libonos-protocols-ospf-protocol.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/ospf/ctl/libonos-protocols-ospf-ctl.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/ovsdb/rfc/libonos-protocols-ovsdb-rfc.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/ovsdb/api/libonos-protocols-ovsdb-api.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/ovsdb/ctl/libonos-protocols-ovsdb-ctl.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/p4runtime/api/libonos-protocols-p4runtime-api.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/p4runtime/model/libonos-protocols-p4runtime-model.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/pcep/pcepio/libonos-protocols-pcep-pcepio.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/pcep/server/api/libonos-protocols-pcep-server-api.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/pcep/server/ctl/libonos-protocols-pcep-server-ctl.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/rest/api/libonos-protocols-rest-api.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/rest/ctl/libonos-protocols-rest-ctl.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/restconf/client/api/libonos-protocols-restconf-client-api.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/restconf/client/ctl/libonos-protocols-restconf-client-ctl.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/snmp/api/libonos-protocols-snmp-api.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/snmp/ctl/libonos-protocols-snmp-ctl.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/tl1/api/libonos-protocols-tl1-api.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/tl1/ctl/libonos-protocols-tl1-ctl.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/xmpp/core/api/libonos-protocols-xmpp-core-api.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/xmpp/core/ctl/libonos-protocols-xmpp-core-ctl.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/netconf/device/libonos-providers-netconf-device.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/openflow/device/libonos-providers-openflow-device.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/openflow/packet/libonos-providers-openflow-packet.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/openflow/flow/libonos-providers-openflow-flow.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/openflow/group/libonos-providers-openflow-group.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/openflow/meter/libonos-providers-openflow-meter.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/ovsdb/device/libonos-providers-ovsdb-device.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/ovsdb/tunnel/libonos-providers-ovsdb-tunnel.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/p4runtime/packet/libonos-providers-p4runtime-packet.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/rest/device/libonos-providers-rest-device.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/snmp/device/libonos-providers-snmp-device.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/isis/cfg/libonos-providers-isis-cfg.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/isis/topology/libonos-providers-isis-topology.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/lisp/device/libonos-providers-lisp-device.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/tl1/device/libonos-providers-tl1-device.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/grpc/onos-protocols-grpc-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/gnmi/onos-protocols-gnmi-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/gnoi/onos-protocols-gnoi-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/p4runtime/onos-protocols-p4runtime-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/restconf/server/onos-protocols-restconf-server-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/xmpp/core/onos-protocols-xmpp-core-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/protocols/xmpp/pubsub/onos-protocols-xmpp-pubsub-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/general/onos-providers-general-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/bgp/onos-providers-bgp-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/bgpcep/onos-providers-bgpcep-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/host/onos-providers-host-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/hostprobing/onos-providers-hostprobing-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/isis/onos-providers-isis-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/link/onos-providers-link-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/lldp/onos-providers-lldp-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/netcfghost/onos-providers-netcfghost-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/netcfglinks/onos-providers-netcfglinks-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/netconf/onos-providers-netconf-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/null/onos-providers-null-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/openflow/app/onos-providers-openflow-app-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/openflow/base/onos-providers-openflow-base-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/openflow/message/onos-providers-openflow-message-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/ovsdb/onos-providers-ovsdb-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/ovsdb/host/onos-providers-ovsdb-host-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/ovsdb/base/onos-providers-ovsdb-base-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/p4runtime/onos-providers-p4runtime-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/pcep/onos-providers-pcep-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/rest/onos-providers-rest-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/snmp/onos-providers-snmp-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/lisp/onos-providers-lisp-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/tl1/onos-providers-tl1-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/providers/xmpp/device/onos-providers-xmpp-device-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/drivers/default/onos-drivers-default-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/drivers/arista/onos-drivers-arista-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/drivers/bmv2/onos-drivers-bmv2-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/drivers/barefoot/onos-drivers-barefoot-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/drivers/ciena/waveserver/onos-drivers-ciena-waveserver-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/drivers/ciena/c5162/onos-drivers-ciena-c5162-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/drivers/ciena/c5170/onos-drivers-ciena-c5170-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/drivers/ciena/waveserverai/onos-drivers-ciena-waveserverai-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/drivers/cisco/netconf/onos-drivers-cisco-netconf-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/drivers/cisco/rest/onos-drivers-cisco-rest-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/drivers/corsa/onos-drivers-corsa-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/drivers/czechlight/onos-drivers-czechlight-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/drivers/flowspec/onos-drivers-flowspec-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/drivers/fujitsu/onos-drivers-fujitsu-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/drivers/gnmi/onos-drivers-gnmi-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/drivers/gnoi/onos-drivers-gnoi-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/drivers/hp/onos-drivers-hp-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/drivers/huawei/onos-drivers-huawei-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/drivers/juniper/onos-drivers-juniper-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/drivers/lisp/onos-drivers-lisp-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/drivers/lumentum/onos-drivers-lumentum-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/drivers/mellanox/onos-drivers-mellanox-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/drivers/netconf/onos-drivers-netconf-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/drivers/odtn-driver/onos-drivers-odtn-driver-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/drivers/oplink/onos-drivers-oplink-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/drivers/optical/onos-drivers-optical-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/drivers/ovsdb/onos-drivers-ovsdb-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/drivers/p4runtime/onos-drivers-p4runtime-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/drivers/polatis/netconf/onos-drivers-polatis-netconf-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/drivers/polatis/openflow/onos-drivers-polatis-openflow-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/drivers/server/onos-drivers-server-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/drivers/stratum/onos-drivers-stratum-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/drivers/zte/onos-drivers-zte-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/acl/onos-apps-acl-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/artemis/onos-apps-artemis-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/bgprouter/onos-apps-bgprouter-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/castor/onos-apps-castor-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/cfm/onos-apps-cfm-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/cip/onos-apps-cip-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/config/onos-apps-config-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/configsync-netconf/onos-apps-configsync-netconf-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/configsync/onos-apps-configsync-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/cord-support/onos-apps-cord-support-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/cpman/app/onos-apps-cpman-app-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/dhcp/onos-apps-dhcp-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/dhcprelay/onos-apps-dhcprelay-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/drivermatrix/onos-apps-drivermatrix-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/events/onos-apps-events-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/evpn-route-service/onos-apps-evpn-route-service-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/evpnopenflow/onos-apps-evpnopenflow-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/faultmanagement/onos-apps-faultmanagement-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/flowanalyzer/onos-apps-flowanalyzer-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/flowspec-api/onos-apps-flowspec-api-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/fwd/onos-apps-fwd-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/gangliametrics/onos-apps-gangliametrics-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/gluon/onos-apps-gluon-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/graphitemetrics/onos-apps-graphitemetrics-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/imr/onos-apps-imr-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/inbandtelemetry/onos-apps-inbandtelemetry-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/influxdbmetrics/onos-apps-influxdbmetrics-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/intentsync/onos-apps-intentsync-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/k8s-networking/onos-apps-k8s-networking-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/k8s-node/onos-apps-k8s-node-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/kafka-integration/onos-apps-kafka-integration-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/l3vpn/onos-apps-l3vpn-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/layout/onos-apps-layout-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/linkprops/onos-apps-linkprops-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/mappingmanagement/onos-apps-mappingmanagement-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/mcast/onos-apps-mcast-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/metrics/onos-apps-metrics-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/mfwd/onos-apps-mfwd-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/mlb/onos-apps-mlb-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/mobility/onos-apps-mobility-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/netconf/client/onos-apps-netconf-client-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/network-troubleshoot/onos-apps-network-troubleshoot-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/newoptical/onos-apps-newoptical-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/nodemetrics/onos-apps-nodemetrics-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/node-diagnosis/onos-apps-node-diagnosis-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/odtn/api/onos-apps-odtn-api-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/odtn/service/onos-apps-odtn-service-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/ofagent/onos-apps-ofagent-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/onlp-demo/onos-apps-onlp-demo-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/onos-topo/onos-apps-onos-topo-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/openroadm/onos-apps-openroadm-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/openstacknetworking/onos-apps-openstacknetworking-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/openstacknetworkingui/onos-apps-openstacknetworkingui-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/openstacknode/onos-apps-openstacknode-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/openstacktelemetry/onos-apps-openstacktelemetry-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/openstacktroubleshoot/onos-apps-openstacktroubleshoot-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/openstackvtap/onos-apps-openstackvtap-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/optical-model/onos-apps-optical-model-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/optical-rest/onos-apps-optical-rest-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/p4-tutorial/mytunnel/onos-apps-p4-tutorial-mytunnel-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/p4-tutorial/pipeconf/onos-apps-p4-tutorial-pipeconf-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/packet-stats/onos-apps-packet-stats-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/packet-throttle/onos-apps-packet-throttle-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/pathpainter/onos-apps-pathpainter-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/pcep-api/onos-apps-pcep-api-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/pim/onos-apps-pim-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/portloadbalancer/onos-apps-portloadbalancer-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/powermanagement/onos-apps-powermanagement-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/proxyarp/onos-apps-proxyarp-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/rabbitmq/onos-apps-rabbitmq-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/reactive-routing/onos-apps-reactive-routing-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/restconf/onos-apps-restconf-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/roadm/onos-apps-roadm-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/route-service/onos-apps-route-service-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/routeradvertisement/onos-apps-routeradvertisement-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/routing/cpr/onos-apps-routing-cpr-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/routing/fibinstaller/onos-apps-routing-fibinstaller-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/routing/fpm/onos-apps-routing-fpm-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/scalablegateway/onos-apps-scalablegateway-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/sdnip/onos-apps-sdnip-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/simplefabric/onos-apps-simplefabric-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/test/cluster-ha/onos-apps-test-cluster-ha-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/test/demo/onos-apps-test-demo-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/test/distributed-primitives/onos-apps-test-distributed-primitives-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/test/election/onos-apps-test-election-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/test/flow-perf/onos-apps-test-flow-perf-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/test/intent-perf/onos-apps-test-intent-perf-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/test/loadtest/onos-apps-test-loadtest-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/test/messaging-perf/onos-apps-test-messaging-perf-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/test/netcfg-monitor/onos-apps-test-netcfg-monitor-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/test/primitive-perf/onos-apps-test-primitive-perf-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/test/route-scale/onos-apps-test-route-scale-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/test/transaction-perf/onos-apps-test-transaction-perf-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/tetopology/onos-apps-tetopology-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/tetunnel/onos-apps-tetunnel-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/tunnel/onos-apps-tunnel-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/virtual/onos-apps-virtual-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/virtualbng/onos-apps-virtualbng-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/vpls/onos-apps-vpls-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/vrouter/onos-apps-vrouter-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/vtn/onos-apps-vtn-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/workflow/ofoverlay/onos-apps-workflow-ofoverlay-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/workflow/onos-apps-workflow-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/yang-gui/onos-apps-yang-gui-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/yang/onos-apps-yang-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/web/gui/onos-web-gui-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/web/gui2/onos-web-gui2-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/cpman/api/libonos-apps-cpman-api.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/routing-api/libonos-apps-routing-api.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/dhcp/api/libonos-apps-dhcp-api.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/dhcp/app/libonos-apps-dhcp-app.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/imr/api/libonos-apps-imr-api.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/imr/app/libonos-apps-imr-app.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/dhcprelay/app/libonos-apps-dhcprelay-app.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/dhcprelay/web/libonos-apps-dhcprelay-web.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/fwd/libonos-apps-fwd.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/iptopology-api/libonos-apps-iptopology-api.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/kafka-integration/api/libonos-apps-kafka-integration-api.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/kafka-integration/app/libonos-apps-kafka-integration-app.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/routing/common/libonos-apps-routing-common.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/vtn/vtnrsc/libonos-apps-vtn-vtnrsc.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/vtn/sfcmgr/libonos-apps-vtn-sfcmgr.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/vtn/vtnmgr/libonos-apps-vtn-vtnmgr.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/apps/vtn/vtnweb/libonos-apps-vtn-vtnweb.jar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/pipelines/basic/onos-pipelines-basic-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/pipelines/fabric/onos-pipelines-fabric-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/models/ietf/onos-models-ietf-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/models/common/onos-models-common-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/models/huawei/onos-models-huawei-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/models/openconfig/onos-models-openconfig-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/models/openconfig-infinera/onos-models-openconfig-infinera-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/models/openconfig-odtn/onos-models-openconfig-odtn-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/models/openroadm/onos-models-openroadm-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/models/tapi/onos-models-tapi-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/models/l3vpn/onos-models-l3vpn-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/models/polatis/onos-models-polatis-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K  bazel-bin/models/ciena/waveserverai/onos-models-ciena-waveserverai-oar.oar
+[32m[5 / 5][0m checking cached actions
+[1A[K[32mINFO: [0mElapsed time: 4.080s, Critical Path: 0.41s
+[32m[5 / 5][0m checking cached actions
+[1A[K[32mINFO: [0m1 process: 1 linux-sandbox.
+[32m[5 / 5][0m checking cached actions
+[1A[K[32mINFO:[0m Build completed successfully, 2 total actions
+[1A[K[32mINFO:[0m Build completed successfully, 2 total actions
+[0msdn@manage:~/onos$[0m
+2020-07-24 22:09:12,770 - VPLSBasic - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-24 22:09:12,771 - VPLSBasic - INFO - Successfully created ONOS package
+2020-07-24 22:09:12,771 - VPLSBasic - INFO - Assertion Passed
+[2020-07-24 22:09:12.771325] [VPLSBasic] [STEP]  1.6: Installing Atomix
+2020-07-24 22:09:17,836 - VPLSBasic - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-24 22:09:17,836 - VPLSBasic - INFO - Successfully installed Atomix
+2020-07-24 22:09:17,836 - VPLSBasic - INFO - Assertion Passed
+[2020-07-24 22:09:17.836679] [VPLSBasic] [STEP]  1.7: Installing ONOS package
+2020-07-24 22:09:48,274 - VPLSBasic - INFO - ONOS was installed on 192.168.171.28 and started.
+2020-07-24 22:09:48,280 - VPLSBasic - INFO - ONOS was installed on 192.168.171.5 and started.
+2020-07-24 22:09:48,587 - VPLSBasic - INFO - ONOS was installed on 192.168.171.24 and started.
+2020-07-24 22:09:48,588 - VPLSBasic - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-24 22:09:48,588 - VPLSBasic - INFO - Successfully installed ONOS package
+2020-07-24 22:09:48,588 - VPLSBasic - INFO - Assertion Passed
+[2020-07-24 22:09:48.588665] [VPLSBasic] [STEP]  1.8: Set up ONOS secure SSH
+2020-07-24 22:09:48,807 - VPLSBasic - INFO - ONOSbench2: Secure SSH performed on 192.168.171.5
+2020-07-24 22:09:48,813 - VPLSBasic - INFO - ONOSbench1: Secure SSH performed on 192.168.171.28
+2020-07-24 22:09:48,814 - VPLSBasic - INFO - ONOSbench3: Secure SSH performed on 192.168.171.24
+2020-07-24 22:09:48,814 - VPLSBasic - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-24 22:09:48,814 - VPLSBasic - INFO - Secured ONOS ssh
+2020-07-24 22:09:48,814 - VPLSBasic - INFO - Assertion Passed
+[2020-07-24 22:09:48.814915] [VPLSBasic] [STEP]  1.9: Checking ONOS service
+2020-07-24 22:09:55,730 - VPLSBasic - INFO - ONOSbench1: 192.168.171.28 is up
+2020-07-24 22:09:57,033 - VPLSBasic - INFO - ONOSbench2: 192.168.171.5 is up
+2020-07-24 22:10:00,508 - VPLSBasic - INFO - ONOSbench3: 192.168.171.24 is up
+2020-07-24 22:10:05,513 - VPLSBasic - INFO - ONOS1 is up and ready
+2020-07-24 22:10:05,514 - VPLSBasic - INFO - ONOS2 is up and ready
+2020-07-24 22:10:05,514 - VPLSBasic - INFO - ONOS3 is up and ready
+2020-07-24 22:10:05,514 - VPLSBasic - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-24 22:10:05,514 - VPLSBasic - INFO - ONOS service is ready on all nodes
+2020-07-24 22:10:05,514 - VPLSBasic - INFO - Assertion Passed
+[2020-07-24 22:10:05.515048] [VPLSBasic] [STEP]  1.10: Starting ONOS CLI sessions
+2020-07-24 22:10:06,415 - VPLSBasic - INFO - 192.168.171.28 CLI Started successfully
+[95m2020-07-24 22:10:06,415 - VPLSBasic - DEBUG -  onos 192.168.171.28
+Welcome to Open Network Operating System (ONOS)!
+[1;31m     ____  _  ______  ____     [0m
+[1;31m    / __ \/ |/ / __ \/ __/   [0m
+[1;31m   / /_/ /    / /_/ /\ \     [0m
+[1;31m   \____/_/|_/\____/___/     [0m
+[1;31m                               [0m
+Documentation: wiki.onosproject.org      
+Tutorials:     tutorials.onosproject.org 
+Mailing lists: lists.onosproject.org     
+
+Come help out! Find out how at: contribute.onosproject.org 
+
+Hit '[1m<tab>[0m' for a list of available commands
+and '[1m[cmd] --help[0m' for help on a specific command.
+Hit '[1m<ctrl-d>[0m' or type '[1mlogout[0m' to exit ONOS session.
+
+[?1h=[90m~[0m                                                                                [?2004h[0m
+2020-07-24 22:10:06,420 - VPLSBasic - INFO - 192.168.171.24 CLI Started successfully
+[95m2020-07-24 22:10:06,420 - VPLSBasic - DEBUG -  onos 192.168.171.24
+Welcome to Open Network Operating System (ONOS)!
+[1;31m     ____  _  ______  ____     [0m
+[1;31m    / __ \/ |/ / __ \/ __/   [0m
+[1;31m   / /_/ /    / /_/ /\ \     [0m
+[1;31m   \____/_/|_/\____/___/     [0m
+[1;31m                               [0m
+Documentation: wiki.onosproject.org      
+Tutorials:     tutorials.onosproject.org 
+Mailing lists: lists.onosproject.org     
+
+Come help out! Find out how at: contribute.onosproject.org 
+
+Hit '[1m<tab>[0m' for a list of available commands
+and '[1m[cmd] --help[0m' for help on a specific command.
+Hit '[1m<ctrl-d>[0m' or type '[1mlogout[0m' to exit ONOS session.
+
+[?1h=[90m~[0m                                                                                [?2004h[0m
+2020-07-24 22:10:06,474 - VPLSBasic - INFO - 192.168.171.5 CLI Started successfully
+[95m2020-07-24 22:10:06,474 - VPLSBasic - DEBUG -  onos 192.168.171.5
+Welcome to Open Network Operating System (ONOS)!
+[1;31m     ____  _  ______  ____     [0m
+[1;31m    / __ \/ |/ / __ \/ __/   [0m
+[1;31m   / /_/ /    / /_/ /\ \     [0m
+[1;31m   \____/_/|_/\____/___/     [0m
+[1;31m                               [0m
+Documentation: wiki.onosproject.org      
+Tutorials:     tutorials.onosproject.org 
+Mailing lists: lists.onosproject.org     
+
+Come help out! Find out how at: contribute.onosproject.org 
+
+Hit '[1m<tab>[0m' for a list of available commands
+and '[1m[cmd] --help[0m' for help on a specific command.
+Hit '[1m<ctrl-d>[0m' or type '[1mlogout[0m' to exit ONOS session.
+
+[?1h=[90m~[0m                                                                                [?2004h[0m
+2020-07-24 22:10:06,474 - VPLSBasic - INFO - Successful CLI startup
+2020-07-24 22:10:06,474 - VPLSBasic - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-24 22:10:06,475 - VPLSBasic - INFO - Successfully start ONOS cli
+2020-07-24 22:10:06,475 - VPLSBasic - INFO - Assertion Passed
+[2020-07-24 22:10:06.475251] [VPLSBasic] [STEP]  1.11: Checking ONOS nodes
+2020-07-24 22:10:06,746 - VPLSBasic - INFO - Command 'nodes -j' sent to ONOScli2.
+[95m2020-07-24 22:10:06,748 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-24 22:10:06,748 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+2020-07-24 22:10:06,749 - VPLSBasic - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-24 22:10:06,749 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-24 22:10:06,749 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+2020-07-24 22:10:06,809 - VPLSBasic - INFO - Command 'nodes -j' sent to ONOScli3.
+[95m2020-07-24 22:10:06,810 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-24 22:10:06,810 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[93m2020-07-24 22:10:06,920 - VPLSBasic - WARNING - ['192.168.171.24', '192.168.171.28', '192.168.171.5'] != [u'192.168.171.28', u'192.168.171.5'][0m
+[93m2020-07-24 22:10:06,920 - VPLSBasic - WARNING - ['192.168.171.24', '192.168.171.28', '192.168.171.5'] != [u'192.168.171.28', u'192.168.171.5'][0m
+[93m2020-07-24 22:10:06,921 - VPLSBasic - WARNING - ['192.168.171.24', '192.168.171.28', '192.168.171.5'] != [u'192.168.171.28', u'192.168.171.5'][0m
+2020-07-24 22:10:08,181 - VPLSBasic - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-24 22:10:08,181 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-24 22:10:08,181 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+2020-07-24 22:10:08,182 - VPLSBasic - INFO - Command 'nodes -j' sent to ONOScli2.
+[95m2020-07-24 22:10:08,182 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-24 22:10:08,182 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+2020-07-24 22:10:08,215 - VPLSBasic - INFO - Command 'nodes -j' sent to ONOScli3.
+[95m2020-07-24 22:10:08,216 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-24 22:10:08,216 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[93m2020-07-24 22:10:08,327 - VPLSBasic - WARNING - ['192.168.171.24', '192.168.171.28', '192.168.171.5'] != [u'192.168.171.28', u'192.168.171.5'][0m
+[93m2020-07-24 22:10:08,327 - VPLSBasic - WARNING - ['192.168.171.24', '192.168.171.28', '192.168.171.5'] != [u'192.168.171.28', u'192.168.171.5'][0m
+[93m2020-07-24 22:10:08,328 - VPLSBasic - WARNING - ['192.168.171.24', '192.168.171.28', '192.168.171.5'] != [u'192.168.171.28', u'192.168.171.5'][0m
+2020-07-24 22:10:09,589 - VPLSBasic - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-24 22:10:09,590 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-24 22:10:09,590 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+2020-07-24 22:10:09,591 - VPLSBasic - INFO - Command 'nodes -j' sent to ONOScli2.
+[95m2020-07-24 22:10:09,591 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-24 22:10:09,591 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+2020-07-24 22:10:09,593 - VPLSBasic - INFO - Command 'nodes -j' sent to ONOScli3.
+[95m2020-07-24 22:10:09,593 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-24 22:10:09,593 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[93m2020-07-24 22:10:09,710 - VPLSBasic - WARNING - ['192.168.171.24', '192.168.171.28', '192.168.171.5'] != [u'192.168.171.28', u'192.168.171.5'][0m
+[93m2020-07-24 22:10:09,710 - VPLSBasic - WARNING - ['192.168.171.24', '192.168.171.28', '192.168.171.5'] != [u'192.168.171.28', u'192.168.171.5'][0m
+[93m2020-07-24 22:10:09,711 - VPLSBasic - WARNING - ['192.168.171.24', '192.168.171.28', '192.168.171.5'] != [u'192.168.171.28', u'192.168.171.5'][0m
+2020-07-24 22:10:10,969 - VPLSBasic - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-24 22:10:10,969 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-24 22:10:10,970 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+2020-07-24 22:10:10,973 - VPLSBasic - INFO - Command 'nodes -j' sent to ONOScli2.
+[95m2020-07-24 22:10:10,973 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-24 22:10:10,973 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+2020-07-24 22:10:10,977 - VPLSBasic - INFO - Command 'nodes -j' sent to ONOScli3.
+[95m2020-07-24 22:10:10,977 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-24 22:10:10,977 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[93m2020-07-24 22:10:11,087 - VPLSBasic - WARNING - ['192.168.171.24', '192.168.171.28', '192.168.171.5'] != [u'192.168.171.28', u'192.168.171.5'][0m
+[93m2020-07-24 22:10:11,088 - VPLSBasic - WARNING - ['192.168.171.24', '192.168.171.28', '192.168.171.5'] != [u'192.168.171.28', u'192.168.171.5'][0m
+[93m2020-07-24 22:10:11,088 - VPLSBasic - WARNING - ['192.168.171.24', '192.168.171.28', '192.168.171.5'] != [u'192.168.171.28', u'192.168.171.5'][0m
+2020-07-24 22:10:12,353 - VPLSBasic - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-24 22:10:12,354 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-24 22:10:12,354 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+2020-07-24 22:10:12,357 - VPLSBasic - INFO - Command 'nodes -j' sent to ONOScli2.
+[95m2020-07-24 22:10:12,357 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-24 22:10:12,357 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+2020-07-24 22:10:12,433 - VPLSBasic - INFO - Command 'nodes -j' sent to ONOScli3.
+[95m2020-07-24 22:10:12,434 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-24 22:10:12,434 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-24 22:10:12,542 - VPLSBasic - DEBUG - <bound method Cluster.nodesCheck of Cluster[{ONOS1:192.168.171.28, Configured - Active}, {ONOS2:192.168.171.5, Configured - Active}, {ONOS3:192.168.171.24, Configured - Active}; Atomix Nodes:{ONOS1:192.168.171.28}, {ONOS2:192.168.171.5}, {ONOS3:192.168.171.24}]> was retried 4 times.[0m
+2020-07-24 22:10:12,542 - VPLSBasic - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-24 22:10:12,542 - VPLSBasic - INFO - All ONOS nodes are in READY state
+2020-07-24 22:10:12,542 - VPLSBasic - INFO - Assertion Passed
+[2020-07-24 22:10:12.542784] [VPLSBasic] [STEP]  1.12: Checking ONOS applications
+2020-07-24 22:10:12,953 - VPLSBasic - INFO - Command 'onos:apps -j' sent to ONOScli2.
+[95m2020-07-24 22:10:12,971 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[95m2020-07-24 22:10:12,972 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[93m2020-07-24 22:10:12,972 - VPLSBasic - WARNING - Relaxed Regex: Searching for a json string amongst the output[0m
+2020-07-24 22:10:13,013 - VPLSBasic - INFO - Command 'onos:apps -j' sent to ONOScli3.
+2020-07-24 22:10:13,014 - VPLSBasic - INFO - Command 'onos:apps -j' sent to ONOScli1.
+[95m2020-07-24 22:10:13,024 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[95m2020-07-24 22:10:13,025 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[93m2020-07-24 22:10:13,025 - VPLSBasic - WARNING - Relaxed Regex: Searching for a json string amongst the output[0m
+[95m2020-07-24 22:10:13,034 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[95m2020-07-24 22:10:13,034 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[93m2020-07-24 22:10:13,034 - VPLSBasic - WARNING - Relaxed Regex: Searching for a json string amongst the output[0m
+2020-07-24 22:10:13,154 - VPLSBasic - INFO - ONOS1: org.onosproject.drivers is activated
+2020-07-24 22:10:13,154 - VPLSBasic - INFO - ONOS2: org.onosproject.drivers is activated
+2020-07-24 22:10:13,154 - VPLSBasic - INFO - ONOS3: org.onosproject.drivers is activated
+2020-07-24 22:10:13,506 - VPLSBasic - INFO - Command 'onos:apps -j' sent to ONOScli2.
+[95m2020-07-24 22:10:13,522 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[95m2020-07-24 22:10:13,523 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[93m2020-07-24 22:10:13,523 - VPLSBasic - WARNING - Relaxed Regex: Searching for a json string amongst the output[0m
+2020-07-24 22:10:13,524 - VPLSBasic - INFO - Command 'onos:apps -j' sent to ONOScli1.
+[95m2020-07-24 22:10:13,543 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[95m2020-07-24 22:10:13,543 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[93m2020-07-24 22:10:13,543 - VPLSBasic - WARNING - Relaxed Regex: Searching for a json string amongst the output[0m
+2020-07-24 22:10:13,553 - VPLSBasic - INFO - Command 'onos:apps -j' sent to ONOScli3.
+[95m2020-07-24 22:10:13,571 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[95m2020-07-24 22:10:13,571 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[93m2020-07-24 22:10:13,571 - VPLSBasic - WARNING - Relaxed Regex: Searching for a json string amongst the output[0m
+2020-07-24 22:10:13,683 - VPLSBasic - INFO - ONOS1: org.onosproject.openflow is activated
+2020-07-24 22:10:13,683 - VPLSBasic - INFO - ONOS2: org.onosproject.openflow is activated
+2020-07-24 22:10:13,683 - VPLSBasic - INFO - ONOS3: org.onosproject.openflow is activated
+2020-07-24 22:10:14,049 - VPLSBasic - INFO - Command 'onos:apps -j' sent to ONOScli2.
+[95m2020-07-24 22:10:14,058 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[95m2020-07-24 22:10:14,058 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[93m2020-07-24 22:10:14,058 - VPLSBasic - WARNING - Relaxed Regex: Searching for a json string amongst the output[0m
+2020-07-24 22:10:14,059 - VPLSBasic - INFO - Command 'onos:apps -j' sent to ONOScli1.
+[95m2020-07-24 22:10:14,069 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[95m2020-07-24 22:10:14,069 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[93m2020-07-24 22:10:14,069 - VPLSBasic - WARNING - Relaxed Regex: Searching for a json string amongst the output[0m
+2020-07-24 22:10:14,121 - VPLSBasic - INFO - Command 'onos:apps -j' sent to ONOScli3.
+[95m2020-07-24 22:10:14,135 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[95m2020-07-24 22:10:14,136 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[93m2020-07-24 22:10:14,136 - VPLSBasic - WARNING - Relaxed Regex: Searching for a json string amongst the output[0m
+2020-07-24 22:10:14,244 - VPLSBasic - INFO - ONOS1: org.onosproject.vpls is activated
+2020-07-24 22:10:14,245 - VPLSBasic - INFO - ONOS2: org.onosproject.vpls is activated
+2020-07-24 22:10:14,245 - VPLSBasic - INFO - ONOS3: org.onosproject.vpls is activated
+2020-07-24 22:10:14,245 - VPLSBasic - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-24 22:10:14,245 - VPLSBasic - INFO - All ONOS apps are activated
+2020-07-24 22:10:14,245 - VPLSBasic - INFO - Assertion Passed
+[2020-07-24 22:10:14.246219] [VPLSBasic] [STEP]  1.13: Starting Mininet
+2020-07-24 22:10:14,247 - VPLSBasic - INFO - Sending: scp ~/onos/tools/test/topos/vpls.py sdn@192.168.171.17:~/mininet/custom/
+2020-07-24 22:10:15,213 - VPLSBasic - INFO - Secure copy successful
+2020-07-24 22:10:15,215 - VPLSBasic - INFO - Mininet1: Clearing any residual state or processes
+2020-07-24 22:10:16,604 - VPLSBasic - INFO - Mininet1: Clean
+2020-07-24 22:10:16,604 - VPLSBasic - INFO - Starting Mininet topology using 'sudo mn --custom ~/mininet/custom/vpls.py --topo vpls --switch ovs,protocols=OpenFlow13 --controller=remote,ip=192.168.171.28 --controller=remote,ip=192.168.171.5 --controller=remote,ip=192.168.171.24' command
+2020-07-24 22:10:16,705 - VPLSBasic - INFO - Sending 'sudo sudo mn --custom ~/mininet/custom/vpls.py --topo vpls --switch ovs,protocols=OpenFlow13 --controller=remote,ip=192.168.171.28 --controller=remote,ip=192.168.171.5 --controller=remote,ip=192.168.171.24' to Mininet1
+2020-07-24 22:10:16,951 - VPLSBasic - INFO -  Creating network
+2020-07-24 22:10:16,952 - VPLSBasic - INFO -  Adding controller
+2020-07-24 22:10:17,044 - VPLSBasic - INFO -  Adding hosts:
+2020-07-24 22:10:17,157 - VPLSBasic - INFO -  Adding switches:
+2020-07-24 22:10:17,305 - VPLSBasic - INFO -  Adding links:
+2020-07-24 22:10:17,485 - VPLSBasic - INFO -  Configuring hosts
+2020-07-24 22:10:17,653 - VPLSBasic - INFO -  Starting controller
+2020-07-24 22:10:17,654 - VPLSBasic - INFO -  Starting 6 switches
+2020-07-24 22:10:17,775 - VPLSBasic - INFO -  Starting CLI:
+2020-07-24 22:10:17,780 - VPLSBasic - INFO - Mininet1: Mininet built
+Time Took : 0.974265098572
+2020-07-24 22:10:17,781 - VPLSBasic - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-24 22:10:17,781 - VPLSBasic - INFO - Mininet Started
+2020-07-24 22:10:17,781 - VPLSBasic - INFO - Assertion Passed
+[2020-07-24 22:10:17.782272] [VPLSBasic] [STEP]  1.14: Activate apps defined in the params file
+[93m2020-07-24 22:10:17,783 - VPLSBasic - WARNING - No apps were specified to be loaded after startup[0m
+[2020-07-24 22:10:17.783737] [VPLSBasic] [STEP]  1.15: Set ONOS configurations
+[93m2020-07-24 22:10:17,784 - VPLSBasic - WARNING - No configurations were specified to be changed after startup[0m
+[2020-07-24 22:10:17.785098] [VPLSBasic] [STEP]  1.16: App Ids check
+[95m2020-07-24 22:10:17,786 - VPLSBasic - DEBUG - ONOS1: Using CLI driver's attribute for 'appToIDCheck'[0m
+[95m2020-07-24 22:10:17,786 - VPLSBasic - DEBUG - ONOS2: Using CLI driver's attribute for 'appToIDCheck'[0m
+[95m2020-07-24 22:10:17,787 - VPLSBasic - DEBUG - ONOS3: Using CLI driver's attribute for 'appToIDCheck'[0m
+2020-07-24 22:10:18,074 - VPLSBasic - INFO - Command 'app-ids -j' sent to ONOScli1.
+[95m2020-07-24 22:10:18,075 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'app-ids -j'
+SENT COMMAND STRING WAS: 'app-ids -j'[0m
+[95m2020-07-24 22:10:18,075 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'app-ids -j'
+SENT COMMAND STRING WAS: 'app-ids -j'[0m
+2020-07-24 22:10:18,089 - VPLSBasic - INFO - Command 'app-ids -j' sent to ONOScli2.
+[95m2020-07-24 22:10:18,090 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'app-ids -j'
+SENT COMMAND STRING WAS: 'app-ids -j'[0m
+[95m2020-07-24 22:10:18,090 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'app-ids -j'
+SENT COMMAND STRING WAS: 'app-ids -j'[0m
+2020-07-24 22:10:18,112 - VPLSBasic - INFO - Command 'app-ids -j' sent to ONOScli3.
+[95m2020-07-24 22:10:18,113 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'app-ids -j'
+SENT COMMAND STRING WAS: 'app-ids -j'[0m
+[95m2020-07-24 22:10:18,113 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'app-ids -j'
+SENT COMMAND STRING WAS: 'app-ids -j'[0m
+2020-07-24 22:10:18,637 - VPLSBasic - INFO - Command 'onos:apps -j' sent to ONOScli1.
+[95m2020-07-24 22:10:18,655 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[95m2020-07-24 22:10:18,655 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[93m2020-07-24 22:10:18,656 - VPLSBasic - WARNING - Relaxed Regex: Searching for a json string amongst the output[0m
+2020-07-24 22:10:18,783 - VPLSBasic - INFO - Command 'onos:apps -j' sent to ONOScli3.
+[95m2020-07-24 22:10:18,800 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+2020-07-24 22:10:18,802 - VPLSBasic - INFO - Command 'onos:apps -j' sent to ONOScli2.
+[95m2020-07-24 22:10:18,804 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[95m2020-07-24 22:10:18,824 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[93m2020-07-24 22:10:18,824 - VPLSBasic - WARNING - Relaxed Regex: Searching for a json string amongst the output[0m
+[95m2020-07-24 22:10:18,824 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[93m2020-07-24 22:10:18,825 - VPLSBasic - WARNING - Relaxed Regex: Searching for a json string amongst the output[0m
+[95m2020-07-24 22:10:18,972 - VPLSBasic - DEBUG - ONOS1's result : 1[0m
+[95m2020-07-24 22:10:18,972 - VPLSBasic - DEBUG - ONOS2's result : 1[0m
+[95m2020-07-24 22:10:18,972 - VPLSBasic - DEBUG - ONOS3's result : 1[0m
+2020-07-24 22:10:18,973 - VPLSBasic - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-24 22:10:18,973 - VPLSBasic - INFO - App Ids seem to be correct
+2020-07-24 22:10:18,973 - VPLSBasic - INFO - Assertion Passed
+
+*****************************
+ Result: Pass 
+*****************************
+
+
+******************************
+ Result summary for Testcase2
+******************************
+
+[95m2020-07-24 22:10:18,976 - VPLSBasic - DEBUG - Case Executed       : [1, 2][0m
+[95m2020-07-24 22:10:18,976 - VPLSBasic - DEBUG - Case to be executed : [10, 11, 12, 13, 14, 15, 16, 11][0m
+[2020-07-24 22:10:18.979418] [VPLSBasic] [STEP]  2.1: Discover hosts using pings
+2020-07-24 22:10:18,980 - VPLSBasic - INFO - Sending: h1 ping h6 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:10:19,095 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:10:19,095 - VPLSBasic - INFO - Sending: h2 ping h6 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:10:19,207 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:10:19,207 - VPLSBasic - INFO - Sending: h3 ping h6 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:10:19,321 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:10:19,322 - VPLSBasic - INFO - Sending: h4 ping h6 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:10:19,441 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:10:19,441 - VPLSBasic - INFO - Sending: h5 ping h6 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:10:20,562 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:10:20,562 - VPLSBasic - INFO - Sending: h6 ping h5 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:10:21,677 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+[2020-07-24 22:10:21.678246] [VPLSBasic] [STEP]  2.2: Load VPLS configurations
+2020-07-24 22:10:21,679 - VPLSBasic - INFO - Sending: onos-netcfg 192.168.171.28 ~/onos/tools/test/topos/vpls.json
+2020-07-24 22:10:22,145 - VPLSBasic - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-24 22:10:22,145 - VPLSBasic - INFO - Loaded vpls configuration.
+2020-07-24 22:10:22,146 - VPLSBasic - INFO - Assertion Passed
+2020-07-24 22:10:32,156 - VPLSBasic - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-24 22:10:32,157 - VPLSBasic - INFO - Loaded vpls configuration
+2020-07-24 22:10:32,157 - VPLSBasic - INFO - Assertion Passed
+[2020-07-24 22:10:32.157825] [VPLSBasic] [STEP]  2.3: Check interface configurations
+[93m2020-07-24 22:10:32,159 - VPLSBasic - WARNING - No ip given, reverting to ip from topo file[0m
+[93m2020-07-24 22:10:32,159 - VPLSBasic - WARNING - No port given, reverting to port from topo file[0m
+2020-07-24 22:10:32,159 - VPLSBasic - INFO - user/passwd is: onos/rocks
+2020-07-24 22:10:32,159 - VPLSBasic - INFO - Sending request http://192.168.171.28:8181/onos/v1/network/configuration/ports using GET method.
+[91m2020-07-24 22:10:32,252 - VPLSBasic - ERROR - ONOS interfaces NetCfg doesn't match what was sent[0m
+[95m2020-07-24 22:10:32,252 - VPLSBasic - DEBUG - ONOS config: {
+    "of:0000000000000001/1": {
+        "interfaces": [
+            {
+                "name": "h1",
+                "vlan": "100"
+            }
+        ]
+    },
+    "of:0000000000000002/1": {
+        "interfaces": [
+            {
+                "name": "h2",
+                "vlan": "200"
+            }
+        ]
+    },
+    "of:0000000000000003/1": {
+        "interfaces": [
+            {
+                "name": "h3",
+                "vlan": "300"
+            }
+        ]
+    },
+    "of:0000000000000004/1": {
+        "interfaces": [
+            {
+                "name": "h4",
+                "vlan": "400"
+            }
+        ]
+    },
+    "of:0000000000000005/1": {
+        "interfaces": [
+            {
+                "name": "h5"
+            }
+        ]
+    },
+    "of:0000000000000006/1": {
+        "interfaces": [
+            {
+                "name": "h6"
+            }
+        ]
+    },
+    "of:00000000000000a5/4": {
+        "interfaces": [
+            {
+                "ips": [
+                    "10.0.9.101/24"
+                ],
+                "mac": "00:00:00:00:00:03",
+                "name": "sw5-4",
+                "vlan": "10"
+            }
+        ]
+    },
+    "of:00000000000000a5/5": {
+        "interfaces": [
+            {
+                "ips": [
+                    "10.0.20.101/24"
+                ],
+                "mac": "00:00:00:00:00:03",
+                "name": "sw5-5",
+                "vlan": "10"
+            }
+        ]
+    },
+    "of:00000000000000a7/3": {
+        "interfaces": [
+            {
+                "ips": [
+                    "10.0.7.101/24"
+                ],
+                "mac": "00:00:00:00:00:02",
+                "name": "sw7-3",
+                "vlan": "20"
+            }
+        ]
+    },
+    "of:00000000000000a8/5": {
+        "interfaces": [
+            {
+                "ips": [
+                    "10.0.5.101/24"
+                ],
+                "mac": "00:00:00:00:00:01",
+                "name": "sw8-5"
+            }
+        ]
+    },
+    "of:00000000000000a9/3": {
+        "interfaces": [
+            {
+                "ips": [
+                    "10.0.8.101/24"
+                ],
+                "mac": "00:00:00:00:00:02",
+                "name": "sw9-3",
+                "vlan": "20"
+            }
+        ]
+    },
+    "of:0000000000000a28/3": {
+        "interfaces": [
+            {
+                "ips": [
+                    "10.0.6.101/24"
+                ],
+                "mac": "00:00:00:00:00:01",
+                "name": "sw28-3"
+            }
+        ]
+    },
+    "of:0000000000000a32/4": {
+        "interfaces": [
+            {
+                "ips": [
+                    "10.0.4.101/24"
+                ],
+                "mac": "00:00:00:00:00:01",
+                "name": "sw32-4"
+            }
+        ]
+    }
+}[0m
+[95m2020-07-24 22:10:32,252 - VPLSBasic - DEBUG - Sent config: {
+    "of:0000000000000001/1": {
+        "interfaces": [
+            {
+                "name": "h1",
+                "vlan": "100"
+            }
+        ]
+    },
+    "of:0000000000000002/1": {
+        "interfaces": [
+            {
+                "name": "h2",
+                "vlan": "200"
+            }
+        ]
+    },
+    "of:0000000000000003/1": {
+        "interfaces": [
+            {
+                "name": "h3",
+                "vlan": "300"
+            }
+        ]
+    },
+    "of:0000000000000004/1": {
+        "interfaces": [
+            {
+                "name": "h4",
+                "vlan": "400"
+            }
+        ]
+    },
+    "of:0000000000000005/1": {
+        "interfaces": [
+            {
+                "name": "h5"
+            }
+        ]
+    },
+    "of:0000000000000006/1": {
+        "interfaces": [
+            {
+                "name": "h6"
+            }
+        ]
+    }
+}[0m
+2020-07-24 22:10:32,253 - VPLSBasic - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+[91m2020-07-24 22:10:32,253 - VPLSBasic - ERROR - Net Cfg not added for interfaces[0m
+
+[REPORT] [24 Jul 2020 22:10:32] Net Cfg not added for interfaces
+[93m2020-07-24 22:10:32,253 - VPLSBasic - WARNING - Assertion Failed[0m
+[2020-07-24 22:10:32.253547] [VPLSBasic] [STEP]  2.4: Check network configurations for vpls application
+[93m2020-07-24 22:10:32,254 - VPLSBasic - WARNING - No ip given, reverting to ip from topo file[0m
+[93m2020-07-24 22:10:32,254 - VPLSBasic - WARNING - No port given, reverting to port from topo file[0m
+2020-07-24 22:10:32,254 - VPLSBasic - INFO - user/passwd is: onos/rocks
+2020-07-24 22:10:32,254 - VPLSBasic - INFO - Sending request http://192.168.171.28:8181/onos/v1/network/configuration/apps/org.onosproject.vpls using GET method.
+2020-07-24 22:10:32,267 - VPLSBasic - INFO - ONOS NetCfg matches what was sent
+[93m2020-07-24 22:10:32,268 - VPLSBasic - WARNING - No ip given, reverting to ip from topo file[0m
+[93m2020-07-24 22:10:32,268 - VPLSBasic - WARNING - No port given, reverting to port from topo file[0m
+2020-07-24 22:10:32,268 - VPLSBasic - INFO - user/passwd is: onos/rocks
+2020-07-24 22:10:32,268 - VPLSBasic - INFO - Sending request http://192.168.171.5:8181/onos/v1/network/configuration/apps/org.onosproject.vpls using GET method.
+2020-07-24 22:10:32,419 - VPLSBasic - INFO - ONOS NetCfg matches what was sent
+[93m2020-07-24 22:10:32,420 - VPLSBasic - WARNING - No ip given, reverting to ip from topo file[0m
+[93m2020-07-24 22:10:32,420 - VPLSBasic - WARNING - No port given, reverting to port from topo file[0m
+2020-07-24 22:10:32,420 - VPLSBasic - INFO - user/passwd is: onos/rocks
+2020-07-24 22:10:32,420 - VPLSBasic - INFO - Sending request http://192.168.171.24:8181/onos/v1/network/configuration/apps/org.onosproject.vpls using GET method.
+2020-07-24 22:10:32,590 - VPLSBasic - INFO - ONOS NetCfg matches what was sent
+2020-07-24 22:10:32,590 - VPLSBasic - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-24 22:10:32,590 - VPLSBasic - INFO - Net Cfg added for vpls
+2020-07-24 22:10:32,590 - VPLSBasic - INFO - Assertion Passed
+[2020-07-24 22:10:32.590951] [VPLSBasic] [STEP]  2.5: Check vpls app configurations
+2020-07-24 22:10:32,849 - VPLSBasic - INFO - Command 'vpls show' sent to ONOScli1.
+[95m2020-07-24 22:10:32,849 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls show'
+SENT COMMAND STRING WAS: 'vpls show'[0m
+[95m2020-07-24 22:10:32,849 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls show'
+SENT COMMAND STRING WAS: 'vpls show'[0m
+2020-07-24 22:10:32,958 - VPLSBasic - INFO - VPLS config matches sent NetCfg
+2020-07-24 22:10:33,217 - VPLSBasic - INFO - Command 'vpls show' sent to ONOScli2.
+[95m2020-07-24 22:10:33,217 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls show'
+SENT COMMAND STRING WAS: 'vpls show'[0m
+[95m2020-07-24 22:10:33,217 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls show'
+SENT COMMAND STRING WAS: 'vpls show'[0m
+2020-07-24 22:10:33,327 - VPLSBasic - INFO - VPLS config matches sent NetCfg
+2020-07-24 22:10:33,581 - VPLSBasic - INFO - Command 'vpls show' sent to ONOScli3.
+[95m2020-07-24 22:10:33,581 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls show'
+SENT COMMAND STRING WAS: 'vpls show'[0m
+[95m2020-07-24 22:10:33,581 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls show'
+SENT COMMAND STRING WAS: 'vpls show'[0m
+2020-07-24 22:10:33,688 - VPLSBasic - INFO - VPLS config matches sent NetCfg
+2020-07-24 22:10:33,688 - VPLSBasic - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-24 22:10:33,688 - VPLSBasic - INFO - VPLS successfully configured
+2020-07-24 22:10:33,688 - VPLSBasic - INFO - Assertion Passed
+2020-07-24 22:10:33,961 - VPLSBasic - INFO - Command 'intents -j' sent to ONOScli1.
+[95m2020-07-24 22:10:33,962 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'intents -j'
+SENT COMMAND STRING WAS: 'intents -j'[0m
+[95m2020-07-24 22:10:33,962 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'intents -j'
+SENT COMMAND STRING WAS: 'intents -j'[0m
+[2020-07-24 22:10:34.070052] [VPLSBasic] [STEP]  2.6: Check connectivity
+2020-07-24 22:10:34,070 - VPLSBasic - INFO - Sending: h1 ping h2 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:10:34,190 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+[91m2020-07-24 22:10:34,190 - VPLSBasic - ERROR - h1 <-> h2: 0; Expected: 1[0m
+2020-07-24 22:10:34,190 - VPLSBasic - INFO - Sending: h1 ping h3 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:10:34,307 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:10:34,307 - VPLSBasic - INFO - Sending: h1 ping h4 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:10:34,427 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:10:34,428 - VPLSBasic - INFO - Sending: h1 ping h5 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:10:34,541 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+[91m2020-07-24 22:10:34,541 - VPLSBasic - ERROR - h1 <-> h5: 0; Expected: 1[0m
+2020-07-24 22:10:34,541 - VPLSBasic - INFO - Sending: h1 ping h6 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:10:34,653 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+[91m2020-07-24 22:10:34,653 - VPLSBasic - ERROR - h1 <-> h6: 0; Expected: 1[0m
+2020-07-24 22:10:34,654 - VPLSBasic - INFO - Sending: h2 ping h1 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:10:34,771 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+[91m2020-07-24 22:10:34,772 - VPLSBasic - ERROR - h2 <-> h1: 0; Expected: 1[0m
+2020-07-24 22:10:34,772 - VPLSBasic - INFO - Sending: h2 ping h3 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:10:34,900 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:10:34,900 - VPLSBasic - INFO - Sending: h2 ping h4 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:10:35,033 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:10:35,033 - VPLSBasic - INFO - Sending: h2 ping h5 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:10:35,155 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+[91m2020-07-24 22:10:35,156 - VPLSBasic - ERROR - h2 <-> h5: 0; Expected: 1[0m
+2020-07-24 22:10:35,156 - VPLSBasic - INFO - Sending: h2 ping h6 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:10:35,279 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+[91m2020-07-24 22:10:35,279 - VPLSBasic - ERROR - h2 <-> h6: 0; Expected: 1[0m
+2020-07-24 22:10:35,279 - VPLSBasic - INFO - Sending: h3 ping h1 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:10:35,411 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:10:35,411 - VPLSBasic - INFO - Sending: h3 ping h2 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:10:35,539 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:10:35,539 - VPLSBasic - INFO - Sending: h3 ping h4 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:10:35,669 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+[91m2020-07-24 22:10:35,669 - VPLSBasic - ERROR - h3 <-> h4: 0; Expected: 1[0m
+2020-07-24 22:10:35,669 - VPLSBasic - INFO - Sending: h3 ping h5 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:10:35,789 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:10:35,789 - VPLSBasic - INFO - Sending: h3 ping h6 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:10:35,905 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:10:35,905 - VPLSBasic - INFO - Sending: h4 ping h1 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:10:36,028 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:10:36,028 - VPLSBasic - INFO - Sending: h4 ping h2 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:10:36,151 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:10:36,151 - VPLSBasic - INFO - Sending: h4 ping h3 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:10:36,266 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+[91m2020-07-24 22:10:36,266 - VPLSBasic - ERROR - h4 <-> h3: 0; Expected: 1[0m
+2020-07-24 22:10:36,266 - VPLSBasic - INFO - Sending: h4 ping h5 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:10:36,380 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:10:36,380 - VPLSBasic - INFO - Sending: h4 ping h6 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:10:36,489 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:10:36,489 - VPLSBasic - INFO - Sending: h5 ping h1 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:10:36,601 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+[91m2020-07-24 22:10:36,601 - VPLSBasic - ERROR - h5 <-> h1: 0; Expected: 1[0m
+2020-07-24 22:10:36,602 - VPLSBasic - INFO - Sending: h5 ping h2 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:10:36,717 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+[91m2020-07-24 22:10:36,717 - VPLSBasic - ERROR - h5 <-> h2: 0; Expected: 1[0m
+2020-07-24 22:10:36,718 - VPLSBasic - INFO - Sending: h5 ping h3 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:10:36,832 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:10:36,832 - VPLSBasic - INFO - Sending: h5 ping h4 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:10:36,953 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:10:36,954 - VPLSBasic - INFO - Sending: h5 ping h6 -c 1 -i 1 -W 1 
+2020-07-24 22:10:37,085 - VPLSBasic - INFO - Mininet1: no packets lost, host is reachable
+2020-07-24 22:10:37,085 - VPLSBasic - INFO - Sending: h6 ping h1 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:10:37,199 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+[91m2020-07-24 22:10:37,199 - VPLSBasic - ERROR - h6 <-> h1: 0; Expected: 1[0m
+2020-07-24 22:10:37,200 - VPLSBasic - INFO - Sending: h6 ping h2 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:10:37,316 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+[91m2020-07-24 22:10:37,316 - VPLSBasic - ERROR - h6 <-> h2: 0; Expected: 1[0m
+2020-07-24 22:10:37,316 - VPLSBasic - INFO - Sending: h6 ping h3 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:10:37,440 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:10:37,440 - VPLSBasic - INFO - Sending: h6 ping h4 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:10:37,560 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:10:37,560 - VPLSBasic - INFO - Sending: h6 ping h5 -c 1 -i 1 -W 1 
+2020-07-24 22:10:37,679 - VPLSBasic - INFO - Mininet1: no packets lost, host is reachable
+2020-07-24 22:10:37,680 - VPLSBasic - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+[91m2020-07-24 22:10:37,680 - VPLSBasic - ERROR - Connectivity is not as expected[0m
+
+[REPORT] [24 Jul 2020 22:10:37] Connectivity is not as expected
+[93m2020-07-24 22:10:37,680 - VPLSBasic - WARNING - Assertion Failed[0m
+[2020-07-24 22:10:37.680821] [VPLSBasic] [STEP]  2.7: Loading vpls configuration in case any configuration was missed.
+2020-07-24 22:10:37,681 - VPLSBasic - INFO - Sending: onos-netcfg 192.168.171.28 ~/onos/tools/test/topos/vpls.json
+2020-07-24 22:10:37,896 - VPLSBasic - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-24 22:10:37,896 - VPLSBasic - INFO - Loaded vpls configuration.
+2020-07-24 22:10:37,896 - VPLSBasic - INFO - Assertion Passed
+
+*****************************
+ Result: Failed 
+*****************************
+
+
+******************************
+ Result summary for Testcase10
+******************************
+
+[95m2020-07-24 22:10:37,899 - VPLSBasic - DEBUG - Case Executed       : [1, 2, 10][0m
+[95m2020-07-24 22:10:37,899 - VPLSBasic - DEBUG - Case to be executed : [11, 12, 13, 14, 15, 16, 11][0m
+[2020-07-24 22:10:37.899983] [VPLSBasic] [STEP]  10.1: Remove an interface from a vpls network
+2020-07-24 22:10:38,165 - VPLSBasic - INFO - Command 'vpls rem-if VPLS1 h1' sent to ONOScli1.
+[95m2020-07-24 22:10:38,166 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls rem-if VPLS1 h1'
+SENT COMMAND STRING WAS: 'vpls rem-if VPLS1 h1'[0m
+[95m2020-07-24 22:10:38,166 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls rem-if VPLS1 h1'
+SENT COMMAND STRING WAS: 'vpls rem-if VPLS1 h1'[0m
+[2020-07-24 22:10:48.285861] [VPLSBasic] [STEP]  10.2: Check network configurations for vpls application
+[93m2020-07-24 22:10:48,287 - VPLSBasic - WARNING - No ip given, reverting to ip from topo file[0m
+[93m2020-07-24 22:10:48,287 - VPLSBasic - WARNING - No port given, reverting to port from topo file[0m
+2020-07-24 22:10:48,287 - VPLSBasic - INFO - user/passwd is: onos/rocks
+2020-07-24 22:10:48,287 - VPLSBasic - INFO - Sending request http://192.168.171.28:8181/onos/v1/network/configuration/apps/org.onosproject.vpls using GET method.
+2020-07-24 22:10:48,307 - VPLSBasic - INFO - ONOS NetCfg matches what was sent
+[93m2020-07-24 22:10:48,307 - VPLSBasic - WARNING - No ip given, reverting to ip from topo file[0m
+[93m2020-07-24 22:10:48,307 - VPLSBasic - WARNING - No port given, reverting to port from topo file[0m
+2020-07-24 22:10:48,307 - VPLSBasic - INFO - user/passwd is: onos/rocks
+2020-07-24 22:10:48,308 - VPLSBasic - INFO - Sending request http://192.168.171.5:8181/onos/v1/network/configuration/apps/org.onosproject.vpls using GET method.
+2020-07-24 22:10:48,332 - VPLSBasic - INFO - ONOS NetCfg matches what was sent
+[93m2020-07-24 22:10:48,332 - VPLSBasic - WARNING - No ip given, reverting to ip from topo file[0m
+[93m2020-07-24 22:10:48,333 - VPLSBasic - WARNING - No port given, reverting to port from topo file[0m
+2020-07-24 22:10:48,333 - VPLSBasic - INFO - user/passwd is: onos/rocks
+2020-07-24 22:10:48,333 - VPLSBasic - INFO - Sending request http://192.168.171.24:8181/onos/v1/network/configuration/apps/org.onosproject.vpls using GET method.
+2020-07-24 22:10:48,348 - VPLSBasic - INFO - ONOS NetCfg matches what was sent
+2020-07-24 22:10:48,348 - VPLSBasic - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-24 22:10:48,348 - VPLSBasic - INFO - Net Cfg added for vpls
+2020-07-24 22:10:48,348 - VPLSBasic - INFO - Assertion Passed
+[2020-07-24 22:10:48.348969] [VPLSBasic] [STEP]  10.3: Check vpls app configurations
+2020-07-24 22:10:48,613 - VPLSBasic - INFO - Command 'vpls show' sent to ONOScli1.
+[95m2020-07-24 22:10:48,613 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls show'
+SENT COMMAND STRING WAS: 'vpls show'[0m
+[95m2020-07-24 22:10:48,613 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls show'
+SENT COMMAND STRING WAS: 'vpls show'[0m
+2020-07-24 22:10:48,722 - VPLSBasic - INFO - VPLS config matches sent NetCfg
+2020-07-24 22:10:48,981 - VPLSBasic - INFO - Command 'vpls show' sent to ONOScli2.
+[95m2020-07-24 22:10:48,981 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls show'
+SENT COMMAND STRING WAS: 'vpls show'[0m
+[95m2020-07-24 22:10:48,981 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls show'
+SENT COMMAND STRING WAS: 'vpls show'[0m
+2020-07-24 22:10:49,090 - VPLSBasic - INFO - VPLS config matches sent NetCfg
+2020-07-24 22:10:49,345 - VPLSBasic - INFO - Command 'vpls show' sent to ONOScli3.
+[95m2020-07-24 22:10:49,345 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls show'
+SENT COMMAND STRING WAS: 'vpls show'[0m
+[95m2020-07-24 22:10:49,346 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls show'
+SENT COMMAND STRING WAS: 'vpls show'[0m
+2020-07-24 22:10:49,470 - VPLSBasic - INFO - VPLS config matches sent NetCfg
+2020-07-24 22:10:49,470 - VPLSBasic - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-24 22:10:49,471 - VPLSBasic - INFO - VPLS successfully configured
+2020-07-24 22:10:49,471 - VPLSBasic - INFO - Assertion Passed
+2020-07-24 22:10:49,737 - VPLSBasic - INFO - Command 'intents -j' sent to ONOScli1.
+[95m2020-07-24 22:10:49,738 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'intents -j'
+SENT COMMAND STRING WAS: 'intents -j'[0m
+[95m2020-07-24 22:10:49,738 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'intents -j'
+SENT COMMAND STRING WAS: 'intents -j'[0m
+[2020-07-24 22:10:49.846932] [VPLSBasic] [STEP]  10.4: Check connectivity
+2020-07-24 22:10:49,848 - VPLSBasic - INFO - Sending: h1 ping h2 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:10:49,963 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:10:49,964 - VPLSBasic - INFO - Sending: h1 ping h3 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:10:50,077 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:10:50,077 - VPLSBasic - INFO - Sending: h1 ping h4 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:10:50,192 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:10:50,192 - VPLSBasic - INFO - Sending: h1 ping h5 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:10:50,307 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:10:50,307 - VPLSBasic - INFO - Sending: h1 ping h6 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:10:50,421 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:10:50,421 - VPLSBasic - INFO - Sending: h2 ping h1 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:10:50,540 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:10:50,540 - VPLSBasic - INFO - Sending: h2 ping h3 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:10:50,658 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:10:50,658 - VPLSBasic - INFO - Sending: h2 ping h4 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:10:50,783 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:10:50,783 - VPLSBasic - INFO - Sending: h2 ping h5 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:10:50,903 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+[91m2020-07-24 22:10:50,903 - VPLSBasic - ERROR - h2 <-> h5: 0; Expected: 1[0m
+2020-07-24 22:10:50,903 - VPLSBasic - INFO - Sending: h2 ping h6 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:10:51,021 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+[91m2020-07-24 22:10:51,022 - VPLSBasic - ERROR - h2 <-> h6: 0; Expected: 1[0m
+2020-07-24 22:10:51,022 - VPLSBasic - INFO - Sending: h3 ping h1 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:10:51,142 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:10:51,142 - VPLSBasic - INFO - Sending: h3 ping h2 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:10:51,259 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:10:51,259 - VPLSBasic - INFO - Sending: h3 ping h4 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:10:51,376 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+[91m2020-07-24 22:10:51,376 - VPLSBasic - ERROR - h3 <-> h4: 0; Expected: 1[0m
+2020-07-24 22:10:51,377 - VPLSBasic - INFO - Sending: h3 ping h5 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:10:51,486 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:10:51,486 - VPLSBasic - INFO - Sending: h3 ping h6 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:10:51,596 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:10:51,596 - VPLSBasic - INFO - Sending: h4 ping h1 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:10:51,714 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:10:51,715 - VPLSBasic - INFO - Sending: h4 ping h2 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:10:51,828 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:10:51,828 - VPLSBasic - INFO - Sending: h4 ping h3 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:10:51,942 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+[91m2020-07-24 22:10:51,942 - VPLSBasic - ERROR - h4 <-> h3: 0; Expected: 1[0m
+2020-07-24 22:10:51,942 - VPLSBasic - INFO - Sending: h4 ping h5 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:10:52,055 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:10:52,055 - VPLSBasic - INFO - Sending: h4 ping h6 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:10:52,169 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:10:52,169 - VPLSBasic - INFO - Sending: h5 ping h1 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:10:52,288 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:10:52,289 - VPLSBasic - INFO - Sending: h5 ping h2 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:10:52,411 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+[91m2020-07-24 22:10:52,411 - VPLSBasic - ERROR - h5 <-> h2: 0; Expected: 1[0m
+2020-07-24 22:10:52,411 - VPLSBasic - INFO - Sending: h5 ping h3 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:10:52,530 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:10:52,530 - VPLSBasic - INFO - Sending: h5 ping h4 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:10:52,647 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:10:52,648 - VPLSBasic - INFO - Sending: h5 ping h6 -c 1 -i 1 -W 1 
+2020-07-24 22:10:52,762 - VPLSBasic - INFO - Mininet1: no packets lost, host is reachable
+2020-07-24 22:10:52,763 - VPLSBasic - INFO - Sending: h6 ping h1 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:10:52,879 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:10:52,879 - VPLSBasic - INFO - Sending: h6 ping h2 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:10:53,005 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+[91m2020-07-24 22:10:53,005 - VPLSBasic - ERROR - h6 <-> h2: 0; Expected: 1[0m
+2020-07-24 22:10:53,005 - VPLSBasic - INFO - Sending: h6 ping h3 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:10:53,132 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:10:53,132 - VPLSBasic - INFO - Sending: h6 ping h4 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:10:53,271 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:10:53,272 - VPLSBasic - INFO - Sending: h6 ping h5 -c 1 -i 1 -W 1 
+2020-07-24 22:10:53,385 - VPLSBasic - INFO - Mininet1: no packets lost, host is reachable
+2020-07-24 22:10:53,385 - VPLSBasic - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+[91m2020-07-24 22:10:53,385 - VPLSBasic - ERROR - Connectivity is not as expected[0m
+
+[REPORT] [24 Jul 2020 22:10:53] Connectivity is not as expected
+[93m2020-07-24 22:10:53,385 - VPLSBasic - WARNING - Assertion Failed[0m
+
+*****************************
+ Result: Failed 
+*****************************
+
+
+******************************
+ Result summary for Testcase11
+******************************
+
+[95m2020-07-24 22:10:53,387 - VPLSBasic - DEBUG - Case Executed       : [1, 2, 10, 11][0m
+[95m2020-07-24 22:10:53,387 - VPLSBasic - DEBUG - Case to be executed : [12, 13, 14, 15, 16, 11][0m
+[2020-07-24 22:10:53.388255] [VPLSBasic] [STEP]  11.1: Clean all vpls configurations
+2020-07-24 22:10:53,649 - VPLSBasic - INFO - Command 'vpls clean' sent to ONOScli1.
+[95m2020-07-24 22:10:53,649 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls clean'
+SENT COMMAND STRING WAS: 'vpls clean'[0m
+[95m2020-07-24 22:10:53,649 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls clean'
+SENT COMMAND STRING WAS: 'vpls clean'[0m
+[2020-07-24 22:11:03.765514] [VPLSBasic] [STEP]  11.2: Check network configurations for vpls application
+[93m2020-07-24 22:11:03,766 - VPLSBasic - WARNING - No ip given, reverting to ip from topo file[0m
+[93m2020-07-24 22:11:03,766 - VPLSBasic - WARNING - No port given, reverting to port from topo file[0m
+2020-07-24 22:11:03,767 - VPLSBasic - INFO - user/passwd is: onos/rocks
+2020-07-24 22:11:03,767 - VPLSBasic - INFO - Sending request http://192.168.171.28:8181/onos/v1/network/configuration/apps/org.onosproject.vpls using GET method.
+2020-07-24 22:11:03,787 - VPLSBasic - INFO - ONOS NetCfg matches what was sent
+[93m2020-07-24 22:11:03,787 - VPLSBasic - WARNING - No ip given, reverting to ip from topo file[0m
+[93m2020-07-24 22:11:03,787 - VPLSBasic - WARNING - No port given, reverting to port from topo file[0m
+2020-07-24 22:11:03,788 - VPLSBasic - INFO - user/passwd is: onos/rocks
+2020-07-24 22:11:03,788 - VPLSBasic - INFO - Sending request http://192.168.171.5:8181/onos/v1/network/configuration/apps/org.onosproject.vpls using GET method.
+2020-07-24 22:11:03,807 - VPLSBasic - INFO - ONOS NetCfg matches what was sent
+[93m2020-07-24 22:11:03,807 - VPLSBasic - WARNING - No ip given, reverting to ip from topo file[0m
+[93m2020-07-24 22:11:03,807 - VPLSBasic - WARNING - No port given, reverting to port from topo file[0m
+2020-07-24 22:11:03,807 - VPLSBasic - INFO - user/passwd is: onos/rocks
+2020-07-24 22:11:03,808 - VPLSBasic - INFO - Sending request http://192.168.171.24:8181/onos/v1/network/configuration/apps/org.onosproject.vpls using GET method.
+2020-07-24 22:11:03,822 - VPLSBasic - INFO - ONOS NetCfg matches what was sent
+2020-07-24 22:11:03,822 - VPLSBasic - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-24 22:11:03,823 - VPLSBasic - INFO - Net Cfg added for vpls
+2020-07-24 22:11:03,823 - VPLSBasic - INFO - Assertion Passed
+[2020-07-24 22:11:03.823358] [VPLSBasic] [STEP]  11.3: Check vpls app configurations
+2020-07-24 22:11:04,081 - VPLSBasic - INFO - Command 'vpls show' sent to ONOScli1.
+[95m2020-07-24 22:11:04,081 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls show'
+SENT COMMAND STRING WAS: 'vpls show'[0m
+[95m2020-07-24 22:11:04,081 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls show'
+SENT COMMAND STRING WAS: 'vpls show'[0m
+2020-07-24 22:11:04,189 - VPLSBasic - INFO - VPLS config matches sent NetCfg
+2020-07-24 22:11:04,449 - VPLSBasic - INFO - Command 'vpls show' sent to ONOScli2.
+[95m2020-07-24 22:11:04,449 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls show'
+SENT COMMAND STRING WAS: 'vpls show'[0m
+[95m2020-07-24 22:11:04,449 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls show'
+SENT COMMAND STRING WAS: 'vpls show'[0m
+2020-07-24 22:11:04,558 - VPLSBasic - INFO - VPLS config matches sent NetCfg
+2020-07-24 22:11:04,813 - VPLSBasic - INFO - Command 'vpls show' sent to ONOScli3.
+[95m2020-07-24 22:11:04,814 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls show'
+SENT COMMAND STRING WAS: 'vpls show'[0m
+[95m2020-07-24 22:11:04,814 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls show'
+SENT COMMAND STRING WAS: 'vpls show'[0m
+2020-07-24 22:11:04,926 - VPLSBasic - INFO - VPLS config matches sent NetCfg
+2020-07-24 22:11:04,927 - VPLSBasic - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-24 22:11:04,927 - VPLSBasic - INFO - VPLS successfully configured
+2020-07-24 22:11:04,927 - VPLSBasic - INFO - Assertion Passed
+2020-07-24 22:11:05,189 - VPLSBasic - INFO - Command 'intents -j' sent to ONOScli1.
+[95m2020-07-24 22:11:05,189 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'intents -j'
+SENT COMMAND STRING WAS: 'intents -j'[0m
+[95m2020-07-24 22:11:05,189 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'intents -j'
+SENT COMMAND STRING WAS: 'intents -j'[0m
+[2020-07-24 22:11:05.298329] [VPLSBasic] [STEP]  11.4: Check connectivity
+2020-07-24 22:11:05,299 - VPLSBasic - INFO - Sending: h1 ping h2 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:05,415 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:05,415 - VPLSBasic - INFO - Sending: h1 ping h3 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:05,544 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:05,545 - VPLSBasic - INFO - Sending: h1 ping h4 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:05,663 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:05,664 - VPLSBasic - INFO - Sending: h1 ping h5 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:05,776 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:05,777 - VPLSBasic - INFO - Sending: h1 ping h6 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:05,889 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:05,889 - VPLSBasic - INFO - Sending: h2 ping h1 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:06,007 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:06,007 - VPLSBasic - INFO - Sending: h2 ping h3 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:06,123 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:06,123 - VPLSBasic - INFO - Sending: h2 ping h4 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:06,240 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:06,240 - VPLSBasic - INFO - Sending: h2 ping h5 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:06,354 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:06,354 - VPLSBasic - INFO - Sending: h2 ping h6 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:06,466 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:06,466 - VPLSBasic - INFO - Sending: h3 ping h1 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:06,598 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:06,598 - VPLSBasic - INFO - Sending: h3 ping h2 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:06,714 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:06,714 - VPLSBasic - INFO - Sending: h3 ping h4 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:06,837 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:06,837 - VPLSBasic - INFO - Sending: h3 ping h5 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:06,951 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:06,952 - VPLSBasic - INFO - Sending: h3 ping h6 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:07,070 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:07,071 - VPLSBasic - INFO - Sending: h4 ping h1 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:07,198 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:07,198 - VPLSBasic - INFO - Sending: h4 ping h2 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:07,317 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:07,317 - VPLSBasic - INFO - Sending: h4 ping h3 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:07,434 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:07,434 - VPLSBasic - INFO - Sending: h4 ping h5 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:07,547 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:07,547 - VPLSBasic - INFO - Sending: h4 ping h6 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:07,659 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:07,659 - VPLSBasic - INFO - Sending: h5 ping h1 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:07,782 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:07,783 - VPLSBasic - INFO - Sending: h5 ping h2 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:07,903 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:07,903 - VPLSBasic - INFO - Sending: h5 ping h3 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:08,019 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:08,019 - VPLSBasic - INFO - Sending: h5 ping h4 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:08,141 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:08,141 - VPLSBasic - INFO - Sending: h5 ping h6 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:09,254 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:09,254 - VPLSBasic - INFO - Sending: h6 ping h1 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:09,375 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:09,375 - VPLSBasic - INFO - Sending: h6 ping h2 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:09,486 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:09,486 - VPLSBasic - INFO - Sending: h6 ping h3 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:09,600 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:09,601 - VPLSBasic - INFO - Sending: h6 ping h4 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:09,716 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:09,717 - VPLSBasic - INFO - Sending: h6 ping h5 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:10,827 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:10,828 - VPLSBasic - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-24 22:11:10,828 - VPLSBasic - INFO - Connectivity is as expected
+2020-07-24 22:11:10,828 - VPLSBasic - INFO - Assertion Passed
+
+*****************************
+ Result: Pass 
+*****************************
+
+
+******************************
+ Result summary for Testcase12
+******************************
+
+[95m2020-07-24 22:11:10,830 - VPLSBasic - DEBUG - Case Executed       : [1, 2, 10, 11, 12][0m
+[95m2020-07-24 22:11:10,830 - VPLSBasic - DEBUG - Case to be executed : [13, 14, 15, 16, 11][0m
+[2020-07-24 22:11:10.830764] [VPLSBasic] [STEP]  12.1: Create a new vpls network
+2020-07-24 22:11:11,094 - VPLSBasic - INFO - Command 'vpls create Network1' sent to ONOScli1.
+[95m2020-07-24 22:11:11,094 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls create Network1'
+SENT COMMAND STRING WAS: 'vpls create Network1'[0m
+[95m2020-07-24 22:11:11,094 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls create Network1'
+SENT COMMAND STRING WAS: 'vpls create Network1'[0m
+[2020-07-24 22:11:21.213009] [VPLSBasic] [STEP]  12.2: Check network configurations for vpls application
+[93m2020-07-24 22:11:21,214 - VPLSBasic - WARNING - No ip given, reverting to ip from topo file[0m
+[93m2020-07-24 22:11:21,214 - VPLSBasic - WARNING - No port given, reverting to port from topo file[0m
+2020-07-24 22:11:21,214 - VPLSBasic - INFO - user/passwd is: onos/rocks
+2020-07-24 22:11:21,214 - VPLSBasic - INFO - Sending request http://192.168.171.28:8181/onos/v1/network/configuration/apps/org.onosproject.vpls using GET method.
+2020-07-24 22:11:21,242 - VPLSBasic - INFO - ONOS NetCfg matches what was sent
+[93m2020-07-24 22:11:21,243 - VPLSBasic - WARNING - No ip given, reverting to ip from topo file[0m
+[93m2020-07-24 22:11:21,243 - VPLSBasic - WARNING - No port given, reverting to port from topo file[0m
+2020-07-24 22:11:21,243 - VPLSBasic - INFO - user/passwd is: onos/rocks
+2020-07-24 22:11:21,243 - VPLSBasic - INFO - Sending request http://192.168.171.5:8181/onos/v1/network/configuration/apps/org.onosproject.vpls using GET method.
+2020-07-24 22:11:21,263 - VPLSBasic - INFO - ONOS NetCfg matches what was sent
+[93m2020-07-24 22:11:21,263 - VPLSBasic - WARNING - No ip given, reverting to ip from topo file[0m
+[93m2020-07-24 22:11:21,264 - VPLSBasic - WARNING - No port given, reverting to port from topo file[0m
+2020-07-24 22:11:21,264 - VPLSBasic - INFO - user/passwd is: onos/rocks
+2020-07-24 22:11:21,264 - VPLSBasic - INFO - Sending request http://192.168.171.24:8181/onos/v1/network/configuration/apps/org.onosproject.vpls using GET method.
+2020-07-24 22:11:21,279 - VPLSBasic - INFO - ONOS NetCfg matches what was sent
+2020-07-24 22:11:21,280 - VPLSBasic - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-24 22:11:21,280 - VPLSBasic - INFO - Net Cfg added for vpls
+2020-07-24 22:11:21,280 - VPLSBasic - INFO - Assertion Passed
+[2020-07-24 22:11:21.280451] [VPLSBasic] [STEP]  12.3: Check vpls app configurations
+2020-07-24 22:11:21,541 - VPLSBasic - INFO - Command 'vpls show' sent to ONOScli1.
+[95m2020-07-24 22:11:21,541 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls show'
+SENT COMMAND STRING WAS: 'vpls show'[0m
+[95m2020-07-24 22:11:21,541 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls show'
+SENT COMMAND STRING WAS: 'vpls show'[0m
+2020-07-24 22:11:21,650 - VPLSBasic - INFO - VPLS config matches sent NetCfg
+2020-07-24 22:11:21,905 - VPLSBasic - INFO - Command 'vpls show' sent to ONOScli2.
+[95m2020-07-24 22:11:21,905 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls show'
+SENT COMMAND STRING WAS: 'vpls show'[0m
+[95m2020-07-24 22:11:21,905 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls show'
+SENT COMMAND STRING WAS: 'vpls show'[0m
+2020-07-24 22:11:22,014 - VPLSBasic - INFO - VPLS config matches sent NetCfg
+2020-07-24 22:11:22,274 - VPLSBasic - INFO - Command 'vpls show' sent to ONOScli3.
+[95m2020-07-24 22:11:22,275 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls show'
+SENT COMMAND STRING WAS: 'vpls show'[0m
+[95m2020-07-24 22:11:22,275 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls show'
+SENT COMMAND STRING WAS: 'vpls show'[0m
+2020-07-24 22:11:22,381 - VPLSBasic - INFO - VPLS config matches sent NetCfg
+2020-07-24 22:11:22,381 - VPLSBasic - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-24 22:11:22,381 - VPLSBasic - INFO - VPLS successfully configured
+2020-07-24 22:11:22,381 - VPLSBasic - INFO - Assertion Passed
+2020-07-24 22:11:22,637 - VPLSBasic - INFO - Command 'intents -j' sent to ONOScli1.
+[95m2020-07-24 22:11:22,637 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'intents -j'
+SENT COMMAND STRING WAS: 'intents -j'[0m
+[95m2020-07-24 22:11:22,637 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'intents -j'
+SENT COMMAND STRING WAS: 'intents -j'[0m
+[2020-07-24 22:11:22.747107] [VPLSBasic] [STEP]  12.4: Check connectivity
+2020-07-24 22:11:22,748 - VPLSBasic - INFO - Sending: h1 ping h2 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:22,860 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:22,860 - VPLSBasic - INFO - Sending: h1 ping h3 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:22,977 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:22,978 - VPLSBasic - INFO - Sending: h1 ping h4 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:23,096 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:23,096 - VPLSBasic - INFO - Sending: h1 ping h5 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:23,208 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:23,208 - VPLSBasic - INFO - Sending: h1 ping h6 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:23,319 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:23,320 - VPLSBasic - INFO - Sending: h2 ping h1 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:23,455 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:23,455 - VPLSBasic - INFO - Sending: h2 ping h3 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:23,568 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:23,568 - VPLSBasic - INFO - Sending: h2 ping h4 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:23,683 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:23,683 - VPLSBasic - INFO - Sending: h2 ping h5 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:23,795 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:23,796 - VPLSBasic - INFO - Sending: h2 ping h6 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:23,909 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:23,909 - VPLSBasic - INFO - Sending: h3 ping h1 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:24,027 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:24,028 - VPLSBasic - INFO - Sending: h3 ping h2 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:24,148 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:24,149 - VPLSBasic - INFO - Sending: h3 ping h4 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:24,280 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:24,280 - VPLSBasic - INFO - Sending: h3 ping h5 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:24,398 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:24,399 - VPLSBasic - INFO - Sending: h3 ping h6 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:24,507 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:24,507 - VPLSBasic - INFO - Sending: h4 ping h1 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:24,620 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:24,620 - VPLSBasic - INFO - Sending: h4 ping h2 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:24,731 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:24,732 - VPLSBasic - INFO - Sending: h4 ping h3 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:24,849 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:24,849 - VPLSBasic - INFO - Sending: h4 ping h5 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:24,959 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:24,960 - VPLSBasic - INFO - Sending: h4 ping h6 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:25,072 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:25,072 - VPLSBasic - INFO - Sending: h5 ping h1 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:25,190 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:25,191 - VPLSBasic - INFO - Sending: h5 ping h2 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:25,307 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:25,307 - VPLSBasic - INFO - Sending: h5 ping h3 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:25,433 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:25,433 - VPLSBasic - INFO - Sending: h5 ping h4 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:25,547 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:25,547 - VPLSBasic - INFO - Sending: h5 ping h6 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:26,658 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:26,658 - VPLSBasic - INFO - Sending: h6 ping h1 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:26,775 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:26,775 - VPLSBasic - INFO - Sending: h6 ping h2 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:26,890 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:26,890 - VPLSBasic - INFO - Sending: h6 ping h3 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:27,008 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:27,008 - VPLSBasic - INFO - Sending: h6 ping h4 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:27,122 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:27,122 - VPLSBasic - INFO - Sending: h6 ping h5 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:28,232 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:28,233 - VPLSBasic - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-24 22:11:28,233 - VPLSBasic - INFO - Connectivity is as expected
+2020-07-24 22:11:28,233 - VPLSBasic - INFO - Assertion Passed
+
+*****************************
+ Result: Pass 
+*****************************
+
+
+******************************
+ Result summary for Testcase13
+******************************
+
+[95m2020-07-24 22:11:28,234 - VPLSBasic - DEBUG - Case Executed       : [1, 2, 10, 11, 12, 13][0m
+[95m2020-07-24 22:11:28,234 - VPLSBasic - DEBUG - Case to be executed : [14, 15, 16, 11][0m
+[2020-07-24 22:11:28.235214] [VPLSBasic] [STEP]  13.1: Add interfaces to the network
+2020-07-24 22:11:28,493 - VPLSBasic - INFO - Command 'vpls add-if Network1 h1' sent to ONOScli1.
+[95m2020-07-24 22:11:28,493 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls add-if Network1 h1'
+SENT COMMAND STRING WAS: 'vpls add-if Network1 h1'[0m
+[95m2020-07-24 22:11:28,493 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls add-if Network1 h1'
+SENT COMMAND STRING WAS: 'vpls add-if Network1 h1'[0m
+2020-07-24 22:11:28,861 - VPLSBasic - INFO - Command 'vpls add-if Network1 h5' sent to ONOScli1.
+[95m2020-07-24 22:11:28,861 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls add-if Network1 h5'
+SENT COMMAND STRING WAS: 'vpls add-if Network1 h5'[0m
+[95m2020-07-24 22:11:28,862 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls add-if Network1 h5'
+SENT COMMAND STRING WAS: 'vpls add-if Network1 h5'[0m
+[91m2020-07-24 22:11:28,970 - VPLSBasic - ERROR - [0m
+Traceback (most recent call last):
+  File "/home/ubuntu/OnosSystemTest/TestON/drivers/common/cli/onosclidriver.py", line 5651, in vplsAddIface
+    assert "still updating" not in output, output
+AssertionError: VPLS Network1 still updating, please wait it finished
+2020-07-24 22:11:39,237 - VPLSBasic - INFO - Command 'vpls add-if Network1 h5' sent to ONOScli1.
+[95m2020-07-24 22:11:39,237 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls add-if Network1 h5'
+SENT COMMAND STRING WAS: 'vpls add-if Network1 h5'[0m
+[95m2020-07-24 22:11:39,237 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls add-if Network1 h5'
+SENT COMMAND STRING WAS: 'vpls add-if Network1 h5'[0m
+[95m2020-07-24 22:11:39,346 - VPLSBasic - DEBUG - <bound method OnosCliDriver.vplsAddIface of <drivers.common.cli.onosclidriver.OnosCliDriver object at 0x7f7a7c3e70d0>> was retried 1 times.[0m
+2020-07-24 22:11:39,609 - VPLSBasic - INFO - Command 'vpls add-if Network1 h4' sent to ONOScli1.
+[95m2020-07-24 22:11:39,610 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls add-if Network1 h4'
+SENT COMMAND STRING WAS: 'vpls add-if Network1 h4'[0m
+[95m2020-07-24 22:11:39,610 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls add-if Network1 h4'
+SENT COMMAND STRING WAS: 'vpls add-if Network1 h4'[0m
+[2020-07-24 22:11:49.728188] [VPLSBasic] [STEP]  13.2: Check network configurations for vpls application
+[93m2020-07-24 22:11:49,729 - VPLSBasic - WARNING - No ip given, reverting to ip from topo file[0m
+[93m2020-07-24 22:11:49,729 - VPLSBasic - WARNING - No port given, reverting to port from topo file[0m
+2020-07-24 22:11:49,729 - VPLSBasic - INFO - user/passwd is: onos/rocks
+2020-07-24 22:11:49,729 - VPLSBasic - INFO - Sending request http://192.168.171.28:8181/onos/v1/network/configuration/apps/org.onosproject.vpls using GET method.
+2020-07-24 22:11:49,753 - VPLSBasic - INFO - ONOS NetCfg matches what was sent
+[93m2020-07-24 22:11:49,754 - VPLSBasic - WARNING - No ip given, reverting to ip from topo file[0m
+[93m2020-07-24 22:11:49,754 - VPLSBasic - WARNING - No port given, reverting to port from topo file[0m
+2020-07-24 22:11:49,754 - VPLSBasic - INFO - user/passwd is: onos/rocks
+2020-07-24 22:11:49,754 - VPLSBasic - INFO - Sending request http://192.168.171.5:8181/onos/v1/network/configuration/apps/org.onosproject.vpls using GET method.
+2020-07-24 22:11:49,775 - VPLSBasic - INFO - ONOS NetCfg matches what was sent
+[93m2020-07-24 22:11:49,776 - VPLSBasic - WARNING - No ip given, reverting to ip from topo file[0m
+[93m2020-07-24 22:11:49,776 - VPLSBasic - WARNING - No port given, reverting to port from topo file[0m
+2020-07-24 22:11:49,776 - VPLSBasic - INFO - user/passwd is: onos/rocks
+2020-07-24 22:11:49,776 - VPLSBasic - INFO - Sending request http://192.168.171.24:8181/onos/v1/network/configuration/apps/org.onosproject.vpls using GET method.
+2020-07-24 22:11:49,795 - VPLSBasic - INFO - ONOS NetCfg matches what was sent
+2020-07-24 22:11:49,796 - VPLSBasic - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-24 22:11:49,796 - VPLSBasic - INFO - Net Cfg added for vpls
+2020-07-24 22:11:49,796 - VPLSBasic - INFO - Assertion Passed
+[2020-07-24 22:11:49.796430] [VPLSBasic] [STEP]  13.3: Check vpls app configurations
+2020-07-24 22:11:50,057 - VPLSBasic - INFO - Command 'vpls show' sent to ONOScli1.
+[95m2020-07-24 22:11:50,057 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls show'
+SENT COMMAND STRING WAS: 'vpls show'[0m
+[95m2020-07-24 22:11:50,057 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls show'
+SENT COMMAND STRING WAS: 'vpls show'[0m
+2020-07-24 22:11:50,165 - VPLSBasic - INFO - VPLS config matches sent NetCfg
+2020-07-24 22:11:50,425 - VPLSBasic - INFO - Command 'vpls show' sent to ONOScli2.
+[95m2020-07-24 22:11:50,425 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls show'
+SENT COMMAND STRING WAS: 'vpls show'[0m
+[95m2020-07-24 22:11:50,426 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls show'
+SENT COMMAND STRING WAS: 'vpls show'[0m
+2020-07-24 22:11:50,535 - VPLSBasic - INFO - VPLS config matches sent NetCfg
+2020-07-24 22:11:50,793 - VPLSBasic - INFO - Command 'vpls show' sent to ONOScli3.
+[95m2020-07-24 22:11:50,794 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls show'
+SENT COMMAND STRING WAS: 'vpls show'[0m
+[95m2020-07-24 22:11:50,794 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls show'
+SENT COMMAND STRING WAS: 'vpls show'[0m
+2020-07-24 22:11:50,899 - VPLSBasic - INFO - VPLS config matches sent NetCfg
+2020-07-24 22:11:50,899 - VPLSBasic - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-24 22:11:50,900 - VPLSBasic - INFO - VPLS successfully configured
+2020-07-24 22:11:50,900 - VPLSBasic - INFO - Assertion Passed
+2020-07-24 22:11:51,133 - VPLSBasic - INFO - Command 'intents -j' sent to ONOScli1.
+[95m2020-07-24 22:11:51,134 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'intents -j'
+SENT COMMAND STRING WAS: 'intents -j'[0m
+[95m2020-07-24 22:11:51,134 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'intents -j'
+SENT COMMAND STRING WAS: 'intents -j'[0m
+[2020-07-24 22:11:51.245721] [VPLSBasic] [STEP]  13.4: Check connectivity
+2020-07-24 22:11:51,246 - VPLSBasic - INFO - Sending: h1 ping h2 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:51,361 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:51,361 - VPLSBasic - INFO - Sending: h1 ping h3 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:51,483 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:51,483 - VPLSBasic - INFO - Sending: h1 ping h4 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:51,598 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+[91m2020-07-24 22:11:51,598 - VPLSBasic - ERROR - h1 <-> h4: 0; Expected: 1[0m
+2020-07-24 22:11:51,598 - VPLSBasic - INFO - Sending: h1 ping h5 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:51,715 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+[91m2020-07-24 22:11:51,715 - VPLSBasic - ERROR - h1 <-> h5: 0; Expected: 1[0m
+2020-07-24 22:11:51,715 - VPLSBasic - INFO - Sending: h1 ping h6 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:51,830 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:51,830 - VPLSBasic - INFO - Sending: h2 ping h1 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:51,951 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:51,951 - VPLSBasic - INFO - Sending: h2 ping h3 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:52,070 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:52,071 - VPLSBasic - INFO - Sending: h2 ping h4 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:52,186 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:52,186 - VPLSBasic - INFO - Sending: h2 ping h5 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:52,301 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:52,301 - VPLSBasic - INFO - Sending: h2 ping h6 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:52,417 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:52,417 - VPLSBasic - INFO - Sending: h3 ping h1 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:52,532 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:52,533 - VPLSBasic - INFO - Sending: h3 ping h2 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:52,650 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:52,650 - VPLSBasic - INFO - Sending: h3 ping h4 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:52,774 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:52,774 - VPLSBasic - INFO - Sending: h3 ping h5 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:52,889 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:52,889 - VPLSBasic - INFO - Sending: h3 ping h6 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:53,007 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:53,007 - VPLSBasic - INFO - Sending: h4 ping h1 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:53,139 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+[91m2020-07-24 22:11:53,139 - VPLSBasic - ERROR - h4 <-> h1: 0; Expected: 1[0m
+2020-07-24 22:11:53,139 - VPLSBasic - INFO - Sending: h4 ping h2 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:53,252 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:53,253 - VPLSBasic - INFO - Sending: h4 ping h3 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:53,377 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:53,377 - VPLSBasic - INFO - Sending: h4 ping h5 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:53,486 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+[91m2020-07-24 22:11:53,486 - VPLSBasic - ERROR - h4 <-> h5: 0; Expected: 1[0m
+2020-07-24 22:11:53,486 - VPLSBasic - INFO - Sending: h4 ping h6 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:53,597 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:53,597 - VPLSBasic - INFO - Sending: h5 ping h1 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:53,715 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+[91m2020-07-24 22:11:53,715 - VPLSBasic - ERROR - h5 <-> h1: 0; Expected: 1[0m
+2020-07-24 22:11:53,716 - VPLSBasic - INFO - Sending: h5 ping h2 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:53,832 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:53,832 - VPLSBasic - INFO - Sending: h5 ping h3 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:53,953 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:53,953 - VPLSBasic - INFO - Sending: h5 ping h4 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:54,073 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+[91m2020-07-24 22:11:54,073 - VPLSBasic - ERROR - h5 <-> h4: 0; Expected: 1[0m
+2020-07-24 22:11:54,073 - VPLSBasic - INFO - Sending: h5 ping h6 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:55,189 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:55,189 - VPLSBasic - INFO - Sending: h6 ping h1 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:55,311 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:55,311 - VPLSBasic - INFO - Sending: h6 ping h2 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:55,433 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:55,433 - VPLSBasic - INFO - Sending: h6 ping h3 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:55,549 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:55,549 - VPLSBasic - INFO - Sending: h6 ping h4 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:55,666 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:55,666 - VPLSBasic - INFO - Sending: h6 ping h5 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:11:56,779 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:11:56,780 - VPLSBasic - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+[91m2020-07-24 22:11:56,780 - VPLSBasic - ERROR - Connectivity is not as expected[0m
+
+[REPORT] [24 Jul 2020 22:11:56] Connectivity is not as expected
+[93m2020-07-24 22:11:56,780 - VPLSBasic - WARNING - Assertion Failed[0m
+
+*****************************
+ Result: Failed 
+*****************************
+
+
+******************************
+ Result summary for Testcase14
+******************************
+
+[95m2020-07-24 22:11:56,783 - VPLSBasic - DEBUG - Case Executed       : [1, 2, 10, 11, 12, 13, 14][0m
+[95m2020-07-24 22:11:56,783 - VPLSBasic - DEBUG - Case to be executed : [15, 16, 11][0m
+[2020-07-24 22:11:56.783986] [VPLSBasic] [STEP]  14.1: Add MPLS encapsulation to a vpls network
+2020-07-24 22:11:57,045 - VPLSBasic - INFO - Command 'vpls set-encap Network1 MPLS' sent to ONOScli1.
+[95m2020-07-24 22:11:57,045 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls set-encap Network1 MPLS'
+SENT COMMAND STRING WAS: 'vpls set-encap Network1 MPLS'[0m
+[95m2020-07-24 22:11:57,045 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls set-encap Network1 MPLS'
+SENT COMMAND STRING WAS: 'vpls set-encap Network1 MPLS'[0m
+[2020-07-24 22:12:07.165447] [VPLSBasic] [STEP]  14.2: Check network configurations for vpls application
+[93m2020-07-24 22:12:07,166 - VPLSBasic - WARNING - No ip given, reverting to ip from topo file[0m
+[93m2020-07-24 22:12:07,166 - VPLSBasic - WARNING - No port given, reverting to port from topo file[0m
+2020-07-24 22:12:07,167 - VPLSBasic - INFO - user/passwd is: onos/rocks
+2020-07-24 22:12:07,167 - VPLSBasic - INFO - Sending request http://192.168.171.28:8181/onos/v1/network/configuration/apps/org.onosproject.vpls using GET method.
+2020-07-24 22:12:07,186 - VPLSBasic - INFO - ONOS NetCfg matches what was sent
+[93m2020-07-24 22:12:07,186 - VPLSBasic - WARNING - No ip given, reverting to ip from topo file[0m
+[93m2020-07-24 22:12:07,187 - VPLSBasic - WARNING - No port given, reverting to port from topo file[0m
+2020-07-24 22:12:07,187 - VPLSBasic - INFO - user/passwd is: onos/rocks
+2020-07-24 22:12:07,187 - VPLSBasic - INFO - Sending request http://192.168.171.5:8181/onos/v1/network/configuration/apps/org.onosproject.vpls using GET method.
+2020-07-24 22:12:07,208 - VPLSBasic - INFO - ONOS NetCfg matches what was sent
+[93m2020-07-24 22:12:07,209 - VPLSBasic - WARNING - No ip given, reverting to ip from topo file[0m
+[93m2020-07-24 22:12:07,209 - VPLSBasic - WARNING - No port given, reverting to port from topo file[0m
+2020-07-24 22:12:07,209 - VPLSBasic - INFO - user/passwd is: onos/rocks
+2020-07-24 22:12:07,209 - VPLSBasic - INFO - Sending request http://192.168.171.24:8181/onos/v1/network/configuration/apps/org.onosproject.vpls using GET method.
+2020-07-24 22:12:07,225 - VPLSBasic - INFO - ONOS NetCfg matches what was sent
+2020-07-24 22:12:07,226 - VPLSBasic - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-24 22:12:07,226 - VPLSBasic - INFO - Net Cfg added for vpls
+2020-07-24 22:12:07,226 - VPLSBasic - INFO - Assertion Passed
+[2020-07-24 22:12:07.227257] [VPLSBasic] [STEP]  14.3: Check vpls app configurations
+2020-07-24 22:12:07,485 - VPLSBasic - INFO - Command 'vpls show' sent to ONOScli1.
+[95m2020-07-24 22:12:07,485 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls show'
+SENT COMMAND STRING WAS: 'vpls show'[0m
+[95m2020-07-24 22:12:07,485 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls show'
+SENT COMMAND STRING WAS: 'vpls show'[0m
+2020-07-24 22:12:07,593 - VPLSBasic - INFO - VPLS config matches sent NetCfg
+2020-07-24 22:12:07,849 - VPLSBasic - INFO - Command 'vpls show' sent to ONOScli2.
+[95m2020-07-24 22:12:07,850 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls show'
+SENT COMMAND STRING WAS: 'vpls show'[0m
+[95m2020-07-24 22:12:07,850 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls show'
+SENT COMMAND STRING WAS: 'vpls show'[0m
+2020-07-24 22:12:07,959 - VPLSBasic - INFO - VPLS config matches sent NetCfg
+2020-07-24 22:12:08,213 - VPLSBasic - INFO - Command 'vpls show' sent to ONOScli3.
+[95m2020-07-24 22:12:08,213 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls show'
+SENT COMMAND STRING WAS: 'vpls show'[0m
+[95m2020-07-24 22:12:08,214 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls show'
+SENT COMMAND STRING WAS: 'vpls show'[0m
+2020-07-24 22:12:08,320 - VPLSBasic - INFO - VPLS config matches sent NetCfg
+2020-07-24 22:12:08,321 - VPLSBasic - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-24 22:12:08,321 - VPLSBasic - INFO - VPLS successfully configured
+2020-07-24 22:12:08,322 - VPLSBasic - INFO - Assertion Passed
+2020-07-24 22:12:08,581 - VPLSBasic - INFO - Command 'intents -j' sent to ONOScli1.
+[95m2020-07-24 22:12:08,581 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'intents -j'
+SENT COMMAND STRING WAS: 'intents -j'[0m
+[95m2020-07-24 22:12:08,582 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'intents -j'
+SENT COMMAND STRING WAS: 'intents -j'[0m
+[2020-07-24 22:12:08.689833] [VPLSBasic] [STEP]  14.4: Check connectivity
+2020-07-24 22:12:08,690 - VPLSBasic - INFO - Sending: h1 ping h2 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:08,804 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:08,804 - VPLSBasic - INFO - Sending: h1 ping h3 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:08,919 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:08,920 - VPLSBasic - INFO - Sending: h1 ping h4 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:09,038 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+[91m2020-07-24 22:12:09,038 - VPLSBasic - ERROR - h1 <-> h4: 0; Expected: 1[0m
+2020-07-24 22:12:09,038 - VPLSBasic - INFO - Sending: h1 ping h5 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:09,151 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+[91m2020-07-24 22:12:09,152 - VPLSBasic - ERROR - h1 <-> h5: 0; Expected: 1[0m
+2020-07-24 22:12:09,152 - VPLSBasic - INFO - Sending: h1 ping h6 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:09,268 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:09,269 - VPLSBasic - INFO - Sending: h2 ping h1 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:09,387 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:09,387 - VPLSBasic - INFO - Sending: h2 ping h3 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:09,498 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:09,498 - VPLSBasic - INFO - Sending: h2 ping h4 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:09,616 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:09,616 - VPLSBasic - INFO - Sending: h2 ping h5 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:09,728 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:09,729 - VPLSBasic - INFO - Sending: h2 ping h6 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:09,846 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:09,846 - VPLSBasic - INFO - Sending: h3 ping h1 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:09,971 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:09,971 - VPLSBasic - INFO - Sending: h3 ping h2 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:10,098 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:10,098 - VPLSBasic - INFO - Sending: h3 ping h4 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:10,216 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:10,216 - VPLSBasic - INFO - Sending: h3 ping h5 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:10,332 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:10,332 - VPLSBasic - INFO - Sending: h3 ping h6 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:10,448 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:10,449 - VPLSBasic - INFO - Sending: h4 ping h1 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:10,563 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+[91m2020-07-24 22:12:10,564 - VPLSBasic - ERROR - h4 <-> h1: 0; Expected: 1[0m
+2020-07-24 22:12:10,564 - VPLSBasic - INFO - Sending: h4 ping h2 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:10,682 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:10,682 - VPLSBasic - INFO - Sending: h4 ping h3 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:10,796 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:10,796 - VPLSBasic - INFO - Sending: h4 ping h5 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:10,909 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+[91m2020-07-24 22:12:10,909 - VPLSBasic - ERROR - h4 <-> h5: 0; Expected: 1[0m
+2020-07-24 22:12:10,910 - VPLSBasic - INFO - Sending: h4 ping h6 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:11,021 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:11,021 - VPLSBasic - INFO - Sending: h5 ping h1 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:11,137 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+[91m2020-07-24 22:12:11,137 - VPLSBasic - ERROR - h5 <-> h1: 0; Expected: 1[0m
+2020-07-24 22:12:11,137 - VPLSBasic - INFO - Sending: h5 ping h2 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:11,255 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:11,255 - VPLSBasic - INFO - Sending: h5 ping h3 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:11,374 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:11,375 - VPLSBasic - INFO - Sending: h5 ping h4 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:11,486 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+[91m2020-07-24 22:12:11,486 - VPLSBasic - ERROR - h5 <-> h4: 0; Expected: 1[0m
+2020-07-24 22:12:11,487 - VPLSBasic - INFO - Sending: h5 ping h6 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:12,599 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:12,600 - VPLSBasic - INFO - Sending: h6 ping h1 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:12,717 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:12,717 - VPLSBasic - INFO - Sending: h6 ping h2 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:12,832 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:12,832 - VPLSBasic - INFO - Sending: h6 ping h3 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:12,944 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:12,944 - VPLSBasic - INFO - Sending: h6 ping h4 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:13,058 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:13,058 - VPLSBasic - INFO - Sending: h6 ping h5 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:14,179 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:14,180 - VPLSBasic - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+[91m2020-07-24 22:12:14,180 - VPLSBasic - ERROR - Connectivity is not as expected[0m
+
+[REPORT] [24 Jul 2020 22:12:14] Connectivity is not as expected
+[93m2020-07-24 22:12:14,180 - VPLSBasic - WARNING - Assertion Failed[0m
+
+*****************************
+ Result: Failed 
+*****************************
+
+
+******************************
+ Result summary for Testcase15
+******************************
+
+[95m2020-07-24 22:12:14,182 - VPLSBasic - DEBUG - Case Executed       : [1, 2, 10, 11, 12, 13, 14, 15][0m
+[95m2020-07-24 22:12:14,182 - VPLSBasic - DEBUG - Case to be executed : [16, 11][0m
+[2020-07-24 22:12:14.183045] [VPLSBasic] [STEP]  15.1: Change an encapsulation type
+2020-07-24 22:12:14,448 - VPLSBasic - INFO - Command 'vpls set-encap Network1 VLAN' sent to ONOScli1.
+[95m2020-07-24 22:12:14,449 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls set-encap Network1 VLAN'
+SENT COMMAND STRING WAS: 'vpls set-encap Network1 VLAN'[0m
+[95m2020-07-24 22:12:14,449 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls set-encap Network1 VLAN'
+SENT COMMAND STRING WAS: 'vpls set-encap Network1 VLAN'[0m
+[2020-07-24 22:12:24.589876] [VPLSBasic] [STEP]  15.2: Check network configurations for vpls application
+[93m2020-07-24 22:12:24,591 - VPLSBasic - WARNING - No ip given, reverting to ip from topo file[0m
+[93m2020-07-24 22:12:24,591 - VPLSBasic - WARNING - No port given, reverting to port from topo file[0m
+2020-07-24 22:12:24,591 - VPLSBasic - INFO - user/passwd is: onos/rocks
+2020-07-24 22:12:24,591 - VPLSBasic - INFO - Sending request http://192.168.171.28:8181/onos/v1/network/configuration/apps/org.onosproject.vpls using GET method.
+2020-07-24 22:12:24,608 - VPLSBasic - INFO - ONOS NetCfg matches what was sent
+[93m2020-07-24 22:12:24,608 - VPLSBasic - WARNING - No ip given, reverting to ip from topo file[0m
+[93m2020-07-24 22:12:24,608 - VPLSBasic - WARNING - No port given, reverting to port from topo file[0m
+2020-07-24 22:12:24,608 - VPLSBasic - INFO - user/passwd is: onos/rocks
+2020-07-24 22:12:24,608 - VPLSBasic - INFO - Sending request http://192.168.171.5:8181/onos/v1/network/configuration/apps/org.onosproject.vpls using GET method.
+2020-07-24 22:12:24,634 - VPLSBasic - INFO - ONOS NetCfg matches what was sent
+[93m2020-07-24 22:12:24,634 - VPLSBasic - WARNING - No ip given, reverting to ip from topo file[0m
+[93m2020-07-24 22:12:24,634 - VPLSBasic - WARNING - No port given, reverting to port from topo file[0m
+2020-07-24 22:12:24,634 - VPLSBasic - INFO - user/passwd is: onos/rocks
+2020-07-24 22:12:24,634 - VPLSBasic - INFO - Sending request http://192.168.171.24:8181/onos/v1/network/configuration/apps/org.onosproject.vpls using GET method.
+2020-07-24 22:12:24,648 - VPLSBasic - INFO - ONOS NetCfg matches what was sent
+2020-07-24 22:12:24,648 - VPLSBasic - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-24 22:12:24,649 - VPLSBasic - INFO - Net Cfg added for vpls
+2020-07-24 22:12:24,649 - VPLSBasic - INFO - Assertion Passed
+[2020-07-24 22:12:24.649340] [VPLSBasic] [STEP]  15.3: Check vpls app configurations
+2020-07-24 22:12:24,905 - VPLSBasic - INFO - Command 'vpls show' sent to ONOScli1.
+[95m2020-07-24 22:12:24,905 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls show'
+SENT COMMAND STRING WAS: 'vpls show'[0m
+[95m2020-07-24 22:12:24,905 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls show'
+SENT COMMAND STRING WAS: 'vpls show'[0m
+2020-07-24 22:12:25,013 - VPLSBasic - INFO - VPLS config matches sent NetCfg
+2020-07-24 22:12:25,273 - VPLSBasic - INFO - Command 'vpls show' sent to ONOScli2.
+[95m2020-07-24 22:12:25,273 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls show'
+SENT COMMAND STRING WAS: 'vpls show'[0m
+[95m2020-07-24 22:12:25,273 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls show'
+SENT COMMAND STRING WAS: 'vpls show'[0m
+2020-07-24 22:12:25,383 - VPLSBasic - INFO - VPLS config matches sent NetCfg
+2020-07-24 22:12:25,637 - VPLSBasic - INFO - Command 'vpls show' sent to ONOScli3.
+[95m2020-07-24 22:12:25,637 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls show'
+SENT COMMAND STRING WAS: 'vpls show'[0m
+[95m2020-07-24 22:12:25,637 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls show'
+SENT COMMAND STRING WAS: 'vpls show'[0m
+2020-07-24 22:12:25,745 - VPLSBasic - INFO - VPLS config matches sent NetCfg
+2020-07-24 22:12:25,745 - VPLSBasic - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-24 22:12:25,745 - VPLSBasic - INFO - VPLS successfully configured
+2020-07-24 22:12:25,745 - VPLSBasic - INFO - Assertion Passed
+2020-07-24 22:12:26,001 - VPLSBasic - INFO - Command 'intents -j' sent to ONOScli1.
+[95m2020-07-24 22:12:26,001 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'intents -j'
+SENT COMMAND STRING WAS: 'intents -j'[0m
+[95m2020-07-24 22:12:26,001 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'intents -j'
+SENT COMMAND STRING WAS: 'intents -j'[0m
+[2020-07-24 22:12:26.112811] [VPLSBasic] [STEP]  15.4: Check connectivity
+2020-07-24 22:12:26,114 - VPLSBasic - INFO - Sending: h1 ping h2 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:26,233 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:26,233 - VPLSBasic - INFO - Sending: h1 ping h3 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:26,350 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:26,351 - VPLSBasic - INFO - Sending: h1 ping h4 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:26,471 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+[91m2020-07-24 22:12:26,471 - VPLSBasic - ERROR - h1 <-> h4: 0; Expected: 1[0m
+2020-07-24 22:12:26,472 - VPLSBasic - INFO - Sending: h1 ping h5 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:26,585 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+[91m2020-07-24 22:12:26,585 - VPLSBasic - ERROR - h1 <-> h5: 0; Expected: 1[0m
+2020-07-24 22:12:26,586 - VPLSBasic - INFO - Sending: h1 ping h6 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:26,698 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:26,698 - VPLSBasic - INFO - Sending: h2 ping h1 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:26,813 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:26,813 - VPLSBasic - INFO - Sending: h2 ping h3 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:26,939 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:26,939 - VPLSBasic - INFO - Sending: h2 ping h4 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:27,063 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:27,064 - VPLSBasic - INFO - Sending: h2 ping h5 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:27,181 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:27,181 - VPLSBasic - INFO - Sending: h2 ping h6 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:27,295 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:27,295 - VPLSBasic - INFO - Sending: h3 ping h1 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:27,420 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:27,420 - VPLSBasic - INFO - Sending: h3 ping h2 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:27,546 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:27,546 - VPLSBasic - INFO - Sending: h3 ping h4 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:27,678 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:27,679 - VPLSBasic - INFO - Sending: h3 ping h5 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:27,789 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:27,790 - VPLSBasic - INFO - Sending: h3 ping h6 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:27,901 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:27,902 - VPLSBasic - INFO - Sending: h4 ping h1 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:28,014 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+[91m2020-07-24 22:12:28,015 - VPLSBasic - ERROR - h4 <-> h1: 0; Expected: 1[0m
+2020-07-24 22:12:28,015 - VPLSBasic - INFO - Sending: h4 ping h2 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:28,138 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:28,138 - VPLSBasic - INFO - Sending: h4 ping h3 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:28,264 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:28,264 - VPLSBasic - INFO - Sending: h4 ping h5 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:28,376 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+[91m2020-07-24 22:12:28,377 - VPLSBasic - ERROR - h4 <-> h5: 0; Expected: 1[0m
+2020-07-24 22:12:28,377 - VPLSBasic - INFO - Sending: h4 ping h6 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:28,485 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:28,485 - VPLSBasic - INFO - Sending: h5 ping h1 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:28,600 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+[91m2020-07-24 22:12:28,600 - VPLSBasic - ERROR - h5 <-> h1: 0; Expected: 1[0m
+2020-07-24 22:12:28,600 - VPLSBasic - INFO - Sending: h5 ping h2 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:28,715 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:28,715 - VPLSBasic - INFO - Sending: h5 ping h3 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:28,831 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:28,832 - VPLSBasic - INFO - Sending: h5 ping h4 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:28,949 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+[91m2020-07-24 22:12:28,949 - VPLSBasic - ERROR - h5 <-> h4: 0; Expected: 1[0m
+2020-07-24 22:12:28,949 - VPLSBasic - INFO - Sending: h5 ping h6 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:30,061 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:30,061 - VPLSBasic - INFO - Sending: h6 ping h1 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:30,185 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:30,185 - VPLSBasic - INFO - Sending: h6 ping h2 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:30,302 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:30,302 - VPLSBasic - INFO - Sending: h6 ping h3 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:30,421 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:30,421 - VPLSBasic - INFO - Sending: h6 ping h4 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:30,538 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:30,538 - VPLSBasic - INFO - Sending: h6 ping h5 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:31,657 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:31,657 - VPLSBasic - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+[91m2020-07-24 22:12:31,658 - VPLSBasic - ERROR - Connectivity is not as expected[0m
+
+[REPORT] [24 Jul 2020 22:12:31] Connectivity is not as expected
+[93m2020-07-24 22:12:31,658 - VPLSBasic - WARNING - Assertion Failed[0m
+
+*****************************
+ Result: Failed 
+*****************************
+
+
+******************************
+ Result summary for Testcase16
+******************************
+
+[95m2020-07-24 22:12:31,660 - VPLSBasic - DEBUG - Case Executed       : [1, 2, 10, 11, 12, 13, 14, 15, 16][0m
+[95m2020-07-24 22:12:31,660 - VPLSBasic - DEBUG - Case to be executed : [11][0m
+[2020-07-24 22:12:31.660948] [VPLSBasic] [STEP]  16.1: Remove encapsulation
+2020-07-24 22:12:31,917 - VPLSBasic - INFO - Command 'vpls set-encap Network1 NONE' sent to ONOScli1.
+[95m2020-07-24 22:12:31,917 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls set-encap Network1 NONE'
+SENT COMMAND STRING WAS: 'vpls set-encap Network1 NONE'[0m
+[95m2020-07-24 22:12:31,917 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls set-encap Network1 NONE'
+SENT COMMAND STRING WAS: 'vpls set-encap Network1 NONE'[0m
+[2020-07-24 22:12:42.033785] [VPLSBasic] [STEP]  16.2: Check network configurations for vpls application
+[93m2020-07-24 22:12:42,034 - VPLSBasic - WARNING - No ip given, reverting to ip from topo file[0m
+[93m2020-07-24 22:12:42,034 - VPLSBasic - WARNING - No port given, reverting to port from topo file[0m
+2020-07-24 22:12:42,034 - VPLSBasic - INFO - user/passwd is: onos/rocks
+2020-07-24 22:12:42,034 - VPLSBasic - INFO - Sending request http://192.168.171.28:8181/onos/v1/network/configuration/apps/org.onosproject.vpls using GET method.
+2020-07-24 22:12:42,055 - VPLSBasic - INFO - ONOS NetCfg matches what was sent
+[93m2020-07-24 22:12:42,055 - VPLSBasic - WARNING - No ip given, reverting to ip from topo file[0m
+[93m2020-07-24 22:12:42,055 - VPLSBasic - WARNING - No port given, reverting to port from topo file[0m
+2020-07-24 22:12:42,055 - VPLSBasic - INFO - user/passwd is: onos/rocks
+2020-07-24 22:12:42,055 - VPLSBasic - INFO - Sending request http://192.168.171.5:8181/onos/v1/network/configuration/apps/org.onosproject.vpls using GET method.
+2020-07-24 22:12:42,072 - VPLSBasic - INFO - ONOS NetCfg matches what was sent
+[93m2020-07-24 22:12:42,073 - VPLSBasic - WARNING - No ip given, reverting to ip from topo file[0m
+[93m2020-07-24 22:12:42,073 - VPLSBasic - WARNING - No port given, reverting to port from topo file[0m
+2020-07-24 22:12:42,073 - VPLSBasic - INFO - user/passwd is: onos/rocks
+2020-07-24 22:12:42,073 - VPLSBasic - INFO - Sending request http://192.168.171.24:8181/onos/v1/network/configuration/apps/org.onosproject.vpls using GET method.
+2020-07-24 22:12:42,089 - VPLSBasic - INFO - ONOS NetCfg matches what was sent
+2020-07-24 22:12:42,089 - VPLSBasic - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-24 22:12:42,089 - VPLSBasic - INFO - Net Cfg added for vpls
+2020-07-24 22:12:42,089 - VPLSBasic - INFO - Assertion Passed
+[2020-07-24 22:12:42.089938] [VPLSBasic] [STEP]  16.3: Check vpls app configurations
+2020-07-24 22:12:42,345 - VPLSBasic - INFO - Command 'vpls show' sent to ONOScli1.
+[95m2020-07-24 22:12:42,345 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls show'
+SENT COMMAND STRING WAS: 'vpls show'[0m
+[95m2020-07-24 22:12:42,345 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls show'
+SENT COMMAND STRING WAS: 'vpls show'[0m
+2020-07-24 22:12:42,455 - VPLSBasic - INFO - VPLS config matches sent NetCfg
+2020-07-24 22:12:42,709 - VPLSBasic - INFO - Command 'vpls show' sent to ONOScli2.
+[95m2020-07-24 22:12:42,709 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls show'
+SENT COMMAND STRING WAS: 'vpls show'[0m
+[95m2020-07-24 22:12:42,709 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls show'
+SENT COMMAND STRING WAS: 'vpls show'[0m
+2020-07-24 22:12:42,817 - VPLSBasic - INFO - VPLS config matches sent NetCfg
+2020-07-24 22:12:43,073 - VPLSBasic - INFO - Command 'vpls show' sent to ONOScli3.
+[95m2020-07-24 22:12:43,073 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls show'
+SENT COMMAND STRING WAS: 'vpls show'[0m
+[95m2020-07-24 22:12:43,073 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls show'
+SENT COMMAND STRING WAS: 'vpls show'[0m
+2020-07-24 22:12:43,179 - VPLSBasic - INFO - VPLS config matches sent NetCfg
+2020-07-24 22:12:43,180 - VPLSBasic - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-24 22:12:43,180 - VPLSBasic - INFO - VPLS successfully configured
+2020-07-24 22:12:43,180 - VPLSBasic - INFO - Assertion Passed
+2020-07-24 22:12:43,437 - VPLSBasic - INFO - Command 'intents -j' sent to ONOScli1.
+[95m2020-07-24 22:12:43,438 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'intents -j'
+SENT COMMAND STRING WAS: 'intents -j'[0m
+[95m2020-07-24 22:12:43,438 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'intents -j'
+SENT COMMAND STRING WAS: 'intents -j'[0m
+[2020-07-24 22:12:43.545741] [VPLSBasic] [STEP]  16.4: Check connectivity
+2020-07-24 22:12:43,547 - VPLSBasic - INFO - Sending: h1 ping h2 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:43,660 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:43,660 - VPLSBasic - INFO - Sending: h1 ping h3 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:43,781 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:43,781 - VPLSBasic - INFO - Sending: h1 ping h4 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:43,895 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+[91m2020-07-24 22:12:43,895 - VPLSBasic - ERROR - h1 <-> h4: 0; Expected: 1[0m
+2020-07-24 22:12:43,895 - VPLSBasic - INFO - Sending: h1 ping h5 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:44,006 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+[91m2020-07-24 22:12:44,006 - VPLSBasic - ERROR - h1 <-> h5: 0; Expected: 1[0m
+2020-07-24 22:12:44,006 - VPLSBasic - INFO - Sending: h1 ping h6 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:44,118 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:44,118 - VPLSBasic - INFO - Sending: h2 ping h1 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:44,240 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:44,240 - VPLSBasic - INFO - Sending: h2 ping h3 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:44,362 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:44,362 - VPLSBasic - INFO - Sending: h2 ping h4 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:44,474 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:44,474 - VPLSBasic - INFO - Sending: h2 ping h5 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:44,593 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:44,593 - VPLSBasic - INFO - Sending: h2 ping h6 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:44,704 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:44,705 - VPLSBasic - INFO - Sending: h3 ping h1 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:44,820 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:44,820 - VPLSBasic - INFO - Sending: h3 ping h2 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:44,937 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:44,937 - VPLSBasic - INFO - Sending: h3 ping h4 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:45,052 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:45,052 - VPLSBasic - INFO - Sending: h3 ping h5 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:45,167 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:45,167 - VPLSBasic - INFO - Sending: h3 ping h6 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:45,284 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:45,285 - VPLSBasic - INFO - Sending: h4 ping h1 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:45,408 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+[91m2020-07-24 22:12:45,408 - VPLSBasic - ERROR - h4 <-> h1: 0; Expected: 1[0m
+2020-07-24 22:12:45,408 - VPLSBasic - INFO - Sending: h4 ping h2 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:45,521 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:45,521 - VPLSBasic - INFO - Sending: h4 ping h3 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:45,638 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:45,638 - VPLSBasic - INFO - Sending: h4 ping h5 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:45,750 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+[91m2020-07-24 22:12:45,751 - VPLSBasic - ERROR - h4 <-> h5: 0; Expected: 1[0m
+2020-07-24 22:12:45,751 - VPLSBasic - INFO - Sending: h4 ping h6 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:45,869 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:45,869 - VPLSBasic - INFO - Sending: h5 ping h1 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:45,986 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+[91m2020-07-24 22:12:45,986 - VPLSBasic - ERROR - h5 <-> h1: 0; Expected: 1[0m
+2020-07-24 22:12:45,986 - VPLSBasic - INFO - Sending: h5 ping h2 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:46,119 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:46,119 - VPLSBasic - INFO - Sending: h5 ping h3 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:46,233 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:46,233 - VPLSBasic - INFO - Sending: h5 ping h4 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:46,355 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+[91m2020-07-24 22:12:46,355 - VPLSBasic - ERROR - h5 <-> h4: 0; Expected: 1[0m
+2020-07-24 22:12:46,355 - VPLSBasic - INFO - Sending: h5 ping h6 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:47,467 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:47,468 - VPLSBasic - INFO - Sending: h6 ping h1 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:47,581 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:47,582 - VPLSBasic - INFO - Sending: h6 ping h2 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:47,705 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:47,706 - VPLSBasic - INFO - Sending: h6 ping h3 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:47,822 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:47,822 - VPLSBasic - INFO - Sending: h6 ping h4 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:47,937 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:47,937 - VPLSBasic - INFO - Sending: h6 ping h5 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:12:49,054 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:12:49,054 - VPLSBasic - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+[91m2020-07-24 22:12:49,054 - VPLSBasic - ERROR - Connectivity is not as expected[0m
+
+[REPORT] [24 Jul 2020 22:12:49] Connectivity is not as expected
+[93m2020-07-24 22:12:49,054 - VPLSBasic - WARNING - Assertion Failed[0m
+
+*****************************
+ Result: Failed 
+*****************************
+
+
+******************************
+ Result summary for Testcase11
+******************************
+
+[95m2020-07-24 22:12:49,055 - VPLSBasic - DEBUG - Case Executed       : [1, 2, 10, 11, 12, 13, 14, 15, 16, 11][0m
+[95m2020-07-24 22:12:49,056 - VPLSBasic - DEBUG - Case to be executed : [][0m
+[2020-07-24 22:12:49.056254] [VPLSBasic] [STEP]  11.1: Clean all vpls configurations
+2020-07-24 22:12:49,317 - VPLSBasic - INFO - Command 'vpls clean' sent to ONOScli1.
+[95m2020-07-24 22:12:49,317 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls clean'
+SENT COMMAND STRING WAS: 'vpls clean'[0m
+[95m2020-07-24 22:12:49,317 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls clean'
+SENT COMMAND STRING WAS: 'vpls clean'[0m
+[2020-07-24 22:12:59.436126] [VPLSBasic] [STEP]  11.2: Check network configurations for vpls application
+[93m2020-07-24 22:12:59,437 - VPLSBasic - WARNING - No ip given, reverting to ip from topo file[0m
+[93m2020-07-24 22:12:59,437 - VPLSBasic - WARNING - No port given, reverting to port from topo file[0m
+2020-07-24 22:12:59,437 - VPLSBasic - INFO - user/passwd is: onos/rocks
+2020-07-24 22:12:59,437 - VPLSBasic - INFO - Sending request http://192.168.171.28:8181/onos/v1/network/configuration/apps/org.onosproject.vpls using GET method.
+[91m2020-07-24 22:12:59,462 - VPLSBasic - ERROR - ONOS NetCfg doesn't match what was sent[0m
+[95m2020-07-24 22:12:59,462 - VPLSBasic - DEBUG - ONOS config: [
+    {
+        "encapsulation": "NONE",
+        "interfaces": [
+            "h1",
+            "h4",
+            "h5"
+        ],
+        "name": "Network1"
+    }
+][0m
+[95m2020-07-24 22:12:59,462 - VPLSBasic - DEBUG - Sent config: [][0m
+[93m2020-07-24 22:12:59,463 - VPLSBasic - WARNING - No ip given, reverting to ip from topo file[0m
+[93m2020-07-24 22:12:59,463 - VPLSBasic - WARNING - No port given, reverting to port from topo file[0m
+2020-07-24 22:12:59,463 - VPLSBasic - INFO - user/passwd is: onos/rocks
+2020-07-24 22:12:59,463 - VPLSBasic - INFO - Sending request http://192.168.171.5:8181/onos/v1/network/configuration/apps/org.onosproject.vpls using GET method.
+[91m2020-07-24 22:12:59,486 - VPLSBasic - ERROR - ONOS NetCfg doesn't match what was sent[0m
+[95m2020-07-24 22:12:59,486 - VPLSBasic - DEBUG - ONOS config: [
+    {
+        "encapsulation": "NONE",
+        "interfaces": [
+            "h1",
+            "h4",
+            "h5"
+        ],
+        "name": "Network1"
+    }
+][0m
+[95m2020-07-24 22:12:59,486 - VPLSBasic - DEBUG - Sent config: [][0m
+[93m2020-07-24 22:12:59,486 - VPLSBasic - WARNING - No ip given, reverting to ip from topo file[0m
+[93m2020-07-24 22:12:59,486 - VPLSBasic - WARNING - No port given, reverting to port from topo file[0m
+2020-07-24 22:12:59,486 - VPLSBasic - INFO - user/passwd is: onos/rocks
+2020-07-24 22:12:59,487 - VPLSBasic - INFO - Sending request http://192.168.171.24:8181/onos/v1/network/configuration/apps/org.onosproject.vpls using GET method.
+[91m2020-07-24 22:12:59,499 - VPLSBasic - ERROR - ONOS NetCfg doesn't match what was sent[0m
+[95m2020-07-24 22:12:59,499 - VPLSBasic - DEBUG - ONOS config: [
+    {
+        "encapsulation": "NONE",
+        "interfaces": [
+            "h1",
+            "h4",
+            "h5"
+        ],
+        "name": "Network1"
+    }
+][0m
+[95m2020-07-24 22:12:59,499 - VPLSBasic - DEBUG - Sent config: [][0m
+2020-07-24 22:12:59,500 - VPLSBasic - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+[91m2020-07-24 22:12:59,500 - VPLSBasic - ERROR - Net Cfg not added for vpls[0m
+
+[REPORT] [24 Jul 2020 22:12:59] Net Cfg not added for vpls
+[93m2020-07-24 22:12:59,500 - VPLSBasic - WARNING - Assertion Failed[0m
+[2020-07-24 22:12:59.500630] [VPLSBasic] [STEP]  11.3: Check vpls app configurations
+2020-07-24 22:12:59,761 - VPLSBasic - INFO - Command 'vpls show' sent to ONOScli1.
+[95m2020-07-24 22:12:59,762 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls show'
+SENT COMMAND STRING WAS: 'vpls show'[0m
+[95m2020-07-24 22:12:59,762 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls show'
+SENT COMMAND STRING WAS: 'vpls show'[0m
+[91m2020-07-24 22:12:59,869 - VPLSBasic - ERROR - VPLS config doesn't match sent NetCfg[0m
+[95m2020-07-24 22:12:59,869 - VPLSBasic - DEBUG - ONOS config: [
+    {
+        "encapsulation": "NONE",
+        "interfaces": [
+            "h1",
+            "h4",
+            "h5"
+        ],
+        "name": "Network1"
+    }
+][0m
+[95m2020-07-24 22:12:59,869 - VPLSBasic - DEBUG - Sent config: [][0m
+2020-07-24 22:13:00,125 - VPLSBasic - INFO - Command 'vpls show' sent to ONOScli2.
+[95m2020-07-24 22:13:00,125 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls show'
+SENT COMMAND STRING WAS: 'vpls show'[0m
+[95m2020-07-24 22:13:00,125 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls show'
+SENT COMMAND STRING WAS: 'vpls show'[0m
+[91m2020-07-24 22:13:00,235 - VPLSBasic - ERROR - VPLS config doesn't match sent NetCfg[0m
+[95m2020-07-24 22:13:00,235 - VPLSBasic - DEBUG - ONOS config: [
+    {
+        "encapsulation": "NONE",
+        "interfaces": [
+            "h1",
+            "h4",
+            "h5"
+        ],
+        "name": "Network1"
+    }
+][0m
+[95m2020-07-24 22:13:00,235 - VPLSBasic - DEBUG - Sent config: [][0m
+2020-07-24 22:13:00,453 - VPLSBasic - INFO - Command 'vpls show' sent to ONOScli3.
+[95m2020-07-24 22:13:00,453 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls show'
+SENT COMMAND STRING WAS: 'vpls show'[0m
+[95m2020-07-24 22:13:00,453 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'vpls show'
+SENT COMMAND STRING WAS: 'vpls show'[0m
+[91m2020-07-24 22:13:00,564 - VPLSBasic - ERROR - VPLS config doesn't match sent NetCfg[0m
+[95m2020-07-24 22:13:00,564 - VPLSBasic - DEBUG - ONOS config: [
+    {
+        "encapsulation": "NONE",
+        "interfaces": [
+            "h1",
+            "h4",
+            "h5"
+        ],
+        "name": "Network1"
+    }
+][0m
+[95m2020-07-24 22:13:00,564 - VPLSBasic - DEBUG - Sent config: [][0m
+2020-07-24 22:13:00,565 - VPLSBasic - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+[91m2020-07-24 22:13:00,565 - VPLSBasic - ERROR - VPLS not configured correctly[0m
+
+[REPORT] [24 Jul 2020 22:13:00] VPLS not configured correctly
+[93m2020-07-24 22:13:00,565 - VPLSBasic - WARNING - Assertion Failed[0m
+2020-07-24 22:13:00,825 - VPLSBasic - INFO - Command 'intents -j' sent to ONOScli1.
+[95m2020-07-24 22:13:00,825 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'intents -j'
+SENT COMMAND STRING WAS: 'intents -j'[0m
+[95m2020-07-24 22:13:00,825 - VPLSBasic - DEBUG - REGEX PATTERN SET TO: 'intents -j'
+SENT COMMAND STRING WAS: 'intents -j'[0m
+[2020-07-24 22:13:00.933781] [VPLSBasic] [STEP]  11.4: Check connectivity
+2020-07-24 22:13:00,935 - VPLSBasic - INFO - Sending: h1 ping h2 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:13:01,053 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:13:01,053 - VPLSBasic - INFO - Sending: h1 ping h3 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:13:01,171 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:13:01,171 - VPLSBasic - INFO - Sending: h1 ping h4 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:13:01,296 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:13:01,296 - VPLSBasic - INFO - Sending: h1 ping h5 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:13:01,413 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:13:01,413 - VPLSBasic - INFO - Sending: h1 ping h6 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:13:01,527 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:13:01,527 - VPLSBasic - INFO - Sending: h2 ping h1 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:13:01,649 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:13:01,649 - VPLSBasic - INFO - Sending: h2 ping h3 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:13:01,762 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:13:01,762 - VPLSBasic - INFO - Sending: h2 ping h4 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:13:01,888 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:13:01,888 - VPLSBasic - INFO - Sending: h2 ping h5 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:13:02,006 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:13:02,006 - VPLSBasic - INFO - Sending: h2 ping h6 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:13:02,120 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:13:02,120 - VPLSBasic - INFO - Sending: h3 ping h1 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:13:02,249 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:13:02,249 - VPLSBasic - INFO - Sending: h3 ping h2 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:13:02,376 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:13:02,376 - VPLSBasic - INFO - Sending: h3 ping h4 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:13:02,486 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:13:02,486 - VPLSBasic - INFO - Sending: h3 ping h5 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:13:02,602 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:13:02,602 - VPLSBasic - INFO - Sending: h3 ping h6 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:13:02,717 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:13:02,717 - VPLSBasic - INFO - Sending: h4 ping h1 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:13:02,835 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:13:02,835 - VPLSBasic - INFO - Sending: h4 ping h2 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:13:02,951 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:13:02,951 - VPLSBasic - INFO - Sending: h4 ping h3 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:13:03,065 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:13:03,066 - VPLSBasic - INFO - Sending: h4 ping h5 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:13:03,179 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:13:03,179 - VPLSBasic - INFO - Sending: h4 ping h6 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:13:03,291 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:13:03,291 - VPLSBasic - INFO - Sending: h5 ping h1 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:13:03,413 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:13:03,413 - VPLSBasic - INFO - Sending: h5 ping h2 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:13:03,531 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:13:03,531 - VPLSBasic - INFO - Sending: h5 ping h3 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:13:03,656 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:13:03,656 - VPLSBasic - INFO - Sending: h5 ping h4 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:13:03,772 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:13:03,772 - VPLSBasic - INFO - Sending: h5 ping h6 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:13:04,886 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:13:04,886 - VPLSBasic - INFO - Sending: h6 ping h1 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:13:05,009 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:13:05,009 - VPLSBasic - INFO - Sending: h6 ping h2 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:13:05,133 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:13:05,133 - VPLSBasic - INFO - Sending: h6 ping h3 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:13:05,254 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:13:05,254 - VPLSBasic - INFO - Sending: h6 ping h4 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:13:05,377 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:13:05,377 - VPLSBasic - INFO - Sending: h6 ping h5 -c 1 -i 1 -W 1 
+[93m2020-07-24 22:13:06,487 - VPLSBasic - WARNING - Mininet1: PACKET LOST, HOST IS NOT REACHABLE[0m
+2020-07-24 22:13:06,487 - VPLSBasic - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-24 22:13:06,487 - VPLSBasic - INFO - Connectivity is as expected
+2020-07-24 22:13:06,487 - VPLSBasic - INFO - Assertion Passed
+
+*****************************
+ Result: Failed 
+*****************************
+
+
+
+*************************************
+	Test Execution Summary
+
+************************************* 
+
+ Test Start           : 24 Jul 2020 22:07:09
+ Test End             : 24 Jul 2020 22:13:06
+ Execution Time       : 0:05:57.442222
+ Total Tests Planned  : 10
+ Total Tests Run      : 10
+ Total Pass           : 3
+ Total Fail           : 7
+ Total No Result      : 0
+ Success Percentage   : 30%
+ Execution Percentage : 100%
+
+ Case Failed          : [2, 10, 13, 14, 15, 16, 11]
+ Case Executed        : [1, 2, 10, 11, 12, 13, 14, 15, 16, 11]
+ Case Not Executed    : []
+Disconnecting from ONOScli3: <class 'drivers.common.cli.onosclidriver.OnosCliDriver'>
+Disconnecting from ONOSserver3: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from ONOSserver2: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from ONOSserver1: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from Mininet1: <class 'drivers.common.cli.emulator.mininetclidriver.MininetCliDriver'>
+2020-07-24 22:13:07,658 - VPLSBasic - INFO - Mininet1: Stopping mininet...
+2020-07-24 22:13:07,760 - VPLSBasic - INFO - Exiting mininet..
+2020-07-24 22:13:09,040 - VPLSBasic - INFO - Executed :exit 		 Expected Prompt '\$' Found
+2020-07-24 22:13:09,040 - VPLSBasic - INFO - Mininet1: Stopped
+Time Took : 1.27986192703
+Disconnecting from ONOSrest2: <class 'drivers.common.api.controller.onosrestdriver.OnosRestDriver'>
+Disconnecting from ONOSrest1: <class 'drivers.common.api.controller.onosrestdriver.OnosRestDriver'>
+Disconnecting from ONOSbench3: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from ONOSrest3: <class 'drivers.common.api.controller.onosrestdriver.OnosRestDriver'>
+Disconnecting from ONOSbench1: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from ONOScli2: <class 'drivers.common.cli.onosclidriver.OnosCliDriver'>
+Disconnecting from ONOScli1: <class 'drivers.common.cli.onosclidriver.OnosCliDriver'>
+Disconnecting from ONOSbench2: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from ONOScell: <class 'drivers.common.cli.onosclusterdriver.OnosClusterDriver'>
+ubuntu@manage:~/OnosSystemTest/TestON/bin$ 
+ubuntu@manage:~/OnosSystemTest/TestON/bin$ exit
+logout
