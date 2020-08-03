@@ -187,12 +187,14 @@ This file is used in Starttest.jar, it will delete the *~/.ssh/known_hosts* and 
 
 1. Turn off unused instances.  
 For example, if you first run 3 node testcases and then you want to run 1 node testcases, please **Shut off instance** which you don't need. It sometimes affect the test results.  
-2. Don't delete id_rsa, id_rsa.pub, oneNodeDemo, threeNodeDemo, sevenNodeDemo after run onosAuTest1node.jar or onosAuTest3nodes.jar or onosAuTest7nodes.jar, because they will be used when you run Starttest.jar.  
+2. Don't delete id_rsa, id_rsa.pub, oneNodeDemo, threeNodeDemo, sevenNodeDemo after run onosAuTest1node.jar or onosAuTest3nodes.jar or onosAuTest7nodes.jar, because they will be used when you run Starttest.jar.   
 3. If you want to know the structure of the test scripts, please read **Tutorial of one node test.odp**.   
+4. The results of all ONOS-Master test cases I have added them to the TestResult folder of Test1node, Test3nodes and Test7nodes. I didn't add the result of Segment Routing. Because they all failed which is the same as the test result in :https://wiki.onosproject.org/display/ONOS/Master-Segment+Routing  
 
 ## Troubleshooting:
 
-1.If you fail to run 1-node sample testcase, 3-node sample testcase and 7-node sample testcase when use onosAuTest1node.jar and onosAuTest3nodes.jar, onosAuTest7nodes.jar. Please use ssh to login to your sdn@<manage machine's ip address>, try to ssh to login to all sdn@<target machine's ip address> and input yes there. Then go back to try to run the testcase again.
+1.If you fail to run 1-node sample testcase, 3-node sample testcase and 7-node sample testcase when use onosAuTest1node.jar and onosAuTest3nodes.jar, onosAuTest7nodes.jar. Please use ssh to login to your sdn@<manage machine's ip address>, try to ssh to login to all sdn@<target machine's ip address> and input yes there. Then go back to try to run the testcase again.   
+2.If you meet this problem “Service org.onosproject.security.AuditService not found", please use **Soft Reboot instance** in Compute Canada Cloud for all target machines.   
 
 ## Author:
 
