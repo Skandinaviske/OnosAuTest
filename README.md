@@ -194,7 +194,7 @@ For example, if you first run 3 node testcases and then you want to run 1 node t
 ## Troubleshooting:
 
 1.If you fail to run 1-node sample testcase, 3-node sample testcase and 7-node sample testcase when use onosAuTest1node.jar and onosAuTest3nodes.jar, onosAuTest7nodes.jar. Please use ssh to login to your sdn@<manage machine's ip address>, try to ssh to login to all sdn@<target machine's ip address> and input yes there. Then go back to try to run the testcase again.   
-2.If you meet this problem “Service org.onosproject.security.AuditService not found, please use **Soft Reboot instance** for all target machines.   
+2.If you meet this problem “Service org.onosproject.security.AuditService not found", please use **Soft Reboot instance** for all target machines.   
 
 ## Author:
 
