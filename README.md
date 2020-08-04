@@ -5,7 +5,7 @@ For basic information of ONOS System test, please read:
 https://wiki.onosproject.org/display/ONOS/System+Testing+Guide  
 
 *Note that You don't need install any softwares or create user on VMs becasue the script will do it automatically. You only need to create the VMs manually.*  
-
+*Note that I have added all the test results of ***ONOS-MASTER branch*** to the ***TestResult folder of Test1node, Test3nodes and Test7nodes*** except ***Segment Routing****
 
 ## Environment:
 
@@ -189,7 +189,7 @@ This file is used in Starttest.jar, it will delete the *~/.ssh/known_hosts* and 
 For example, if you first run 3 node testcases and then you want to run 1 node testcases, please **Shut off instance** which you don't need. It sometimes affect the test results.  
 2. Don't delete id_rsa, id_rsa.pub, oneNodeDemo, threeNodeDemo, sevenNodeDemo after run onosAuTest1node.jar or onosAuTest3nodes.jar or onosAuTest7nodes.jar, because they will be used when you run Starttest.jar.   
 3. If you want to know the structure of the test scripts, please read **Tutorial of one node test.odp**.   
-4. The results of all ONOS-Master test cases I have added them to the TestResult folder of Test1node, Test3nodes and Test7nodes. I didn't add the result of Segment Routing. Because they all failed which is the same as the test result in :https://wiki.onosproject.org/display/ONOS/Master-Segment+Routing  
+4. The results of all **ONOS-Master** test cases I have added them to the TestResult folder of Test1node, Test3nodes and Test7nodes. I didn't add the result of Segment Routing. Because they all failed which is the same as the test result in :https://wiki.onosproject.org/display/ONOS/Master-Segment+Routing  
 
 ## Troubleshooting:
 
