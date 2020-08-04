@@ -1,0 +1,2328 @@
+Last login: Mon Jul 27 19:30:47 2020 from 174.114.234.237
+
+cell threeNodeDemo; cd ~/OnosSystemTest/TestON/bin/; ./cli.py run USECASE_SdnipFunctionCluster
+
+exit
+
+ubuntu@manage:~$ cell threeNodeDemo; cd ~/OnosSystemTest/TestON/bin/; ./cli.py ru
+un USECASE_SdnipFunctionCluster
+[01;31m[KONOS_CELL[m[K=threeNodeDemo
+OCC1=192.168.171.28
+OCC2=192.168.171.5
+OCC3=192.168.171.24
+OC1=192.168.171.28
+OC2=192.168.171.5
+OC3=192.168.171.24
+OCI=192.168.171.28
+OCN=192.168.171.17
+ONOS_APPS=gui,drivers,openflow,proxyarp
+ONOS_GROUP=sdn
+ONOS_MN_PY=/home/ubuntu/onos/tools/dev/mininet/onos.py
+ONOS_SCENARIOS=/home/ubuntu/onos/tools/test/scenarios
+ONOS_USER=sdn
+ONOS_WEB_PASS=rocks
+ONOS_WEB_USER=onos
+
+                                +----------------+
+------------------------------ { Script And Files }  ------------------------------
+                                +----------------+
+
+	Script Log File : /home/ubuntu/OnosSystemTest/TestON/logs/USECASE_SdnipFunctionCluster_27_Jul_2020_19_30_52/USECASE_SdnipFunctionCluster_27_Jul_2020_19_30_52.log
+	Report Log File : /home/ubuntu/OnosSystemTest/TestON/logs/USECASE_SdnipFunctionCluster_27_Jul_2020_19_30_52/USECASE_SdnipFunctionCluster_27_Jul_2020_19_30_52.rpt
+	Mininet Session Log : /home/ubuntu/OnosSystemTest/TestON/logs/USECASE_SdnipFunctionCluster_27_Jul_2020_19_30_52/Mininet.session
+	ONOScell Session Log : /home/ubuntu/OnosSystemTest/TestON/logs/USECASE_SdnipFunctionCluster_27_Jul_2020_19_30_52/ONOScell.session
+	QuaggaCliSpeaker1 Session Log : /home/ubuntu/OnosSystemTest/TestON/logs/USECASE_SdnipFunctionCluster_27_Jul_2020_19_30_52/QuaggaCliSpeaker1.session
+	Test Script : /home/ubuntu/OnosSystemTest/TestON/tests/USECASE/USECASE_SdnipFunctionCluster/USECASE_SdnipFunctionCluster.py
+	Test Params : /home/ubuntu/OnosSystemTest/TestON/tests/USECASE/USECASE_SdnipFunctionCluster/USECASE_SdnipFunctionCluster.params
+	Topology : /home/ubuntu/OnosSystemTest/TestON/tests/USECASE/USECASE_SdnipFunctionCluster/USECASE_SdnipFunctionCluster.topo
+                              +------------------+
+---------------------------  { Script Exec Params }  ---------------------------
+                              +------------------+
+
+	
+	'DEPENDENCY': 
+	'wrapper2': 'USECASE_SdnipI2MN_Cluster'
+	 'wrapper1': 'Functions'
+	 'topology': 'USECASE_SdnipI2MN_Cluster.py'
+	 'path': '/USECASE/USECASE_SdnipFunctionCluster/dependencies/'
+	
+	 'testcases': '101
+	 100
+	 200
+	 102
+	 1
+	 2
+	 3
+	 4
+	 5
+	 6
+	 7
+	 8
+	 9
+	 10
+	 11
+	 12'
+	 'GIT': 
+	'pull': 'False'
+	 'branch': 'master'
+	
+	 'timers': 
+	'RouteDelivery': '30'
+	 'PathAvailable': '20'
+	 'PingTestWithoutRoutes': '100'
+	 'PingTestWithRoutes': '30'
+	 'SdnIpSetup': '10'
+	 'TopoDiscovery': '15'
+	
+	 'ENV': 
+	'appString': 'drivers
+	openflow
+	proxyarp'
+	 'cellName': 'SDNIP'
+	
+	 'CTRL': 
+	'ip2': 'OC2'
+	 'ip3': 'OC3'
+	 'ip1': 'OC1'
+	 'numCtrl': '3'
+	 'port1': '6653'
+	
+	 'GRAPH': 
+	'nodeCluster': 'BM'
+	 'builds': '20'
+	
+	 'config': 
+	'peerNum': '7'
+	 'p64516': '10.0.16.1'
+	 'switchNum': '39'
+	 'p64514': '10.0.14.1'
+	 'p64515': '10.0.15.1'
+	
+	
+
+                               +---------------+
+----------------------------- { Components Used }  -----------------------------
+                               +---------------+
+	Mininet
+	ONOScell
+	QuaggaCliSpeaker1
+
+
+                              +--------+
+---------------------------- { Topology }  ----------------------------
+                              +--------+
+
+	
+	'Mininet': 
+	'connect_order': '3'
+	 'host': 'OCN'
+	 'user': 'sdn'
+	 'COMPONENTS': 
+	'home': '~/Mininet/mininet/custom/'
+	 'prompt': None
+	
+	 'password': 'rocks'
+	 'type': 'MininetCliDriver'
+	
+	 'ONOScell': 
+	'connect_order': '1'
+	 'host': 'localhost'
+	 'user': 'sdn'
+	 'COMPONENTS': 
+	'web_user': None
+	 'diff_clihost': None
+	 'web_pass': None
+	 'prompt': None
+	 'cluster_name': None
+	 'onos_home': None
+	 'nodes': '3'
+	 'karaf_password': None
+	 'karaf_username': None
+	 'rest_port': None
+	
+	 'home': None
+	 'password': 'rocks'
+	 'type': 'OnosClusterDriver'
+	
+	 'QuaggaCliSpeaker1': 
+	'connect_order': '2'
+	 'host': '127.0.0.1'
+	 'user': 'sdn'
+	 'COMPONENTS': 
+	'prompt': None
+	
+	 'password': 'rocks'
+	 'type': 'QuaggaCliDriver'
+	
+	
+------------------------------------------------------------
+
+
+******************************
+ CASE INIT 
+******************************
+
+['ONOScell', 'QuaggaCliSpeaker1', 'Mininet']
+2020-07-27 19:30:52,402 - USECASE_SdnipFunctionCluster - INFO - Creating component Handle: ONOScell
+2020-07-27 19:30:52,412 - USECASE_SdnipFunctionCluster - INFO - ONOScell: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5'] ONOS IPs
+2020-07-27 19:30:52,412 - USECASE_SdnipFunctionCluster - INFO - ONOScell: Trying to connect to localhost
+2020-07-27 19:30:53,551 - USECASE_SdnipFunctionCluster - INFO - Password not required logged in
+[95m2020-07-27 19:30:53,858 - USECASE_SdnipFunctionCluster - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '3', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosCliDriver', 'host': 'localhost'}[0m
+2020-07-27 19:30:53,858 - USECASE_SdnipFunctionCluster - INFO - Creating component Handle: ONOScli1
+2020-07-27 19:30:53,871 - USECASE_SdnipFunctionCluster - INFO - ONOScli1: Trying to connect to localhost
+2020-07-27 19:30:54,954 - USECASE_SdnipFunctionCluster - INFO - Password not required logged in
+[95m2020-07-27 19:30:55,260 - USECASE_SdnipFunctionCluster - DEBUG - {'connect_order': '1', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '3', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosClusterDriver', 'host': 'localhost'}[0m
+[95m2020-07-27 19:30:55,261 - USECASE_SdnipFunctionCluster - DEBUG - {'connect_order': '2', 'user': 'onos', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '3', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosRestDriver', 'host': '192.168.171.28', 'port': '8181'}[0m
+2020-07-27 19:30:55,261 - USECASE_SdnipFunctionCluster - INFO - Creating component Handle: ONOSrest1
+2020-07-27 19:30:55,331 - USECASE_SdnipFunctionCluster - INFO - ONOSrest1: ip set to 192.168.171.28
+[95m2020-07-27 19:30:55,332 - USECASE_SdnipFunctionCluster - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '3', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': 'localhost'}[0m
+2020-07-27 19:30:55,332 - USECASE_SdnipFunctionCluster - INFO - Creating component Handle: ONOSbench1
+2020-07-27 19:30:55,340 - USECASE_SdnipFunctionCluster - INFO - ONOSbench1: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5'] ONOS IPs
+2020-07-27 19:30:55,340 - USECASE_SdnipFunctionCluster - INFO - ONOSbench1: Trying to connect to localhost
+2020-07-27 19:30:56,408 - USECASE_SdnipFunctionCluster - INFO - Password not required logged in
+[95m2020-07-27 19:30:56,714 - USECASE_SdnipFunctionCluster - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '3', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': '192.168.171.28'}[0m
+2020-07-27 19:30:56,714 - USECASE_SdnipFunctionCluster - INFO - Creating component Handle: ONOSserver1
+2020-07-27 19:30:56,719 - USECASE_SdnipFunctionCluster - INFO - ONOSserver1: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5'] ONOS IPs
+2020-07-27 19:30:56,719 - USECASE_SdnipFunctionCluster - INFO - ONOSserver1: Trying to connect to 192.168.171.28
+2020-07-27 19:30:57,515 - USECASE_SdnipFunctionCluster - INFO - Password not required logged in
+[95m2020-07-27 19:30:57,835 - USECASE_SdnipFunctionCluster - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '3', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosCliDriver', 'host': 'localhost'}[0m
+2020-07-27 19:30:57,836 - USECASE_SdnipFunctionCluster - INFO - Creating component Handle: ONOScli2
+2020-07-27 19:30:57,841 - USECASE_SdnipFunctionCluster - INFO - ONOScli2: Trying to connect to localhost
+2020-07-27 19:30:58,946 - USECASE_SdnipFunctionCluster - INFO - Password not required logged in
+[95m2020-07-27 19:30:59,261 - USECASE_SdnipFunctionCluster - DEBUG - {'connect_order': '1', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '3', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosClusterDriver', 'host': 'localhost'}[0m
+[95m2020-07-27 19:30:59,261 - USECASE_SdnipFunctionCluster - DEBUG - {'connect_order': '2', 'user': 'onos', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '3', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosRestDriver', 'host': '192.168.171.5', 'port': '8181'}[0m
+2020-07-27 19:30:59,261 - USECASE_SdnipFunctionCluster - INFO - Creating component Handle: ONOSrest2
+2020-07-27 19:30:59,267 - USECASE_SdnipFunctionCluster - INFO - ONOSrest2: ip set to 192.168.171.5
+[95m2020-07-27 19:30:59,267 - USECASE_SdnipFunctionCluster - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '3', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': 'localhost'}[0m
+2020-07-27 19:30:59,267 - USECASE_SdnipFunctionCluster - INFO - Creating component Handle: ONOSbench2
+2020-07-27 19:30:59,271 - USECASE_SdnipFunctionCluster - INFO - ONOSbench2: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5'] ONOS IPs
+2020-07-27 19:30:59,272 - USECASE_SdnipFunctionCluster - INFO - ONOSbench2: Trying to connect to localhost
+2020-07-27 19:31:00,382 - USECASE_SdnipFunctionCluster - INFO - Password not required logged in
+[95m2020-07-27 19:31:00,688 - USECASE_SdnipFunctionCluster - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '3', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': '192.168.171.5'}[0m
+2020-07-27 19:31:00,688 - USECASE_SdnipFunctionCluster - INFO - Creating component Handle: ONOSserver2
+2020-07-27 19:31:00,692 - USECASE_SdnipFunctionCluster - INFO - ONOSserver2: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5'] ONOS IPs
+2020-07-27 19:31:00,693 - USECASE_SdnipFunctionCluster - INFO - ONOSserver2: Trying to connect to 192.168.171.5
+2020-07-27 19:31:01,530 - USECASE_SdnipFunctionCluster - INFO - Password not required logged in
+[95m2020-07-27 19:31:01,837 - USECASE_SdnipFunctionCluster - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '3', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosCliDriver', 'host': 'localhost'}[0m
+2020-07-27 19:31:01,837 - USECASE_SdnipFunctionCluster - INFO - Creating component Handle: ONOScli3
+2020-07-27 19:31:01,842 - USECASE_SdnipFunctionCluster - INFO - ONOScli3: Trying to connect to localhost
+2020-07-27 19:31:02,959 - USECASE_SdnipFunctionCluster - INFO - Password not required logged in
+[95m2020-07-27 19:31:03,265 - USECASE_SdnipFunctionCluster - DEBUG - {'connect_order': '1', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '3', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosClusterDriver', 'host': 'localhost'}[0m
+[95m2020-07-27 19:31:03,265 - USECASE_SdnipFunctionCluster - DEBUG - {'connect_order': '2', 'user': 'onos', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '3', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosRestDriver', 'host': '192.168.171.24', 'port': '8181'}[0m
+2020-07-27 19:31:03,266 - USECASE_SdnipFunctionCluster - INFO - Creating component Handle: ONOSrest3
+2020-07-27 19:31:03,271 - USECASE_SdnipFunctionCluster - INFO - ONOSrest3: ip set to 192.168.171.24
+[95m2020-07-27 19:31:03,272 - USECASE_SdnipFunctionCluster - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '3', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': 'localhost'}[0m
+2020-07-27 19:31:03,272 - USECASE_SdnipFunctionCluster - INFO - Creating component Handle: ONOSbench3
+2020-07-27 19:31:03,277 - USECASE_SdnipFunctionCluster - INFO - ONOSbench3: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5'] ONOS IPs
+2020-07-27 19:31:03,278 - USECASE_SdnipFunctionCluster - INFO - ONOSbench3: Trying to connect to localhost
+2020-07-27 19:31:04,378 - USECASE_SdnipFunctionCluster - INFO - Password not required logged in
+[95m2020-07-27 19:31:04,685 - USECASE_SdnipFunctionCluster - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '3', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': '192.168.171.24'}[0m
+2020-07-27 19:31:04,685 - USECASE_SdnipFunctionCluster - INFO - Creating component Handle: ONOSserver3
+2020-07-27 19:31:04,690 - USECASE_SdnipFunctionCluster - INFO - ONOSserver3: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5'] ONOS IPs
+2020-07-27 19:31:04,690 - USECASE_SdnipFunctionCluster - INFO - ONOSserver3: Trying to connect to 192.168.171.24
+2020-07-27 19:31:05,437 - USECASE_SdnipFunctionCluster - INFO - Password not required logged in
+2020-07-27 19:31:05,743 - USECASE_SdnipFunctionCluster - INFO - Creating component Handle: QuaggaCliSpeaker1
+2020-07-27 19:31:06,736 - USECASE_SdnipFunctionCluster - INFO - Password not required logged in
+2020-07-27 19:31:06,945 - USECASE_SdnipFunctionCluster - INFO - Creating component Handle: Mininet
+2020-07-27 19:31:08,441 - USECASE_SdnipFunctionCluster - INFO - Password not required logged in
+2020-07-27 19:31:08,659 - USECASE_SdnipFunctionCluster - INFO - Connection successful to the host sdn@192.168.171.17
+
+******************************
+ Result summary for Testcase101
+******************************
+
+[95m2020-07-27 19:31:08,670 - USECASE_SdnipFunctionCluster - DEBUG - Case Executed       : [101][0m
+[95m2020-07-27 19:31:08,670 - USECASE_SdnipFunctionCluster - DEBUG - Case to be executed : [100, 200, 102, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12][0m
+[2020-07-27 19:31:08.674619] [USECASE_SdnipFunctionCluster] [CASE]  Constructing test variables and building ONOS package
+[2020-07-27 19:31:08.676101] [USECASE_SdnipFunctionCluster] [STEP]  101.1: Constructing test variables
+[2020-07-27 19:31:08.678482] [USECASE_SdnipFunctionCluster] [CASE]  Pull onos branch and build onos on Teststation.
+2020-07-27 19:31:08,679 - USECASE_SdnipFunctionCluster - INFO - Skipped git checkout and pull as they are disabled in params file
+[2020-07-27 19:31:08.679965] [USECASE_SdnipFunctionCluster] [STEP]  101.2: Copying config files
+2020-07-27 19:31:08,681 - USECASE_SdnipFunctionCluster - INFO - Sending: scp /home/ubuntu/OnosSystemTest/TestON/tests/USECASE/USECASE_SdnipFunctionCluster/network-cfg.json sdn@localhost:~/onos/tools/package/config/network-cfg.json
+2020-07-27 19:31:09,627 - USECASE_SdnipFunctionCluster - INFO - Secure copy successful
+2020-07-27 19:31:09,630 - USECASE_SdnipFunctionCluster - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-27 19:31:09,630 - USECASE_SdnipFunctionCluster - INFO - Copy config file succeeded
+2020-07-27 19:31:09,630 - USECASE_SdnipFunctionCluster - INFO - Assertion Passed
+[2020-07-27 19:31:09.630706] [USECASE_SdnipFunctionCluster] [CASE]  Starting up 3 node(s) ONOS cluster
+2020-07-27 19:31:09,631 - USECASE_SdnipFunctionCluster - INFO - ONOS cluster size = 3
+[95m2020-07-27 19:31:09,631 - USECASE_SdnipFunctionCluster - DEBUG - Apps: drivers,openflow,proxyarp[0m
+2020-07-27 19:31:09,631 - USECASE_SdnipFunctionCluster - INFO - Atomix Cluster Size = 3 
+
+SDNIP                                           0%    0     0.0KB/s   --:-- ETA
+SDNIP                                         100%  354   699.5KB/s   00:00    
+
+SDNIP                                           0%    0     0.0KB/s   --:-- ETA
+SDNIP                                         100%  354   347.4KB/s   00:00    
+
+SDNIP                                           0%    0     0.0KB/s   --:-- ETA
+SDNIP                                         100%  354   686.9KB/s   00:00    
+[2020-07-27 19:31:10.825357] [USECASE_SdnipFunctionCluster] [STEP]  101.3: Apply cell to environment
+2020-07-27 19:31:11,061 - USECASE_SdnipFunctionCluster - INFO - ONOSbench2: Successfully set cell:  cell SDNIP
+
+[01;31m[KONOS_CELL[m[K=SDNIP
+
+OCC1=192.168.171.28
+
+OCC2=192.168.171.5
+
+OCC3=192.168.171.24
+
+OC1=192.168.171.28
+
+OC2=192.168.171.5
+
+OC3=192.168.171.24
+
+OCI=192.168.171.28
+
+OCN=192.168.171.17
+
+ONOS_APPS=drivers,openflow,proxyarp
+
+ONOS_GROUP=sdn
+
+ONOS_MN_PY=/home/sdn/onos/tools/dev/mininet/onos.py
+
+ONOS_NIC=192.168.171.*
+
+ONOS_SCENARIOS=/home/sdn/onos/tools/test/scenarios
+
+ONOS_USER=sdn
+
+ONOS_USE_SSH=true
+
+ONOS_WEB_PASS=rocks
+
+ONOS_WEB_USER=onos
+
+sdn@manage:~/onos$
+2020-07-27 19:31:11,069 - USECASE_SdnipFunctionCluster - INFO - ONOSbench1: Successfully set cell:  cell SDNIP
+
+[01;31m[KONOS_CELL[m[K=SDNIP
+
+OCC1=192.168.171.28
+
+OCC2=192.168.171.5
+
+OCC3=192.168.171.24
+
+OC1=192.168.171.28
+
+OC2=192.168.171.5
+
+OC3=192.168.171.24
+
+OCI=192.168.171.28
+
+OCN=192.168.171.17
+
+ONOS_APPS=drivers,openflow,proxyarp
+
+ONOS_GROUP=sdn
+
+ONOS_MN_PY=/home/sdn/onos/tools/dev/mininet/onos.py
+
+ONOS_NIC=192.168.171.*
+
+ONOS_SCENARIOS=/home/sdn/onos/tools/test/scenarios
+
+ONOS_USER=sdn
+
+ONOS_USE_SSH=true
+
+ONOS_WEB_PASS=rocks
+
+ONOS_WEB_USER=onos
+
+sdn@manage:~/onos$
+2020-07-27 19:31:11,074 - USECASE_SdnipFunctionCluster - INFO - ONOSbench3: Successfully set cell:  cell SDNIP
+
+[01;31m[KONOS_CELL[m[K=SDNIP
+
+OCC1=192.168.171.28
+
+OCC2=192.168.171.5
+
+OCC3=192.168.171.24
+
+OC1=192.168.171.28
+
+OC2=192.168.171.5
+
+OC3=192.168.171.24
+
+OCI=192.168.171.28
+
+OCN=192.168.171.17
+
+ONOS_APPS=drivers,openflow,proxyarp
+
+ONOS_GROUP=sdn
+
+ONOS_MN_PY=/home/sdn/onos/tools/dev/mininet/onos.py
+
+ONOS_NIC=192.168.171.*
+
+ONOS_SCENARIOS=/home/sdn/onos/tools/test/scenarios
+
+ONOS_USER=sdn
+
+ONOS_USE_SSH=true
+
+ONOS_WEB_PASS=rocks
+
+ONOS_WEB_USER=onos
+
+sdn@manage:~/onos$
+2020-07-27 19:31:11,330 - USECASE_SdnipFunctionCluster - INFO - ONOSbench1: Successfully set cell:  cell SDNIP
+
+[01;31m[KONOS_CELL[m[K=SDNIP
+
+OCC1=192.168.171.28
+
+OCC2=192.168.171.5
+
+OCC3=192.168.171.24
+
+OC1=192.168.171.28
+
+OC2=192.168.171.5
+
+OC3=192.168.171.24
+
+OCI=192.168.171.28
+
+OCN=192.168.171.17
+
+ONOS_APPS=drivers,openflow,proxyarp
+
+ONOS_GROUP=sdn
+
+ONOS_MN_PY=/home/sdn/onos/tools/dev/mininet/onos.py
+
+ONOS_NIC=192.168.171.*
+
+ONOS_SCENARIOS=/home/sdn/onos/tools/test/scenarios
+
+ONOS_TOPO=default
+
+ONOS_USER=sdn
+
+ONOS_USE_SSH=true
+
+ONOS_WEB_PASS=rocks
+
+ONOS_WEB_USER=onos
+
+sdn@manage:~/onos$
+2020-07-27 19:31:14,552 - USECASE_SdnipFunctionCluster - INFO - Verify cell returned:  onos-verify-cell
+
+192.168.171.17: node
+
+192.168.171.24: node-3
+
+192.168.171.28: node-1
+
+192.168.171.5: node-2
+
+sdn@manage:~/onos$
+2020-07-27 19:31:14,807 - USECASE_SdnipFunctionCluster - INFO - Verify cell returned:  onos-verify-cell
+
+192.168.171.17: node
+
+192.168.171.24: node-3
+
+192.168.171.28: node-1
+
+192.168.171.5: node-2
+
+sdn@manage:~/onos$
+2020-07-27 19:31:14,911 - USECASE_SdnipFunctionCluster - INFO - Verify cell returned:  onos-verify-cell
+
+192.168.171.17: node
+
+192.168.171.24: node-3
+
+192.168.171.28: node-1
+
+192.168.171.5: node-2
+
+sdn@manage:~/onos$
+2020-07-27 19:31:14,912 - USECASE_SdnipFunctionCluster - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-27 19:31:14,912 - USECASE_SdnipFunctionCluster - INFO - Successfully applied cell to environment
+2020-07-27 19:31:14,912 - USECASE_SdnipFunctionCluster - INFO - Assertion Passed
+2020-07-27 19:31:14,912 - USECASE_SdnipFunctionCluster - INFO - Safety check, killing all Atomix processes
+2020-07-27 19:31:15,831 - USECASE_SdnipFunctionCluster - INFO - Atomix instance 192.168.171.24 was killed
+2020-07-27 19:31:15,907 - USECASE_SdnipFunctionCluster - INFO - Atomix instance 192.168.171.5 was killed
+2020-07-27 19:31:15,927 - USECASE_SdnipFunctionCluster - INFO - Atomix instance 192.168.171.28 was killed
+2020-07-27 19:31:15,928 - USECASE_SdnipFunctionCluster - INFO - Safety check, killing all ONOS processes
+2020-07-27 19:31:16,828 - USECASE_SdnipFunctionCluster - INFO - ONOS instance 192.168.171.24 was killed
+2020-07-27 19:31:16,877 - USECASE_SdnipFunctionCluster - INFO - ONOS instance 192.168.171.28 was killed
+2020-07-27 19:31:16,908 - USECASE_SdnipFunctionCluster - INFO - ONOS instance 192.168.171.5 was killed
+[2020-07-27 19:31:16.909139] [USECASE_SdnipFunctionCluster] [STEP]  101.4: Uninstalling Atomix
+2020-07-27 19:31:17,795 - USECASE_SdnipFunctionCluster - INFO - Atomix 192.168.171.24 was uninstalled
+2020-07-27 19:31:17,812 - USECASE_SdnipFunctionCluster - INFO - Atomix 192.168.171.5 was uninstalled
+2020-07-27 19:31:17,826 - USECASE_SdnipFunctionCluster - INFO - Atomix 192.168.171.28 was uninstalled
+2020-07-27 19:31:17,826 - USECASE_SdnipFunctionCluster - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-27 19:31:17,827 - USECASE_SdnipFunctionCluster - INFO - Successfully uninstalled Atomix
+2020-07-27 19:31:17,827 - USECASE_SdnipFunctionCluster - INFO - Assertion Passed
+[2020-07-27 19:31:17.827278] [USECASE_SdnipFunctionCluster] [STEP]  101.5: Uninstalling ONOS package
+2020-07-27 19:31:19,202 - USECASE_SdnipFunctionCluster - INFO - ONOS 192.168.171.24 was uninstalled
+2020-07-27 19:31:19,366 - USECASE_SdnipFunctionCluster - INFO - ONOS 192.168.171.5 was uninstalled
+2020-07-27 19:32:54,163 - USECASE_SdnipFunctionCluster - INFO - ONOS 192.168.171.28 was uninstalled
+2020-07-27 19:32:54,163 - USECASE_SdnipFunctionCluster - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-27 19:32:54,164 - USECASE_SdnipFunctionCluster - INFO - Successfully uninstalled ONOS package
+2020-07-27 19:32:54,164 - USECASE_SdnipFunctionCluster - INFO - Assertion Passed
+[2020-07-27 19:32:54.164347] [USECASE_SdnipFunctionCluster] [STEP]  101.6: Creating ONOS package
+[95m2020-07-27 19:32:56,951 - USECASE_SdnipFunctionCluster - DEBUG - 
+
+[32mLoading:[0m 
+
+
+[1A[K[32mLoading:[0m 0 packages loaded
+
+
+[1A[K[32mAnalyzing:[0m target //:onos (1 packages loaded, 0 targets configured)
+
+
+[1A[K[32mINFO: [0mAnalyzed target //:onos (1 packages loaded, 418 targets configured).
+
+
+
+
+[1A[K[32mINFO: [0mFound 1 target...
+
+
+
+
+[1A[K
+
+
+[1A[K[32m[0 / 1][0m [Prepa] BazelWorkspaceStatusAction stable-status.txt
+
+
+[1A[KTarget //:onos up-to-date:
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/utils/osgiwrap/osgi-jar.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/utils/osgiwrap/osgi-jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/utils/osgi/libonlab-osgi.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/utils/junit/libonlab-junit.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/utils/misc/libonlab-misc.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/utils/rest/libonlab-rest.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/core/api/libonos-api.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/core/net/libonos-core-net.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/core/common/libonos-core-common.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/core/protobuf/models/libonos-core-protobuf-models.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/core/protobuf/models/proto/libonos-core-protobuf-models-proto.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/core/store/primitives/libonos-core-primitives.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/core/store/serializers/libonos-core-serializers.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/core/store/dist/libonos-core-dist.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/core/store/persistence/libonos-core-persistence.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/cli/libonos-cli.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/utilities/libonos-drivers-utilities.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/general/device/libonos-providers-general-device.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/web/api/libonos-rest.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/tools/build/conf/libonos-build-conf.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/onos-admin.tar.gz
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/onos-test.tar.gz
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/onos.tar.gz
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/bgp/bgpio/libonos-protocols-bgp-bgpio.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/bgp/api/libonos-protocols-bgp-api.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/bgp/ctl/libonos-protocols-bgp-ctl.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/isis/api/libonos-protocols-isis-api.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/isis/ctl/libonos-protocols-isis-ctl.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/isis/isisio/libonos-protocols-isis-isisio.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/lisp/api/libonos-protocols-lisp-api.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/lisp/ctl/libonos-protocols-lisp-ctl.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/lisp/msg/libonos-protocols-lisp-msg.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/netconf/api/libonos-protocols-netconf-api.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/netconf/ctl/libonos-protocols-netconf-ctl.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/openflow/api/libonos-protocols-openflow-api.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/openflow/ctl/libonos-protocols-openflow-ctl.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/ospf/api/libonos-protocols-ospf-api.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/ospf/protocol/libonos-protocols-ospf-protocol.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/ospf/ctl/libonos-protocols-ospf-ctl.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/ovsdb/rfc/libonos-protocols-ovsdb-rfc.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/ovsdb/api/libonos-protocols-ovsdb-api.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/ovsdb/ctl/libonos-protocols-ovsdb-ctl.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/p4runtime/api/libonos-protocols-p4runtime-api.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/p4runtime/model/libonos-protocols-p4runtime-model.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/pcep/pcepio/libonos-protocols-pcep-pcepio.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/pcep/server/api/libonos-protocols-pcep-server-api.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/pcep/server/ctl/libonos-protocols-pcep-server-ctl.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/rest/api/libonos-protocols-rest-api.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/rest/ctl/libonos-protocols-rest-ctl.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/restconf/client/api/libonos-protocols-restconf-client-api.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/restconf/client/ctl/libonos-protocols-restconf-client-ctl.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/snmp/api/libonos-protocols-snmp-api.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/snmp/ctl/libonos-protocols-snmp-ctl.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/tl1/api/libonos-protocols-tl1-api.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/tl1/ctl/libonos-protocols-tl1-ctl.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/xmpp/core/api/libonos-protocols-xmpp-core-api.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/xmpp/core/ctl/libonos-protocols-xmpp-core-ctl.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/netconf/device/libonos-providers-netconf-device.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/openflow/device/libonos-providers-openflow-device.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/openflow/packet/libonos-providers-openflow-packet.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/openflow/flow/libonos-providers-openflow-flow.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/openflow/group/libonos-providers-openflow-group.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/openflow/meter/libonos-providers-openflow-meter.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/ovsdb/device/libonos-providers-ovsdb-device.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/ovsdb/tunnel/libonos-providers-ovsdb-tunnel.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/p4runtime/packet/libonos-providers-p4runtime-packet.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/rest/device/libonos-providers-rest-device.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/snmp/device/libonos-providers-snmp-device.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/isis/cfg/libonos-providers-isis-cfg.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/isis/topology/libonos-providers-isis-topology.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/lisp/device/libonos-providers-lisp-device.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/tl1/device/libonos-providers-tl1-device.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/grpc/onos-protocols-grpc-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/gnmi/onos-protocols-gnmi-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/gnoi/onos-protocols-gnoi-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/p4runtime/onos-protocols-p4runtime-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/restconf/server/onos-protocols-restconf-server-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/xmpp/core/onos-protocols-xmpp-core-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/xmpp/pubsub/onos-protocols-xmpp-pubsub-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/general/onos-providers-general-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/bgp/onos-providers-bgp-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/bgpcep/onos-providers-bgpcep-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/host/onos-providers-host-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/hostprobing/onos-providers-hostprobing-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/isis/onos-providers-isis-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/link/onos-providers-link-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/lldp/onos-providers-lldp-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/netcfghost/onos-providers-netcfghost-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/netcfglinks/onos-providers-netcfglinks-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/netconf/onos-providers-netconf-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/null/onos-providers-null-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/openflow/app/onos-providers-openflow-app-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/openflow/base/onos-providers-openflow-base-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/openflow/message/onos-providers-openflow-message-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/ovsdb/onos-providers-ovsdb-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/ovsdb/host/onos-providers-ovsdb-host-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/ovsdb/base/onos-providers-ovsdb-base-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/p4runtime/onos-providers-p4runtime-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/pcep/onos-providers-pcep-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/rest/onos-providers-rest-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/snmp/onos-providers-snmp-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/lisp/onos-providers-lisp-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/tl1/onos-providers-tl1-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/xmpp/device/onos-providers-xmpp-device-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/default/onos-drivers-default-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/arista/onos-drivers-arista-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/bmv2/onos-drivers-bmv2-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/barefoot/onos-drivers-barefoot-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/ciena/waveserver/onos-drivers-ciena-waveserver-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/ciena/c5162/onos-drivers-ciena-c5162-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/ciena/c5170/onos-drivers-ciena-c5170-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/ciena/waveserverai/onos-drivers-ciena-waveserverai-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/cisco/netconf/onos-drivers-cisco-netconf-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/cisco/rest/onos-drivers-cisco-rest-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/corsa/onos-drivers-corsa-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/czechlight/onos-drivers-czechlight-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/flowspec/onos-drivers-flowspec-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/fujitsu/onos-drivers-fujitsu-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/gnmi/onos-drivers-gnmi-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/gnoi/onos-drivers-gnoi-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/hp/onos-drivers-hp-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/huawei/onos-drivers-huawei-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/juniper/onos-drivers-juniper-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/lisp/onos-drivers-lisp-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/lumentum/onos-drivers-lumentum-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/mellanox/onos-drivers-mellanox-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/netconf/onos-drivers-netconf-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/odtn-driver/onos-drivers-odtn-driver-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/oplink/onos-drivers-oplink-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/optical/onos-drivers-optical-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/ovsdb/onos-drivers-ovsdb-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/p4runtime/onos-drivers-p4runtime-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/polatis/netconf/onos-drivers-polatis-netconf-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/polatis/openflow/onos-drivers-polatis-openflow-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/server/onos-drivers-server-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/stratum/onos-drivers-stratum-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/zte/onos-drivers-zte-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/acl/onos-apps-acl-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/artemis/onos-apps-artemis-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/bgprouter/onos-apps-bgprouter-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/castor/onos-apps-castor-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/cfm/onos-apps-cfm-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/cip/onos-apps-cip-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/config/onos-apps-config-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/configsync-netconf/onos-apps-configsync-netconf-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/configsync/onos-apps-configsync-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/cord-support/onos-apps-cord-support-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/cpman/app/onos-apps-cpman-app-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/dhcp/onos-apps-dhcp-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/dhcprelay/onos-apps-dhcprelay-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/drivermatrix/onos-apps-drivermatrix-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/events/onos-apps-events-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/evpn-route-service/onos-apps-evpn-route-service-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/evpnopenflow/onos-apps-evpnopenflow-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/faultmanagement/onos-apps-faultmanagement-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/flowanalyzer/onos-apps-flowanalyzer-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/flowspec-api/onos-apps-flowspec-api-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/fwd/onos-apps-fwd-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/gangliametrics/onos-apps-gangliametrics-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/gluon/onos-apps-gluon-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/graphitemetrics/onos-apps-graphitemetrics-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/imr/onos-apps-imr-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/inbandtelemetry/onos-apps-inbandtelemetry-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/influxdbmetrics/onos-apps-influxdbmetrics-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/intentsync/onos-apps-intentsync-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/k8s-networking/onos-apps-k8s-networking-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/k8s-node/onos-apps-k8s-node-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/kafka-integration/onos-apps-kafka-integration-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/l3vpn/onos-apps-l3vpn-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/layout/onos-apps-layout-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/linkprops/onos-apps-linkprops-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/mappingmanagement/onos-apps-mappingmanagement-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/mcast/onos-apps-mcast-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/metrics/onos-apps-metrics-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/mfwd/onos-apps-mfwd-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/mlb/onos-apps-mlb-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/mobility/onos-apps-mobility-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/netconf/client/onos-apps-netconf-client-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/network-troubleshoot/onos-apps-network-troubleshoot-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/newoptical/onos-apps-newoptical-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/nodemetrics/onos-apps-nodemetrics-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/node-diagnosis/onos-apps-node-diagnosis-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/odtn/api/onos-apps-odtn-api-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/odtn/service/onos-apps-odtn-service-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/ofagent/onos-apps-ofagent-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/onlp-demo/onos-apps-onlp-demo-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/onos-topo/onos-apps-onos-topo-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/openroadm/onos-apps-openroadm-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/openstacknetworking/onos-apps-openstacknetworking-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/openstacknetworkingui/onos-apps-openstacknetworkingui-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/openstacknode/onos-apps-openstacknode-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/openstacktelemetry/onos-apps-openstacktelemetry-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/openstacktroubleshoot/onos-apps-openstacktroubleshoot-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/openstackvtap/onos-apps-openstackvtap-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/optical-model/onos-apps-optical-model-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/optical-rest/onos-apps-optical-rest-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/p4-tutorial/mytunnel/onos-apps-p4-tutorial-mytunnel-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/p4-tutorial/pipeconf/onos-apps-p4-tutorial-pipeconf-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/packet-stats/onos-apps-packet-stats-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/packet-throttle/onos-apps-packet-throttle-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/pathpainter/onos-apps-pathpainter-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/pcep-api/onos-apps-pcep-api-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/pim/onos-apps-pim-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/portloadbalancer/onos-apps-portloadbalancer-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/powermanagement/onos-apps-powermanagement-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/proxyarp/onos-apps-proxyarp-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/rabbitmq/onos-apps-rabbitmq-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/reactive-routing/onos-apps-reactive-routing-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/restconf/onos-apps-restconf-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/roadm/onos-apps-roadm-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/route-service/onos-apps-route-service-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/routeradvertisement/onos-apps-routeradvertisement-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/routing/cpr/onos-apps-routing-cpr-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/routing/fibinstaller/onos-apps-routing-fibinstaller-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/routing/fpm/onos-apps-routing-fpm-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/scalablegateway/onos-apps-scalablegateway-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/sdnip/onos-apps-sdnip-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/simplefabric/onos-apps-simplefabric-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/test/cluster-ha/onos-apps-test-cluster-ha-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/test/demo/onos-apps-test-demo-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/test/distributed-primitives/onos-apps-test-distributed-primitives-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/test/election/onos-apps-test-election-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/test/flow-perf/onos-apps-test-flow-perf-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/test/intent-perf/onos-apps-test-intent-perf-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/test/loadtest/onos-apps-test-loadtest-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/test/messaging-perf/onos-apps-test-messaging-perf-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/test/netcfg-monitor/onos-apps-test-netcfg-monitor-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/test/primitive-perf/onos-apps-test-primitive-perf-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/test/route-scale/onos-apps-test-route-scale-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/test/transaction-perf/onos-apps-test-transaction-perf-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/tetopology/onos-apps-tetopology-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/tetunnel/onos-apps-tetunnel-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/tunnel/onos-apps-tunnel-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/virtual/onos-apps-virtual-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/virtualbng/onos-apps-virtualbng-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/vpls/onos-apps-vpls-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/vrouter/onos-apps-vrouter-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/vtn/onos-apps-vtn-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/workflow/ofoverlay/onos-apps-workflow-ofoverlay-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/workflow/onos-apps-workflow-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/yang-gui/onos-apps-yang-gui-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/yang/onos-apps-yang-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/web/gui/onos-web-gui-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/web/gui2/onos-web-gui2-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/cpman/api/libonos-apps-cpman-api.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/routing-api/libonos-apps-routing-api.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/dhcp/api/libonos-apps-dhcp-api.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/dhcp/app/libonos-apps-dhcp-app.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/imr/api/libonos-apps-imr-api.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/imr/app/libonos-apps-imr-app.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/dhcprelay/app/libonos-apps-dhcprelay-app.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/dhcprelay/web/libonos-apps-dhcprelay-web.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/fwd/libonos-apps-fwd.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/iptopology-api/libonos-apps-iptopology-api.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/kafka-integration/api/libonos-apps-kafka-integration-api.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/kafka-integration/app/libonos-apps-kafka-integration-app.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/routing/common/libonos-apps-routing-common.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/vtn/vtnrsc/libonos-apps-vtn-vtnrsc.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/vtn/sfcmgr/libonos-apps-vtn-sfcmgr.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/vtn/vtnmgr/libonos-apps-vtn-vtnmgr.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/vtn/vtnweb/libonos-apps-vtn-vtnweb.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/pipelines/basic/onos-pipelines-basic-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/pipelines/fabric/onos-pipelines-fabric-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/models/ietf/onos-models-ietf-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/models/common/onos-models-common-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/models/huawei/onos-models-huawei-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/models/openconfig/onos-models-openconfig-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/models/openconfig-infinera/onos-models-openconfig-infinera-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/models/openconfig-odtn/onos-models-openconfig-odtn-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/models/openroadm/onos-models-openroadm-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/models/tapi/onos-models-tapi-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/models/l3vpn/onos-models-l3vpn-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/models/polatis/onos-models-polatis-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/models/ciena/waveserverai/onos-models-ciena-waveserverai-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K[32mINFO: [0mElapsed time: 2.620s, Critical Path: 0.17s
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K[32mINFO: [0m1 process: 1 linux-sandbox.
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K[32mINFO:[0m Build completed successfully, 2 total actions
+
+
+[1A[K[32mINFO:[0m Build completed successfully, 2 total actions
+
+[0msdn@manage:~/onos$[0m
+2020-07-27 19:32:56,952 - USECASE_SdnipFunctionCluster - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-27 19:32:56,952 - USECASE_SdnipFunctionCluster - INFO - Successfully created ONOS package
+2020-07-27 19:32:56,953 - USECASE_SdnipFunctionCluster - INFO - Assertion Passed
+[2020-07-27 19:32:56.953264] [USECASE_SdnipFunctionCluster] [STEP]  101.7: Installing Atomix
+2020-07-27 19:33:01,955 - USECASE_SdnipFunctionCluster - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-27 19:33:01,955 - USECASE_SdnipFunctionCluster - INFO - Successfully installed Atomix
+2020-07-27 19:33:01,955 - USECASE_SdnipFunctionCluster - INFO - Assertion Passed
+[2020-07-27 19:33:01.955752] [USECASE_SdnipFunctionCluster] [STEP]  101.8: Installing ONOS package
+2020-07-27 19:33:31,346 - USECASE_SdnipFunctionCluster - INFO - ONOS was installed on 192.168.171.24 and started.
+2020-07-27 19:33:31,680 - USECASE_SdnipFunctionCluster - INFO - ONOS was installed on 192.168.171.28 and started.
+2020-07-27 19:33:31,957 - USECASE_SdnipFunctionCluster - INFO - ONOS was installed on 192.168.171.5 and started.
+2020-07-27 19:33:31,957 - USECASE_SdnipFunctionCluster - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-27 19:33:31,957 - USECASE_SdnipFunctionCluster - INFO - Successfully installed ONOS package
+2020-07-27 19:33:31,957 - USECASE_SdnipFunctionCluster - INFO - Assertion Passed
+[2020-07-27 19:33:31.958178] [USECASE_SdnipFunctionCluster] [STEP]  101.9: Set up ONOS secure SSH
+2020-07-27 19:33:32,181 - USECASE_SdnipFunctionCluster - INFO - ONOSbench3: Secure SSH performed on 192.168.171.24
+2020-07-27 19:33:32,186 - USECASE_SdnipFunctionCluster - INFO - ONOSbench2: Secure SSH performed on 192.168.171.5
+2020-07-27 19:33:32,200 - USECASE_SdnipFunctionCluster - INFO - ONOSbench1: Secure SSH performed on 192.168.171.28
+2020-07-27 19:33:32,200 - USECASE_SdnipFunctionCluster - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-27 19:33:32,200 - USECASE_SdnipFunctionCluster - INFO - Secured ONOS ssh
+2020-07-27 19:33:32,200 - USECASE_SdnipFunctionCluster - INFO - Assertion Passed
+[2020-07-27 19:33:32.201043] [USECASE_SdnipFunctionCluster] [STEP]  101.10: Checking ONOS service
+2020-07-27 19:33:40,029 - USECASE_SdnipFunctionCluster - INFO - ONOSbench2: 192.168.171.5 is up
+2020-07-27 19:33:40,495 - USECASE_SdnipFunctionCluster - INFO - ONOSbench1: 192.168.171.28 is up
+2020-07-27 19:33:40,892 - USECASE_SdnipFunctionCluster - INFO - ONOSbench3: 192.168.171.24 is up
+2020-07-27 19:33:45,898 - USECASE_SdnipFunctionCluster - INFO - ONOS1 is up and ready
+2020-07-27 19:33:45,899 - USECASE_SdnipFunctionCluster - INFO - ONOS2 is up and ready
+2020-07-27 19:33:45,899 - USECASE_SdnipFunctionCluster - INFO - ONOS3 is up and ready
+2020-07-27 19:33:45,899 - USECASE_SdnipFunctionCluster - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-27 19:33:45,899 - USECASE_SdnipFunctionCluster - INFO - ONOS service is ready on all nodes
+2020-07-27 19:33:45,899 - USECASE_SdnipFunctionCluster - INFO - Assertion Passed
+[2020-07-27 19:33:45.899756] [USECASE_SdnipFunctionCluster] [STEP]  101.11: Starting ONOS CLI sessions
+2020-07-27 19:33:47,468 - USECASE_SdnipFunctionCluster - INFO - 192.168.171.28 CLI Started successfully
+[95m2020-07-27 19:33:47,469 - USECASE_SdnipFunctionCluster - DEBUG -  onos 192.168.171.28
+
+Welcome to Open Network Operating System (ONOS)!
+
+
+[1;31m     ____  _  ______  ____     [0m
+
+
+[1;31m    / __ \/ |/ / __ \/ __/   [0m
+
+
+[1;31m   / /_/ /    / /_/ /\ \     [0m
+
+
+[1;31m   \____/_/|_/\____/___/     [0m
+
+
+[1;31m                               [0m
+
+
+Documentation: wiki.onosproject.org      
+
+
+Tutorials:     tutorials.onosproject.org 
+
+
+Mailing lists: lists.onosproject.org     
+
+
+
+
+
+Come help out! Find out how at: contribute.onosproject.org 
+
+
+
+
+
+Hit '[1m<tab>[0m' for a list of available commands
+
+
+and '[1m[cmd] --help[0m' for help on a specific command.
+
+
+Hit '[1m<ctrl-d>[0m' or type '[1mlogout[0m' to exit ONOS session.
+
+
+
+
+[?1h=[90m~[0m                                                                               
+ 
+[?2004h[0m
+2020-07-27 19:33:47,491 - USECASE_SdnipFunctionCluster - INFO - 192.168.171.5 CLI Started successfully
+[95m2020-07-27 19:33:47,491 - USECASE_SdnipFunctionCluster - DEBUG -  onos 192.168.171.5
+
+Welcome to Open Network Operating System (ONOS)!
+
+
+[1;31m     ____  _  ______  ____     [0m
+
+
+[1;31m    / __ \/ |/ / __ \/ __/   [0m
+
+
+[1;31m   / /_/ /    / /_/ /\ \     [0m
+
+
+[1;31m   \____/_/|_/\____/___/     [0m
+
+
+[1;31m                               [0m
+
+
+Documentation: wiki.onosproject.org      
+
+
+Tutorials:     tutorials.onosproject.org 
+
+
+Mailing lists: lists.onosproject.org     
+
+
+
+
+
+Come help out! Find out how at: contribute.onosproject.org 
+
+
+
+
+
+Hit '[1m<tab>[0m' for a list of available commands
+
+
+and '[1m[cmd] --help[0m' for help on a specific command.
+
+
+Hit '[1m<ctrl-d>[0m' or type '[1mlogout[0m' to exit ONOS session.
+
+
+
+
+[?1h=[90m~[0m                                                                               
+ 
+[?2004h[0m
+2020-07-27 19:33:47,601 - USECASE_SdnipFunctionCluster - INFO - 192.168.171.24 CLI Started successfully
+[95m2020-07-27 19:33:47,602 - USECASE_SdnipFunctionCluster - DEBUG -  onos 192.168.171.24
+
+Welcome to Open Network Operating System (ONOS)!
+
+
+[1;31m     ____  _  ______  ____     [0m
+
+
+[1;31m    / __ \/ |/ / __ \/ __/   [0m
+
+
+[1;31m   / /_/ /    / /_/ /\ \     [0m
+
+
+[1;31m   \____/_/|_/\____/___/     [0m
+
+
+[1;31m                               [0m
+
+
+Documentation: wiki.onosproject.org      
+
+
+Tutorials:     tutorials.onosproject.org 
+
+
+Mailing lists: lists.onosproject.org     
+
+
+
+
+
+Come help out! Find out how at: contribute.onosproject.org 
+
+
+
+
+
+Hit '[1m<tab>[0m' for a list of available commands
+
+
+and '[1m[cmd] --help[0m' for help on a specific command.
+
+
+Hit '[1m<ctrl-d>[0m' or type '[1mlogout[0m' to exit ONOS session.
+
+
+
+
+[?1h=[90m~[0m                                                                               
+ 
+[?2004h[0m
+2020-07-27 19:33:47,602 - USECASE_SdnipFunctionCluster - INFO - Successful CLI startup
+2020-07-27 19:33:47,602 - USECASE_SdnipFunctionCluster - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-27 19:33:47,602 - USECASE_SdnipFunctionCluster - INFO - Successfully start ONOS cli
+2020-07-27 19:33:47,603 - USECASE_SdnipFunctionCluster - INFO - Assertion Passed
+[2020-07-27 19:33:47.603160] [USECASE_SdnipFunctionCluster] [STEP]  101.12: Checking ONOS nodes
+2020-07-27 19:33:47,893 - USECASE_SdnipFunctionCluster - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 19:33:47,895 - USECASE_SdnipFunctionCluster - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 19:33:47,895 - USECASE_SdnipFunctionCluster - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+2020-07-27 19:33:47,985 - USECASE_SdnipFunctionCluster - INFO - Command 'nodes -j' sent to ONOScli3.
+[95m2020-07-27 19:33:47,985 - USECASE_SdnipFunctionCluster - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 19:33:47,985 - USECASE_SdnipFunctionCluster - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+2020-07-27 19:33:48,169 - USECASE_SdnipFunctionCluster - INFO - Command 'nodes -j' sent to ONOScli2.
+[95m2020-07-27 19:33:48,169 - USECASE_SdnipFunctionCluster - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 19:33:48,169 - USECASE_SdnipFunctionCluster - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[93m2020-07-27 19:33:48,289 - USECASE_SdnipFunctionCluster - WARNING - ['192.168.171.24', '192.168.171.28', '192.168.171.5'] != [][0m
+[93m2020-07-27 19:33:48,289 - USECASE_SdnipFunctionCluster - WARNING - ['192.168.171.24', '192.168.171.28', '192.168.171.5'] != [][0m
+[93m2020-07-27 19:33:48,289 - USECASE_SdnipFunctionCluster - WARNING - ['192.168.171.24', '192.168.171.28', '192.168.171.5'] != [][0m
+2020-07-27 19:33:49,549 - USECASE_SdnipFunctionCluster - INFO - Command 'nodes -j' sent to ONOScli2.
+[95m2020-07-27 19:33:49,550 - USECASE_SdnipFunctionCluster - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 19:33:49,550 - USECASE_SdnipFunctionCluster - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+2020-07-27 19:33:49,552 - USECASE_SdnipFunctionCluster - INFO - Command 'nodes -j' sent to ONOScli3.
+[95m2020-07-27 19:33:49,553 - USECASE_SdnipFunctionCluster - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 19:33:49,553 - USECASE_SdnipFunctionCluster - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+2020-07-27 19:33:49,573 - USECASE_SdnipFunctionCluster - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 19:33:49,573 - USECASE_SdnipFunctionCluster - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 19:33:49,573 - USECASE_SdnipFunctionCluster - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[93m2020-07-27 19:33:49,681 - USECASE_SdnipFunctionCluster - WARNING - ['192.168.171.24', '192.168.171.28', '192.168.171.5'] != [][0m
+[93m2020-07-27 19:33:49,682 - USECASE_SdnipFunctionCluster - WARNING - ['192.168.171.24', '192.168.171.28', '192.168.171.5'] != [][0m
+[93m2020-07-27 19:33:49,682 - USECASE_SdnipFunctionCluster - WARNING - ['192.168.171.24', '192.168.171.28', '192.168.171.5'] != [][0m
+2020-07-27 19:33:50,941 - USECASE_SdnipFunctionCluster - INFO - Command 'nodes -j' sent to ONOScli2.
+[95m2020-07-27 19:33:50,941 - USECASE_SdnipFunctionCluster - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 19:33:50,941 - USECASE_SdnipFunctionCluster - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+2020-07-27 19:33:50,945 - USECASE_SdnipFunctionCluster - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 19:33:50,945 - USECASE_SdnipFunctionCluster - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 19:33:50,945 - USECASE_SdnipFunctionCluster - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+2020-07-27 19:33:50,945 - USECASE_SdnipFunctionCluster - INFO - Command 'nodes -j' sent to ONOScli3.
+[95m2020-07-27 19:33:50,946 - USECASE_SdnipFunctionCluster - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 19:33:50,946 - USECASE_SdnipFunctionCluster - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[93m2020-07-27 19:33:51,056 - USECASE_SdnipFunctionCluster - WARNING - ['192.168.171.24', '192.168.171.28', '192.168.171.5'] != [u'192.168.171.28', u'192.168.171.5'][0m
+[93m2020-07-27 19:33:51,056 - USECASE_SdnipFunctionCluster - WARNING - ['192.168.171.24', '192.168.171.28', '192.168.171.5'] != [u'192.168.171.28', u'192.168.171.5'][0m
+[93m2020-07-27 19:33:51,056 - USECASE_SdnipFunctionCluster - WARNING - ['192.168.171.24', '192.168.171.28', '192.168.171.5'] != [u'192.168.171.28', u'192.168.171.5'][0m
+2020-07-27 19:33:52,317 - USECASE_SdnipFunctionCluster - INFO - Command 'nodes -j' sent to ONOScli2.
+2020-07-27 19:33:52,317 - USECASE_SdnipFunctionCluster - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 19:33:52,318 - USECASE_SdnipFunctionCluster - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 19:33:52,318 - USECASE_SdnipFunctionCluster - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 19:33:52,318 - USECASE_SdnipFunctionCluster - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 19:33:52,318 - USECASE_SdnipFunctionCluster - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+2020-07-27 19:33:52,321 - USECASE_SdnipFunctionCluster - INFO - Command 'nodes -j' sent to ONOScli3.
+[95m2020-07-27 19:33:52,321 - USECASE_SdnipFunctionCluster - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 19:33:52,321 - USECASE_SdnipFunctionCluster - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 19:33:52,438 - USECASE_SdnipFunctionCluster - DEBUG - <bound method Cluster.nodesCheck of Cluster[{ONOS1:192.168.171.28, Configured - Active}, {ONOS2:192.168.171.5, Configured - Active}, {ONOS3:192.168.171.24, Configured - Active}; Atomix Nodes:{ONOS1:192.168.171.28}, {ONOS2:192.168.171.5}, {ONOS3:192.168.171.24}]> was retried 3 times.[0m
+2020-07-27 19:33:52,438 - USECASE_SdnipFunctionCluster - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-27 19:33:52,438 - USECASE_SdnipFunctionCluster - INFO - All ONOS nodes are in READY state
+2020-07-27 19:33:52,438 - USECASE_SdnipFunctionCluster - INFO - Assertion Passed
+[2020-07-27 19:33:52.439153] [USECASE_SdnipFunctionCluster] [STEP]  101.13: Checking ONOS applications
+2020-07-27 19:33:52,877 - USECASE_SdnipFunctionCluster - INFO - Command 'onos:apps -j' sent to ONOScli1.
+[95m2020-07-27 19:33:52,894 - USECASE_SdnipFunctionCluster - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[95m2020-07-27 19:33:52,894 - USECASE_SdnipFunctionCluster - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[93m2020-07-27 19:33:52,895 - USECASE_SdnipFunctionCluster - WARNING - Relaxed Regex: Searching for a json string amongst the output[0m
+2020-07-27 19:33:52,945 - USECASE_SdnipFunctionCluster - INFO - Command 'onos:apps -j' sent to ONOScli2.
+[95m2020-07-27 19:33:52,963 - USECASE_SdnipFunctionCluster - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[95m2020-07-27 19:33:52,963 - USECASE_SdnipFunctionCluster - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[93m2020-07-27 19:33:52,963 - USECASE_SdnipFunctionCluster - WARNING - Relaxed Regex: Searching for a json string amongst the output[0m
+2020-07-27 19:33:53,045 - USECASE_SdnipFunctionCluster - INFO - Command 'onos:apps -j' sent to ONOScli3.
+[95m2020-07-27 19:33:53,054 - USECASE_SdnipFunctionCluster - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[95m2020-07-27 19:33:53,054 - USECASE_SdnipFunctionCluster - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[93m2020-07-27 19:33:53,054 - USECASE_SdnipFunctionCluster - WARNING - Relaxed Regex: Searching for a json string amongst the output[0m
+2020-07-27 19:33:53,169 - USECASE_SdnipFunctionCluster - INFO - ONOS1: org.onosproject.drivers is activated
+2020-07-27 19:33:53,169 - USECASE_SdnipFunctionCluster - INFO - ONOS2: org.onosproject.drivers is activated
+2020-07-27 19:33:53,170 - USECASE_SdnipFunctionCluster - INFO - ONOS3: org.onosproject.drivers is activated
+2020-07-27 19:33:53,550 - USECASE_SdnipFunctionCluster - INFO - Command 'onos:apps -j' sent to ONOScli2.
+2020-07-27 19:33:53,551 - USECASE_SdnipFunctionCluster - INFO - Command 'onos:apps -j' sent to ONOScli1.
+[95m2020-07-27 19:33:53,567 - USECASE_SdnipFunctionCluster - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[95m2020-07-27 19:33:53,585 - USECASE_SdnipFunctionCluster - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[95m2020-07-27 19:33:53,585 - USECASE_SdnipFunctionCluster - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[95m2020-07-27 19:33:53,586 - USECASE_SdnipFunctionCluster - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[93m2020-07-27 19:33:53,587 - USECASE_SdnipFunctionCluster - WARNING - Relaxed Regex: Searching for a json string amongst the output[0m
+2020-07-27 19:33:53,586 - USECASE_SdnipFunctionCluster - INFO - Command 'onos:apps -j' sent to ONOScli3.
+[93m2020-07-27 19:33:53,586 - USECASE_SdnipFunctionCluster - WARNING - Relaxed Regex: Searching for a json string amongst the output[0m
+[95m2020-07-27 19:33:53,604 - USECASE_SdnipFunctionCluster - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[95m2020-07-27 19:33:53,605 - USECASE_SdnipFunctionCluster - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[93m2020-07-27 19:33:53,605 - USECASE_SdnipFunctionCluster - WARNING - Relaxed Regex: Searching for a json string amongst the output[0m
+2020-07-27 19:33:53,720 - USECASE_SdnipFunctionCluster - INFO - ONOS1: org.onosproject.openflow is activated
+2020-07-27 19:33:53,721 - USECASE_SdnipFunctionCluster - INFO - ONOS2: org.onosproject.openflow is activated
+2020-07-27 19:33:53,721 - USECASE_SdnipFunctionCluster - INFO - ONOS3: org.onosproject.openflow is activated
+2020-07-27 19:33:54,070 - USECASE_SdnipFunctionCluster - INFO - Command 'onos:apps -j' sent to ONOScli2.
+[95m2020-07-27 19:33:54,088 - USECASE_SdnipFunctionCluster - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[95m2020-07-27 19:33:54,095 - USECASE_SdnipFunctionCluster - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[93m2020-07-27 19:33:54,095 - USECASE_SdnipFunctionCluster - WARNING - Relaxed Regex: Searching for a json string amongst the output[0m
+2020-07-27 19:33:54,097 - USECASE_SdnipFunctionCluster - INFO - Command 'onos:apps -j' sent to ONOScli1.
+[95m2020-07-27 19:33:54,114 - USECASE_SdnipFunctionCluster - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[95m2020-07-27 19:33:54,116 - USECASE_SdnipFunctionCluster - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[93m2020-07-27 19:33:54,116 - USECASE_SdnipFunctionCluster - WARNING - Relaxed Regex: Searching for a json string amongst the output[0m
+2020-07-27 19:33:54,117 - USECASE_SdnipFunctionCluster - INFO - Command 'onos:apps -j' sent to ONOScli3.
+[95m2020-07-27 19:33:54,135 - USECASE_SdnipFunctionCluster - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[95m2020-07-27 19:33:54,135 - USECASE_SdnipFunctionCluster - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[93m2020-07-27 19:33:54,135 - USECASE_SdnipFunctionCluster - WARNING - Relaxed Regex: Searching for a json string amongst the output[0m
+2020-07-27 19:33:54,248 - USECASE_SdnipFunctionCluster - INFO - ONOS1: org.onosproject.proxyarp is activated
+2020-07-27 19:33:54,248 - USECASE_SdnipFunctionCluster - INFO - ONOS2: org.onosproject.proxyarp is activated
+2020-07-27 19:33:54,249 - USECASE_SdnipFunctionCluster - INFO - ONOS3: org.onosproject.proxyarp is activated
+2020-07-27 19:33:54,249 - USECASE_SdnipFunctionCluster - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-27 19:33:54,249 - USECASE_SdnipFunctionCluster - INFO - All ONOS apps are activated
+2020-07-27 19:33:54,249 - USECASE_SdnipFunctionCluster - INFO - Assertion Passed
+[2020-07-27 19:33:54.249617] [USECASE_SdnipFunctionCluster] [STEP]  101.14: Checking if ONOS CLI is ready for issuing commands
+[95m2020-07-27 19:33:54,251 - USECASE_SdnipFunctionCluster - DEBUG - ONOS1: Using CLI driver's attribute for 'summary'[0m
+[95m2020-07-27 19:33:54,251 - USECASE_SdnipFunctionCluster - DEBUG - ONOS2: Using CLI driver's attribute for 'summary'[0m
+[95m2020-07-27 19:33:54,252 - USECASE_SdnipFunctionCluster - DEBUG - ONOS3: Using CLI driver's attribute for 'summary'[0m
+2020-07-27 19:33:54,505 - USECASE_SdnipFunctionCluster - INFO - Command 'summary -j' sent to ONOScli3.
+[95m2020-07-27 19:33:54,505 - USECASE_SdnipFunctionCluster - DEBUG - REGEX PATTERN SET TO: 'summary -j'
+SENT COMMAND STRING WAS: 'summary -j'[0m
+[95m2020-07-27 19:33:54,506 - USECASE_SdnipFunctionCluster - DEBUG - REGEX PATTERN SET TO: 'summary -j'
+SENT COMMAND STRING WAS: 'summary -j'[0m
+2020-07-27 19:33:54,509 - USECASE_SdnipFunctionCluster - INFO - Command 'summary -j' sent to ONOScli1.
+[95m2020-07-27 19:33:54,509 - USECASE_SdnipFunctionCluster - DEBUG - REGEX PATTERN SET TO: 'summary -j'
+SENT COMMAND STRING WAS: 'summary -j'[0m
+[95m2020-07-27 19:33:54,509 - USECASE_SdnipFunctionCluster - DEBUG - REGEX PATTERN SET TO: 'summary -j'
+SENT COMMAND STRING WAS: 'summary -j'[0m
+2020-07-27 19:33:54,509 - USECASE_SdnipFunctionCluster - INFO - Command 'summary -j' sent to ONOScli2.
+[95m2020-07-27 19:33:54,510 - USECASE_SdnipFunctionCluster - DEBUG - REGEX PATTERN SET TO: 'summary -j'
+SENT COMMAND STRING WAS: 'summary -j'[0m
+[95m2020-07-27 19:33:54,510 - USECASE_SdnipFunctionCluster - DEBUG - REGEX PATTERN SET TO: 'summary -j'
+SENT COMMAND STRING WAS: 'summary -j'[0m
+[95m2020-07-27 19:33:54,619 - USECASE_SdnipFunctionCluster - DEBUG - ONOS1's result : {"node":"192.168.171.28","version":"2.5.0.aa5a3af99f","clusterId":"onos","nodes":3,"devices":0,"links":0,"hosts":0,"SCC(s)":0,"flows":0,"intents":0}[0m
+[95m2020-07-27 19:33:54,620 - USECASE_SdnipFunctionCluster - DEBUG - ONOS2's result : {"node":"192.168.171.5","version":"2.5.0.aa5a3af99f","clusterId":"onos","nodes":3,"devices":0,"links":0,"hosts":0,"SCC(s)":0,"flows":0,"intents":0}[0m
+[95m2020-07-27 19:33:54,620 - USECASE_SdnipFunctionCluster - DEBUG - ONOS3's result : {"node":"192.168.171.24","version":"2.5.0.aa5a3af99f","clusterId":"onos","nodes":3,"devices":0,"links":0,"hosts":0,"SCC(s)":0,"flows":0,"intents":0}[0m
+2020-07-27 19:33:54,620 - USECASE_SdnipFunctionCluster - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-27 19:33:54,620 - USECASE_SdnipFunctionCluster - INFO - ONOS summary command succeded
+2020-07-27 19:33:54,620 - USECASE_SdnipFunctionCluster - INFO - Assertion Passed
+
+*****************************
+ Result: Pass 
+*****************************
+
+
+******************************
+ Result summary for Testcase100
+******************************
+
+[95m2020-07-27 19:33:54,624 - USECASE_SdnipFunctionCluster - DEBUG - Case Executed       : [101, 100][0m
+[95m2020-07-27 19:33:54,624 - USECASE_SdnipFunctionCluster - DEBUG - Case to be executed : [200, 102, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12][0m
+[2020-07-27 19:33:54.624912] [USECASE_SdnipFunctionCluster] [CASE]  Setup the Mininet testbed
+[2020-07-27 19:33:54.626472] [USECASE_SdnipFunctionCluster] [STEP]  100.1: Starting Mininet Topology
+2020-07-27 19:33:54,627 - USECASE_SdnipFunctionCluster - INFO - Mininet: Clearing any residual state or processes
+2020-07-27 19:33:56,171 - USECASE_SdnipFunctionCluster - INFO - Mininet: Clean
+2020-07-27 19:33:56,171 - USECASE_SdnipFunctionCluster - INFO - Starting Mininet from topo file /home/ubuntu/OnosSystemTest/TestON/tests/USECASE/USECASE_SdnipFunctionCluster/dependencies/USECASE_SdnipI2MN_Cluster.py
+2020-07-27 19:33:56,272 - USECASE_SdnipFunctionCluster - INFO - Sending 'sudo -E python /home/ubuntu/OnosSystemTest/TestON/tests/USECASE/USECASE_SdnipFunctionCluster/dependencies/USECASE_SdnipI2MN_Cluster.py ' to Mininet
+[91m2020-07-27 19:33:56,399 - USECASE_SdnipFunctionCluster - ERROR - Mininet:  
+
+sdn@node:~$ sudo -E python /home/ubuntu/OnosSystemTest/TestON/tests/USECASE/USECA
+ASE_SdnipFunctionCluster/dependencies/USECASE_SdnipI2MN_Cluster.py 
+
+python: can't open file '/home/ubuntu/OnosSystemTest/TestON/tests/USECASE/USECASE_SdnipFunctionCluster/dependencies/USECASE_SdnipI2MN_Cluster.py': [Errno 2] No such file or directory[0m
+2020-07-27 19:33:56,399 - USECASE_SdnipFunctionCluster - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+[91m2020-07-27 19:33:56,399 - USECASE_SdnipFunctionCluster - ERROR - Failed to load topology[0m
+
+[REPORT] [27 Jul 2020 19:33:56] Failed to load topology
+[93m2020-07-27 19:33:56,399 - USECASE_SdnipFunctionCluster - WARNING - Assertion Failed[0m
+
+*****************************
+ Result: Failed 
+*****************************
+
+
+
+*************************************
+	Test Execution Summary
+
+************************************* 
+
+ Test Start           : 27 Jul 2020 19:30:52
+ Test End             : 27 Jul 2020 19:33:56
+ Execution Time       : 0:03:03.999270
+ Total Tests Planned  : 16
+ Total Tests Run      : 2
+ Total Pass           : 1
+ Total Fail           : 1
+ Total No Result      : 0
+ Success Percentage   : 50%
+ Execution Percentage : 12%
+
+ Case Failed          : [100]
+ Case Executed        : [101, 100]
+ Case Not Executed    : [200, 102, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+Disconnecting from Mininet: <class 'drivers.common.cli.emulator.mininetclidriver.MininetCliDriver'>
+Disconnecting from QuaggaCliSpeaker1: <class 'drivers.common.cli.quaggaclidriver.QuaggaCliDriver'>
+Disconnecting from ONOScli3: <class 'drivers.common.cli.onosclidriver.OnosCliDriver'>
+Disconnecting from ONOSserver3: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from ONOSserver2: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from ONOSserver1: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from ONOSrest1: <class 'drivers.common.api.controller.onosrestdriver.OnosRestDriver'>
+Disconnecting from ONOSrest2: <class 'drivers.common.api.controller.onosrestdriver.OnosRestDriver'>
+Disconnecting from ONOSbench3: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from ONOSrest3: <class 'drivers.common.api.controller.onosrestdriver.OnosRestDriver'>
+Disconnecting from ONOSbench1: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from ONOScli2: <class 'drivers.common.cli.onosclidriver.OnosCliDriver'>
+Disconnecting from ONOScli1: <class 'drivers.common.cli.onosclidriver.OnosCliDriver'>
+Disconnecting from ONOSbench2: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from ONOScell: <class 'drivers.common.cli.onosclusterdriver.OnosClusterDriver'>
+ubuntu@manage:~/OnosSystemTest/TestON/bin$ 
+ubuntu@manage:~/OnosSystemTest/TestON/bin$ exit
+logout

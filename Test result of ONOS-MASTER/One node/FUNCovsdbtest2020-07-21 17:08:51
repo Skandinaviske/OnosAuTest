@@ -1,0 +1,2404 @@
+Last login: Tue Jul 21 21:08:47 2020 from 174.114.234.237
+
+cell oneNodeDemo; cd ~/OnosSystemTest/TestON/bin/; ./cli.py run FUNCovsdbtest
+
+exit
+
+ubuntu@manage:~$ cell oneNodeDemo; cd ~/OnosSystemTest/TestON/bin/; ./cli.py run 
+ FUNCovsdbtest
+[01;31m[KONOS_CELL[m[K=oneNodeDemo
+OCC1=192.168.171.28
+OC1=192.168.171.28
+OCI=192.168.171.28
+OCN=192.168.171.17
+ONOS_APPS=gui,drivers,openflow,proxyarp
+ONOS_GROUP=sdn
+ONOS_MN_PY=/home/ubuntu/onos/tools/dev/mininet/onos.py
+ONOS_SCENARIOS=/home/ubuntu/onos/tools/test/scenarios
+ONOS_USER=sdn
+ONOS_WEB_PASS=rocks
+ONOS_WEB_USER=onos
+
+                                +----------------+
+------------------------------ { Script And Files }  ------------------------------
+                                +----------------+
+
+	Script Log File : /home/ubuntu/OnosSystemTest/TestON/logs/FUNCovsdbtest_21_Jul_2020_21_08_51/FUNCovsdbtest_21_Jul_2020_21_08_51.log
+	Report Log File : /home/ubuntu/OnosSystemTest/TestON/logs/FUNCovsdbtest_21_Jul_2020_21_08_51/FUNCovsdbtest_21_Jul_2020_21_08_51.rpt
+	OVSDB2 Session Log : /home/ubuntu/OnosSystemTest/TestON/logs/FUNCovsdbtest_21_Jul_2020_21_08_51/OVSDB2.session
+	OVSDB1 Session Log : /home/ubuntu/OnosSystemTest/TestON/logs/FUNCovsdbtest_21_Jul_2020_21_08_51/OVSDB1.session
+	ONOScell Session Log : /home/ubuntu/OnosSystemTest/TestON/logs/FUNCovsdbtest_21_Jul_2020_21_08_51/ONOScell.session
+	Test Script : /home/ubuntu/OnosSystemTest/TestON/tests/FUNC/FUNCovsdbtest/FUNCovsdbtest.py
+	Test Params : /home/ubuntu/OnosSystemTest/TestON/tests/FUNC/FUNCovsdbtest/FUNCovsdbtest.params
+	Topology : /home/ubuntu/OnosSystemTest/TestON/tests/FUNC/FUNCovsdbtest/FUNCovsdbtest.topo
+                              +------------------+
+---------------------------  { Script Exec Params }  ---------------------------
+                              +------------------+
+
+	
+	'OVSDB': 
+	'ip2': 'OC1'
+	 'ip1': 'OCN'
+	
+	 'testcases': '1
+	3
+	4
+	2
+	5
+	6
+	7
+	8'
+	 'GIT': 
+	'pull': 'False'
+	 'branch': 'master'
+	
+	 'HTTP': 
+	'path': '/onos/vtn/'
+	 'port': '8181'
+	
+	 'ENV': 
+	'cellApps': 'drivers
+	openflow
+	proxyarp
+	mobility'
+	 'cellName': 'singlenode'
+	
+	 'CTRL': 
+	'ip1': 'OC1'
+	 'ovsdbport': '6640'
+	 'port1': '6653'
+	
+	 'GRAPH': 
+	'nodeCluster': 'VM'
+	 'builds': '20'
+	
+	 'SLEEP': 
+	'startup': '15'
+	
+	 'TIMER': 
+	'delaytime': '5'
+	
+	 'DEPENDENCY': 
+	'path': '/tests/FUNC/FUNCovsdbtest/dependencies/'
+	
+	
+
+                               +---------------+
+----------------------------- { Components Used }  -----------------------------
+                               +---------------+
+	OVSDB2
+	OVSDB1
+	ONOScell
+
+
+                              +--------+
+---------------------------- { Topology }  ----------------------------
+                              +--------+
+
+	
+	'OVSDB2': 
+	'connect_order': '2'
+	 'host': 'OC1'
+	 'user': 'sdn'
+	 'COMPONENTS': 
+	'prompt': None
+	
+	 'password': 'rocks'
+	 'type': 'OvsdbDriver'
+	
+	 'OVSDB1': 
+	'connect_order': '2'
+	 'host': 'OCN'
+	 'user': 'sdn'
+	 'COMPONENTS': 
+	'prompt': None
+	
+	 'password': 'rocks'
+	 'type': 'OvsdbDriver'
+	
+	 'ONOScell': 
+	'connect_order': '1'
+	 'host': 'localhost'
+	 'user': 'sdn'
+	 'COMPONENTS': 
+	'web_user': None
+	 'diff_clihost': None
+	 'web_pass': None
+	 'prompt': None
+	 'cluster_name': None
+	 'onos_home': None
+	 'nodes': '1'
+	 'karaf_password': None
+	 'karaf_username': None
+	 'rest_port': None
+	
+	 'home': None
+	 'password': 'rocks'
+	 'type': 'OnosClusterDriver'
+	
+	
+------------------------------------------------------------
+
+
+******************************
+ CASE INIT 
+******************************
+
+['ONOScell', 'OVSDB2', 'OVSDB1']
+2020-07-21 21:08:51,720 - FUNCovsdbtest - INFO - Creating component Handle: ONOScell
+2020-07-21 21:08:51,728 - FUNCovsdbtest - INFO - ONOScell: Found ['192.168.171.28'] ONOS IPs
+2020-07-21 21:08:51,728 - FUNCovsdbtest - INFO - ONOScell: Trying to connect to localhost
+2020-07-21 21:08:52,784 - FUNCovsdbtest - INFO - Password not required logged in
+[95m2020-07-21 21:08:53,097 - FUNCovsdbtest - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '1', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosCliDriver', 'host': 'localhost'}[0m
+2020-07-21 21:08:53,097 - FUNCovsdbtest - INFO - Creating component Handle: ONOScli1
+2020-07-21 21:08:53,107 - FUNCovsdbtest - INFO - ONOScli1: Trying to connect to localhost
+2020-07-21 21:08:54,142 - FUNCovsdbtest - INFO - Password not required logged in
+[95m2020-07-21 21:08:54,472 - FUNCovsdbtest - DEBUG - {'connect_order': '1', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '1', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosClusterDriver', 'host': 'localhost'}[0m
+[95m2020-07-21 21:08:54,472 - FUNCovsdbtest - DEBUG - {'connect_order': '2', 'user': 'onos', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '1', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosRestDriver', 'host': '192.168.171.28', 'port': '8181'}[0m
+2020-07-21 21:08:54,472 - FUNCovsdbtest - INFO - Creating component Handle: ONOSrest1
+2020-07-21 21:08:54,538 - FUNCovsdbtest - INFO - ONOSrest1: ip set to 192.168.171.28
+[95m2020-07-21 21:08:54,539 - FUNCovsdbtest - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '1', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': 'localhost'}[0m
+2020-07-21 21:08:54,539 - FUNCovsdbtest - INFO - Creating component Handle: ONOSbench1
+2020-07-21 21:08:54,546 - FUNCovsdbtest - INFO - ONOSbench1: Found ['192.168.171.28'] ONOS IPs
+2020-07-21 21:08:54,546 - FUNCovsdbtest - INFO - ONOSbench1: Trying to connect to localhost
+2020-07-21 21:08:55,642 - FUNCovsdbtest - INFO - Password not required logged in
+[95m2020-07-21 21:08:55,948 - FUNCovsdbtest - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '1', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': '192.168.171.28'}[0m
+2020-07-21 21:08:55,948 - FUNCovsdbtest - INFO - Creating component Handle: ONOSserver1
+2020-07-21 21:08:55,953 - FUNCovsdbtest - INFO - ONOSserver1: Found ['192.168.171.28'] ONOS IPs
+2020-07-21 21:08:55,953 - FUNCovsdbtest - INFO - ONOSserver1: Trying to connect to 192.168.171.28
+2020-07-21 21:08:56,744 - FUNCovsdbtest - INFO - Password not required logged in
+2020-07-21 21:08:57,051 - FUNCovsdbtest - INFO - Creating component Handle: OVSDB2
+2020-07-21 21:08:57,816 - FUNCovsdbtest - INFO - Password not required logged in
+2020-07-21 21:08:58,021 - FUNCovsdbtest - INFO - Connection successful to the ovsdb node OVSDB2
+2020-07-21 21:08:58,022 - FUNCovsdbtest - INFO - Creating component Handle: OVSDB1
+2020-07-21 21:08:59,225 - FUNCovsdbtest - INFO - Password not required logged in
+2020-07-21 21:08:59,441 - FUNCovsdbtest - INFO - Connection successful to the ovsdb node OVSDB1
+
+******************************
+ Result summary for Testcase1
+******************************
+
+[95m2020-07-21 21:08:59,452 - FUNCovsdbtest - DEBUG - Case Executed       : [1][0m
+[95m2020-07-21 21:08:59,452 - FUNCovsdbtest - DEBUG - Case to be executed : [3, 4, 2, 5, 6, 7, 8][0m
+2020-07-21 21:08:59,453 - FUNCovsdbtest - INFO - ONOS Single node start ovsdb test - initialization
+[2020-07-21 21:08:59.454022] [FUNCovsdbtest] [CASE]  Constructing test variables and building ONOS package
+[2020-07-21 21:08:59.454587] [FUNCovsdbtest] [STEP]  1.1: Constructing test variables
+[2020-07-21 21:08:59.455638] [FUNCovsdbtest] [STEP]  1.2: Constructing test variables
+[2020-07-21 21:08:59.456229] [FUNCovsdbtest] [CASE]  Pull onos branch and build onos on Teststation.
+2020-07-21 21:08:59,456 - FUNCovsdbtest - INFO - Skipped git checkout and pull as they are disabled in params file
+2020-07-21 21:08:59,457 - FUNCovsdbtest - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-21 21:08:59,458 - FUNCovsdbtest - INFO - Successfully construct test variables 
+2020-07-21 21:08:59,458 - FUNCovsdbtest - INFO - Assertion Passed
+2020-07-21 21:08:59,458 - FUNCovsdbtest - INFO - ONOSbench1 home is ~/onos
+ONOSbench1: 
+
+commit aa5a3af99f6c0558c6e3f923036c0ef3a0d9bd12 (HEAD -> master, origin/master, origin/HEAD)
+Author:     pierventre <pier@opennetworking.org>
+AuthorDate: Tue Jun 30 22:04:16 2020 +0200
+Commit:     pierventre <pier@opennetworking.org>
+CommitDate: Thu Jul 9 10:56:21 2020 +0200
+
+    [AETHER-255] Tost profile for bazel build (onos and onos-package)
+sdn@manage:~/onos$
+[2020-07-21 21:08:59.999282] [FUNCovsdbtest] [CASE]  Starting up 1 node(s) ONOS cluster
+2020-07-21 21:08:59,999 - FUNCovsdbtest - INFO - ONOS cluster size = 1
+[95m2020-07-21 21:08:59,999 - FUNCovsdbtest - DEBUG - Apps: drivers,openflow,proxyarp,mobility[0m
+2020-07-21 21:09:00,000 - FUNCovsdbtest - INFO - Atomix Cluster Size = 1 
+
+singlenode                                      0%    0     0.0KB/s   --:-- ETA
+singlenode                                    100%  243    47.9KB/s   00:00    
+[2020-07-21 21:09:01.134448] [FUNCovsdbtest] [STEP]  1.3: Apply cell to environment
+2020-07-21 21:09:01,518 - FUNCovsdbtest - INFO - ONOSbench1: Successfully set cell:  cell singlenode
+
+[01;31m[KONOS_CELL[m[K=singlenode
+
+OCC1=192.168.171.28
+
+OC1=192.168.171.28
+
+OCI=192.168.171.28
+
+OCN=OVSDB1
+
+ONOS_APPS=drivers,openflow,proxyarp,mobility
+
+ONOS_GROUP=sdn
+
+ONOS_MN_PY=/home/sdn/onos/tools/dev/mininet/onos.py
+
+ONOS_NIC=192.168.171.*
+
+ONOS_SCENARIOS=/home/sdn/onos/tools/test/scenarios
+
+ONOS_USER=sdn
+
+ONOS_USE_SSH=true
+
+ONOS_WEB_PASS=rocks
+
+ONOS_WEB_USER=onos
+
+sdn@manage:~/onos$
+2020-07-21 21:09:01,860 - FUNCovsdbtest - INFO - ONOSbench1: Successfully set cell:  cell singlenode
+
+[01;31m[KONOS_CELL[m[K=singlenode
+
+OCC1=192.168.171.28
+
+OC1=192.168.171.28
+
+OCI=192.168.171.28
+
+OCN=OVSDB1
+
+ONOS_APPS=drivers,openflow,proxyarp,mobility
+
+ONOS_GROUP=sdn
+
+ONOS_MN_PY=/home/sdn/onos/tools/dev/mininet/onos.py
+
+ONOS_NIC=192.168.171.*
+
+ONOS_SCENARIOS=/home/sdn/onos/tools/test/scenarios
+
+ONOS_TOPO=default
+
+ONOS_USER=sdn
+
+ONOS_USE_SSH=true
+
+ONOS_WEB_PASS=rocks
+
+ONOS_WEB_USER=onos
+
+sdn@manage:~/onos$
+2020-07-21 21:09:02,255 - FUNCovsdbtest - INFO - Verify cell returned:  onos-verify-cell
+
+OVSDB1: OVSDB1: OVSDB1: OVSDB1: OVSDB1: OVSDB1: OVSDB1: OVSDB1: OVSDB1: OVSDB1: OVSDB1: OVSDB1: OVSDB1: OVSDB1: OVSDB1: OVSDB1: OVSDB1: OVSDB1: sdn@manage:~/onos$
+2020-07-21 21:09:02,255 - FUNCovsdbtest - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-21 21:09:02,255 - FUNCovsdbtest - INFO - Successfully applied cell to environment
+2020-07-21 21:09:02,255 - FUNCovsdbtest - INFO - Assertion Passed
+2020-07-21 21:09:02,256 - FUNCovsdbtest - INFO - Safety check, killing all Atomix processes
+2020-07-21 21:09:03,243 - FUNCovsdbtest - INFO - Atomix instance 192.168.171.28 was killed
+2020-07-21 21:09:03,244 - FUNCovsdbtest - INFO - Safety check, killing all ONOS processes
+2020-07-21 21:09:04,253 - FUNCovsdbtest - INFO - ONOS instance 192.168.171.28 was killed
+[2020-07-21 21:09:04.254086] [FUNCovsdbtest] [STEP]  1.4: Uninstalling Atomix
+2020-07-21 21:09:05,135 - FUNCovsdbtest - INFO - Atomix 192.168.171.28 was uninstalled
+2020-07-21 21:09:05,136 - FUNCovsdbtest - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-21 21:09:05,136 - FUNCovsdbtest - INFO - Successfully uninstalled Atomix
+2020-07-21 21:09:05,136 - FUNCovsdbtest - INFO - Assertion Passed
+[2020-07-21 21:09:05.136493] [FUNCovsdbtest] [STEP]  1.5: Uninstalling ONOS package
+2020-07-21 21:10:41,232 - FUNCovsdbtest - INFO - ONOS 192.168.171.28 was uninstalled
+2020-07-21 21:10:41,233 - FUNCovsdbtest - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-21 21:10:41,233 - FUNCovsdbtest - INFO - Successfully uninstalled ONOS package
+2020-07-21 21:10:41,234 - FUNCovsdbtest - INFO - Assertion Passed
+[2020-07-21 21:10:41.234211] [FUNCovsdbtest] [STEP]  1.6: Creating ONOS package
+[95m2020-07-21 21:10:43,954 - FUNCovsdbtest - DEBUG - 
+
+[32mLoading:[0m 
+
+
+[1A[K[32mLoading:[0m 0 packages loaded
+
+
+[1A[K[32mAnalyzing:[0m target //:onos (1 packages loaded, 0 targets configured)
+
+
+[1A[K[32mINFO: [0mAnalyzed target //:onos (1 packages loaded, 408 targets configured).
+
+
+
+
+[1A[K[32mINFO: [0mFound 1 target...
+
+
+
+
+[1A[K[32m[0 / 1][0m [Prepa] BazelWorkspaceStatusAction stable-status.txt
+
+
+[1A[KTarget //:onos up-to-date:
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/utils/osgiwrap/osgi-jar.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/utils/osgiwrap/osgi-jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/utils/osgi/libonlab-osgi.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/utils/junit/libonlab-junit.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/utils/misc/libonlab-misc.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/utils/rest/libonlab-rest.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/core/api/libonos-api.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/core/net/libonos-core-net.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/core/common/libonos-core-common.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/core/protobuf/models/libonos-core-protobuf-models.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/core/protobuf/models/proto/libonos-core-protobuf-models-proto.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/core/store/primitives/libonos-core-primitives.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/core/store/serializers/libonos-core-serializers.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/core/store/dist/libonos-core-dist.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/core/store/persistence/libonos-core-persistence.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/cli/libonos-cli.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/utilities/libonos-drivers-utilities.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/general/device/libonos-providers-general-device.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/web/api/libonos-rest.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/tools/build/conf/libonos-build-conf.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/onos-admin.tar.gz
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/onos-test.tar.gz
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/onos.tar.gz
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/bgp/bgpio/libonos-protocols-bgp-bgpio.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/bgp/api/libonos-protocols-bgp-api.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/bgp/ctl/libonos-protocols-bgp-ctl.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/isis/api/libonos-protocols-isis-api.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/isis/ctl/libonos-protocols-isis-ctl.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/isis/isisio/libonos-protocols-isis-isisio.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/lisp/api/libonos-protocols-lisp-api.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/lisp/ctl/libonos-protocols-lisp-ctl.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/lisp/msg/libonos-protocols-lisp-msg.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/netconf/api/libonos-protocols-netconf-api.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/netconf/ctl/libonos-protocols-netconf-ctl.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/openflow/api/libonos-protocols-openflow-api.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/openflow/ctl/libonos-protocols-openflow-ctl.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/ospf/api/libonos-protocols-ospf-api.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/ospf/protocol/libonos-protocols-ospf-protocol.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/ospf/ctl/libonos-protocols-ospf-ctl.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/ovsdb/rfc/libonos-protocols-ovsdb-rfc.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/ovsdb/api/libonos-protocols-ovsdb-api.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/ovsdb/ctl/libonos-protocols-ovsdb-ctl.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/p4runtime/api/libonos-protocols-p4runtime-api.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/p4runtime/model/libonos-protocols-p4runtime-model.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/pcep/pcepio/libonos-protocols-pcep-pcepio.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/pcep/server/api/libonos-protocols-pcep-server-api.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/pcep/server/ctl/libonos-protocols-pcep-server-ctl.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/rest/api/libonos-protocols-rest-api.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/rest/ctl/libonos-protocols-rest-ctl.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/restconf/client/api/libonos-protocols-restconf-client-api.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/restconf/client/ctl/libonos-protocols-restconf-client-ctl.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/snmp/api/libonos-protocols-snmp-api.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/snmp/ctl/libonos-protocols-snmp-ctl.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/tl1/api/libonos-protocols-tl1-api.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/tl1/ctl/libonos-protocols-tl1-ctl.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/xmpp/core/api/libonos-protocols-xmpp-core-api.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/xmpp/core/ctl/libonos-protocols-xmpp-core-ctl.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/netconf/device/libonos-providers-netconf-device.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/openflow/device/libonos-providers-openflow-device.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/openflow/packet/libonos-providers-openflow-packet.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/openflow/flow/libonos-providers-openflow-flow.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/openflow/group/libonos-providers-openflow-group.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/openflow/meter/libonos-providers-openflow-meter.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/ovsdb/device/libonos-providers-ovsdb-device.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/ovsdb/tunnel/libonos-providers-ovsdb-tunnel.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/p4runtime/packet/libonos-providers-p4runtime-packet.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/rest/device/libonos-providers-rest-device.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/snmp/device/libonos-providers-snmp-device.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/isis/cfg/libonos-providers-isis-cfg.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/isis/topology/libonos-providers-isis-topology.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/lisp/device/libonos-providers-lisp-device.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/tl1/device/libonos-providers-tl1-device.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/grpc/onos-protocols-grpc-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/gnmi/onos-protocols-gnmi-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/gnoi/onos-protocols-gnoi-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/p4runtime/onos-protocols-p4runtime-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/restconf/server/onos-protocols-restconf-server-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/xmpp/core/onos-protocols-xmpp-core-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/xmpp/pubsub/onos-protocols-xmpp-pubsub-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/general/onos-providers-general-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/bgp/onos-providers-bgp-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/bgpcep/onos-providers-bgpcep-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/host/onos-providers-host-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/hostprobing/onos-providers-hostprobing-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/isis/onos-providers-isis-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/link/onos-providers-link-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/lldp/onos-providers-lldp-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/netcfghost/onos-providers-netcfghost-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/netcfglinks/onos-providers-netcfglinks-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/netconf/onos-providers-netconf-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/null/onos-providers-null-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/openflow/app/onos-providers-openflow-app-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/openflow/base/onos-providers-openflow-base-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/openflow/message/onos-providers-openflow-message-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/ovsdb/onos-providers-ovsdb-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/ovsdb/host/onos-providers-ovsdb-host-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/ovsdb/base/onos-providers-ovsdb-base-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/p4runtime/onos-providers-p4runtime-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/pcep/onos-providers-pcep-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/rest/onos-providers-rest-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/snmp/onos-providers-snmp-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/lisp/onos-providers-lisp-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/tl1/onos-providers-tl1-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/xmpp/device/onos-providers-xmpp-device-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/default/onos-drivers-default-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/arista/onos-drivers-arista-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/bmv2/onos-drivers-bmv2-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/barefoot/onos-drivers-barefoot-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/ciena/waveserver/onos-drivers-ciena-waveserver-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/ciena/c5162/onos-drivers-ciena-c5162-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/ciena/c5170/onos-drivers-ciena-c5170-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/ciena/waveserverai/onos-drivers-ciena-waveserverai-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/cisco/netconf/onos-drivers-cisco-netconf-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/cisco/rest/onos-drivers-cisco-rest-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/corsa/onos-drivers-corsa-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/czechlight/onos-drivers-czechlight-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/flowspec/onos-drivers-flowspec-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/fujitsu/onos-drivers-fujitsu-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/gnmi/onos-drivers-gnmi-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/gnoi/onos-drivers-gnoi-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/hp/onos-drivers-hp-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/huawei/onos-drivers-huawei-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/juniper/onos-drivers-juniper-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/lisp/onos-drivers-lisp-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/lumentum/onos-drivers-lumentum-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/mellanox/onos-drivers-mellanox-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/netconf/onos-drivers-netconf-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/odtn-driver/onos-drivers-odtn-driver-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/oplink/onos-drivers-oplink-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/optical/onos-drivers-optical-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/ovsdb/onos-drivers-ovsdb-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/p4runtime/onos-drivers-p4runtime-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/polatis/netconf/onos-drivers-polatis-netconf-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/polatis/openflow/onos-drivers-polatis-openflow-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/server/onos-drivers-server-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/stratum/onos-drivers-stratum-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/zte/onos-drivers-zte-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/acl/onos-apps-acl-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/artemis/onos-apps-artemis-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/bgprouter/onos-apps-bgprouter-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/castor/onos-apps-castor-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/cfm/onos-apps-cfm-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/cip/onos-apps-cip-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/config/onos-apps-config-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/configsync-netconf/onos-apps-configsync-netconf-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/configsync/onos-apps-configsync-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/cord-support/onos-apps-cord-support-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/cpman/app/onos-apps-cpman-app-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/dhcp/onos-apps-dhcp-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/dhcprelay/onos-apps-dhcprelay-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/drivermatrix/onos-apps-drivermatrix-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/events/onos-apps-events-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/evpn-route-service/onos-apps-evpn-route-service-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/evpnopenflow/onos-apps-evpnopenflow-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/faultmanagement/onos-apps-faultmanagement-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/flowanalyzer/onos-apps-flowanalyzer-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/flowspec-api/onos-apps-flowspec-api-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/fwd/onos-apps-fwd-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/gangliametrics/onos-apps-gangliametrics-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/gluon/onos-apps-gluon-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/graphitemetrics/onos-apps-graphitemetrics-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/imr/onos-apps-imr-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/inbandtelemetry/onos-apps-inbandtelemetry-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/influxdbmetrics/onos-apps-influxdbmetrics-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/intentsync/onos-apps-intentsync-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/k8s-networking/onos-apps-k8s-networking-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/k8s-node/onos-apps-k8s-node-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/kafka-integration/onos-apps-kafka-integration-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/l3vpn/onos-apps-l3vpn-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/layout/onos-apps-layout-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/linkprops/onos-apps-linkprops-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/mappingmanagement/onos-apps-mappingmanagement-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/mcast/onos-apps-mcast-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/metrics/onos-apps-metrics-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/mfwd/onos-apps-mfwd-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/mlb/onos-apps-mlb-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/mobility/onos-apps-mobility-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/netconf/client/onos-apps-netconf-client-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/network-troubleshoot/onos-apps-network-troubleshoot-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/newoptical/onos-apps-newoptical-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/nodemetrics/onos-apps-nodemetrics-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/node-diagnosis/onos-apps-node-diagnosis-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/odtn/api/onos-apps-odtn-api-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/odtn/service/onos-apps-odtn-service-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/ofagent/onos-apps-ofagent-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/onlp-demo/onos-apps-onlp-demo-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/onos-topo/onos-apps-onos-topo-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/openroadm/onos-apps-openroadm-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/openstacknetworking/onos-apps-openstacknetworking-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/openstacknetworkingui/onos-apps-openstacknetworkingui-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/openstacknode/onos-apps-openstacknode-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/openstacktelemetry/onos-apps-openstacktelemetry-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/openstacktroubleshoot/onos-apps-openstacktroubleshoot-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/openstackvtap/onos-apps-openstackvtap-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/optical-model/onos-apps-optical-model-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/optical-rest/onos-apps-optical-rest-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/p4-tutorial/mytunnel/onos-apps-p4-tutorial-mytunnel-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/p4-tutorial/pipeconf/onos-apps-p4-tutorial-pipeconf-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/packet-stats/onos-apps-packet-stats-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/packet-throttle/onos-apps-packet-throttle-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/pathpainter/onos-apps-pathpainter-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/pcep-api/onos-apps-pcep-api-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/pim/onos-apps-pim-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/portloadbalancer/onos-apps-portloadbalancer-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/powermanagement/onos-apps-powermanagement-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/proxyarp/onos-apps-proxyarp-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/rabbitmq/onos-apps-rabbitmq-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/reactive-routing/onos-apps-reactive-routing-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/restconf/onos-apps-restconf-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/roadm/onos-apps-roadm-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/route-service/onos-apps-route-service-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/routeradvertisement/onos-apps-routeradvertisement-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/routing/cpr/onos-apps-routing-cpr-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/routing/fibinstaller/onos-apps-routing-fibinstaller-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/routing/fpm/onos-apps-routing-fpm-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/scalablegateway/onos-apps-scalablegateway-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/sdnip/onos-apps-sdnip-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/simplefabric/onos-apps-simplefabric-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/test/cluster-ha/onos-apps-test-cluster-ha-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/test/demo/onos-apps-test-demo-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/test/distributed-primitives/onos-apps-test-distributed-primitives-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/test/election/onos-apps-test-election-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/test/flow-perf/onos-apps-test-flow-perf-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/test/intent-perf/onos-apps-test-intent-perf-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/test/loadtest/onos-apps-test-loadtest-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/test/messaging-perf/onos-apps-test-messaging-perf-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/test/netcfg-monitor/onos-apps-test-netcfg-monitor-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/test/primitive-perf/onos-apps-test-primitive-perf-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/test/route-scale/onos-apps-test-route-scale-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/test/transaction-perf/onos-apps-test-transaction-perf-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/tetopology/onos-apps-tetopology-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/tetunnel/onos-apps-tetunnel-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/tunnel/onos-apps-tunnel-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/virtual/onos-apps-virtual-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/virtualbng/onos-apps-virtualbng-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/vpls/onos-apps-vpls-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/vrouter/onos-apps-vrouter-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/vtn/onos-apps-vtn-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/workflow/ofoverlay/onos-apps-workflow-ofoverlay-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/workflow/onos-apps-workflow-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/yang-gui/onos-apps-yang-gui-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/yang/onos-apps-yang-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/web/gui/onos-web-gui-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/web/gui2/onos-web-gui2-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/cpman/api/libonos-apps-cpman-api.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/routing-api/libonos-apps-routing-api.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/dhcp/api/libonos-apps-dhcp-api.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/dhcp/app/libonos-apps-dhcp-app.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/imr/api/libonos-apps-imr-api.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/imr/app/libonos-apps-imr-app.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/dhcprelay/app/libonos-apps-dhcprelay-app.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/dhcprelay/web/libonos-apps-dhcprelay-web.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/fwd/libonos-apps-fwd.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/iptopology-api/libonos-apps-iptopology-api.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/kafka-integration/api/libonos-apps-kafka-integration-api.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/kafka-integration/app/libonos-apps-kafka-integration-app.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/routing/common/libonos-apps-routing-common.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/vtn/vtnrsc/libonos-apps-vtn-vtnrsc.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/vtn/sfcmgr/libonos-apps-vtn-sfcmgr.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/vtn/vtnmgr/libonos-apps-vtn-vtnmgr.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/vtn/vtnweb/libonos-apps-vtn-vtnweb.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/pipelines/basic/onos-pipelines-basic-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/pipelines/fabric/onos-pipelines-fabric-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/models/ietf/onos-models-ietf-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/models/common/onos-models-common-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/models/huawei/onos-models-huawei-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/models/openconfig/onos-models-openconfig-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/models/openconfig-infinera/onos-models-openconfig-infinera-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/models/openconfig-odtn/onos-models-openconfig-odtn-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/models/openroadm/onos-models-openroadm-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/models/tapi/onos-models-tapi-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/models/l3vpn/onos-models-l3vpn-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/models/polatis/onos-models-polatis-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/models/ciena/waveserverai/onos-models-ciena-waveserverai-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K[32mINFO: [0mElapsed time: 2.565s, Critical Path: 0.17s
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K[32mINFO: [0m1 process: 1 linux-sandbox.
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K[32mINFO:[0m Build completed successfully, 2 total actions
+
+
+[1A[K[32mINFO:[0m Build completed successfully, 2 total actions
+
+[0msdn@manage:~/onos$[0m
+2020-07-21 21:10:43,958 - FUNCovsdbtest - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-21 21:10:43,958 - FUNCovsdbtest - INFO - Successfully created ONOS package
+2020-07-21 21:10:43,958 - FUNCovsdbtest - INFO - Assertion Passed
+[2020-07-21 21:10:43.958649] [FUNCovsdbtest] [STEP]  1.7: Installing Atomix
+2020-07-21 21:10:48,968 - FUNCovsdbtest - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-21 21:10:48,968 - FUNCovsdbtest - INFO - Successfully installed Atomix
+2020-07-21 21:10:48,968 - FUNCovsdbtest - INFO - Assertion Passed
+[2020-07-21 21:10:48.968684] [FUNCovsdbtest] [STEP]  1.8: Installing ONOS package
+2020-07-21 21:11:18,364 - FUNCovsdbtest - INFO - ONOS was installed on 192.168.171.28 and started.
+2020-07-21 21:11:18,365 - FUNCovsdbtest - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-21 21:11:18,365 - FUNCovsdbtest - INFO - Successfully installed ONOS package
+2020-07-21 21:11:18,366 - FUNCovsdbtest - INFO - Assertion Passed
+[2020-07-21 21:11:18.366259] [FUNCovsdbtest] [STEP]  1.9: Set up ONOS secure SSH
+2020-07-21 21:11:18,581 - FUNCovsdbtest - INFO - ONOSbench1: Secure SSH performed on 192.168.171.28
+2020-07-21 21:11:18,581 - FUNCovsdbtest - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-21 21:11:18,582 - FUNCovsdbtest - INFO - Secured ONOS ssh
+2020-07-21 21:11:18,582 - FUNCovsdbtest - INFO - Assertion Passed
+[2020-07-21 21:11:18.582485] [FUNCovsdbtest] [STEP]  1.10: Checking ONOS service
+2020-07-21 21:11:25,732 - FUNCovsdbtest - INFO - ONOSbench1: 192.168.171.28 is up
+2020-07-21 21:11:30,738 - FUNCovsdbtest - INFO - ONOS1 is up and ready
+2020-07-21 21:11:30,739 - FUNCovsdbtest - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-21 21:11:30,739 - FUNCovsdbtest - INFO - ONOS service is ready on all nodes
+2020-07-21 21:11:30,739 - FUNCovsdbtest - INFO - Assertion Passed
+[2020-07-21 21:11:30.739489] [FUNCovsdbtest] [STEP]  1.11: Starting ONOS CLI sessions
+2020-07-21 21:11:31,691 - FUNCovsdbtest - INFO - 192.168.171.28 CLI Started successfully
+[95m2020-07-21 21:11:31,691 - FUNCovsdbtest - DEBUG -  onos 192.168.171.28
+
+Welcome to Open Network Operating System (ONOS)!
+
+
+[1;31m     ____  _  ______  ____     [0m
+
+
+[1;31m    / __ \/ |/ / __ \/ __/   [0m
+
+
+[1;31m   / /_/ /    / /_/ /\ \     [0m
+
+
+[1;31m   \____/_/|_/\____/___/     [0m
+
+
+[1;31m                               [0m
+
+
+Documentation: wiki.onosproject.org      
+
+
+Tutorials:     tutorials.onosproject.org 
+
+
+Mailing lists: lists.onosproject.org     
+
+
+
+
+
+Come help out! Find out how at: contribute.onosproject.org 
+
+
+
+
+
+Hit '[1m<tab>[0m' for a list of available commands
+
+
+and '[1m[cmd] --help[0m' for help on a specific command.
+
+
+Hit '[1m<ctrl-d>[0m' or type '[1mlogout[0m' to exit ONOS session.
+
+
+
+
+[?1h=[90m~[0m                                                                               
+ 
+[?2004h[0m
+2020-07-21 21:11:31,691 - FUNCovsdbtest - INFO - Successful CLI startup
+2020-07-21 21:11:31,692 - FUNCovsdbtest - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-21 21:11:31,692 - FUNCovsdbtest - INFO - Successfully start ONOS cli
+2020-07-21 21:11:31,692 - FUNCovsdbtest - INFO - Assertion Passed
+[2020-07-21 21:11:31.692831] [FUNCovsdbtest] [STEP]  1.12: Checking ONOS nodes
+2020-07-21 21:11:31,980 - FUNCovsdbtest - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-21 21:11:31,981 - FUNCovsdbtest - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-21 21:11:31,981 - FUNCovsdbtest - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[93m2020-07-21 21:11:32,089 - FUNCovsdbtest - WARNING - ['192.168.171.28'] != [][0m
+2020-07-21 21:11:33,349 - FUNCovsdbtest - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-21 21:11:33,350 - FUNCovsdbtest - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-21 21:11:33,350 - FUNCovsdbtest - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-21 21:11:33,456 - FUNCovsdbtest - DEBUG - <bound method Cluster.nodesCheck of Cluster[{ONOS1:192.168.171.28, Configured - Active}; Atomix Nodes:{ONOS1:192.168.171.28}]> was retried 1 times.[0m
+2020-07-21 21:11:33,456 - FUNCovsdbtest - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-21 21:11:33,457 - FUNCovsdbtest - INFO - All ONOS nodes are in READY state
+2020-07-21 21:11:33,457 - FUNCovsdbtest - INFO - Assertion Passed
+[2020-07-21 21:11:33.457308] [FUNCovsdbtest] [STEP]  1.13: Checking ONOS applications
+2020-07-21 21:11:33,909 - FUNCovsdbtest - INFO - Command 'onos:apps -j' sent to ONOScli1.
+[95m2020-07-21 21:11:33,919 - FUNCovsdbtest - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[95m2020-07-21 21:11:33,919 - FUNCovsdbtest - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[93m2020-07-21 21:11:33,919 - FUNCovsdbtest - WARNING - Relaxed Regex: Searching for a json string amongst the output[0m
+2020-07-21 21:11:34,028 - FUNCovsdbtest - INFO - ONOS1: org.onosproject.drivers is activated
+2020-07-21 21:11:34,401 - FUNCovsdbtest - INFO - Command 'onos:apps -j' sent to ONOScli1.
+[95m2020-07-21 21:11:34,411 - FUNCovsdbtest - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[95m2020-07-21 21:11:34,411 - FUNCovsdbtest - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[93m2020-07-21 21:11:34,411 - FUNCovsdbtest - WARNING - Relaxed Regex: Searching for a json string amongst the output[0m
+2020-07-21 21:11:34,524 - FUNCovsdbtest - INFO - ONOS1: org.onosproject.openflow is activated
+2020-07-21 21:11:34,845 - FUNCovsdbtest - INFO - Command 'onos:apps -j' sent to ONOScli1.
+[95m2020-07-21 21:11:34,862 - FUNCovsdbtest - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[95m2020-07-21 21:11:34,862 - FUNCovsdbtest - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[93m2020-07-21 21:11:34,862 - FUNCovsdbtest - WARNING - Relaxed Regex: Searching for a json string amongst the output[0m
+2020-07-21 21:11:34,977 - FUNCovsdbtest - INFO - ONOS1: org.onosproject.proxyarp is activated
+2020-07-21 21:11:35,309 - FUNCovsdbtest - INFO - Command 'onos:apps -j' sent to ONOScli1.
+[95m2020-07-21 21:11:35,327 - FUNCovsdbtest - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[95m2020-07-21 21:11:35,327 - FUNCovsdbtest - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[93m2020-07-21 21:11:35,327 - FUNCovsdbtest - WARNING - Relaxed Regex: Searching for a json string amongst the output[0m
+2020-07-21 21:11:35,439 - FUNCovsdbtest - INFO - ONOS1: org.onosproject.mobility is activated
+2020-07-21 21:11:35,440 - FUNCovsdbtest - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-21 21:11:35,440 - FUNCovsdbtest - INFO - All ONOS apps are activated
+2020-07-21 21:11:35,440 - FUNCovsdbtest - INFO - Assertion Passed
+[2020-07-21 21:11:35.440993] [FUNCovsdbtest] [STEP]  1.14: App Ids check
+2020-07-21 21:11:35,692 - FUNCovsdbtest - INFO - Command 'app-ids -j' sent to ONOScli1.
+[95m2020-07-21 21:11:35,693 - FUNCovsdbtest - DEBUG - REGEX PATTERN SET TO: 'app-ids -j'
+SENT COMMAND STRING WAS: 'app-ids -j'[0m
+[95m2020-07-21 21:11:35,693 - FUNCovsdbtest - DEBUG - REGEX PATTERN SET TO: 'app-ids -j'
+SENT COMMAND STRING WAS: 'app-ids -j'[0m
+2020-07-21 21:11:36,137 - FUNCovsdbtest - INFO - Command 'onos:apps -j' sent to ONOScli1.
+[95m2020-07-21 21:11:36,147 - FUNCovsdbtest - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[95m2020-07-21 21:11:36,147 - FUNCovsdbtest - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[93m2020-07-21 21:11:36,147 - FUNCovsdbtest - WARNING - Relaxed Regex: Searching for a json string amongst the output[0m
+2020-07-21 21:11:36,273 - FUNCovsdbtest - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-21 21:11:36,274 - FUNCovsdbtest - INFO - App Ids seem to be correct
+2020-07-21 21:11:36,274 - FUNCovsdbtest - INFO - Assertion Passed
+[2020-07-21 21:11:36.274858] [FUNCovsdbtest] [STEP]  1.15: Install onos-ovsdb
+2020-07-21 21:11:36,593 - FUNCovsdbtest - INFO - Command 'onos:apps -j' sent to ONOScli1.
+[95m2020-07-21 21:11:36,609 - FUNCovsdbtest - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[95m2020-07-21 21:11:36,610 - FUNCovsdbtest - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[93m2020-07-21 21:11:36,610 - FUNCovsdbtest - WARNING - Relaxed Regex: Searching for a json string amongst the output[0m
+2020-07-21 21:11:38,574 - FUNCovsdbtest - INFO - Command 'onos:app activate org.onosproject.ovsdb' sent to ONOScli1.
+[95m2020-07-21 21:11:38,575 - FUNCovsdbtest - DEBUG - REGEX PATTERN SET TO: 'onos:app activate org.onosproject.ovsdb'
+SENT COMMAND STRING WAS: 'onos:app activate org.onosproject.ovsdb'[0m
+[95m2020-07-21 21:11:38,575 - FUNCovsdbtest - DEBUG - REGEX PATTERN SET TO: 'onos:app activate org.onosproject.ovsdb'
+SENT COMMAND STRING WAS: 'onos:app activate org.onosproject.ovsdb'[0m
+2020-07-21 21:11:38,997 - FUNCovsdbtest - INFO - Command 'onos:apps -j' sent to ONOScli1.
+[95m2020-07-21 21:11:39,013 - FUNCovsdbtest - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[95m2020-07-21 21:11:39,013 - FUNCovsdbtest - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[93m2020-07-21 21:11:39,013 - FUNCovsdbtest - WARNING - Relaxed Regex: Searching for a json string amongst the output[0m
+2020-07-21 21:11:39,122 - FUNCovsdbtest - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-21 21:11:39,122 - FUNCovsdbtest - INFO - Install onos-ovsdatabase successful
+2020-07-21 21:11:39,122 - FUNCovsdbtest - INFO - Assertion Passed
+[2020-07-21 21:11:39.123257] [FUNCovsdbtest] [STEP]  1.16: Install onos-app-vtn
+2020-07-21 21:11:39,433 - FUNCovsdbtest - INFO - Command 'onos:apps -j' sent to ONOScli1.
+[95m2020-07-21 21:11:39,446 - FUNCovsdbtest - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[95m2020-07-21 21:11:39,446 - FUNCovsdbtest - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[93m2020-07-21 21:11:39,446 - FUNCovsdbtest - WARNING - Relaxed Regex: Searching for a json string amongst the output[0m
+2020-07-21 21:11:40,825 - FUNCovsdbtest - INFO - Command 'onos:app activate org.onosproject.vtn' sent to ONOScli1.
+[95m2020-07-21 21:11:40,825 - FUNCovsdbtest - DEBUG - REGEX PATTERN SET TO: 'onos:app activate org.onosproject.vtn'
+SENT COMMAND STRING WAS: 'onos:app activate org.onosproject.vtn'[0m
+[95m2020-07-21 21:11:40,825 - FUNCovsdbtest - DEBUG - REGEX PATTERN SET TO: 'onos:app activate org.onosproject.vtn'
+SENT COMMAND STRING WAS: 'onos:app activate org.onosproject.vtn'[0m
+2020-07-21 21:11:41,233 - FUNCovsdbtest - INFO - Command 'onos:apps -j' sent to ONOScli1.
+[95m2020-07-21 21:11:41,249 - FUNCovsdbtest - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[95m2020-07-21 21:11:41,249 - FUNCovsdbtest - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[93m2020-07-21 21:11:41,250 - FUNCovsdbtest - WARNING - Relaxed Regex: Searching for a json string amongst the output[0m
+2020-07-21 21:11:41,362 - FUNCovsdbtest - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-21 21:11:41,363 - FUNCovsdbtest - INFO - Install onos-app-vtn successful
+2020-07-21 21:11:41,363 - FUNCovsdbtest - INFO - Assertion Passed
+
+*****************************
+ Result: Pass 
+*****************************
+
+
+******************************
+ Result summary for Testcase3
+******************************
+
+[95m2020-07-21 21:11:41,366 - FUNCovsdbtest - DEBUG - Case Executed       : [1, 3][0m
+[95m2020-07-21 21:11:41,366 - FUNCovsdbtest - DEBUG - Case to be executed : [4, 2, 5, 6, 7, 8][0m
+[2020-07-21 21:11:41.366590] [FUNCovsdbtest] [CASE]  Test default br-int configuration and vxlan port
+[2020-07-21 21:11:41.367428] [FUNCovsdbtest] [STEP]  3.1: ovsdb node 1 set ovs manager to 192.168.171.28
+2020-07-21 21:11:41,480 - FUNCovsdbtest - INFO - Executed :sudo ovs-vsctl set-manager tcp:192.168.171.28:6640 		 Expected Prompt '.*[$>\#]' Found
+2020-07-21 21:11:41,481 - FUNCovsdbtest - INFO - Ovsdb manager 192.168.171.28 set
+2020-07-21 21:11:41,481 - FUNCovsdbtest - INFO - Wait 5 seconds for ovsdb connection create
+2020-07-21 21:11:46,487 - FUNCovsdbtest - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-21 21:11:46,487 - FUNCovsdbtest - INFO - ovsdb node 1 set ovs manager to  to 192.168.171.28 sucess
+2020-07-21 21:11:46,487 - FUNCovsdbtest - INFO - Assertion Passed
+[2020-07-21 21:11:46.488248] [FUNCovsdbtest] [STEP]  3.2: ovsdb node 2 set ovs manager to 192.168.171.28
+2020-07-21 21:11:46,605 - FUNCovsdbtest - INFO - Executed :sudo ovs-vsctl set-manager tcp:192.168.171.28:6640 		 Expected Prompt '.*[$>\#]' Found
+2020-07-21 21:11:46,605 - FUNCovsdbtest - INFO - Ovsdb manager 192.168.171.28 set
+2020-07-21 21:11:46,605 - FUNCovsdbtest - INFO - Wait 5 seconds for ovsdb connection create
+2020-07-21 21:11:51,611 - FUNCovsdbtest - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-21 21:11:51,611 - FUNCovsdbtest - INFO - ovsdb node 2 set ovs manager to  to 192.168.171.28 sucess
+2020-07-21 21:11:51,615 - FUNCovsdbtest - INFO - Assertion Passed
+[2020-07-21 21:11:51.615822] [FUNCovsdbtest] [STEP]  3.3: Check ovsdb node 1 manager is 192.168.171.28
+2020-07-21 21:11:51,743 - FUNCovsdbtest - INFO - Executed :sudo ovs-vsctl get-manager 		 Expected Prompt '.*[$>\#]' Found
+2020-07-21 21:11:51,744 - FUNCovsdbtest - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-21 21:11:51,744 - FUNCovsdbtest - INFO - ovsdb node 1 manager is  sudo ovs-vsctl get-manager
+
+tcp:192.168.171.28:6640
+
+sdn@node:~$
+2020-07-21 21:11:51,744 - FUNCovsdbtest - INFO - Assertion Passed
+[2020-07-21 21:11:51.744756] [FUNCovsdbtest] [STEP]  3.4: Check ovsdb node 2 manager is 192.168.171.28
+2020-07-21 21:11:51,861 - FUNCovsdbtest - INFO - Executed :sudo ovs-vsctl get-manager 		 Expected Prompt '.*[$>\#]' Found
+2020-07-21 21:11:51,862 - FUNCovsdbtest - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+[91m2020-07-21 21:11:51,862 - FUNCovsdbtest - ERROR - ovsdb node 2 manager check failed[0m
+
+[REPORT] [21 Jul 2020 21:11:51] ovsdb node 2 manager check failed
+[93m2020-07-21 21:11:51,862 - FUNCovsdbtest - WARNING - Assertion Failed[0m
+[2020-07-21 21:11:51.863157] [FUNCovsdbtest] [STEP]  3.5: Check default br-int bridge on ovsdb node 192.168.171.17
+2020-07-21 21:11:51,998 - FUNCovsdbtest - INFO - Executed :sudo ovs-vsctl list-br 		 Expected Prompt '.*[$>\#]' Found
+2020-07-21 21:11:51,999 - FUNCovsdbtest - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+[91m2020-07-21 21:11:51,999 - FUNCovsdbtest - ERROR - onos add default bridge on the node 1 failed[0m
+
+[REPORT] [21 Jul 2020 21:11:51] onos add default bridge on the node 1 failed
+[93m2020-07-21 21:11:51,999 - FUNCovsdbtest - WARNING - Assertion Failed[0m
+[2020-07-21 21:11:52.000271] [FUNCovsdbtest] [STEP]  3.6: Check default br-int bridge on ovsdb node 192.168.171.28
+2020-07-21 21:11:52,113 - FUNCovsdbtest - INFO - Executed :sudo ovs-vsctl list-br 		 Expected Prompt '.*[$>\#]' Found
+2020-07-21 21:11:52,114 - FUNCovsdbtest - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+[91m2020-07-21 21:11:52,114 - FUNCovsdbtest - ERROR - onos add default bridge on the node 2 failed[0m
+
+[REPORT] [21 Jul 2020 21:11:52] onos add default bridge on the node 2 failed
+[93m2020-07-21 21:11:52,114 - FUNCovsdbtest - WARNING - Assertion Failed[0m
+[2020-07-21 21:11:52.114931] [FUNCovsdbtest] [STEP]  3.7: Check default vxlan port on ovsdb node 192.168.171.17
+2020-07-21 21:11:52,241 - FUNCovsdbtest - INFO - Executed :sudo ovs-vsctl list-ports br-int 		 Expected Prompt '.*[$>\#]' Found
+2020-07-21 21:11:52,241 - FUNCovsdbtest - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+[91m2020-07-21 21:11:52,241 - FUNCovsdbtest - ERROR - onos add default vxlan port on the node 1 failed[0m
+
+[REPORT] [21 Jul 2020 21:11:52] onos add default vxlan port on the node 1 failed
+[93m2020-07-21 21:11:52,242 - FUNCovsdbtest - WARNING - Assertion Failed[0m
+[2020-07-21 21:11:52.242540] [FUNCovsdbtest] [STEP]  3.8: Check default vxlan port on ovsdb node 192.168.171.28
+2020-07-21 21:11:52,356 - FUNCovsdbtest - INFO - Executed :sudo ovs-vsctl list-ports br-int 		 Expected Prompt '.*[$>\#]' Found
+2020-07-21 21:11:52,357 - FUNCovsdbtest - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+[91m2020-07-21 21:11:52,357 - FUNCovsdbtest - ERROR - onos add default vxlan port on the node 2 failed[0m
+
+[REPORT] [21 Jul 2020 21:11:52] onos add default vxlan port on the node 2 failed
+[93m2020-07-21 21:11:52,357 - FUNCovsdbtest - WARNING - Assertion Failed[0m
+
+*****************************
+ Result: Failed 
+*****************************
+
+
+******************************
+ Result summary for Testcase4
+******************************
+
+[95m2020-07-21 21:11:52,359 - FUNCovsdbtest - DEBUG - Case Executed       : [1, 3, 4][0m
+[95m2020-07-21 21:11:52,359 - FUNCovsdbtest - DEBUG - Case to be executed : [2, 5, 6, 7, 8][0m
+[2020-07-21 21:11:52.360060] [FUNCovsdbtest] [STEP]  4.1: ovsdb node 1 set ovs manager to 192.168.171.28
+2020-07-21 21:11:52,475 - FUNCovsdbtest - INFO - Executed :sudo ovs-vsctl set-manager tcp:192.168.171.28:6640 		 Expected Prompt '.*[$>\#]' Found
+2020-07-21 21:11:52,475 - FUNCovsdbtest - INFO - Ovsdb manager 192.168.171.28 set
+2020-07-21 21:11:52,475 - FUNCovsdbtest - INFO - Wait 5 seconds for ovsdb connection create
+2020-07-21 21:11:57,482 - FUNCovsdbtest - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-21 21:11:57,482 - FUNCovsdbtest - INFO - ovsdb node 1 set ovs manager to  to 192.168.171.28 sucess
+2020-07-21 21:11:57,482 - FUNCovsdbtest - INFO - Assertion Passed
+[2020-07-21 21:11:57.483270] [FUNCovsdbtest] [STEP]  4.2: ovsdb node 2 set ovs manager to 192.168.171.28
+2020-07-21 21:11:57,601 - FUNCovsdbtest - INFO - Executed :sudo ovs-vsctl set-manager tcp:192.168.171.28:6640 		 Expected Prompt '.*[$>\#]' Found
+2020-07-21 21:11:57,602 - FUNCovsdbtest - INFO - Ovsdb manager 192.168.171.28 set
+2020-07-21 21:11:57,602 - FUNCovsdbtest - INFO - Wait 5 seconds for ovsdb connection create
+2020-07-21 21:12:02,607 - FUNCovsdbtest - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-21 21:12:02,607 - FUNCovsdbtest - INFO - ovsdb node 2 set ovs manager to  to 192.168.171.28 sucess
+2020-07-21 21:12:02,610 - FUNCovsdbtest - INFO - Assertion Passed
+[2020-07-21 21:12:02.610505] [FUNCovsdbtest] [STEP]  4.3: Check ovsdb node 1 manager is 192.168.171.28
+2020-07-21 21:12:02,736 - FUNCovsdbtest - INFO - Executed :sudo ovs-vsctl get-manager 		 Expected Prompt '.*[$>\#]' Found
+2020-07-21 21:12:02,856 - FUNCovsdbtest - INFO - Executed :sudo ovs-vsctl show  		 Expected Prompt '.*[$>\#]' Found
+2020-07-21 21:12:02,856 - FUNCovsdbtest - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-21 21:12:02,856 - FUNCovsdbtest - INFO - ovsdb node 1 manager is  sudo ovs-vsctl get-manager
+
+tcp:192.168.171.28:6640
+
+sdn@node:~$
+2020-07-21 21:12:02,856 - FUNCovsdbtest - INFO - Assertion Passed
+[2020-07-21 21:12:02.857144] [FUNCovsdbtest] [STEP]  4.4: Check ovsdb node 2 manager is 192.168.171.28
+2020-07-21 21:12:02,972 - FUNCovsdbtest - INFO - Executed :sudo ovs-vsctl get-manager 		 Expected Prompt '.*[$>\#]' Found
+2020-07-21 21:12:03,087 - FUNCovsdbtest - INFO - Executed :sudo ovs-vsctl show  		 Expected Prompt '.*[$>\#]' Found
+2020-07-21 21:12:03,087 - FUNCovsdbtest - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+[91m2020-07-21 21:12:03,087 - FUNCovsdbtest - ERROR - ovsdb node 2 manager check failed
+ sudo ovs-vsctl show 
+
+sudo: ovs-vsctl: command not found
+
+sdn@node-1:~$[0m
+
+[REPORT] [21 Jul 2020 21:12:03] ovsdb node 2 manager check failed
+ sudo ovs-vsctl show 
+
+sudo: ovs-vsctl: command not found
+
+sdn@node-1:~$
+[93m2020-07-21 21:12:03,087 - FUNCovsdbtest - WARNING - Assertion Failed[0m
+[2020-07-21 21:12:03.088236] [FUNCovsdbtest] [STEP]  4.5: Check ovsdb node 1 bridge br-int controller set to 192.168.171.28
+2020-07-21 21:12:03,224 - FUNCovsdbtest - INFO - Executed :sudo ovs-vsctl get-controller br-int 		 Expected Prompt '.*[$>\#]' Found
+2020-07-21 21:12:03,351 - FUNCovsdbtest - INFO - Executed :sudo ovs-vsctl show  		 Expected Prompt '.*[$>\#]' Found
+2020-07-21 21:12:03,351 - FUNCovsdbtest - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+[91m2020-07-21 21:12:03,351 - FUNCovsdbtest - ERROR - Check ovsdb node 1 bridge br-int controller set to 192.168.171.28 failed
+ sudo ovs-vsctl show 
+
+5fad9d06-e9cf-48e6-b678-4ca7175b0df4
+
+    Manager "tcp:192.168.171.28:6640"
+
+        is_connected: true
+
+    ovs_version: "2.9.5"
+
+sdn@node:~$[0m
+
+[REPORT] [21 Jul 2020 21:12:03] Check ovsdb node 1 bridge br-int controller set to 192.168.171.28 failed
+ sudo ovs-vsctl show 
+
+5fad9d06-e9cf-48e6-b678-4ca7175b0df4
+
+    Manager "tcp:192.168.171.28:6640"
+
+        is_connected: true
+
+    ovs_version: "2.9.5"
+
+sdn@node:~$
+[93m2020-07-21 21:12:03,351 - FUNCovsdbtest - WARNING - Assertion Failed[0m
+[2020-07-21 21:12:03.352368] [FUNCovsdbtest] [STEP]  4.6: Check ovsdb node 2 bridge br-int controller set to  192.168.171.28
+2020-07-21 21:12:03,468 - FUNCovsdbtest - INFO - Executed :sudo ovs-vsctl get-controller br-int 		 Expected Prompt '.*[$>\#]' Found
+2020-07-21 21:12:03,584 - FUNCovsdbtest - INFO - Executed :sudo ovs-vsctl show  		 Expected Prompt '.*[$>\#]' Found
+2020-07-21 21:12:03,584 - FUNCovsdbtest - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+[91m2020-07-21 21:12:03,584 - FUNCovsdbtest - ERROR - Check ovsdb node 2 bridge br-int controller set to 192.168.171.28 failed
+ sudo ovs-vsctl show 
+
+sudo: ovs-vsctl: command not found
+
+sdn@node-1:~$[0m
+
+[REPORT] [21 Jul 2020 21:12:03] Check ovsdb node 2 bridge br-int controller set to 192.168.171.28 failed
+ sudo ovs-vsctl show 
+
+sudo: ovs-vsctl: command not found
+
+sdn@node-1:~$
+[93m2020-07-21 21:12:03,585 - FUNCovsdbtest - WARNING - Assertion Failed[0m
+[2020-07-21 21:12:03.585641] [FUNCovsdbtest] [STEP]  4.7: Check onoscli devices have ovs 192.168.171.17
+2020-07-21 21:12:03,845 - FUNCovsdbtest - INFO - Command 'devices -j' sent to ONOScli1.
+[95m2020-07-21 21:12:03,845 - FUNCovsdbtest - DEBUG - REGEX PATTERN SET TO: 'devices -j'
+SENT COMMAND STRING WAS: 'devices -j'[0m
+[95m2020-07-21 21:12:03,845 - FUNCovsdbtest - DEBUG - REGEX PATTERN SET TO: 'devices -j'
+SENT COMMAND STRING WAS: 'devices -j'[0m
+2020-07-21 21:12:03,958 - FUNCovsdbtest - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-21 21:12:03,958 - FUNCovsdbtest - INFO - Check onoscli devices have ovs 192.168.171.17 sucess
+2020-07-21 21:12:03,958 - FUNCovsdbtest - INFO - Assertion Passed
+[2020-07-21 21:12:03.959387] [FUNCovsdbtest] [STEP]  4.8: Check onoscli devices have ovs 192.168.171.28
+2020-07-21 21:12:04,217 - FUNCovsdbtest - INFO - Command 'devices -j' sent to ONOScli1.
+[95m2020-07-21 21:12:04,217 - FUNCovsdbtest - DEBUG - REGEX PATTERN SET TO: 'devices -j'
+SENT COMMAND STRING WAS: 'devices -j'[0m
+[95m2020-07-21 21:12:04,217 - FUNCovsdbtest - DEBUG - REGEX PATTERN SET TO: 'devices -j'
+SENT COMMAND STRING WAS: 'devices -j'[0m
+2020-07-21 21:12:04,326 - FUNCovsdbtest - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+[91m2020-07-21 21:12:04,326 - FUNCovsdbtest - ERROR - Check onoscli devices have ovs 192.168.171.28 failed[0m
+
+[REPORT] [21 Jul 2020 21:12:04] Check onoscli devices have ovs 192.168.171.28 failed
+[93m2020-07-21 21:12:04,326 - FUNCovsdbtest - WARNING - Assertion Failed[0m
+
+*****************************
+ Result: Failed 
+*****************************
+
+
+******************************
+ Result summary for Testcase2
+******************************
+
+[95m2020-07-21 21:12:04,329 - FUNCovsdbtest - DEBUG - Case Executed       : [1, 3, 4, 2][0m
+[95m2020-07-21 21:12:04,329 - FUNCovsdbtest - DEBUG - Case to be executed : [5, 6, 7, 8][0m
+[2020-07-21 21:12:04.329513] [FUNCovsdbtest] [CASE]  Test ovsdb connection and teardown
+[2020-07-21 21:12:04.330240] [FUNCovsdbtest] [STEP]  2.1: Set ovsdb node manager
+2020-07-21 21:12:04,456 - FUNCovsdbtest - INFO - Executed :sudo ovs-vsctl set-manager tcp:192.168.171.28:6640 		 Expected Prompt '.*[$>\#]' Found
+2020-07-21 21:12:04,457 - FUNCovsdbtest - INFO - Ovsdb manager 192.168.171.28 set
+2020-07-21 21:12:04,457 - FUNCovsdbtest - INFO - Wait 5 seconds for ovsdb connection create
+2020-07-21 21:12:09,463 - FUNCovsdbtest - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-21 21:12:09,463 - FUNCovsdbtest - INFO - Set ovsdb node manager sucess
+2020-07-21 21:12:09,463 - FUNCovsdbtest - INFO - Assertion Passed
+[2020-07-21 21:12:09.464346] [FUNCovsdbtest] [STEP]  2.2: Check ovsdb node manager is 192.168.171.28
+2020-07-21 21:12:09,591 - FUNCovsdbtest - INFO - Executed :sudo ovs-vsctl get-manager 		 Expected Prompt '.*[$>\#]' Found
+2020-07-21 21:12:09,591 - FUNCovsdbtest - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-21 21:12:09,591 - FUNCovsdbtest - INFO - Check ovsdb node manager is  sudo ovs-vsctl get-manager
+
+tcp:192.168.171.28:6640
+
+sdn@node:~$
+2020-07-21 21:12:09,592 - FUNCovsdbtest - INFO - Assertion Passed
+[2020-07-21 21:12:09.592476] [FUNCovsdbtest] [STEP]  2.3: Delete ovsdb node manager
+2020-07-21 21:12:09,724 - FUNCovsdbtest - INFO - Executed :sudo ovs-vsctl del-manager 		 Expected Prompt '.*[$>\#]' Found
+2020-07-21 21:12:09,724 - FUNCovsdbtest - INFO - Ovsdb manager delete
+2020-07-21 21:12:09,724 - FUNCovsdbtest - INFO - Wait 5 seconds for ovsdb connection delete
+2020-07-21 21:12:14,731 - FUNCovsdbtest - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-21 21:12:14,731 - FUNCovsdbtest - INFO - ovsdb node delete manager sucess
+2020-07-21 21:12:14,737 - FUNCovsdbtest - INFO - Assertion Passed
+[2020-07-21 21:12:14.738099] [FUNCovsdbtest] [STEP]  2.4: Check ovsdb node delete manager 192.168.171.28
+2020-07-21 21:12:14,858 - FUNCovsdbtest - INFO - Executed :sudo ovs-vsctl get-manager 		 Expected Prompt '.*[$>\#]' Found
+2020-07-21 21:12:14,858 - FUNCovsdbtest - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-21 21:12:14,859 - FUNCovsdbtest - INFO - Check ovsdb node delete manager sucess
+2020-07-21 21:12:14,859 - FUNCovsdbtest - INFO - Assertion Passed
+
+*****************************
+ Result: Pass 
+*****************************
+
+
+******************************
+ Result summary for Testcase5
+******************************
+
+[95m2020-07-21 21:12:14,860 - FUNCovsdbtest - DEBUG - Case Executed       : [1, 3, 4, 2, 5][0m
+[95m2020-07-21 21:12:14,860 - FUNCovsdbtest - DEBUG - Case to be executed : [6, 7, 8][0m
+[2020-07-21 21:12:14.860990] [FUNCovsdbtest] [STEP]  5.1: ovsdb node 1 set ovs manager to onos
+2020-07-21 21:12:14,980 - FUNCovsdbtest - INFO - Executed :sudo ovs-vsctl set-manager tcp:192.168.171.28:6640 		 Expected Prompt '.*[$>\#]' Found
+2020-07-21 21:12:14,981 - FUNCovsdbtest - INFO - Ovsdb manager 192.168.171.28 set
+2020-07-21 21:12:14,981 - FUNCovsdbtest - INFO - Wait 5 seconds for ovsdb connection create
+2020-07-21 21:12:19,986 - FUNCovsdbtest - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-21 21:12:19,987 - FUNCovsdbtest - INFO - ovsdb node 1 set ovs manager to  to 192.168.171.28 sucess
+2020-07-21 21:12:19,987 - FUNCovsdbtest - INFO - Assertion Passed
+[2020-07-21 21:12:19.987990] [FUNCovsdbtest] [STEP]  5.2: Check ovsdb node 1 manager is 192.168.171.28
+2020-07-21 21:12:20,109 - FUNCovsdbtest - INFO - Executed :sudo ovs-vsctl get-manager 		 Expected Prompt '.*[$>\#]' Found
+2020-07-21 21:12:20,109 - FUNCovsdbtest - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-21 21:12:20,109 - FUNCovsdbtest - INFO - ovsdb node 1 manager is  sudo ovs-vsctl get-manager
+
+tcp:192.168.171.28:6640
+
+sdn@node:~$
+2020-07-21 21:12:20,109 - FUNCovsdbtest - INFO - Assertion Passed
+[2020-07-21 21:12:20.110370] [FUNCovsdbtest] [STEP]  5.3: Check ovsdb node 1 bridge br-int default flows on 192.168.171.17
+2020-07-21 21:12:20,231 - FUNCovsdbtest - INFO - Executed :sudo ovs-ofctl -O OpenFlow13 dump-flows br-int 		 Expected Prompt '.*[$>\#]' Found
+2020-07-21 21:12:20,232 - FUNCovsdbtest - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+[91m2020-07-21 21:12:20,232 - FUNCovsdbtest - ERROR - Failed to set default flows 192.168.171.28[0m
+
+[REPORT] [21 Jul 2020 21:12:20] Failed to set default flows 192.168.171.28
+[93m2020-07-21 21:12:20,232 - FUNCovsdbtest - WARNING - Assertion Failed[0m
+
+*****************************
+ Result: Failed 
+*****************************
+
+
+******************************
+ Result summary for Testcase6
+******************************
+
+[95m2020-07-21 21:12:20,233 - FUNCovsdbtest - DEBUG - Case Executed       : [1, 3, 4, 2, 5, 6][0m
+[95m2020-07-21 21:12:20,233 - FUNCovsdbtest - DEBUG - Case to be executed : [7, 8][0m
+2020-07-21 21:12:20,236 - FUNCovsdbtest - INFO - Configure Network Subnet Port Start
+[2020-07-21 21:12:20.236595] [FUNCovsdbtest] [CASE]  Configure Network Subnet Port
+[2020-07-21 21:12:20.237218] [FUNCovsdbtest] [STEP]  6.1: Generate Post Data
+[2020-07-21 21:12:20.238117] [FUNCovsdbtest] [STEP]  6.2: Post Network Data via HTTP(Post port need post network)
+2020-07-21 21:12:20,238 - FUNCovsdbtest - INFO - user/passwd is: onos/rocks
+2020-07-21 21:12:20,238 - FUNCovsdbtest - INFO - Sending request http://192.168.171.28:8181/onos/vtn/networks/ using POST method.
+2020-07-21 21:12:20,386 - FUNCovsdbtest - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-21 21:12:20,386 - FUNCovsdbtest - INFO - Post Network Success
+2020-07-21 21:12:20,386 - FUNCovsdbtest - INFO - Assertion Passed
+[2020-07-21 21:12:20.387303] [FUNCovsdbtest] [STEP]  6.3: Post Subnet Data via HTTP(Post port need post subnet)
+2020-07-21 21:12:20,388 - FUNCovsdbtest - INFO - user/passwd is: onos/rocks
+2020-07-21 21:12:20,388 - FUNCovsdbtest - INFO - Sending request http://192.168.171.28:8181/onos/vtn/subnets/ using POST method.
+2020-07-21 21:12:20,410 - FUNCovsdbtest - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-21 21:12:20,411 - FUNCovsdbtest - INFO - Post Subnet Success
+2020-07-21 21:12:20,411 - FUNCovsdbtest - INFO - Assertion Passed
+[2020-07-21 21:12:20.411601] [FUNCovsdbtest] [STEP]  6.4: Post Port1 Data via HTTP
+2020-07-21 21:12:20,412 - FUNCovsdbtest - INFO - user/passwd is: onos/rocks
+2020-07-21 21:12:20,412 - FUNCovsdbtest - INFO - Sending request http://192.168.171.28:8181/onos/vtn/ports/ using POST method.
+2020-07-21 21:12:20,426 - FUNCovsdbtest - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-21 21:12:20,426 - FUNCovsdbtest - INFO - Post Port Success
+2020-07-21 21:12:20,426 - FUNCovsdbtest - INFO - Assertion Passed
+[2020-07-21 21:12:20.427278] [FUNCovsdbtest] [STEP]  6.5: Post Port2 Data via HTTP
+2020-07-21 21:12:20,427 - FUNCovsdbtest - INFO - user/passwd is: onos/rocks
+2020-07-21 21:12:20,427 - FUNCovsdbtest - INFO - Sending request http://192.168.171.28:8181/onos/vtn/ports/ using POST method.
+2020-07-21 21:12:20,437 - FUNCovsdbtest - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-21 21:12:20,437 - FUNCovsdbtest - INFO - Post Port Success
+2020-07-21 21:12:20,438 - FUNCovsdbtest - INFO - Assertion Passed
+
+*****************************
+ Result: Pass 
+*****************************
+
+
+******************************
+ Result summary for Testcase7
+******************************
+
+[95m2020-07-21 21:12:20,439 - FUNCovsdbtest - DEBUG - Case Executed       : [1, 3, 4, 2, 5, 6, 7][0m
+[95m2020-07-21 21:12:20,439 - FUNCovsdbtest - DEBUG - Case to be executed : [8][0m
+[2020-07-21 21:12:20.439502] [FUNCovsdbtest] [STEP]  7.1: ovsdb node 1 set ovs manager to 192.168.171.28
+2020-07-21 21:12:20,559 - FUNCovsdbtest - INFO - Executed :sudo ovs-vsctl set-manager tcp:192.168.171.28:6640 		 Expected Prompt '.*[$>\#]' Found
+2020-07-21 21:12:20,559 - FUNCovsdbtest - INFO - Ovsdb manager 192.168.171.28 set
+2020-07-21 21:12:20,559 - FUNCovsdbtest - INFO - Wait 5 seconds for ovsdb connection create
+2020-07-21 21:12:25,565 - FUNCovsdbtest - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-21 21:12:25,565 - FUNCovsdbtest - INFO - ovsdb node 1 set ovs manager to  to 192.168.171.28 sucess
+2020-07-21 21:12:25,565 - FUNCovsdbtest - INFO - Assertion Passed
+[2020-07-21 21:12:25.565977] [FUNCovsdbtest] [STEP]  7.2: ovsdb node 2 set ovs manager to 192.168.171.28
+2020-07-21 21:12:25,689 - FUNCovsdbtest - INFO - Executed :sudo ovs-vsctl set-manager tcp:192.168.171.28:6640 		 Expected Prompt '.*[$>\#]' Found
+2020-07-21 21:12:25,690 - FUNCovsdbtest - INFO - Ovsdb manager 192.168.171.28 set
+2020-07-21 21:12:25,690 - FUNCovsdbtest - INFO - Wait 5 seconds for ovsdb connection create
+2020-07-21 21:12:30,695 - FUNCovsdbtest - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-21 21:12:30,696 - FUNCovsdbtest - INFO - ovsdb node 2 set ovs manager to 192.168.171.28 sucess
+2020-07-21 21:12:30,696 - FUNCovsdbtest - INFO - Assertion Passed
+[2020-07-21 21:12:30.696881] [FUNCovsdbtest] [STEP]  7.3: Create host1 on node 1 192.168.171.17
+2020-07-21 21:12:30,862 - FUNCovsdbtest - INFO - Executed :sudo ip netns add host1 		 Expected Prompt '.*[$>\#]' Found
+2020-07-21 21:12:30,862 - FUNCovsdbtest - INFO - Create host1 sucess
+2020-07-21 21:12:30,862 - FUNCovsdbtest - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-21 21:12:30,862 - FUNCovsdbtest - INFO - Create host1 on node 1 192.168.171.17 sucess
+2020-07-21 21:12:30,862 - FUNCovsdbtest - INFO - Assertion Passed
+[2020-07-21 21:12:30.863415] [FUNCovsdbtest] [STEP]  7.4: Create host2 on node 2 192.168.171.28
+2020-07-21 21:12:30,987 - FUNCovsdbtest - INFO - Executed :sudo ip netns add host2 		 Expected Prompt '.*[$>\#]' Found
+2020-07-21 21:12:30,987 - FUNCovsdbtest - INFO - Create host2 sucess
+2020-07-21 21:12:30,988 - FUNCovsdbtest - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-21 21:12:30,988 - FUNCovsdbtest - INFO - Create host2 on node 2 192.168.171.28 sucess
+2020-07-21 21:12:30,988 - FUNCovsdbtest - INFO - Assertion Passed
+[2020-07-21 21:12:30.988736] [FUNCovsdbtest] [STEP]  7.5: Create port on host1 on the node 192.168.171.17
+2020-07-21 21:12:31,195 - FUNCovsdbtest - INFO - Executed :sudo ip link add host1-eth0 type veth peer name port1;sudo ip link set host1-eth0 up;sudo ip link set port1 up; sudo ifconfig host1-eth0 hw ether 000000000001; sudo ip link set host1-eth0 netns host1 		 Expected Prompt '.*[$>\#]' Found
+2020-07-21 21:12:31,195 - FUNCovsdbtest - INFO - Create host port host1-eth0 on host1 sucess
+2020-07-21 21:12:31,195 - FUNCovsdbtest - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-21 21:12:31,196 - FUNCovsdbtest - INFO - Create port on host1 on the node 192.168.171.17 sucess
+2020-07-21 21:12:31,196 - FUNCovsdbtest - INFO - Assertion Passed
+[2020-07-21 21:12:31.196566] [FUNCovsdbtest] [STEP]  7.6: Create port on host2 on the node 192.168.171.28
+2020-07-21 21:12:31,389 - FUNCovsdbtest - INFO - Executed :sudo ip link add host2-eth0 type veth peer name port1;sudo ip link set host2-eth0 up;sudo ip link set port1 up; sudo ifconfig host2-eth0 hw ether 000000000002; sudo ip link set host2-eth0 netns host2 		 Expected Prompt '.*[$>\#]' Found
+2020-07-21 21:12:31,389 - FUNCovsdbtest - INFO - Create host port host2-eth0 on host2 sucess
+2020-07-21 21:12:31,389 - FUNCovsdbtest - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-21 21:12:31,390 - FUNCovsdbtest - INFO - Create port on host1 on the node 192.168.171.28 sucess
+2020-07-21 21:12:31,390 - FUNCovsdbtest - INFO - Assertion Passed
+[2020-07-21 21:12:31.390570] [FUNCovsdbtest] [STEP]  7.7: Add port to ovs br-int and host go-online on the node 192.168.171.17
+2020-07-21 21:12:31,502 - FUNCovsdbtest - INFO - Executed :sudo ovs-vsctl add-port br-int port1 -- set Interface port1 external-ids:iface-id=00000000-0000-0000-0000-000000000001 external-ids:iface-status=active external-ids:attached-mac=00:00:00:00:00:01 external-ids:vm-uuid=10000000-0000-0000-0000-000000000001 		 Expected Prompt '.*[$>\#]' Found
+2020-07-21 21:12:31,502 - FUNCovsdbtest - INFO - Add port port1 to ovs br-int sucess
+2020-07-21 21:12:31,502 - FUNCovsdbtest - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-21 21:12:31,502 - FUNCovsdbtest - INFO - Add port to ovs br-int and host go-online on the node 192.168.171.17 sucess
+2020-07-21 21:12:31,502 - FUNCovsdbtest - INFO - Assertion Passed
+[2020-07-21 21:12:31.503245] [FUNCovsdbtest] [STEP]  7.8: Add port to ovs br-int and host go-online on the node 192.168.171.28
+2020-07-21 21:12:31,619 - FUNCovsdbtest - INFO - Executed :sudo ovs-vsctl add-port br-int port1 -- set Interface port1 external-ids:iface-id=00000000-0000-0000-0000-000000000002 external-ids:iface-status=active external-ids:attached-mac=00:00:00:00:00:02 external-ids:vm-uuid=10000000-0000-0000-0000-000000000001 		 Expected Prompt '.*[$>\#]' Found
+2020-07-21 21:12:31,619 - FUNCovsdbtest - INFO - Add port port1 to ovs br-int sucess
+2020-07-21 21:12:31,619 - FUNCovsdbtest - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-21 21:12:31,619 - FUNCovsdbtest - INFO - Add port to ovs br-int and host go-online on the node 192.168.171.28 sucess
+2020-07-21 21:12:31,619 - FUNCovsdbtest - INFO - Assertion Passed
+[2020-07-21 21:12:31.620327] [FUNCovsdbtest] [STEP]  7.9: Check onos set host flows on the node 192.168.171.17
+2020-07-21 21:12:31,736 - FUNCovsdbtest - INFO - Executed :sudo ovs-ofctl -O OpenFlow13 dump-flows br-int 		 Expected Prompt '.*[$>\#]' Found
+2020-07-21 21:12:31,737 - FUNCovsdbtest - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+[91m2020-07-21 21:12:31,737 - FUNCovsdbtest - ERROR - Check onos set host flows on the node 192.168.171.17 failed[0m
+
+[REPORT] [21 Jul 2020 21:12:31] Check onos set host flows on the node 192.168.171.17 failed
+[93m2020-07-21 21:12:31,737 - FUNCovsdbtest - WARNING - Assertion Failed[0m
+[2020-07-21 21:12:31.738277] [FUNCovsdbtest] [STEP]  7.10: Check onos set host flows on the node 192.168.171.28
+2020-07-21 21:12:31,853 - FUNCovsdbtest - INFO - Executed :sudo ovs-ofctl -O OpenFlow13 dump-flows br-int 		 Expected Prompt '.*[$>\#]' Found
+2020-07-21 21:12:31,854 - FUNCovsdbtest - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+[91m2020-07-21 21:12:31,854 - FUNCovsdbtest - ERROR - Check onos set host flows on the node 192.168.171.28 failed[0m
+
+[REPORT] [21 Jul 2020 21:12:31] Check onos set host flows on the node 192.168.171.28 failed
+[93m2020-07-21 21:12:31,854 - FUNCovsdbtest - WARNING - Assertion Failed[0m
+[2020-07-21 21:12:31.855270] [FUNCovsdbtest] [STEP]  7.11: Check hosts can ping each other
+2020-07-21 21:12:31,997 - FUNCovsdbtest - INFO - Executed :sudo ip netns exec host1 ifconfig host1-eth0 10.0.0.1 		 Expected Prompt '.*[$>\#]' Found
+2020-07-21 21:12:31,998 - FUNCovsdbtest - INFO - Set host ip for host1-eth0 on host host1 sucess
+2020-07-21 21:12:32,160 - FUNCovsdbtest - INFO - Executed :sudo ip netns exec host2 ifconfig host2-eth0 10.0.0.2 		 Expected Prompt '.*[$>\#]' Found
+2020-07-21 21:12:32,161 - FUNCovsdbtest - INFO - Set host ip for host2-eth0 on host host2 sucess
+[91m2020-07-21 21:12:42,272 - FUNCovsdbtest - ERROR - Expected Prompt not found, Time Out!![0m
+[91m2020-07-21 21:12:42,273 - FUNCovsdbtest - ERROR - .*[$>\#][0m
+2020-07-21 21:12:47,383 - FUNCovsdbtest - INFO - Executed :sudo ip netns exec host1 ping -c 1 -S 10.0.0.1 10.0.0.2 		 Expected Prompt '.*[$>\#]' Found
+2020-07-21 21:12:57,434 - FUNCovsdbtest - INFO - Executed :sudo ip netns exec host1 ping -c 1 -S 10.0.0.1 10.0.0.2 		 Expected Prompt '.*[$>\#]' Found
+2020-07-21 21:13:07,485 - FUNCovsdbtest - INFO - Executed :sudo ip netns exec host1 ping -c 1 -S 10.0.0.1 10.0.0.2 		 Expected Prompt '.*[$>\#]' Found
+2020-07-21 21:13:12,491 - FUNCovsdbtest - INFO - OVSDB1: packets lost, host is unreachable
+[91m2020-07-21 21:13:22,594 - FUNCovsdbtest - ERROR - Expected Prompt not found, Time Out!![0m
+[91m2020-07-21 21:13:22,594 - FUNCovsdbtest - ERROR - .*[$>\#][0m
+2020-07-21 21:13:27,696 - FUNCovsdbtest - INFO - Executed :sudo ip netns exec host2 ping -c 1 -S 10.0.0.2 10.0.0.1 		 Expected Prompt '.*[$>\#]' Found
+2020-07-21 21:13:37,745 - FUNCovsdbtest - INFO - Executed :sudo ip netns exec host2 ping -c 1 -S 10.0.0.2 10.0.0.1 		 Expected Prompt '.*[$>\#]' Found
+2020-07-21 21:13:47,804 - FUNCovsdbtest - INFO - Executed :sudo ip netns exec host2 ping -c 1 -S 10.0.0.2 10.0.0.1 		 Expected Prompt '.*[$>\#]' Found
+2020-07-21 21:13:52,810 - FUNCovsdbtest - INFO - OVSDB2: packets lost, host is unreachable
+2020-07-21 21:13:52,810 - FUNCovsdbtest - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+[91m2020-07-21 21:13:52,811 - FUNCovsdbtest - ERROR - Failed to host go online and ping each other,controller is 192.168.171.28[0m
+
+[REPORT] [21 Jul 2020 21:13:52] Failed to host go online and ping each other,controller is 192.168.171.28
+[93m2020-07-21 21:13:52,811 - FUNCovsdbtest - WARNING - Assertion Failed[0m
+
+*****************************
+ Result: Failed 
+*****************************
+
+
+******************************
+ Result summary for Testcase8
+******************************
+
+[95m2020-07-21 21:13:52,813 - FUNCovsdbtest - DEBUG - Case Executed       : [1, 3, 4, 2, 5, 6, 7, 8][0m
+[95m2020-07-21 21:13:52,813 - FUNCovsdbtest - DEBUG - Case to be executed : [][0m
+[2020-07-21 21:13:52.813780] [FUNCovsdbtest] [STEP]  8.1: Delete ovsdb node 1 manager
+2020-07-21 21:13:52,915 - FUNCovsdbtest - INFO - Executed :sudo ovs-vsctl del-manager 		 Expected Prompt '.*[$>\#]' Found
+2020-07-21 21:13:52,915 - FUNCovsdbtest - INFO - Ovsdb manager delete
+2020-07-21 21:13:52,915 - FUNCovsdbtest - INFO - Wait 5 seconds for ovsdb connection delete
+2020-07-21 21:13:57,921 - FUNCovsdbtest - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-21 21:13:57,921 - FUNCovsdbtest - INFO - ovsdb node 1 delete manager sucess
+2020-07-21 21:13:57,922 - FUNCovsdbtest - INFO - Assertion Passed
+[2020-07-21 21:13:57.922710] [FUNCovsdbtest] [STEP]  8.2: Delete ovsdb node 2 manager
+2020-07-21 21:13:58,024 - FUNCovsdbtest - INFO - Executed :sudo ovs-vsctl del-manager 		 Expected Prompt '.*[$>\#]' Found
+2020-07-21 21:13:58,024 - FUNCovsdbtest - INFO - Ovsdb manager delete
+2020-07-21 21:13:58,024 - FUNCovsdbtest - INFO - Wait 5 seconds for ovsdb connection delete
+2020-07-21 21:14:03,030 - FUNCovsdbtest - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-21 21:14:03,030 - FUNCovsdbtest - INFO - ovsdb node 2 delete manager sucess
+2020-07-21 21:14:03,030 - FUNCovsdbtest - INFO - Assertion Passed
+[2020-07-21 21:14:03.031390] [FUNCovsdbtest] [STEP]  8.3: Delete ovsdb node 1 bridge br-int
+2020-07-21 21:14:03,133 - FUNCovsdbtest - INFO - Executed :sudo ovs-vsctl del-br br-int 		 Expected Prompt '.*[$>\#]' Found
+2020-07-21 21:14:03,133 - FUNCovsdbtest - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-21 21:14:03,133 - FUNCovsdbtest - INFO - Delete ovsdb node 1 bridge br-int sucess
+2020-07-21 21:14:03,133 - FUNCovsdbtest - INFO - Assertion Passed
+[2020-07-21 21:14:03.133852] [FUNCovsdbtest] [STEP]  8.4: Delete ovsdb node 2 bridge br-int
+2020-07-21 21:14:03,235 - FUNCovsdbtest - INFO - Executed :sudo ovs-vsctl del-br br-int 		 Expected Prompt '.*[$>\#]' Found
+2020-07-21 21:14:03,235 - FUNCovsdbtest - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-21 21:14:03,235 - FUNCovsdbtest - INFO - Delete ovsdb node 2 bridge br-int sucess
+2020-07-21 21:14:03,235 - FUNCovsdbtest - INFO - Assertion Passed
+[2020-07-21 21:14:03.236278] [FUNCovsdbtest] [STEP]  8.5: Delete ip netns host on the ovsdb node 1
+2020-07-21 21:14:03,342 - FUNCovsdbtest - INFO - Executed :sudo ip netns delete host1 		 Expected Prompt '.*[$>\#]' Found
+2020-07-21 21:14:03,343 - FUNCovsdbtest - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-21 21:14:03,343 - FUNCovsdbtest - INFO - Delete ip netns host on the ovsdb node 1 sucess
+2020-07-21 21:14:03,343 - FUNCovsdbtest - INFO - Assertion Passed
+[2020-07-21 21:14:03.343824] [FUNCovsdbtest] [STEP]  8.6: Delete ip netns host on the ovsdb node 2
+2020-07-21 21:14:03,445 - FUNCovsdbtest - INFO - Executed :sudo ip netns delete host2 		 Expected Prompt '.*[$>\#]' Found
+2020-07-21 21:14:03,445 - FUNCovsdbtest - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-21 21:14:03,445 - FUNCovsdbtest - INFO - Delete ip netns host on the ovsdb node 2 sucess
+2020-07-21 21:14:03,446 - FUNCovsdbtest - INFO - Assertion Passed
+[2020-07-21 21:14:03.446457] [FUNCovsdbtest] [STEP]  8.7: Check onoscli devices openflow session is false 192.168.171.17
+2020-07-21 21:14:03,705 - FUNCovsdbtest - INFO - Command 'devices -j' sent to ONOScli1.
+[95m2020-07-21 21:14:03,705 - FUNCovsdbtest - DEBUG - REGEX PATTERN SET TO: 'devices -j'
+SENT COMMAND STRING WAS: 'devices -j'[0m
+[95m2020-07-21 21:14:03,705 - FUNCovsdbtest - DEBUG - REGEX PATTERN SET TO: 'devices -j'
+SENT COMMAND STRING WAS: 'devices -j'[0m
+2020-07-21 21:14:03,815 - FUNCovsdbtest - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-21 21:14:03,816 - FUNCovsdbtest - INFO - Check openflow session is false 192.168.171.17 sucess
+2020-07-21 21:14:03,816 - FUNCovsdbtest - INFO - Assertion Passed
+[2020-07-21 21:14:03.816760] [FUNCovsdbtest] [STEP]  8.8: Check onoscli devices have ovs 192.168.171.28
+2020-07-21 21:14:04,082 - FUNCovsdbtest - INFO - Command 'devices -j' sent to ONOScli1.
+[95m2020-07-21 21:14:04,082 - FUNCovsdbtest - DEBUG - REGEX PATTERN SET TO: 'devices -j'
+SENT COMMAND STRING WAS: 'devices -j'[0m
+[95m2020-07-21 21:14:04,082 - FUNCovsdbtest - DEBUG - REGEX PATTERN SET TO: 'devices -j'
+SENT COMMAND STRING WAS: 'devices -j'[0m
+2020-07-21 21:14:04,190 - FUNCovsdbtest - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+[91m2020-07-21 21:14:04,190 - FUNCovsdbtest - ERROR - Check openflow session is false 192.168.171.28 failed[0m
+
+[REPORT] [21 Jul 2020 21:14:04] Check openflow session is false 192.168.171.28 failed
+[93m2020-07-21 21:14:04,190 - FUNCovsdbtest - WARNING - Assertion Failed[0m
+
+*****************************
+ Result: Failed 
+*****************************
+
+
+
+*************************************
+	Test Execution Summary
+
+************************************* 
+
+ Test Start           : 21 Jul 2020 21:08:51
+ Test End             : 21 Jul 2020 21:14:04
+ Execution Time       : 0:05:12.472849
+ Total Tests Planned  : 8
+ Total Tests Run      : 8
+ Total Pass           : 3
+ Total Fail           : 5
+ Total No Result      : 0
+ Success Percentage   : 37%
+ Execution Percentage : 100%
+
+ Case Failed          : [3, 4, 5, 7, 8]
+ Case Executed        : [1, 3, 4, 2, 5, 6, 7, 8]
+ Case Not Executed    : []
+Disconnecting from ONOSserver1: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from ONOSrest1: <class 'drivers.common.api.controller.onosrestdriver.OnosRestDriver'>
+Disconnecting from OVSDB2: <class 'drivers.common.cli.ovsdbdriver.OvsdbDriver'>
+Disconnecting from OVSDB1: <class 'drivers.common.cli.ovsdbdriver.OvsdbDriver'>
+Disconnecting from ONOSbench1: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from ONOScli1: <class 'drivers.common.cli.onosclidriver.OnosCliDriver'>
+Disconnecting from ONOScell: <class 'drivers.common.cli.onosclusterdriver.OnosClusterDriver'>
+ubuntu@manage:~/OnosSystemTest/TestON/bin$ 
+ubuntu@manage:~/OnosSystemTest/TestON/bin$ exit
+logout

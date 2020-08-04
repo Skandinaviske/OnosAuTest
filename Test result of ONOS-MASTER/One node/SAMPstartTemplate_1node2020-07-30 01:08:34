@@ -1,0 +1,2507 @@
+Welcome to Ubuntu 18.04.4 LTS (GNU/Linux 4.15.0-74-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Thu Jul 30 05:08:34 UTC 2020
+
+  System load:  13.29              Processes:           246
+  Usage of /:   18.5% of 48.29GB   Users logged in:     1
+  Memory usage: 11%                IP address for ens3: 192.168.171.144
+  Swap usage:   0%
+
+
+10 packages can be updated.
+8 updates are security updates.
+
+
+*** System restart required ***
+Last login: Thu Jul 30 04:58:45 2020 from 174.114.234.237
+
+cell oneNodeDemo; cd ~/OnosSystemTest/TestON/bin/; ./cli.py run SAMPstartTemplate_1node
+
+exit
+
+ubuntu@manage:~$ cell oneNodeDemo; cd ~/OnosSystemTest/TestON/bin/; ./cli.py run 
+ SAMPstartTemplate_1node
+[01;31m[KONOS_CELL[m[K=oneNodeDemo
+OCC1=192.168.171.28
+OC1=192.168.171.28
+OCI=192.168.171.28
+OCN=192.168.171.17
+ONOS_APPS=gui,drivers,openflow,proxyarp
+ONOS_GROUP=sdn
+ONOS_MN_PY=/home/ubuntu/onos/tools/dev/mininet/onos.py
+ONOS_SCENARIOS=/home/ubuntu/onos/tools/test/scenarios
+ONOS_USER=sdn
+ONOS_WEB_PASS=rocks
+ONOS_WEB_USER=onos
+
+                                +----------------+
+------------------------------ { Script And Files }  ------------------------------
+                                +----------------+
+
+	Script Log File : /home/ubuntu/OnosSystemTest/TestON/logs/SAMPstartTemplate_1node_30_Jul_2020_05_08_35/SAMPstartTemplate_1node_30_Jul_2020_05_08_35.log
+	Report Log File : /home/ubuntu/OnosSystemTest/TestON/logs/SAMPstartTemplate_1node_30_Jul_2020_05_08_35/SAMPstartTemplate_1node_30_Jul_2020_05_08_35.rpt
+	Mininet1 Session Log : /home/ubuntu/OnosSystemTest/TestON/logs/SAMPstartTemplate_1node_30_Jul_2020_05_08_35/Mininet1.session
+	ONOScell Session Log : /home/ubuntu/OnosSystemTest/TestON/logs/SAMPstartTemplate_1node_30_Jul_2020_05_08_35/ONOScell.session
+	Test Script : /home/ubuntu/OnosSystemTest/TestON/tests/SAMP/SAMPstartTemplate_1node/SAMPstartTemplate_1node.py
+	Test Params : /home/ubuntu/OnosSystemTest/TestON/tests/SAMP/SAMPstartTemplate_1node/SAMPstartTemplate_1node.params
+	Topology : /home/ubuntu/OnosSystemTest/TestON/tests/SAMP/SAMPstartTemplate_1node/SAMPstartTemplate_1node.topo
+                              +------------------+
+---------------------------  { Script Exec Params }  ---------------------------
+                              +------------------+
+
+{
+    "CASE0": "", 
+    "CASE1": {
+        "NodeList": "OC1", 
+        "SleepTimers": {
+            "mnCfg": "10", 
+            "mnStartup": "15", 
+            "onosCfg": "5", 
+            "onosStartup": "60"
+        }
+    }, 
+    "CASE10": {
+        "Apps": "org.onosproject.openflow", 
+        "ONOS_Configuration": {
+            "org.onosproject.net.intent.impl.compiler.IntentConfigurableRegistrator": {
+                "useFlowObjectives": "true"
+            }
+        }, 
+        "numNodes": "1", 
+        "restartCluster": "True"
+    }, 
+    "CASE11": {
+        "topo": "mn --topo tree,3,3"
+    }, 
+    "CASE12": "", 
+    "CASE22": "", 
+    "CASE32": "", 
+    "GIT": {
+        "branch": "master", 
+        "pull": "False"
+    }, 
+    "GRAPH": {
+        "builds": "20", 
+        "nodeCluster": "VM"
+    }, 
+    "testcases": "0,1,10,11,12,22,2,32"
+}
+
+                               +---------------+
+----------------------------- { Components Used }  -----------------------------
+                               +---------------+
+	Mininet1
+	ONOScell
+
+
+                              +--------+
+---------------------------- { Topology }  ----------------------------
+                              +--------+
+
+[
+    [
+        "ONOScell", 
+        {
+            "connect_order": "1", 
+            "host": "localhost", 
+            "user": "sdn", 
+            "COMPONENTS": {
+                "web_user": null, 
+                "diff_clihost": null, 
+                "web_pass": null, 
+                "prompt": null, 
+                "cluster_name": null, 
+                "onos_home": null, 
+                "nodes": "1", 
+                "karaf_password": null, 
+                "karaf_username": null, 
+                "rest_port": null
+            }, 
+            "home": null, 
+            "password": "rocks", 
+            "type": "OnosClusterDriver"
+        }
+    ], 
+    [
+        "Mininet1", 
+        {
+            "connect_order": "2", 
+            "host": "OCN", 
+            "user": "sdn", 
+            "COMPONENTS": {
+                "home": "~/mininet/custom/", 
+                "prompt": null
+            }, 
+            "password": "rocks", 
+            "type": "MininetCliDriver"
+        }
+    ]
+]
+------------------------------------------------------------
+
+
+******************************
+ CASE INIT 
+******************************
+
+['ONOScell', 'Mininet1']
+2020-07-30 05:08:35,920 - SAMPstartTemplate_1node - INFO - Creating component Handle: ONOScell
+2020-07-30 05:08:35,936 - SAMPstartTemplate_1node - INFO - ONOScell: Found ['192.168.171.28'] ONOS IPs
+2020-07-30 05:08:35,936 - SAMPstartTemplate_1node - INFO - ONOScell: Trying to connect to localhost
+2020-07-30 05:08:35,980 - SAMPstartTemplate_1node - INFO - ssh key confirmation received, send yes
+2020-07-30 05:08:36,891 - SAMPstartTemplate_1node - INFO - Password not required logged in
+[95m2020-07-30 05:08:37,196 - SAMPstartTemplate_1node - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '1', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosCliDriver', 'host': 'localhost'}[0m
+2020-07-30 05:08:37,197 - SAMPstartTemplate_1node - INFO - Creating component Handle: ONOScli1
+2020-07-30 05:08:37,256 - SAMPstartTemplate_1node - INFO - ONOScli1: Trying to connect to localhost
+2020-07-30 05:08:38,110 - SAMPstartTemplate_1node - INFO - Password not required logged in
+[95m2020-07-30 05:08:38,416 - SAMPstartTemplate_1node - DEBUG - {'connect_order': '1', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '1', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosClusterDriver', 'host': 'localhost'}[0m
+[95m2020-07-30 05:08:38,416 - SAMPstartTemplate_1node - DEBUG - {'connect_order': '2', 'user': 'onos', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '1', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosRestDriver', 'host': '192.168.171.28', 'port': '8181'}[0m
+2020-07-30 05:08:38,416 - SAMPstartTemplate_1node - INFO - Creating component Handle: ONOSrest1
+2020-07-30 05:08:38,488 - SAMPstartTemplate_1node - INFO - ONOSrest1: ip set to 192.168.171.28
+[95m2020-07-30 05:08:38,488 - SAMPstartTemplate_1node - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '1', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': 'localhost'}[0m
+2020-07-30 05:08:38,489 - SAMPstartTemplate_1node - INFO - Creating component Handle: ONOSbench1
+2020-07-30 05:08:38,513 - SAMPstartTemplate_1node - INFO - ONOSbench1: Found ['192.168.171.28'] ONOS IPs
+2020-07-30 05:08:38,513 - SAMPstartTemplate_1node - INFO - ONOSbench1: Trying to connect to localhost
+2020-07-30 05:08:39,363 - SAMPstartTemplate_1node - INFO - Password not required logged in
+[95m2020-07-30 05:08:39,669 - SAMPstartTemplate_1node - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '1', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': '192.168.171.28'}[0m
+2020-07-30 05:08:39,669 - SAMPstartTemplate_1node - INFO - Creating component Handle: ONOSserver1
+2020-07-30 05:08:39,678 - SAMPstartTemplate_1node - INFO - ONOSserver1: Found ['192.168.171.28'] ONOS IPs
+2020-07-30 05:08:39,679 - SAMPstartTemplate_1node - INFO - ONOSserver1: Trying to connect to 192.168.171.28
+2020-07-30 05:08:39,736 - SAMPstartTemplate_1node - INFO - ssh key confirmation received, send yes
+2020-07-30 05:08:40,613 - SAMPstartTemplate_1node - INFO - Password not required logged in
+2020-07-30 05:08:40,919 - SAMPstartTemplate_1node - INFO - Creating component Handle: Mininet1
+2020-07-30 05:08:41,006 - SAMPstartTemplate_1node - INFO - ssh key confirmation received, send yes
+2020-07-30 05:08:41,959 - SAMPstartTemplate_1node - INFO - Password not required logged in
+2020-07-30 05:08:42,163 - SAMPstartTemplate_1node - INFO - Connection successful to the host sdn@192.168.171.17
+
+******************************
+ Result summary for Testcase0
+******************************
+
+[95m2020-07-30 05:08:42,297 - SAMPstartTemplate_1node - DEBUG - Case Executed       : [0][0m
+[95m2020-07-30 05:08:42,298 - SAMPstartTemplate_1node - DEBUG - Case to be executed : [1, 10, 11, 12, 22, 2, 32][0m
+[2020-07-30 05:08:42.304980] [SAMPstartTemplate_1node] [CASE]  Pull onos branch and build onos on Teststation.
+2020-07-30 05:08:42,305 - SAMPstartTemplate_1node - INFO - Skipped git checkout and pull as they are disabled in params file
+[95m2020-07-30 05:08:42,305 - SAMPstartTemplate_1node - DEBUG - Network initialized with components: [<drivers.common.cli.emulator.mininetclidriver.MininetCliDriver object at 0x7ff137ddc550>][0m
+
+*****************************
+ Result: Pass 
+*****************************
+
+
+******************************
+ Result summary for Testcase1
+******************************
+
+[95m2020-07-30 05:08:42,306 - SAMPstartTemplate_1node - DEBUG - Case Executed       : [0, 1][0m
+[95m2020-07-30 05:08:42,306 - SAMPstartTemplate_1node - DEBUG - Case to be executed : [10, 11, 12, 22, 2, 32][0m
+[2020-07-30 05:08:42.306585] [SAMPstartTemplate_1node] [CASE]  Constructing test variables and building ONOS package
+[2020-07-30 05:08:42.306848] [SAMPstartTemplate_1node] [STEP]  1.1: Constructing test variables
+2020-07-30 05:08:42,310 - SAMPstartTemplate_1node - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-30 05:08:42,310 - SAMPstartTemplate_1node - INFO - Successfully construct test variables 
+2020-07-30 05:08:42,310 - SAMPstartTemplate_1node - INFO - Assertion Passed
+2020-07-30 05:08:42,310 - SAMPstartTemplate_1node - INFO - ONOSbench1 home is ~/onos
+ONOSbench1: 
+
+commit 12bfd3d32d808e9590d1d3d70bc0cbd4b320575c (HEAD -> master, origin/master, origin/HEAD)
+Author:     Parvathi MH <parvathi.mh@samsung.com>
+AuthorDate: Thu Jan 30 10:31:10 2020 +0530
+Commit:     Thomas Vachuska <tom@opennetworking.org>
+CommitDate: Tue Jul 28 18:17:54 2020 +0000
+
+    Fix to get onos pid in onos-jpenable
+sdn@manage:~/onos$
+
+*****************************
+ Result: Pass 
+*****************************
+
+
+******************************
+ Result summary for Testcase10
+******************************
+
+[95m2020-07-30 05:08:42,856 - SAMPstartTemplate_1node - DEBUG - Case Executed       : [0, 1, 10][0m
+[95m2020-07-30 05:08:42,857 - SAMPstartTemplate_1node - DEBUG - Case to be executed : [11, 12, 22, 2, 32][0m
+[2020-07-30 05:08:42.857456] [SAMPstartTemplate_1node] [CASE]  Start up 1-node onos cluster.
+[2020-07-30 05:08:42.858412] [SAMPstartTemplate_1node] [STEP]  10.1: Start ONOS cluster with basic (drivers) app.
+[2020-07-30 05:08:42.859086] [SAMPstartTemplate_1node] [CASE]  Starting up 1 node(s) ONOS cluster
+2020-07-30 05:08:42,859 - SAMPstartTemplate_1node - INFO - ONOS cluster size = 1
+[95m2020-07-30 05:08:42,859 - SAMPstartTemplate_1node - DEBUG - Apps: drivers[0m
+2020-07-30 05:08:42,859 - SAMPstartTemplate_1node - INFO - Atomix Cluster Size = 1 
+
+temp                                            0%    0     0.0KB/s   --:-- ETA
+temp                                          100%  224   398.9KB/s   00:00    
+[2020-07-30 05:08:43.777340] [SAMPstartTemplate_1node] [STEP]  10.2: Apply cell to environment
+2020-07-30 05:08:44,071 - SAMPstartTemplate_1node - INFO - ONOSbench1: Successfully set cell:  cell temp
+
+[01;31m[KONOS_CELL[m[K=temp
+
+OCC1=192.168.171.28
+
+OC1=192.168.171.28
+
+OCI=192.168.171.28
+
+OCN=192.168.171.17
+
+ONOS_APPS=drivers
+
+ONOS_GROUP=sdn
+
+ONOS_MN_PY=/home/sdn/onos/tools/dev/mininet/onos.py
+
+ONOS_NIC=192.168.171.*
+
+ONOS_SCENARIOS=/home/sdn/onos/tools/test/scenarios
+
+ONOS_USER=sdn
+
+ONOS_USE_SSH=true
+
+ONOS_WEB_PASS=rocks
+
+ONOS_WEB_USER=onos
+
+sdn@manage:~/onos$
+2020-07-30 05:08:44,365 - SAMPstartTemplate_1node - INFO - ONOSbench1: Successfully set cell:  cell temp
+
+[01;31m[KONOS_CELL[m[K=temp
+
+OCC1=192.168.171.28
+
+OC1=192.168.171.28
+
+OCI=192.168.171.28
+
+OCN=192.168.171.17
+
+ONOS_APPS=drivers
+
+ONOS_GROUP=sdn
+
+ONOS_MN_PY=/home/sdn/onos/tools/dev/mininet/onos.py
+
+ONOS_NIC=192.168.171.*
+
+ONOS_SCENARIOS=/home/sdn/onos/tools/test/scenarios
+
+ONOS_TOPO=default
+
+ONOS_USER=sdn
+
+ONOS_USE_SSH=true
+
+ONOS_WEB_PASS=rocks
+
+ONOS_WEB_USER=onos
+
+sdn@manage:~/onos$
+2020-07-30 05:08:46,123 - SAMPstartTemplate_1node - INFO - Verify cell returned:  onos-verify-cell
+
+192.168.171.17: node
+
+192.168.171.28: node-1
+
+sdn@manage:~/onos$
+2020-07-30 05:08:46,124 - SAMPstartTemplate_1node - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-30 05:08:46,124 - SAMPstartTemplate_1node - INFO - Successfully applied cell to environment
+2020-07-30 05:08:46,125 - SAMPstartTemplate_1node - INFO - Assertion Passed
+2020-07-30 05:08:46,125 - SAMPstartTemplate_1node - INFO - Safety check, killing all Atomix processes
+2020-07-30 05:08:47,072 - SAMPstartTemplate_1node - INFO - Atomix instance 192.168.171.28 was killed
+2020-07-30 05:08:47,072 - SAMPstartTemplate_1node - INFO - Safety check, killing all ONOS processes
+2020-07-30 05:08:48,066 - SAMPstartTemplate_1node - INFO - ONOS instance 192.168.171.28 was killed
+[2020-07-30 05:08:48.067271] [SAMPstartTemplate_1node] [STEP]  10.3: Uninstalling Atomix
+2020-07-30 05:08:48,989 - SAMPstartTemplate_1node - INFO - Atomix 192.168.171.28 was uninstalled
+2020-07-30 05:08:48,990 - SAMPstartTemplate_1node - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-30 05:08:48,990 - SAMPstartTemplate_1node - INFO - Successfully uninstalled Atomix
+2020-07-30 05:08:48,990 - SAMPstartTemplate_1node - INFO - Assertion Passed
+[2020-07-30 05:08:48.991092] [SAMPstartTemplate_1node] [STEP]  10.4: Uninstalling ONOS package
+2020-07-30 05:09:09,200 - SAMPstartTemplate_1node - INFO - ONOS 192.168.171.28 was uninstalled
+2020-07-30 05:09:09,201 - SAMPstartTemplate_1node - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-30 05:09:09,202 - SAMPstartTemplate_1node - INFO - Successfully uninstalled ONOS package
+2020-07-30 05:09:09,202 - SAMPstartTemplate_1node - INFO - Assertion Passed
+[2020-07-30 05:09:09.202579] [SAMPstartTemplate_1node] [STEP]  10.5: Creating ONOS package
+[95m2020-07-30 05:09:11,294 - SAMPstartTemplate_1node - DEBUG - 
+
+[32mLoading:[0m 
+
+
+[1A[K[32mLoading:[0m 0 packages loaded
+
+
+[1A[K[32mAnalyzing:[0m target //:onos (1 packages loaded, 0 targets configured)
+
+
+[1A[K[32mINFO: [0mAnalyzed target //:onos (1 packages loaded, 404 targets configured).
+
+
+
+
+[1A[K[32mINFO: [0mFound 1 target...
+
+
+
+
+[1A[K
+
+
+[1A[K[32m[0 / 1][0m [Prepa] BazelWorkspaceStatusAction stable-status.txt
+
+
+[1A[KTarget //:onos up-to-date:
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/utils/osgiwrap/osgi-jar.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/utils/osgiwrap/osgi-jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/utils/osgi/libonlab-osgi.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/utils/junit/libonlab-junit.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/utils/misc/libonlab-misc.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/utils/rest/libonlab-rest.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/core/api/libonos-api.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/core/net/libonos-core-net.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/core/common/libonos-core-common.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/core/protobuf/models/libonos-core-protobuf-models.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/core/protobuf/models/proto/libonos-core-protobuf-models-proto.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/core/store/primitives/libonos-core-primitives.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/core/store/serializers/libonos-core-serializers.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/core/store/dist/libonos-core-dist.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/core/store/persistence/libonos-core-persistence.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/cli/libonos-cli.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/utilities/libonos-drivers-utilities.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/general/device/libonos-providers-general-device.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/web/api/libonos-rest.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/tools/build/conf/libonos-build-conf.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/onos-admin.tar.gz
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/onos-test.tar.gz
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/onos.tar.gz
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/bgp/bgpio/libonos-protocols-bgp-bgpio.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/bgp/api/libonos-protocols-bgp-api.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/bgp/ctl/libonos-protocols-bgp-ctl.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/isis/api/libonos-protocols-isis-api.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/isis/ctl/libonos-protocols-isis-ctl.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/isis/isisio/libonos-protocols-isis-isisio.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/lisp/api/libonos-protocols-lisp-api.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/lisp/ctl/libonos-protocols-lisp-ctl.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/lisp/msg/libonos-protocols-lisp-msg.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/netconf/api/libonos-protocols-netconf-api.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/netconf/ctl/libonos-protocols-netconf-ctl.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/openflow/api/libonos-protocols-openflow-api.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/openflow/ctl/libonos-protocols-openflow-ctl.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/ospf/api/libonos-protocols-ospf-api.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/ospf/protocol/libonos-protocols-ospf-protocol.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/ospf/ctl/libonos-protocols-ospf-ctl.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/ovsdb/rfc/libonos-protocols-ovsdb-rfc.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/ovsdb/api/libonos-protocols-ovsdb-api.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/ovsdb/ctl/libonos-protocols-ovsdb-ctl.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/p4runtime/api/libonos-protocols-p4runtime-api.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/p4runtime/model/libonos-protocols-p4runtime-model.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/pcep/pcepio/libonos-protocols-pcep-pcepio.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/pcep/server/api/libonos-protocols-pcep-server-api.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/pcep/server/ctl/libonos-protocols-pcep-server-ctl.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/rest/api/libonos-protocols-rest-api.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/rest/ctl/libonos-protocols-rest-ctl.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/restconf/client/api/libonos-protocols-restconf-client-api.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/restconf/client/ctl/libonos-protocols-restconf-client-ctl.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/snmp/api/libonos-protocols-snmp-api.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/snmp/ctl/libonos-protocols-snmp-ctl.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/tl1/api/libonos-protocols-tl1-api.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/tl1/ctl/libonos-protocols-tl1-ctl.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/xmpp/core/api/libonos-protocols-xmpp-core-api.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/xmpp/core/ctl/libonos-protocols-xmpp-core-ctl.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/netconf/device/libonos-providers-netconf-device.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/openflow/device/libonos-providers-openflow-device.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/openflow/packet/libonos-providers-openflow-packet.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/openflow/flow/libonos-providers-openflow-flow.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/openflow/group/libonos-providers-openflow-group.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/openflow/meter/libonos-providers-openflow-meter.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/ovsdb/device/libonos-providers-ovsdb-device.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/ovsdb/tunnel/libonos-providers-ovsdb-tunnel.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/p4runtime/packet/libonos-providers-p4runtime-packet.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/rest/device/libonos-providers-rest-device.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/snmp/device/libonos-providers-snmp-device.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/isis/cfg/libonos-providers-isis-cfg.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/isis/topology/libonos-providers-isis-topology.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/lisp/device/libonos-providers-lisp-device.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/tl1/device/libonos-providers-tl1-device.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/grpc/onos-protocols-grpc-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/gnmi/onos-protocols-gnmi-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/gnoi/onos-protocols-gnoi-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/p4runtime/onos-protocols-p4runtime-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/restconf/server/onos-protocols-restconf-server-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/xmpp/core/onos-protocols-xmpp-core-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/xmpp/pubsub/onos-protocols-xmpp-pubsub-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/general/onos-providers-general-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/bgp/onos-providers-bgp-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/bgpcep/onos-providers-bgpcep-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/host/onos-providers-host-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/hostprobing/onos-providers-hostprobing-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/isis/onos-providers-isis-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/link/onos-providers-link-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/lldp/onos-providers-lldp-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/netcfghost/onos-providers-netcfghost-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/netcfglinks/onos-providers-netcfglinks-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/netconf/onos-providers-netconf-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/null/onos-providers-null-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/openflow/app/onos-providers-openflow-app-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/openflow/base/onos-providers-openflow-base-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/openflow/message/onos-providers-openflow-message-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/ovsdb/onos-providers-ovsdb-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/ovsdb/host/onos-providers-ovsdb-host-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/ovsdb/base/onos-providers-ovsdb-base-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/p4runtime/onos-providers-p4runtime-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/pcep/onos-providers-pcep-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/rest/onos-providers-rest-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/snmp/onos-providers-snmp-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/lisp/onos-providers-lisp-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/tl1/onos-providers-tl1-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/xmpp/device/onos-providers-xmpp-device-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/default/onos-drivers-default-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/arista/onos-drivers-arista-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/bmv2/onos-drivers-bmv2-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/barefoot/onos-drivers-barefoot-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/ciena/waveserver/onos-drivers-ciena-waveserver-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/ciena/c5162/onos-drivers-ciena-c5162-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/ciena/c5170/onos-drivers-ciena-c5170-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/ciena/waveserverai/onos-drivers-ciena-waveserverai-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/cisco/netconf/onos-drivers-cisco-netconf-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/cisco/rest/onos-drivers-cisco-rest-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/corsa/onos-drivers-corsa-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/czechlight/onos-drivers-czechlight-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/flowspec/onos-drivers-flowspec-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/fujitsu/onos-drivers-fujitsu-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/gnmi/onos-drivers-gnmi-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/gnoi/onos-drivers-gnoi-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/hp/onos-drivers-hp-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/huawei/onos-drivers-huawei-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/juniper/onos-drivers-juniper-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/lisp/onos-drivers-lisp-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/lumentum/onos-drivers-lumentum-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/mellanox/onos-drivers-mellanox-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/netconf/onos-drivers-netconf-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/odtn-driver/onos-drivers-odtn-driver-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/oplink/onos-drivers-oplink-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/optical/onos-drivers-optical-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/ovsdb/onos-drivers-ovsdb-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/p4runtime/onos-drivers-p4runtime-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/polatis/netconf/onos-drivers-polatis-netconf-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/polatis/openflow/onos-drivers-polatis-openflow-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/server/onos-drivers-server-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/stratum/onos-drivers-stratum-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/zte/onos-drivers-zte-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/acl/onos-apps-acl-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/artemis/onos-apps-artemis-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/bgprouter/onos-apps-bgprouter-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/castor/onos-apps-castor-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/cfm/onos-apps-cfm-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/cip/onos-apps-cip-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/config/onos-apps-config-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/configsync-netconf/onos-apps-configsync-netconf-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/configsync/onos-apps-configsync-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/cord-support/onos-apps-cord-support-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/cpman/app/onos-apps-cpman-app-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/dhcp/onos-apps-dhcp-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/dhcprelay/onos-apps-dhcprelay-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/drivermatrix/onos-apps-drivermatrix-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/events/onos-apps-events-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/evpn-route-service/onos-apps-evpn-route-service-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/evpnopenflow/onos-apps-evpnopenflow-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/faultmanagement/onos-apps-faultmanagement-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/flowanalyzer/onos-apps-flowanalyzer-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/flowspec-api/onos-apps-flowspec-api-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/fwd/onos-apps-fwd-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/gangliametrics/onos-apps-gangliametrics-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/gluon/onos-apps-gluon-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/graphitemetrics/onos-apps-graphitemetrics-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/imr/onos-apps-imr-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/inbandtelemetry/onos-apps-inbandtelemetry-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/influxdbmetrics/onos-apps-influxdbmetrics-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/intentsync/onos-apps-intentsync-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/k8s-networking/onos-apps-k8s-networking-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/k8s-node/onos-apps-k8s-node-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/kafka-integration/onos-apps-kafka-integration-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/l3vpn/onos-apps-l3vpn-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/layout/onos-apps-layout-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/linkprops/onos-apps-linkprops-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/mappingmanagement/onos-apps-mappingmanagement-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/mcast/onos-apps-mcast-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/metrics/onos-apps-metrics-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/mfwd/onos-apps-mfwd-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/mlb/onos-apps-mlb-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/mobility/onos-apps-mobility-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/netconf/client/onos-apps-netconf-client-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/network-troubleshoot/onos-apps-network-troubleshoot-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/newoptical/onos-apps-newoptical-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/nodemetrics/onos-apps-nodemetrics-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/node-diagnosis/onos-apps-node-diagnosis-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/odtn/api/onos-apps-odtn-api-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/odtn/service/onos-apps-odtn-service-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/ofagent/onos-apps-ofagent-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/onlp-demo/onos-apps-onlp-demo-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/onos-topo/onos-apps-onos-topo-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/openroadm/onos-apps-openroadm-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/openstacknetworking/onos-apps-openstacknetworking-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/openstacknetworkingui/onos-apps-openstacknetworkingui-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/openstacknode/onos-apps-openstacknode-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/openstacktelemetry/onos-apps-openstacktelemetry-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/openstacktroubleshoot/onos-apps-openstacktroubleshoot-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/openstackvtap/onos-apps-openstackvtap-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/optical-model/onos-apps-optical-model-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/optical-rest/onos-apps-optical-rest-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/p4-tutorial/mytunnel/onos-apps-p4-tutorial-mytunnel-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/p4-tutorial/pipeconf/onos-apps-p4-tutorial-pipeconf-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/packet-stats/onos-apps-packet-stats-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/packet-throttle/onos-apps-packet-throttle-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/pathpainter/onos-apps-pathpainter-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/pcep-api/onos-apps-pcep-api-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/pim/onos-apps-pim-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/portloadbalancer/onos-apps-portloadbalancer-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/powermanagement/onos-apps-powermanagement-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/proxyarp/onos-apps-proxyarp-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/rabbitmq/onos-apps-rabbitmq-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/reactive-routing/onos-apps-reactive-routing-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/restconf/onos-apps-restconf-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/roadm/onos-apps-roadm-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/route-service/onos-apps-route-service-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/routeradvertisement/onos-apps-routeradvertisement-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/routing/cpr/onos-apps-routing-cpr-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/routing/fibinstaller/onos-apps-routing-fibinstaller-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/routing/fpm/onos-apps-routing-fpm-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/scalablegateway/onos-apps-scalablegateway-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/sdnip/onos-apps-sdnip-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/simplefabric/onos-apps-simplefabric-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/test/cluster-ha/onos-apps-test-cluster-ha-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/test/demo/onos-apps-test-demo-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/test/distributed-primitives/onos-apps-test-distributed-primitives-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/test/election/onos-apps-test-election-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/test/flow-perf/onos-apps-test-flow-perf-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/test/intent-perf/onos-apps-test-intent-perf-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/test/loadtest/onos-apps-test-loadtest-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/test/messaging-perf/onos-apps-test-messaging-perf-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/test/netcfg-monitor/onos-apps-test-netcfg-monitor-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/test/primitive-perf/onos-apps-test-primitive-perf-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/test/route-scale/onos-apps-test-route-scale-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/test/transaction-perf/onos-apps-test-transaction-perf-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/tetopology/onos-apps-tetopology-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/tetunnel/onos-apps-tetunnel-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/tunnel/onos-apps-tunnel-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/virtual/onos-apps-virtual-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/virtualbng/onos-apps-virtualbng-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/vpls/onos-apps-vpls-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/vrouter/onos-apps-vrouter-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/vtn/onos-apps-vtn-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/workflow/ofoverlay/onos-apps-workflow-ofoverlay-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/workflow/onos-apps-workflow-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/yang-gui/onos-apps-yang-gui-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/yang/onos-apps-yang-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/web/gui/onos-web-gui-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/web/gui2/onos-web-gui2-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/cpman/api/libonos-apps-cpman-api.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/routing-api/libonos-apps-routing-api.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/dhcp/api/libonos-apps-dhcp-api.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/dhcp/app/libonos-apps-dhcp-app.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/imr/api/libonos-apps-imr-api.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/imr/app/libonos-apps-imr-app.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/dhcprelay/app/libonos-apps-dhcprelay-app.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/dhcprelay/web/libonos-apps-dhcprelay-web.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/fwd/libonos-apps-fwd.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/iptopology-api/libonos-apps-iptopology-api.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/kafka-integration/api/libonos-apps-kafka-integration-api.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/kafka-integration/app/libonos-apps-kafka-integration-app.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/routing/common/libonos-apps-routing-common.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/vtn/vtnrsc/libonos-apps-vtn-vtnrsc.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/vtn/sfcmgr/libonos-apps-vtn-sfcmgr.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/vtn/vtnmgr/libonos-apps-vtn-vtnmgr.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/vtn/vtnweb/libonos-apps-vtn-vtnweb.jar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/pipelines/basic/onos-pipelines-basic-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/pipelines/fabric/onos-pipelines-fabric-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/models/ietf/onos-models-ietf-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/models/common/onos-models-common-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/models/huawei/onos-models-huawei-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/models/openconfig/onos-models-openconfig-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/models/openconfig-infinera/onos-models-openconfig-infinera-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/models/openconfig-odtn/onos-models-openconfig-odtn-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/models/openroadm/onos-models-openroadm-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/models/tapi/onos-models-tapi-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/models/l3vpn/onos-models-l3vpn-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/models/polatis/onos-models-polatis-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K  bazel-bin/models/ciena/waveserverai/onos-models-ciena-waveserverai-oar.oar
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K[32mINFO: [0mElapsed time: 1.962s, Critical Path: 0.17s
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K[32mINFO: [0m1 process: 1 linux-sandbox.
+
+[32m[5 / 5][0m checking cached actions
+
+
+[1A[K[32mINFO:[0m Build completed successfully, 2 total actions
+
+
+[1A[K[32mINFO:[0m Build completed successfully, 2 total actions
+
+[0msdn@manage:~/onos$[0m
+2020-07-30 05:09:11,296 - SAMPstartTemplate_1node - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-30 05:09:11,296 - SAMPstartTemplate_1node - INFO - Successfully created ONOS package
+2020-07-30 05:09:11,296 - SAMPstartTemplate_1node - INFO - Assertion Passed
+[2020-07-30 05:09:11.296847] [SAMPstartTemplate_1node] [STEP]  10.6: Installing Atomix
+2020-07-30 05:09:18,937 - SAMPstartTemplate_1node - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-30 05:09:18,938 - SAMPstartTemplate_1node - INFO - Successfully installed Atomix
+2020-07-30 05:09:18,938 - SAMPstartTemplate_1node - INFO - Assertion Passed
+[2020-07-30 05:09:18.938548] [SAMPstartTemplate_1node] [STEP]  10.7: Installing ONOS package
+2020-07-30 05:09:49,208 - SAMPstartTemplate_1node - INFO - ONOS was installed on 192.168.171.28 and started.
+2020-07-30 05:09:49,209 - SAMPstartTemplate_1node - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-30 05:09:49,209 - SAMPstartTemplate_1node - INFO - Successfully installed ONOS package
+2020-07-30 05:09:49,209 - SAMPstartTemplate_1node - INFO - Assertion Passed
+[2020-07-30 05:09:49.210172] [SAMPstartTemplate_1node] [STEP]  10.8: Set up ONOS secure SSH
+2020-07-30 05:09:49,432 - SAMPstartTemplate_1node - INFO - ONOSbench1: Secure SSH performed on 192.168.171.28
+2020-07-30 05:09:49,433 - SAMPstartTemplate_1node - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-30 05:09:49,433 - SAMPstartTemplate_1node - INFO - Secured ONOS ssh
+2020-07-30 05:09:49,434 - SAMPstartTemplate_1node - INFO - Assertion Passed
+[2020-07-30 05:09:49.434416] [SAMPstartTemplate_1node] [STEP]  10.9: Checking ONOS service
+2020-07-30 05:09:58,724 - SAMPstartTemplate_1node - INFO - ONOSbench1: 192.168.171.28 is up
+2020-07-30 05:10:03,730 - SAMPstartTemplate_1node - INFO - ONOS1 is up and ready
+2020-07-30 05:10:03,732 - SAMPstartTemplate_1node - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-30 05:10:03,732 - SAMPstartTemplate_1node - INFO - ONOS service is ready on all nodes
+2020-07-30 05:10:03,732 - SAMPstartTemplate_1node - INFO - Assertion Passed
+[2020-07-30 05:10:03.732660] [SAMPstartTemplate_1node] [STEP]  10.10: Starting ONOS CLI sessions
+2020-07-30 05:10:04,470 - SAMPstartTemplate_1node - INFO - 192.168.171.28 CLI Started successfully
+[95m2020-07-30 05:10:04,470 - SAMPstartTemplate_1node - DEBUG -  onos 192.168.171.28
+
+Welcome to Open Network Operating System (ONOS)!
+
+
+[1;31m     ____  _  ______  ____     [0m
+
+
+[1;31m    / __ \/ |/ / __ \/ __/   [0m
+
+
+[1;31m   / /_/ /    / /_/ /\ \     [0m
+
+
+[1;31m   \____/_/|_/\____/___/     [0m
+
+
+[1;31m                               [0m
+
+
+Documentation: wiki.onosproject.org      
+
+
+Tutorials:     tutorials.onosproject.org 
+
+
+Mailing lists: lists.onosproject.org     
+
+
+
+
+
+Come help out! Find out how at: contribute.onosproject.org 
+
+
+
+
+
+Hit '[1m<tab>[0m' for a list of available commands
+
+
+and '[1m[cmd] --help[0m' for help on a specific command.
+
+
+Hit '[1m<ctrl-d>[0m' or type '[1mlogout[0m' to exit ONOS session.
+
+
+
+
+[?1h=[90m~[0m                                                                               
+ 
+[?2004h[0m
+2020-07-30 05:10:04,470 - SAMPstartTemplate_1node - INFO - Successful CLI startup
+2020-07-30 05:10:04,471 - SAMPstartTemplate_1node - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-30 05:10:04,471 - SAMPstartTemplate_1node - INFO - Successfully start ONOS cli
+2020-07-30 05:10:04,471 - SAMPstartTemplate_1node - INFO - Assertion Passed
+[2020-07-30 05:10:04.472006] [SAMPstartTemplate_1node] [STEP]  10.11: Checking ONOS nodes
+2020-07-30 05:10:04,746 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:10:04,748 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:10:04,748 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:10:04,861 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:10:04,861 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:10:06,126 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:10:06,126 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:10:06,126 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:10:06,246 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:10:06,246 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:10:07,510 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:10:07,510 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:10:07,510 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:10:07,623 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:10:07,624 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:10:08,886 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:10:08,886 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:10:08,886 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:10:08,997 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:10:08,998 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:10:10,262 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:10:10,262 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:10:10,262 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:10:10,372 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:10:10,373 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:10:11,638 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:10:11,638 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:10:11,638 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:10:11,749 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:10:11,750 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:10:13,010 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:10:13,010 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:10:13,010 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:10:13,119 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:10:13,120 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:10:14,378 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:10:14,378 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:10:14,378 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:10:14,487 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:10:14,488 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:10:15,746 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:10:15,746 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:10:15,746 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:10:15,855 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:10:15,855 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:10:17,114 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:10:17,114 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:10:17,114 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:10:17,223 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:10:17,223 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:10:18,482 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:10:18,482 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:10:18,482 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:10:18,590 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:10:18,590 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:10:19,850 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:10:19,850 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:10:19,850 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:10:19,958 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:10:19,958 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:10:21,218 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:10:21,218 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:10:21,218 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:10:21,333 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:10:21,333 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:10:22,598 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:10:22,598 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:10:22,598 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:10:22,719 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:10:22,719 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:10:23,982 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:10:23,982 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:10:23,982 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:10:24,091 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:10:24,091 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:10:25,363 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:10:25,364 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:10:25,364 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:10:25,471 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:10:25,471 - SAMPstartTemplate_1node - WARNING - 'Service org.onosproject.security.AuditService not found'[0m
+2020-07-30 05:10:26,770 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:10:26,770 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:10:26,770 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:10:26,878 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:10:26,879 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:10:28,101 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:10:28,101 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:10:28,101 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:10:28,210 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:10:28,210 - SAMPstartTemplate_1node - WARNING - 'Service org.onosproject.security.AuditService not found'[0m
+2020-07-30 05:10:29,470 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:10:29,470 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:10:29,470 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:10:29,619 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:10:29,619 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:10:30,882 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:10:30,882 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:10:30,882 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:10:30,990 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:10:30,991 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:10:32,254 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:10:32,254 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:10:32,254 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:10:32,364 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:10:32,364 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:10:33,658 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:10:33,658 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:10:33,658 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:10:33,766 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:10:33,766 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:10:35,026 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:10:35,026 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:10:35,026 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:10:35,133 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:10:35,133 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:10:36,398 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:10:36,398 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:10:36,398 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:10:36,508 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:10:36,508 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:10:37,770 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:10:37,770 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:10:37,770 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:10:37,877 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:10:37,878 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:10:39,134 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:10:39,134 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:10:39,134 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:10:39,241 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:10:39,242 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:10:40,497 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:10:40,498 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:10:40,498 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:10:40,606 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:10:40,606 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:10:41,862 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:10:41,862 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:10:41,862 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:10:41,972 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:10:41,973 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:10:43,230 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:10:43,230 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:10:43,230 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:10:43,342 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:10:43,342 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:10:44,598 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:10:44,598 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:10:44,598 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:10:44,706 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:10:44,707 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:10:45,966 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:10:45,966 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:10:45,966 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:10:46,076 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:10:46,077 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:10:47,334 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:10:47,334 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:10:47,334 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:10:47,441 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:10:47,442 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:10:48,698 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:10:48,698 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:10:48,698 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:10:48,806 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:10:48,806 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:10:50,062 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:10:50,062 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:10:50,062 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:10:50,169 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:10:50,170 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:10:51,426 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:10:51,426 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:10:51,426 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:10:51,533 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:10:51,534 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:10:52,794 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:10:52,794 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:10:52,794 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:10:52,903 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:10:52,904 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:10:54,158 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:10:54,158 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:10:54,158 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:10:54,265 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:10:54,265 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:10:55,533 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:10:55,534 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:10:55,534 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:10:55,642 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:10:55,642 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:10:56,864 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:10:56,864 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:10:56,864 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:10:56,974 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:10:56,974 - SAMPstartTemplate_1node - WARNING - 'Service org.onosproject.security.AuditService not found'[0m
+2020-07-30 05:10:58,230 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:10:58,230 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:10:58,230 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:10:58,338 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:10:58,339 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:10:59,597 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:10:59,598 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:10:59,598 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:10:59,705 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:10:59,705 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:11:00,962 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:11:00,962 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:11:00,962 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:11:01,069 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:11:01,069 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:11:02,326 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:11:02,326 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:11:02,326 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:11:02,433 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:11:02,434 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:11:03,690 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:11:03,690 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:11:03,690 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:11:03,797 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:11:03,798 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:11:05,054 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:11:05,054 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:11:05,054 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:11:05,161 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:11:05,162 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:11:06,418 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:11:06,418 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:11:06,418 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:11:06,525 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:11:06,525 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:11:07,782 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:11:07,782 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:11:07,782 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:11:07,889 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:11:07,889 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:11:09,146 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:11:09,146 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:11:09,146 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:11:09,252 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:11:09,253 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:11:10,510 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:11:10,510 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:11:10,510 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:11:10,617 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:11:10,617 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:11:11,874 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:11:11,874 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:11:11,874 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:11:11,981 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:11:11,981 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:11:13,238 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:11:13,238 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:11:13,238 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:11:13,345 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:11:13,345 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:11:14,602 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:11:14,602 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:11:14,602 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:11:14,709 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:11:14,709 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:11:15,966 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:11:15,966 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:11:15,966 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:11:16,073 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:11:16,073 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:11:17,329 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:11:17,330 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:11:17,330 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:11:17,437 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:11:17,437 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:11:18,694 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:11:18,694 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:11:18,694 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:11:18,801 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:11:18,801 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:11:20,058 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:11:20,058 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:11:20,058 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:11:20,165 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:11:20,165 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:11:21,422 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:11:21,422 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:11:21,422 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:11:21,529 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:11:21,529 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:11:22,786 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:11:22,786 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:11:22,786 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:11:22,893 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:11:22,893 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:11:24,150 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:11:24,150 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:11:24,150 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:11:24,256 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:11:24,257 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:11:25,514 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:11:25,514 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:11:25,514 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:11:25,621 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:11:25,621 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:11:26,878 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:11:26,878 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:11:26,878 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:11:26,985 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:11:26,986 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:11:28,242 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:11:28,242 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:11:28,242 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:11:28,351 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:11:28,351 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:11:29,573 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:11:29,573 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:11:29,573 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:11:29,680 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:11:29,680 - SAMPstartTemplate_1node - WARNING - 'Service org.onosproject.security.AuditService not found'[0m
+2020-07-30 05:11:30,942 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:11:30,942 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:11:30,942 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:11:31,049 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:11:31,050 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:11:32,306 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:11:32,306 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:11:32,306 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:11:32,414 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:11:32,414 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:11:33,674 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:11:33,674 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:11:33,674 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:11:33,782 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:11:33,782 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:11:35,038 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:11:35,038 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:11:35,038 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:11:35,145 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:11:35,145 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:11:36,402 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:11:36,402 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:11:36,402 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:11:36,509 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:11:36,509 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:11:37,766 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:11:37,766 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:11:37,766 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:11:37,882 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:11:37,882 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:11:39,142 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:11:39,142 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:11:39,142 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:11:39,249 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:11:39,249 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:11:40,506 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:11:40,506 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:11:40,506 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:11:40,614 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:11:40,614 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:11:41,878 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:11:41,878 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:11:41,878 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:11:41,985 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:11:41,986 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:11:43,242 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:11:43,242 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:11:43,242 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:11:43,349 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:11:43,350 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:11:44,606 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:11:44,606 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:11:44,606 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:11:44,713 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:11:44,713 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:11:45,970 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:11:45,970 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:11:45,970 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:11:46,077 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:11:46,077 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:11:47,334 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:11:47,334 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:11:47,334 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:11:47,442 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:11:47,443 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:11:48,698 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:11:48,698 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:11:48,698 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:11:48,805 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:11:48,806 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:11:50,062 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:11:50,062 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:11:50,062 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:11:50,169 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:11:50,169 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:11:51,426 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:11:51,426 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:11:51,426 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:11:51,533 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:11:51,533 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:11:52,790 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:11:52,790 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:11:52,790 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:11:52,897 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:11:52,897 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:11:54,154 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:11:54,154 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:11:54,154 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:11:54,261 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:11:54,261 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:11:55,513 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:11:55,514 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:11:55,514 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:11:55,622 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:11:55,622 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:11:56,878 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:11:56,878 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:11:56,878 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:11:56,985 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:11:56,985 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:11:58,242 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:11:58,242 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:11:58,242 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:11:58,349 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:11:58,350 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:11:59,610 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:11:59,610 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:11:59,610 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:11:59,718 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:11:59,719 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:12:00,974 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:12:00,974 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:12:00,974 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:12:01,081 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:12:01,081 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:12:02,338 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:12:02,338 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:12:02,338 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:12:02,445 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:12:02,445 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:12:03,702 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:12:03,702 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:12:03,702 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:12:03,809 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:12:03,810 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:12:05,066 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:12:05,066 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:12:05,066 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:12:05,173 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:12:05,173 - SAMPstartTemplate_1node - WARNING - ''[0m
+2020-07-30 05:12:06,430 - SAMPstartTemplate_1node - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-30 05:12:06,430 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-30 05:12:06,430 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[91m2020-07-30 05:12:06,536 - SAMPstartTemplate_1node - ERROR - Error parsing nodes output[0m
+[93m2020-07-30 05:12:06,537 - SAMPstartTemplate_1node - WARNING - ''[0m
+[95m2020-07-30 05:12:07,539 - SAMPstartTemplate_1node - DEBUG - <bound method Cluster.nodesCheck of Cluster[{ONOS1:192.168.171.28, Configured - Active}; Atomix Nodes:{ONOS1:192.168.171.28}]> was retried 89 times.[0m
+2020-07-30 05:12:07,540 - SAMPstartTemplate_1node - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+[91m2020-07-30 05:12:07,540 - SAMPstartTemplate_1node - ERROR - Not all ONOS nodes are in READY state[0m
+
+[REPORT] [30 Jul 2020 05:12:07] Not all ONOS nodes are in READY state
+[93m2020-07-30 05:12:07,541 - SAMPstartTemplate_1node - WARNING - Assertion Failed[0m
+2020-07-30 05:12:07,830 - SAMPstartTemplate_1node - INFO - Command 'onos:scr-list | grep -v ACTIVE' sent to ONOScli1.
+[95m2020-07-30 05:12:07,830 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'onos:scr-list | grep -v ACTIVE'
+SENT COMMAND STRING WAS: 'onos:scr-list | grep -v ACTIVE'[0m
+[95m2020-07-30 05:12:07,830 - SAMPstartTemplate_1node - DEBUG - REGEX PATTERN SET TO: 'grep -v ACTIVE'
+SENT COMMAND STRING WAS: 'onos:scr-list | grep -v ACTIVE'[0m
+[95m2020-07-30 05:12:07,937 - SAMPstartTemplate_1node - DEBUG - ONOS1 components not ACTIVE: 
+[0m
+[91m2020-07-30 05:12:07,937 - SAMPstartTemplate_1node - ERROR - Failed to start ONOS, stopping test[0m
+
+*****************************
+ Result: Failed 
+*****************************
+
+
+
+*************************************
+	Test Execution Summary
+
+************************************* 
+
+ Test Start           : 30 Jul 2020 05:08:35
+ Test End             : 30 Jul 2020 05:12:07
+ Execution Time       : 0:03:32.019588
+ Total Tests Planned  : 8
+ Total Tests Run      : 3
+ Total Pass           : 2
+ Total Fail           : 1
+ Total No Result      : 0
+ Success Percentage   : 66%
+ Execution Percentage : 37%
+
+ Case Failed          : [10]
+ Case Executed        : [0, 1, 10]
+ Case Not Executed    : [11, 12, 22, 2, 32]
+Disconnecting from ONOSserver1: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from Mininet1: <class 'drivers.common.cli.emulator.mininetclidriver.MininetCliDriver'>
+Disconnecting from ONOSrest1: <class 'drivers.common.api.controller.onosrestdriver.OnosRestDriver'>
+Disconnecting from ONOSbench1: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from ONOScli1: <class 'drivers.common.cli.onosclidriver.OnosCliDriver'>
+Disconnecting from ONOScell: <class 'drivers.common.cli.onosclusterdriver.OnosClusterDriver'>
+ubuntu@manage:~/OnosSystemTest/TestON/bin$ 
+ubuntu@manage:~/OnosSystemTest/TestON/bin$ exit
+logout

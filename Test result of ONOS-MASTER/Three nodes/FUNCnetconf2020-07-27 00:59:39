@@ -1,0 +1,2124 @@
+Last login: Mon Jul 27 04:59:35 2020 from 174.114.234.237
+
+cell threeNodeDemo; cd ~/OnosSystemTest/TestON/bin/; ./cli.py run FUNCnetconf
+
+exit
+
+ubuntu@manage:~$ cell threeNodeDemo; cd ~/OnosSystemTest/TestON/bin/; ./cli.py ru
+un FUNCnetconf
+[01;31m[KONOS_CELL[m[K=threeNodeDemo
+OCC1=192.168.171.28
+OCC2=192.168.171.5
+OCC3=192.168.171.24
+OC1=192.168.171.28
+OC2=192.168.171.5
+OC3=192.168.171.24
+OCI=192.168.171.28
+OCN=192.168.171.17
+ONOS_APPS=gui,drivers,openflow,proxyarp
+ONOS_GROUP=sdn
+ONOS_MN_PY=/home/ubuntu/onos/tools/dev/mininet/onos.py
+ONOS_SCENARIOS=/home/ubuntu/onos/tools/test/scenarios
+ONOS_USER=sdn
+ONOS_WEB_PASS=rocks
+ONOS_WEB_USER=onos
+
+                                +----------------+
+------------------------------ { Script And Files }  ------------------------------
+                                +----------------+
+
+	Script Log File : /home/ubuntu/OnosSystemTest/TestON/logs/FUNCnetconf_27_Jul_2020_04_59_39/FUNCnetconf_27_Jul_2020_04_59_39.log
+	Report Log File : /home/ubuntu/OnosSystemTest/TestON/logs/FUNCnetconf_27_Jul_2020_04_59_39/FUNCnetconf_27_Jul_2020_04_59_39.rpt
+	Mininet1 Session Log : /home/ubuntu/OnosSystemTest/TestON/logs/FUNCnetconf_27_Jul_2020_04_59_39/Mininet1.session
+	ONOScell Session Log : /home/ubuntu/OnosSystemTest/TestON/logs/FUNCnetconf_27_Jul_2020_04_59_39/ONOScell.session
+	Test Script : /home/ubuntu/OnosSystemTest/TestON/tests/FUNC/FUNCnetconf/FUNCnetconf.py
+	Test Params : /home/ubuntu/OnosSystemTest/TestON/tests/FUNC/FUNCnetconf/FUNCnetconf.params
+	Topology : /home/ubuntu/OnosSystemTest/TestON/tests/FUNC/FUNCnetconf/FUNCnetconf.topo
+                              +------------------+
+---------------------------  { Script Exec Params }  ---------------------------
+                              +------------------+
+
+	
+	'ENV': 
+	'cellApps': 'drivers
+	openflow
+	proxyarp
+	mobility
+	netconf'
+	
+	 'MININET': 
+	'switch': '0'
+	 'links': None
+	
+	 'testcases': '1
+	[2
+	100
+	200
+	300
+	19]*2'
+	 'SCALE': 
+	'size': '1
+	3'
+	
+	 'SLEEP': 
+	'topoAttempts': '3'
+	 'upSwitch': '10'
+	 'startup': '20'
+	
+	 'CONFIGURE': 
+	'cfgPass': '"rocks"'
+	 'cfgDevicePort': '830'
+	 'cfgName': '"sdn"'
+	 'cfgDriver': 'ovs-netconf'
+	 'cfgApps': 'org.onosproject.netconf'
+	 'cfgAppPort': '830'
+	
+	 'GIT': 
+	'pull': 'False'
+	 'branch': 'master'
+	
+	 'DEPENDENCY': 
+	'wrapper3': 'topo'
+	 'wrapper2': 'netconf'
+	 'wrapper1': 'startUp'
+	 'iface': None
+	 'path': '/tests/FUNC/FUNCnetconf/dependencies/'
+	 'topology': None
+	
+	 'GRAPH': 
+	'nodeCluster': 'VM'
+	 'builds': '20'
+	
+	
+
+                               +---------------+
+----------------------------- { Components Used }  -----------------------------
+                               +---------------+
+	Mininet1
+	ONOScell
+
+
+                              +--------+
+---------------------------- { Topology }  ----------------------------
+                              +--------+
+
+	
+	'Mininet1': 
+	'connect_order': '2'
+	 'host': 'OCN'
+	 'user': 'sdn'
+	 'COMPONENTS': 
+	'home': '~/mininet/'
+	 'prompt': None
+	
+	 'password': 'rocks'
+	 'type': 'MininetCliDriver'
+	
+	 'ONOScell': 
+	'connect_order': '1'
+	 'host': 'localhost'
+	 'user': 'sdn'
+	 'COMPONENTS': 
+	'web_user': None
+	 'diff_clihost': None
+	 'web_pass': None
+	 'prompt': None
+	 'cluster_name': None
+	 'onos_home': None
+	 'nodes': '3'
+	 'karaf_password': None
+	 'karaf_username': None
+	 'rest_port': None
+	
+	 'home': None
+	 'password': 'rocks'
+	 'type': 'OnosClusterDriver'
+	
+	
+------------------------------------------------------------
+
+
+******************************
+ CASE INIT 
+******************************
+
+['ONOScell', 'Mininet1']
+2020-07-27 04:59:39,894 - FUNCnetconf - INFO - Creating component Handle: ONOScell
+2020-07-27 04:59:39,902 - FUNCnetconf - INFO - ONOScell: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5'] ONOS IPs
+2020-07-27 04:59:39,902 - FUNCnetconf - INFO - ONOScell: Trying to connect to localhost
+2020-07-27 04:59:40,991 - FUNCnetconf - INFO - Password not required logged in
+[95m2020-07-27 04:59:41,300 - FUNCnetconf - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '3', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosCliDriver', 'host': 'localhost'}[0m
+2020-07-27 04:59:41,301 - FUNCnetconf - INFO - Creating component Handle: ONOScli1
+2020-07-27 04:59:41,312 - FUNCnetconf - INFO - ONOScli1: Trying to connect to localhost
+2020-07-27 04:59:42,461 - FUNCnetconf - INFO - Password not required logged in
+[95m2020-07-27 04:59:42,767 - FUNCnetconf - DEBUG - {'connect_order': '1', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '3', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosClusterDriver', 'host': 'localhost'}[0m
+[95m2020-07-27 04:59:42,768 - FUNCnetconf - DEBUG - {'connect_order': '2', 'user': 'onos', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '3', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosRestDriver', 'host': '192.168.171.28', 'port': '8181'}[0m
+2020-07-27 04:59:42,768 - FUNCnetconf - INFO - Creating component Handle: ONOSrest1
+2020-07-27 04:59:42,843 - FUNCnetconf - INFO - ONOSrest1: ip set to 192.168.171.28
+[95m2020-07-27 04:59:42,843 - FUNCnetconf - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '3', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': 'localhost'}[0m
+2020-07-27 04:59:42,843 - FUNCnetconf - INFO - Creating component Handle: ONOSbench1
+2020-07-27 04:59:42,850 - FUNCnetconf - INFO - ONOSbench1: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5'] ONOS IPs
+2020-07-27 04:59:42,850 - FUNCnetconf - INFO - ONOSbench1: Trying to connect to localhost
+2020-07-27 04:59:43,911 - FUNCnetconf - INFO - Password not required logged in
+[95m2020-07-27 04:59:44,217 - FUNCnetconf - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '3', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': '192.168.171.28'}[0m
+2020-07-27 04:59:44,217 - FUNCnetconf - INFO - Creating component Handle: ONOSserver1
+2020-07-27 04:59:44,222 - FUNCnetconf - INFO - ONOSserver1: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5'] ONOS IPs
+2020-07-27 04:59:44,223 - FUNCnetconf - INFO - ONOSserver1: Trying to connect to 192.168.171.28
+2020-07-27 04:59:45,067 - FUNCnetconf - INFO - Password not required logged in
+[95m2020-07-27 04:59:45,374 - FUNCnetconf - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '3', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosCliDriver', 'host': 'localhost'}[0m
+2020-07-27 04:59:45,374 - FUNCnetconf - INFO - Creating component Handle: ONOScli2
+2020-07-27 04:59:45,379 - FUNCnetconf - INFO - ONOScli2: Trying to connect to localhost
+2020-07-27 04:59:46,409 - FUNCnetconf - INFO - Password not required logged in
+[95m2020-07-27 04:59:46,714 - FUNCnetconf - DEBUG - {'connect_order': '1', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '3', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosClusterDriver', 'host': 'localhost'}[0m
+[95m2020-07-27 04:59:46,714 - FUNCnetconf - DEBUG - {'connect_order': '2', 'user': 'onos', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '3', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosRestDriver', 'host': '192.168.171.5', 'port': '8181'}[0m
+2020-07-27 04:59:46,714 - FUNCnetconf - INFO - Creating component Handle: ONOSrest2
+2020-07-27 04:59:46,718 - FUNCnetconf - INFO - ONOSrest2: ip set to 192.168.171.5
+[95m2020-07-27 04:59:46,719 - FUNCnetconf - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '3', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': 'localhost'}[0m
+2020-07-27 04:59:46,719 - FUNCnetconf - INFO - Creating component Handle: ONOSbench2
+2020-07-27 04:59:46,723 - FUNCnetconf - INFO - ONOSbench2: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5'] ONOS IPs
+2020-07-27 04:59:46,724 - FUNCnetconf - INFO - ONOSbench2: Trying to connect to localhost
+2020-07-27 04:59:47,801 - FUNCnetconf - INFO - Password not required logged in
+[95m2020-07-27 04:59:48,107 - FUNCnetconf - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '3', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': '192.168.171.5'}[0m
+2020-07-27 04:59:48,107 - FUNCnetconf - INFO - Creating component Handle: ONOSserver2
+2020-07-27 04:59:48,113 - FUNCnetconf - INFO - ONOSserver2: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5'] ONOS IPs
+2020-07-27 04:59:48,114 - FUNCnetconf - INFO - ONOSserver2: Trying to connect to 192.168.171.5
+2020-07-27 04:59:48,946 - FUNCnetconf - INFO - Password not required logged in
+[95m2020-07-27 04:59:49,257 - FUNCnetconf - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '3', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosCliDriver', 'host': 'localhost'}[0m
+2020-07-27 04:59:49,257 - FUNCnetconf - INFO - Creating component Handle: ONOScli3
+2020-07-27 04:59:49,262 - FUNCnetconf - INFO - ONOScli3: Trying to connect to localhost
+2020-07-27 04:59:50,321 - FUNCnetconf - INFO - Password not required logged in
+[95m2020-07-27 04:59:50,627 - FUNCnetconf - DEBUG - {'connect_order': '1', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '3', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosClusterDriver', 'host': 'localhost'}[0m
+[95m2020-07-27 04:59:50,628 - FUNCnetconf - DEBUG - {'connect_order': '2', 'user': 'onos', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '3', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosRestDriver', 'host': '192.168.171.24', 'port': '8181'}[0m
+2020-07-27 04:59:50,628 - FUNCnetconf - INFO - Creating component Handle: ONOSrest3
+2020-07-27 04:59:50,634 - FUNCnetconf - INFO - ONOSrest3: ip set to 192.168.171.24
+[95m2020-07-27 04:59:50,635 - FUNCnetconf - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '3', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': 'localhost'}[0m
+2020-07-27 04:59:50,635 - FUNCnetconf - INFO - Creating component Handle: ONOSbench3
+2020-07-27 04:59:50,640 - FUNCnetconf - INFO - ONOSbench3: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5'] ONOS IPs
+2020-07-27 04:59:50,640 - FUNCnetconf - INFO - ONOSbench3: Trying to connect to localhost
+2020-07-27 04:59:51,769 - FUNCnetconf - INFO - Password not required logged in
+[95m2020-07-27 04:59:52,075 - FUNCnetconf - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '3', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': '192.168.171.24'}[0m
+2020-07-27 04:59:52,075 - FUNCnetconf - INFO - Creating component Handle: ONOSserver3
+2020-07-27 04:59:52,081 - FUNCnetconf - INFO - ONOSserver3: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5'] ONOS IPs
+2020-07-27 04:59:52,081 - FUNCnetconf - INFO - ONOSserver3: Trying to connect to 192.168.171.24
+2020-07-27 04:59:52,850 - FUNCnetconf - INFO - Password not required logged in
+2020-07-27 04:59:53,159 - FUNCnetconf - INFO - Creating component Handle: Mininet1
+2020-07-27 04:59:54,419 - FUNCnetconf - INFO - Password not required logged in
+2020-07-27 04:59:54,629 - FUNCnetconf - INFO - Connection successful to the host sdn@192.168.171.17
+
+
+******************************
+ Result summary for Testcase1
+******************************
+
+[95m2020-07-27 04:59:54,635 - FUNCnetconf - DEBUG - Case Executed       : [1][0m
+[95m2020-07-27 04:59:54,635 - FUNCnetconf - DEBUG - Case to be executed : [2, 100, 200, 300, 19, 2, 100, 200, 300, 19][0m
+[2020-07-27 04:59:54.636676] [FUNCnetconf] [CASE]  Constructing test variables and building ONOS package
+[2020-07-27 04:59:54.637747] [FUNCnetconf] [STEP]  1.1: Constructing test variables
+[2020-07-27 04:59:54.641170] [FUNCnetconf] [CASE]  Pull onos branch and build onos on Teststation.
+2020-07-27 04:59:54,642 - FUNCnetconf - INFO - Skipped git checkout and pull as they are disabled in params file
+2020-07-27 04:59:54,643 - FUNCnetconf - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-27 04:59:54,643 - FUNCnetconf - INFO - Successfully construct test variables 
+2020-07-27 04:59:54,643 - FUNCnetconf - INFO - Assertion Passed
+2020-07-27 04:59:54,643 - FUNCnetconf - INFO - ONOSbench1 home is ~/onos
+ONOSbench1: 
+
+commit aa5a3af99f6c0558c6e3f923036c0ef3a0d9bd12 (HEAD -> master, origin/master, origin/HEAD)
+Author:     pierventre <pier@opennetworking.org>
+AuthorDate: Tue Jun 30 22:04:16 2020 +0200
+Commit:     pierventre <pier@opennetworking.org>
+CommitDate: Thu Jul 9 10:56:21 2020 +0200
+
+    [AETHER-255] Tost profile for bazel build (onos and onos-package)
+sdn@manage:~/onos$
+
+*****************************
+ Result: Pass 
+*****************************
+
+
+******************************
+ Result summary for Testcase2
+******************************
+
+[95m2020-07-27 04:59:55,195 - FUNCnetconf - DEBUG - Case Executed       : [1, 2][0m
+[95m2020-07-27 04:59:55,195 - FUNCnetconf - DEBUG - Case to be executed : [100, 200, 300, 19, 2, 100, 200, 300, 19][0m
+[2020-07-27 04:59:55.195411] [FUNCnetconf] [CASE]  Starting up 1 node(s) ONOS cluster
+2020-07-27 04:59:55,196 - FUNCnetconf - INFO - ONOS cluster size = 1
+[95m2020-07-27 04:59:55,196 - FUNCnetconf - DEBUG - Apps: drivers,openflow,proxyarp,mobility,netconf[0m
+2020-07-27 04:59:55,196 - FUNCnetconf - INFO - Atomix Cluster Size = 1 
+
+temp                                            0%    0     0.0KB/s   --:-- ETA
+temp                                          100%  259   683.2KB/s   00:00    
+[2020-07-27 04:59:56.276170] [FUNCnetconf] [STEP]  2.1: Apply cell to environment
+2020-07-27 04:59:56,528 - FUNCnetconf - INFO - ONOSbench2: Successfully set cell:  cell temp
+
+[01;31m[KONOS_CELL[m[K=temp
+
+OCC1=192.168.171.28
+
+OC1=192.168.171.28
+
+OCI=192.168.171.28
+
+OCN=192.168.171.17
+
+ONOS_APPS=drivers,openflow,proxyarp,mobility,netconf
+
+ONOS_GROUP=sdn
+
+ONOS_MN_PY=/home/sdn/onos/tools/dev/mininet/onos.py
+
+ONOS_NIC=192.168.171.*
+
+ONOS_SCENARIOS=/home/sdn/onos/tools/test/scenarios
+
+ONOS_USER=sdn
+
+ONOS_USE_SSH=true
+
+ONOS_WEB_PASS=rocks
+
+ONOS_WEB_USER=onos
+
+sdn@manage:~/onos$
+2020-07-27 04:59:56,531 - FUNCnetconf - INFO - ONOSbench1: Successfully set cell:  cell temp
+
+[01;31m[KONOS_CELL[m[K=temp
+
+OCC1=192.168.171.28
+
+OC1=192.168.171.28
+
+OCI=192.168.171.28
+
+OCN=192.168.171.17
+
+ONOS_APPS=drivers,openflow,proxyarp,mobility,netconf
+
+ONOS_GROUP=sdn
+
+ONOS_MN_PY=/home/sdn/onos/tools/dev/mininet/onos.py
+
+ONOS_NIC=192.168.171.*
+
+ONOS_SCENARIOS=/home/sdn/onos/tools/test/scenarios
+
+ONOS_USER=sdn
+
+ONOS_USE_SSH=true
+
+ONOS_WEB_PASS=rocks
+
+ONOS_WEB_USER=onos
+
+sdn@manage:~/onos$
+2020-07-27 04:59:56,542 - FUNCnetconf - INFO - ONOSbench3: Successfully set cell:  cell temp
+
+[01;31m[KONOS_CELL[m[K=temp
+
+OCC1=192.168.171.28
+
+OC1=192.168.171.28
+
+OCI=192.168.171.28
+
+OCN=192.168.171.17
+
+ONOS_APPS=drivers,openflow,proxyarp,mobility,netconf
+
+ONOS_GROUP=sdn
+
+ONOS_MN_PY=/home/sdn/onos/tools/dev/mininet/onos.py
+
+ONOS_NIC=192.168.171.*
+
+ONOS_SCENARIOS=/home/sdn/onos/tools/test/scenarios
+
+ONOS_USER=sdn
+
+ONOS_USE_SSH=true
+
+ONOS_WEB_PASS=rocks
+
+ONOS_WEB_USER=onos
+
+sdn@manage:~/onos$
+2020-07-27 04:59:56,749 - FUNCnetconf - INFO - ONOSbench1: Successfully set cell:  cell temp
+
+[01;31m[KONOS_CELL[m[K=temp
+
+OCC1=192.168.171.28
+
+OC1=192.168.171.28
+
+OCI=192.168.171.28
+
+OCN=192.168.171.17
+
+ONOS_APPS=drivers,openflow,proxyarp,mobility,netconf
+
+ONOS_GROUP=sdn
+
+ONOS_MN_PY=/home/sdn/onos/tools/dev/mininet/onos.py
+
+ONOS_NIC=192.168.171.*
+
+ONOS_SCENARIOS=/home/sdn/onos/tools/test/scenarios
+
+ONOS_TOPO=default
+
+ONOS_USER=sdn
+
+ONOS_USE_SSH=true
+
+ONOS_WEB_PASS=rocks
+
+ONOS_WEB_USER=onos
+
+sdn@manage:~/onos$
+2020-07-27 04:59:58,897 - FUNCnetconf - INFO - Verify cell returned:  onos-verify-cell
+
+192.168.171.17: node
+
+192.168.171.28: node-1
+
+sdn@manage:~/onos$
+2020-07-27 04:59:58,934 - FUNCnetconf - INFO - Verify cell returned:  onos-verify-cell
+
+192.168.171.17: node
+
+192.168.171.28: node-1
+
+sdn@manage:~/onos$
+2020-07-27 04:59:59,009 - FUNCnetconf - INFO - Verify cell returned:  onos-verify-cell
+
+192.168.171.17: node
+
+192.168.171.28: node-1
+
+sdn@manage:~/onos$
+2020-07-27 04:59:59,009 - FUNCnetconf - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-27 04:59:59,010 - FUNCnetconf - INFO - Successfully applied cell to environment
+2020-07-27 04:59:59,010 - FUNCnetconf - INFO - Assertion Passed
+2020-07-27 04:59:59,010 - FUNCnetconf - INFO - Safety check, killing all Atomix processes
+2020-07-27 04:59:59,941 - FUNCnetconf - INFO - Atomix instance 192.168.171.24 was killed
+2020-07-27 04:59:59,982 - FUNCnetconf - INFO - Atomix instance 192.168.171.28 was killed
+2020-07-27 05:00:00,032 - FUNCnetconf - INFO - Atomix instance 192.168.171.5 was killed
+2020-07-27 05:00:00,033 - FUNCnetconf - INFO - Safety check, killing all ONOS processes
+2020-07-27 05:00:00,940 - FUNCnetconf - INFO - ONOS instance 192.168.171.24 was killed
+2020-07-27 05:00:00,990 - FUNCnetconf - INFO - ONOS instance 192.168.171.5 was killed
+2020-07-27 05:00:01,010 - FUNCnetconf - INFO - ONOS instance 192.168.171.28 was killed
+[2020-07-27 05:00:01.010851] [FUNCnetconf] [STEP]  2.2: Uninstalling Atomix
+2020-07-27 05:00:01,932 - FUNCnetconf - INFO - Atomix 192.168.171.28 was uninstalled
+2020-07-27 05:00:01,996 - FUNCnetconf - INFO - Atomix 192.168.171.24 was uninstalled
+2020-07-27 05:00:02,000 - FUNCnetconf - INFO - Atomix 192.168.171.5 was uninstalled
+2020-07-27 05:00:02,001 - FUNCnetconf - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-27 05:00:02,001 - FUNCnetconf - INFO - Successfully uninstalled Atomix
+2020-07-27 05:00:02,001 - FUNCnetconf - INFO - Assertion Passed
+[2020-07-27 05:00:02.001638] [FUNCnetconf] [STEP]  2.3: Uninstalling ONOS package
+2020-07-27 05:00:03,424 - FUNCnetconf - INFO - ONOS 192.168.171.24 was uninstalled
+2020-07-27 05:00:03,580 - FUNCnetconf - INFO - ONOS 192.168.171.5 was uninstalled
+2020-07-27 05:01:38,153 - FUNCnetconf - INFO - ONOS 192.168.171.28 was uninstalled
+2020-07-27 05:01:38,154 - FUNCnetconf - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-27 05:01:38,154 - FUNCnetconf - INFO - Successfully uninstalled ONOS package
+2020-07-27 05:01:38,155 - FUNCnetconf - INFO - Assertion Passed
+[2020-07-27 05:01:38.155187] [FUNCnetconf] [STEP]  2.4: Creating ONOS package
+[95m2020-07-27 05:01:40,563 - FUNCnetconf - DEBUG - 
+
+[32mLoading:[0m 
+
+
+[1A[K[32mLoading:[0m 0 packages loaded
+
+
+[1A[K[32mAnalyzing:[0m target //:onos (0 packages loaded, 0 targets configured)
+
+
+[1A[K[32mINFO: [0mAnalyzed target //:onos (0 packages loaded, 0 targets configured).
+
+
+
+
+[1A[K[32mINFO: [0mFound 1 target...
+
+
+
+
+[1A[K
+
+
+[1A[K[32m[0 / 2][0m [Prepa] BazelWorkspaceStatusAction stable-status.txt
+
+
+[1A[KTarget //:onos up-to-date:
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/utils/osgiwrap/osgi-jar.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/utils/osgiwrap/osgi-jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/utils/osgi/libonlab-osgi.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/utils/junit/libonlab-junit.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/utils/misc/libonlab-misc.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/utils/rest/libonlab-rest.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/core/api/libonos-api.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/core/net/libonos-core-net.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/core/common/libonos-core-common.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/core/protobuf/models/libonos-core-protobuf-models.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/core/protobuf/models/proto/libonos-core-protobuf-models-proto.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/core/store/primitives/libonos-core-primitives.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/core/store/serializers/libonos-core-serializers.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/core/store/dist/libonos-core-dist.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/core/store/persistence/libonos-core-persistence.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/cli/libonos-cli.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/utilities/libonos-drivers-utilities.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/general/device/libonos-providers-general-device.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/web/api/libonos-rest.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/tools/build/conf/libonos-build-conf.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/onos-admin.tar.gz
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/onos-test.tar.gz
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/onos.tar.gz
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/bgp/bgpio/libonos-protocols-bgp-bgpio.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/bgp/api/libonos-protocols-bgp-api.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/bgp/ctl/libonos-protocols-bgp-ctl.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/isis/api/libonos-protocols-isis-api.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/isis/ctl/libonos-protocols-isis-ctl.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/isis/isisio/libonos-protocols-isis-isisio.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/lisp/api/libonos-protocols-lisp-api.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/lisp/ctl/libonos-protocols-lisp-ctl.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/lisp/msg/libonos-protocols-lisp-msg.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/netconf/api/libonos-protocols-netconf-api.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/netconf/ctl/libonos-protocols-netconf-ctl.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/openflow/api/libonos-protocols-openflow-api.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/openflow/ctl/libonos-protocols-openflow-ctl.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/ospf/api/libonos-protocols-ospf-api.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/ospf/protocol/libonos-protocols-ospf-protocol.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/ospf/ctl/libonos-protocols-ospf-ctl.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/ovsdb/rfc/libonos-protocols-ovsdb-rfc.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/ovsdb/api/libonos-protocols-ovsdb-api.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/ovsdb/ctl/libonos-protocols-ovsdb-ctl.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/p4runtime/api/libonos-protocols-p4runtime-api.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/p4runtime/model/libonos-protocols-p4runtime-model.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/pcep/pcepio/libonos-protocols-pcep-pcepio.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/pcep/server/api/libonos-protocols-pcep-server-api.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/pcep/server/ctl/libonos-protocols-pcep-server-ctl.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/rest/api/libonos-protocols-rest-api.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/rest/ctl/libonos-protocols-rest-ctl.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/restconf/client/api/libonos-protocols-restconf-client-api.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/restconf/client/ctl/libonos-protocols-restconf-client-ctl.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/snmp/api/libonos-protocols-snmp-api.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/snmp/ctl/libonos-protocols-snmp-ctl.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/tl1/api/libonos-protocols-tl1-api.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/tl1/ctl/libonos-protocols-tl1-ctl.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/xmpp/core/api/libonos-protocols-xmpp-core-api.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/xmpp/core/ctl/libonos-protocols-xmpp-core-ctl.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/netconf/device/libonos-providers-netconf-device.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/openflow/device/libonos-providers-openflow-device.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/openflow/packet/libonos-providers-openflow-packet.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/openflow/flow/libonos-providers-openflow-flow.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/openflow/group/libonos-providers-openflow-group.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/openflow/meter/libonos-providers-openflow-meter.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/ovsdb/device/libonos-providers-ovsdb-device.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/ovsdb/tunnel/libonos-providers-ovsdb-tunnel.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/p4runtime/packet/libonos-providers-p4runtime-packet.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/rest/device/libonos-providers-rest-device.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/snmp/device/libonos-providers-snmp-device.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/isis/cfg/libonos-providers-isis-cfg.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/isis/topology/libonos-providers-isis-topology.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/lisp/device/libonos-providers-lisp-device.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/tl1/device/libonos-providers-tl1-device.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/grpc/onos-protocols-grpc-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/gnmi/onos-protocols-gnmi-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/gnoi/onos-protocols-gnoi-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/p4runtime/onos-protocols-p4runtime-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/restconf/server/onos-protocols-restconf-server-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/xmpp/core/onos-protocols-xmpp-core-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/protocols/xmpp/pubsub/onos-protocols-xmpp-pubsub-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/general/onos-providers-general-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/bgp/onos-providers-bgp-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/bgpcep/onos-providers-bgpcep-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/host/onos-providers-host-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/hostprobing/onos-providers-hostprobing-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/isis/onos-providers-isis-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/link/onos-providers-link-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/lldp/onos-providers-lldp-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/netcfghost/onos-providers-netcfghost-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/netcfglinks/onos-providers-netcfglinks-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/netconf/onos-providers-netconf-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/null/onos-providers-null-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/openflow/app/onos-providers-openflow-app-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/openflow/base/onos-providers-openflow-base-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/openflow/message/onos-providers-openflow-message-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/ovsdb/onos-providers-ovsdb-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/ovsdb/host/onos-providers-ovsdb-host-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/ovsdb/base/onos-providers-ovsdb-base-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/p4runtime/onos-providers-p4runtime-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/pcep/onos-providers-pcep-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/rest/onos-providers-rest-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/snmp/onos-providers-snmp-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/lisp/onos-providers-lisp-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/tl1/onos-providers-tl1-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/providers/xmpp/device/onos-providers-xmpp-device-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/default/onos-drivers-default-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/arista/onos-drivers-arista-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/bmv2/onos-drivers-bmv2-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/barefoot/onos-drivers-barefoot-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/ciena/waveserver/onos-drivers-ciena-waveserver-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/ciena/c5162/onos-drivers-ciena-c5162-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/ciena/c5170/onos-drivers-ciena-c5170-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/ciena/waveserverai/onos-drivers-ciena-waveserverai-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/cisco/netconf/onos-drivers-cisco-netconf-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/cisco/rest/onos-drivers-cisco-rest-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/corsa/onos-drivers-corsa-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/czechlight/onos-drivers-czechlight-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/flowspec/onos-drivers-flowspec-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/fujitsu/onos-drivers-fujitsu-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/gnmi/onos-drivers-gnmi-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/gnoi/onos-drivers-gnoi-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/hp/onos-drivers-hp-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/huawei/onos-drivers-huawei-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/juniper/onos-drivers-juniper-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/lisp/onos-drivers-lisp-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/lumentum/onos-drivers-lumentum-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/mellanox/onos-drivers-mellanox-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/netconf/onos-drivers-netconf-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/odtn-driver/onos-drivers-odtn-driver-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/oplink/onos-drivers-oplink-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/optical/onos-drivers-optical-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/ovsdb/onos-drivers-ovsdb-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/p4runtime/onos-drivers-p4runtime-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/polatis/netconf/onos-drivers-polatis-netconf-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/polatis/openflow/onos-drivers-polatis-openflow-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/server/onos-drivers-server-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/stratum/onos-drivers-stratum-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/drivers/zte/onos-drivers-zte-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/acl/onos-apps-acl-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/artemis/onos-apps-artemis-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/bgprouter/onos-apps-bgprouter-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/castor/onos-apps-castor-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/cfm/onos-apps-cfm-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/cip/onos-apps-cip-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/config/onos-apps-config-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/configsync-netconf/onos-apps-configsync-netconf-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/configsync/onos-apps-configsync-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/cord-support/onos-apps-cord-support-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/cpman/app/onos-apps-cpman-app-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/dhcp/onos-apps-dhcp-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/dhcprelay/onos-apps-dhcprelay-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/drivermatrix/onos-apps-drivermatrix-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/events/onos-apps-events-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/evpn-route-service/onos-apps-evpn-route-service-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/evpnopenflow/onos-apps-evpnopenflow-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/faultmanagement/onos-apps-faultmanagement-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/flowanalyzer/onos-apps-flowanalyzer-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/flowspec-api/onos-apps-flowspec-api-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/fwd/onos-apps-fwd-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/gangliametrics/onos-apps-gangliametrics-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/gluon/onos-apps-gluon-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/graphitemetrics/onos-apps-graphitemetrics-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/imr/onos-apps-imr-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/inbandtelemetry/onos-apps-inbandtelemetry-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/influxdbmetrics/onos-apps-influxdbmetrics-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/intentsync/onos-apps-intentsync-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/k8s-networking/onos-apps-k8s-networking-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/k8s-node/onos-apps-k8s-node-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/kafka-integration/onos-apps-kafka-integration-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/l3vpn/onos-apps-l3vpn-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/layout/onos-apps-layout-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/linkprops/onos-apps-linkprops-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/mappingmanagement/onos-apps-mappingmanagement-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/mcast/onos-apps-mcast-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/metrics/onos-apps-metrics-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/mfwd/onos-apps-mfwd-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/mlb/onos-apps-mlb-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/mobility/onos-apps-mobility-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/netconf/client/onos-apps-netconf-client-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/network-troubleshoot/onos-apps-network-troubleshoot-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/newoptical/onos-apps-newoptical-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/nodemetrics/onos-apps-nodemetrics-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/node-diagnosis/onos-apps-node-diagnosis-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/odtn/api/onos-apps-odtn-api-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/odtn/service/onos-apps-odtn-service-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/ofagent/onos-apps-ofagent-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/onlp-demo/onos-apps-onlp-demo-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/onos-topo/onos-apps-onos-topo-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/openroadm/onos-apps-openroadm-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/openstacknetworking/onos-apps-openstacknetworking-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/openstacknetworkingui/onos-apps-openstacknetworkingui-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/openstacknode/onos-apps-openstacknode-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/openstacktelemetry/onos-apps-openstacktelemetry-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/openstacktroubleshoot/onos-apps-openstacktroubleshoot-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/openstackvtap/onos-apps-openstackvtap-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/optical-model/onos-apps-optical-model-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/optical-rest/onos-apps-optical-rest-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/p4-tutorial/mytunnel/onos-apps-p4-tutorial-mytunnel-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/p4-tutorial/pipeconf/onos-apps-p4-tutorial-pipeconf-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/packet-stats/onos-apps-packet-stats-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/packet-throttle/onos-apps-packet-throttle-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/pathpainter/onos-apps-pathpainter-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/pcep-api/onos-apps-pcep-api-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/pim/onos-apps-pim-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/portloadbalancer/onos-apps-portloadbalancer-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/powermanagement/onos-apps-powermanagement-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/proxyarp/onos-apps-proxyarp-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/rabbitmq/onos-apps-rabbitmq-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/reactive-routing/onos-apps-reactive-routing-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/restconf/onos-apps-restconf-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/roadm/onos-apps-roadm-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/route-service/onos-apps-route-service-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/routeradvertisement/onos-apps-routeradvertisement-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/routing/cpr/onos-apps-routing-cpr-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/routing/fibinstaller/onos-apps-routing-fibinstaller-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/routing/fpm/onos-apps-routing-fpm-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/scalablegateway/onos-apps-scalablegateway-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/sdnip/onos-apps-sdnip-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/simplefabric/onos-apps-simplefabric-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/test/cluster-ha/onos-apps-test-cluster-ha-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/test/demo/onos-apps-test-demo-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/test/distributed-primitives/onos-apps-test-distributed-primitives-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/test/election/onos-apps-test-election-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/test/flow-perf/onos-apps-test-flow-perf-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/test/intent-perf/onos-apps-test-intent-perf-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/test/loadtest/onos-apps-test-loadtest-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/test/messaging-perf/onos-apps-test-messaging-perf-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/test/netcfg-monitor/onos-apps-test-netcfg-monitor-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/test/primitive-perf/onos-apps-test-primitive-perf-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/test/route-scale/onos-apps-test-route-scale-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/test/transaction-perf/onos-apps-test-transaction-perf-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/tetopology/onos-apps-tetopology-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/tetunnel/onos-apps-tetunnel-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/tunnel/onos-apps-tunnel-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/virtual/onos-apps-virtual-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/virtualbng/onos-apps-virtualbng-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/vpls/onos-apps-vpls-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/vrouter/onos-apps-vrouter-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/vtn/onos-apps-vtn-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/workflow/ofoverlay/onos-apps-workflow-ofoverlay-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/workflow/onos-apps-workflow-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/yang-gui/onos-apps-yang-gui-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/yang/onos-apps-yang-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/web/gui/onos-web-gui-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/web/gui2/onos-web-gui2-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/cpman/api/libonos-apps-cpman-api.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/routing-api/libonos-apps-routing-api.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/dhcp/api/libonos-apps-dhcp-api.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/dhcp/app/libonos-apps-dhcp-app.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/imr/api/libonos-apps-imr-api.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/imr/app/libonos-apps-imr-app.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/dhcprelay/app/libonos-apps-dhcprelay-app.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/dhcprelay/web/libonos-apps-dhcprelay-web.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/fwd/libonos-apps-fwd.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/iptopology-api/libonos-apps-iptopology-api.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/kafka-integration/api/libonos-apps-kafka-integration-api.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/kafka-integration/app/libonos-apps-kafka-integration-app.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/routing/common/libonos-apps-routing-common.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/vtn/vtnrsc/libonos-apps-vtn-vtnrsc.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/vtn/sfcmgr/libonos-apps-vtn-sfcmgr.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/vtn/vtnmgr/libonos-apps-vtn-vtnmgr.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/apps/vtn/vtnweb/libonos-apps-vtn-vtnweb.jar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/pipelines/basic/onos-pipelines-basic-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/pipelines/fabric/onos-pipelines-fabric-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/models/ietf/onos-models-ietf-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/models/common/onos-models-common-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/models/huawei/onos-models-huawei-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/models/openconfig/onos-models-openconfig-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/models/openconfig-infinera/onos-models-openconfig-infinera-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/models/openconfig-odtn/onos-models-openconfig-odtn-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/models/openroadm/onos-models-openroadm-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/models/tapi/onos-models-tapi-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/models/l3vpn/onos-models-l3vpn-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/models/polatis/onos-models-polatis-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K  bazel-bin/models/ciena/waveserverai/onos-models-ciena-waveserverai-oar.oar
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K[32mINFO: [0mElapsed time: 2.142s, Critical Path: 0.19s
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K[32mINFO: [0m1 process: 1 linux-sandbox.
+
+[32m[2 / 2][0m checking cached actions
+
+
+[1A[K[32mINFO:[0m Build completed successfully, 2 total actions
+
+
+[1A[K[32mINFO:[0m Build completed successfully, 2 total actions
+
+[0msdn@manage:~/onos$[0m
+2020-07-27 05:01:40,564 - FUNCnetconf - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-27 05:01:40,565 - FUNCnetconf - INFO - Successfully created ONOS package
+2020-07-27 05:01:40,565 - FUNCnetconf - INFO - Assertion Passed
+[2020-07-27 05:01:40.565355] [FUNCnetconf] [STEP]  2.5: Installing Atomix
+2020-07-27 05:01:45,693 - FUNCnetconf - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-27 05:01:45,693 - FUNCnetconf - INFO - Successfully installed Atomix
+2020-07-27 05:01:45,693 - FUNCnetconf - INFO - Assertion Passed
+[2020-07-27 05:01:45.693541] [FUNCnetconf] [STEP]  2.6: Installing ONOS package
+2020-07-27 05:02:14,747 - FUNCnetconf - INFO - ONOS was installed on 192.168.171.28 and started.
+2020-07-27 05:02:14,747 - FUNCnetconf - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-27 05:02:14,747 - FUNCnetconf - INFO - Successfully installed ONOS package
+2020-07-27 05:02:14,748 - FUNCnetconf - INFO - Assertion Passed
+[2020-07-27 05:02:14.748208] [FUNCnetconf] [STEP]  2.7: Set up ONOS secure SSH
+2020-07-27 05:02:14,973 - FUNCnetconf - INFO - ONOSbench1: Secure SSH performed on 192.168.171.28
+2020-07-27 05:02:14,974 - FUNCnetconf - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-27 05:02:14,974 - FUNCnetconf - INFO - Secured ONOS ssh
+2020-07-27 05:02:14,974 - FUNCnetconf - INFO - Assertion Passed
+[2020-07-27 05:02:14.974977] [FUNCnetconf] [STEP]  2.8: Checking ONOS service
+2020-07-27 05:02:22,535 - FUNCnetconf - INFO - ONOSbench1: 192.168.171.28 is up
+2020-07-27 05:02:27,541 - FUNCnetconf - INFO - ONOS1 is up and ready
+2020-07-27 05:02:27,542 - FUNCnetconf - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-27 05:02:27,542 - FUNCnetconf - INFO - ONOS service is ready on all nodes
+2020-07-27 05:02:27,542 - FUNCnetconf - INFO - Assertion Passed
+[2020-07-27 05:02:27.542692] [FUNCnetconf] [STEP]  2.9: Starting ONOS CLI sessions
+2020-07-27 05:02:28,749 - FUNCnetconf - INFO - 192.168.171.28 CLI Started successfully
+[95m2020-07-27 05:02:28,749 - FUNCnetconf - DEBUG -  onos 192.168.171.28
+
+Welcome to Open Network Operating System (ONOS)!
+
+
+[1;31m     ____  _  ______  ____     [0m
+
+
+[1;31m    / __ \/ |/ / __ \/ __/   [0m
+
+
+[1;31m   / /_/ /    / /_/ /\ \     [0m
+
+
+[1;31m   \____/_/|_/\____/___/     [0m
+
+
+[1;31m                               [0m
+
+
+Documentation: wiki.onosproject.org      
+
+
+Tutorials:     tutorials.onosproject.org 
+
+
+Mailing lists: lists.onosproject.org     
+
+
+
+
+
+Come help out! Find out how at: contribute.onosproject.org 
+
+
+
+
+
+Hit '[1m<tab>[0m' for a list of available commands
+
+
+and '[1m[cmd] --help[0m' for help on a specific command.
+
+
+Hit '[1m<ctrl-d>[0m' or type '[1mlogout[0m' to exit ONOS session.
+
+
+
+
+[?1h=[90m~[0m                                                                               
+ 
+[?2004h[0m
+2020-07-27 05:02:28,750 - FUNCnetconf - INFO - Successful CLI startup
+2020-07-27 05:02:28,750 - FUNCnetconf - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-27 05:02:28,750 - FUNCnetconf - INFO - Successfully start ONOS cli
+2020-07-27 05:02:28,750 - FUNCnetconf - INFO - Assertion Passed
+[2020-07-27 05:02:28.750807] [FUNCnetconf] [STEP]  2.10: Checking ONOS nodes
+2020-07-27 05:02:29,037 - FUNCnetconf - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 05:02:29,038 - FUNCnetconf - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 05:02:29,038 - FUNCnetconf - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[93m2020-07-27 05:02:29,149 - FUNCnetconf - WARNING - ['192.168.171.28'] != [][0m
+2020-07-27 05:02:30,409 - FUNCnetconf - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 05:02:30,410 - FUNCnetconf - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 05:02:30,410 - FUNCnetconf - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[93m2020-07-27 05:02:30,520 - FUNCnetconf - WARNING - ['192.168.171.28'] != [][0m
+2020-07-27 05:02:31,785 - FUNCnetconf - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 05:02:31,785 - FUNCnetconf - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 05:02:31,785 - FUNCnetconf - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[93m2020-07-27 05:02:31,898 - FUNCnetconf - WARNING - ['192.168.171.28'] != [][0m
+2020-07-27 05:02:33,161 - FUNCnetconf - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 05:02:33,162 - FUNCnetconf - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 05:02:33,162 - FUNCnetconf - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 05:02:33,273 - FUNCnetconf - DEBUG - <bound method Cluster.nodesCheck of Cluster[{ONOS1:192.168.171.28, Configured - Active}, {ONOS2:192.168.171.5, Not Configured - Inactive}, {ONOS3:192.168.171.24, Not Configured - Inactive}; Atomix Nodes:{ONOS1:192.168.171.28}]> was retried 3 times.[0m
+2020-07-27 05:02:33,273 - FUNCnetconf - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-27 05:02:33,273 - FUNCnetconf - INFO - All ONOS nodes are in READY state
+2020-07-27 05:02:33,273 - FUNCnetconf - INFO - Assertion Passed
+[2020-07-27 05:02:33.273979] [FUNCnetconf] [STEP]  2.11: Checking ONOS applications
+2020-07-27 05:02:33,725 - FUNCnetconf - INFO - Command 'onos:apps -j' sent to ONOScli1.
+[95m2020-07-27 05:02:33,735 - FUNCnetconf - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[95m2020-07-27 05:02:33,736 - FUNCnetconf - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[93m2020-07-27 05:02:33,736 - FUNCnetconf - WARNING - Relaxed Regex: Searching for a json string amongst the output[0m
+2020-07-27 05:02:33,847 - FUNCnetconf - INFO - ONOS1: org.onosproject.drivers is activated
+2020-07-27 05:02:34,213 - FUNCnetconf - INFO - Command 'onos:apps -j' sent to ONOScli1.
+[95m2020-07-27 05:02:34,232 - FUNCnetconf - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[95m2020-07-27 05:02:34,232 - FUNCnetconf - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[93m2020-07-27 05:02:34,232 - FUNCnetconf - WARNING - Relaxed Regex: Searching for a json string amongst the output[0m
+2020-07-27 05:02:34,342 - FUNCnetconf - INFO - ONOS1: org.onosproject.openflow is activated
+2020-07-27 05:02:34,709 - FUNCnetconf - INFO - Command 'onos:apps -j' sent to ONOScli1.
+[95m2020-07-27 05:02:34,727 - FUNCnetconf - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[95m2020-07-27 05:02:34,728 - FUNCnetconf - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[93m2020-07-27 05:02:34,728 - FUNCnetconf - WARNING - Relaxed Regex: Searching for a json string amongst the output[0m
+2020-07-27 05:02:34,841 - FUNCnetconf - INFO - ONOS1: org.onosproject.proxyarp is activated
+2020-07-27 05:02:35,185 - FUNCnetconf - INFO - Command 'onos:apps -j' sent to ONOScli1.
+[95m2020-07-27 05:02:35,195 - FUNCnetconf - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[95m2020-07-27 05:02:35,195 - FUNCnetconf - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[93m2020-07-27 05:02:35,195 - FUNCnetconf - WARNING - Relaxed Regex: Searching for a json string amongst the output[0m
+2020-07-27 05:02:35,308 - FUNCnetconf - INFO - ONOS1: org.onosproject.mobility is activated
+2020-07-27 05:02:35,629 - FUNCnetconf - INFO - Command 'onos:apps -j' sent to ONOScli1.
+[95m2020-07-27 05:02:35,648 - FUNCnetconf - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[95m2020-07-27 05:02:35,648 - FUNCnetconf - DEBUG - REGEX PATTERN SET TO: 'onos:apps -j'
+SENT COMMAND STRING WAS: 'onos:apps -j'[0m
+[93m2020-07-27 05:02:35,648 - FUNCnetconf - WARNING - Relaxed Regex: Searching for a json string amongst the output[0m
+2020-07-27 05:02:35,760 - FUNCnetconf - INFO - ONOS1: org.onosproject.netconf is activated
+2020-07-27 05:02:35,761 - FUNCnetconf - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-27 05:02:35,761 - FUNCnetconf - INFO - All ONOS apps are activated
+2020-07-27 05:02:35,761 - FUNCnetconf - INFO - Assertion Passed
+2020-07-27 05:02:56,045 - FUNCnetconf - INFO - Command 'nodes -j' sent to ONOScli1.
+[95m2020-07-27 05:02:56,045 - FUNCnetconf - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+[95m2020-07-27 05:02:56,045 - FUNCnetconf - DEBUG - REGEX PATTERN SET TO: 'nodes -j'
+SENT COMMAND STRING WAS: 'nodes -j'[0m
+2020-07-27 05:02:56,154 - FUNCnetconf - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-27 05:02:56,154 - FUNCnetconf - INFO - Nodes check successful.
+2020-07-27 05:02:56,154 - FUNCnetconf - INFO - Assertion Passed
+
+*****************************
+ Result: Pass 
+*****************************
+
+
+******************************
+ Result summary for Testcase100
+******************************
+
+[95m2020-07-27 05:02:56,157 - FUNCnetconf - DEBUG - Case Executed       : [1, 2, 100][0m
+[95m2020-07-27 05:02:56,157 - FUNCnetconf - DEBUG - Case to be executed : [200, 300, 19, 2, 100, 200, 300, 19][0m
+[2020-07-27 05:02:56.158077] [FUNCnetconf] [CASE]  Start up NETCONF app in all nodes Test - 1 NODE(S)
+[2020-07-27 05:02:56.159554] [FUNCnetconf] [STEP]  100.1: Starting NETCONF app
+[93m2020-07-27 05:02:56,160 - FUNCnetconf - WARNING - No ip given, reverting to ip from topo file[0m
+[93m2020-07-27 05:02:56,161 - FUNCnetconf - WARNING - No port given, reverting to port from topo file[0m
+2020-07-27 05:02:56,161 - FUNCnetconf - INFO - user/passwd is: onos/rocks
+2020-07-27 05:02:56,161 - FUNCnetconf - INFO - Sending request http://192.168.171.28:8181/onos/v1/applications/org.onosproject.netconf/active using POST method.
+2020-07-27 05:02:56,343 - FUNCnetconf - INFO - ONOSrest1: org.onosproject.netconf application is in ACTIVE state
+2020-07-27 05:02:56,344 - FUNCnetconf - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-27 05:02:56,344 - FUNCnetconf - INFO - Assertion result for starting NETCONF app
+2020-07-27 05:02:56,344 - FUNCnetconf - INFO - Assertion Passed
+[2020-07-27 05:02:56.345000] [FUNCnetconf] [STEP]  100.2: Starting OFC-Server
+[93m2020-07-27 05:02:56,372 - FUNCnetconf - WARNING - getIpAddr failed to find a public IP address[0m
+2020-07-27 05:02:56,373 - FUNCnetconf - INFO - Device to be configured: 127.0.0.1
+2020-07-27 05:02:56,487 - FUNCnetconf - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-27 05:02:56,487 - FUNCnetconf - INFO - Assertion result for starting OFC-Server
+2020-07-27 05:02:56,487 - FUNCnetconf - INFO - Assertion Passed
+
+*****************************
+ Result: Pass 
+*****************************
+
+
+******************************
+ Result summary for Testcase200
+******************************
+
+[95m2020-07-27 05:03:16,509 - FUNCnetconf - DEBUG - Case Executed       : [1, 2, 100, 200][0m
+[95m2020-07-27 05:03:16,510 - FUNCnetconf - DEBUG - Case to be executed : [300, 19, 2, 100, 200, 300, 19][0m
+[2020-07-27 05:03:16.510287] [FUNCnetconf] [CASE]  Assemble the configuration Test - 1 NODES(S)
+[2020-07-27 05:03:16.511372] [FUNCnetconf] [STEP]  200.1: Assembling configuration file
+{"devices": {"netconf:127.0.0.1:830": {"netconf": {"ip": "127.0.0.1","port": 830,"username": "sdn","password": "rocks"},"basic": {"driver": "ovs-netconf"}}}}
+2020-07-27 05:03:16,512 - FUNCnetconf - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-27 05:03:16,512 - FUNCnetconf - INFO - Assertion result for assembling configuration file
+2020-07-27 05:03:16,513 - FUNCnetconf - INFO - Assertion Passed
+
+*****************************
+ Result: Pass 
+*****************************
+
+
+******************************
+ Result summary for Testcase300
+******************************
+
+[95m2020-07-27 05:03:36,535 - FUNCnetconf - DEBUG - Case Executed       : [1, 2, 100, 200, 300][0m
+[95m2020-07-27 05:03:36,535 - FUNCnetconf - DEBUG - Case to be executed : [19, 2, 100, 200, 300, 19][0m
+[2020-07-27 05:03:36.535567] [FUNCnetconf] [CASE]  Uploading the configuration Test - 1 NODES(S)
+[2020-07-27 05:03:36.536759] [FUNCnetconf] [STEP]  300.1: Sending the configuration file
+[93m2020-07-27 05:03:36,537 - FUNCnetconf - WARNING - No ip given, reverting to ip from topo file[0m
+[93m2020-07-27 05:03:36,537 - FUNCnetconf - WARNING - No port given, reverting to port from topo file[0m
+2020-07-27 05:03:36,538 - FUNCnetconf - INFO - user/passwd is: onos/rocks
+2020-07-27 05:03:36,538 - FUNCnetconf - INFO - Sending request http://192.168.171.28:8181/onos/v1/network/configuration using POST method.
+2020-07-27 05:03:36,590 - FUNCnetconf - INFO - Device configuration request response code: 200
+2020-07-27 05:03:36,590 - FUNCnetconf - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-27 05:03:36,590 - FUNCnetconf - INFO - Assertion result for sending the configuration file
+2020-07-27 05:03:36,590 - FUNCnetconf - INFO - Assertion Passed
+[2020-07-27 05:03:46.602213] [FUNCnetconf] [STEP]  300.2: Confirming the device was configured
+[93m2020-07-27 05:03:46,603 - FUNCnetconf - WARNING - No ip given, reverting to ip from topo file[0m
+[93m2020-07-27 05:03:46,603 - FUNCnetconf - WARNING - No port given, reverting to port from topo file[0m
+2020-07-27 05:03:46,603 - FUNCnetconf - INFO - user/passwd is: onos/rocks
+2020-07-27 05:03:46,603 - FUNCnetconf - INFO - Sending request http://192.168.171.28:8181/onos/v1/devices using GET method.
+2020-07-27 05:03:46,877 - FUNCnetconf - INFO - Command 'devices -j' sent to ONOScli1.
+[95m2020-07-27 05:03:46,877 - FUNCnetconf - DEBUG - REGEX PATTERN SET TO: 'devices -j'
+SENT COMMAND STRING WAS: 'devices -j'[0m
+[95m2020-07-27 05:03:46,877 - FUNCnetconf - DEBUG - REGEX PATTERN SET TO: 'devices -j'
+SENT COMMAND STRING WAS: 'devices -j'[0m
+[93m2020-07-27 05:03:46,984 - FUNCnetconf - WARNING - Error trying to get step number. It is likely between step 2 and step 3[0m
+[91m2020-07-27 05:03:46,984 - FUNCnetconf - ERROR - 
+Exception in the following section of code: 300.<IndexError>: <IndexError>[0m
+[91m2020-07-27 05:03:46,985 - FUNCnetconf - ERROR - <type 'exceptions.IndexError'>list index out of range[0m
+
+ *****************************
+
+ Result: No Assertion Called 
+*****************************
+
+
+
+*************************************
+	Test Execution Summary
+
+************************************* 
+
+ Test Start           : 27 Jul 2020 04:59:39
+ Test End             : 27 Jul 2020 05:03:46
+ Execution Time       : 0:04:07.092479
+ Total Tests Planned  : 11
+ Total Tests Run      : 5
+ Total Pass           : 4
+ Total Fail           : 0
+ Total No Result      : 1
+ Success Percentage   : 80%
+ Execution Percentage : 45%
+
+ Case Executed        : [1, 2, 100, 200, 300]
+ Case Not Executed    : [19, 2, 100, 200, 300, 19]
+Disconnecting from ONOScli3: <class 'drivers.common.cli.onosclidriver.OnosCliDriver'>
+Disconnecting from ONOSserver3: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from ONOSserver2: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from ONOSserver1: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from Mininet1: <class 'drivers.common.cli.emulator.mininetclidriver.MininetCliDriver'>
+Disconnecting from ONOSrest2: <class 'drivers.common.api.controller.onosrestdriver.OnosRestDriver'>
+Disconnecting from ONOSrest1: <class 'drivers.common.api.controller.onosrestdriver.OnosRestDriver'>
+Disconnecting from ONOSbench3: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from ONOSrest3: <class 'drivers.common.api.controller.onosrestdriver.OnosRestDriver'>
+Disconnecting from ONOSbench1: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from ONOScli2: <class 'drivers.common.cli.onosclidriver.OnosCliDriver'>
+Disconnecting from ONOScli1: <class 'drivers.common.cli.onosclidriver.OnosCliDriver'>
+Disconnecting from ONOSbench2: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from ONOScell: <class 'drivers.common.cli.onosclusterdriver.OnosClusterDriver'>
+ubuntu@manage:~/OnosSystemTest/TestON/bin$ 
+ubuntu@manage:~/OnosSystemTest/TestON/bin$ exit
+logout

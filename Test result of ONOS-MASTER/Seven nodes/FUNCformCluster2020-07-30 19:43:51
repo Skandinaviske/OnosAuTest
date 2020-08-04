@@ -1,0 +1,580 @@
+Last login: Thu Jul 30 23:43:47 2020 from 174.114.234.237
+
+cell sevenNodeDemo; cd ~/OnosSystemTest/TestON/bin/; ./cli.py run FUNCformCluster
+
+exit
+
+ubuntu@manage:~$ cell sevenNodeDemo; cd ~/OnosSystemTest/TestON/bin/; ./cli.py ru
+un FUNCformCluster
+[01;31m[KONOS_CELL[m[K=sevenNodeDemo
+OCC1=192.168.171.28
+OCC2=192.168.171.5
+OCC3=192.168.171.24
+OCC4=192.168.171.13
+OCC5=192.168.171.14
+OCC6=192.168.171.15
+OCC7=192.168.171.7
+OC1=192.168.171.28
+OC2=192.168.171.5
+OC3=192.168.171.24
+OC4=192.168.171.13
+OC5=192.168.171.14
+OC6=192.168.171.15
+OC7=192.168.171.7
+OCI=192.168.171.28
+OCN=192.168.171.17
+ONOS_APPS=gui,drivers,openflow,proxyarp
+ONOS_GROUP=sdn
+ONOS_MN_PY=/home/ubuntu/onos/tools/dev/mininet/onos.py
+ONOS_SCENARIOS=/home/ubuntu/onos/tools/test/scenarios
+ONOS_USER=sdn
+ONOS_WEB_PASS=rocks
+ONOS_WEB_USER=onos
+
+                                +----------------+
+------------------------------ { Script And Files }  ------------------------------
+                                +----------------+
+
+	Script Log File : /home/ubuntu/OnosSystemTest/TestON/logs/FUNCformCluster_30_Jul_2020_23_43_52/FUNCformCluster_30_Jul_2020_23_43_52.log
+	Report Log File : /home/ubuntu/OnosSystemTest/TestON/logs/FUNCformCluster_30_Jul_2020_23_43_52/FUNCformCluster_30_Jul_2020_23_43_52.rpt
+	Mininet1 Session Log : /home/ubuntu/OnosSystemTest/TestON/logs/FUNCformCluster_30_Jul_2020_23_43_52/Mininet1.session
+	ONOScell Session Log : /home/ubuntu/OnosSystemTest/TestON/logs/FUNCformCluster_30_Jul_2020_23_43_52/ONOScell.session
+	Test Script : /home/ubuntu/OnosSystemTest/TestON/tests/FUNC/FUNCformCluster/FUNCformCluster.py
+	Test Params : /home/ubuntu/OnosSystemTest/TestON/tests/FUNC/FUNCformCluster/FUNCformCluster.params
+	Topology : /home/ubuntu/OnosSystemTest/TestON/tests/FUNC/FUNCformCluster/FUNCformCluster.topo
+                              +------------------+
+---------------------------  { Script Exec Params }  ---------------------------
+                              +------------------+
+
+{
+    "DEPENDENCY": {
+        "file": "formClusterFuncs", 
+        "path": "/tests/FUNC/FUNCformCluster/dependencies/"
+    }, 
+    "ENV": {
+        "additionalApp": "org.onosproject.fwd", 
+        "cellApps": "drivers,openflow", 
+        "cellBasicName": "singleTemp"
+    }, 
+    "GIT": {
+        "branch": "master", 
+        "pull": "False"
+    }, 
+    "GRAPH": {
+        "builds": "20", 
+        "nodeCluster": "VM"
+    }, 
+    "MININET": {
+        "topo": "mn --topo tree,2,2"
+    }, 
+    "RETRY": {
+        "pingall": "2", 
+        "topoCheck": "2"
+    }, 
+    "SLEEP": {
+        "afterONOSStart": "15", 
+        "pingall": "3"
+    }, 
+    "TEST": {
+        "numNodes": "7"
+    }, 
+    "testcases": "0,1,3,2,4,5"
+}
+
+                               +---------------+
+----------------------------- { Components Used }  -----------------------------
+                               +---------------+
+	Mininet1
+	ONOScell
+
+
+                              +--------+
+---------------------------- { Topology }  ----------------------------
+                              +--------+
+
+[
+    [
+        "ONOScell", 
+        {
+            "connect_order": "1", 
+            "host": "localhost", 
+            "user": "sdn", 
+            "COMPONENTS": {
+                "web_user": null, 
+                "diff_clihost": null, 
+                "web_pass": null, 
+                "prompt": null, 
+                "cluster_name": null, 
+                "onos_home": null, 
+                "nodes": "7", 
+                "karaf_password": null, 
+                "karaf_username": null, 
+                "rest_port": null
+            }, 
+            "home": null, 
+            "password": "rocks", 
+            "type": "OnosClusterDriver"
+        }
+    ], 
+    [
+        "Mininet1", 
+        {
+            "connect_order": "2", 
+            "host": "OCN", 
+            "user": "sdn", 
+            "COMPONENTS": {
+                "prompt": null
+            }, 
+            "password": "rocks", 
+            "type": "MininetCliDriver"
+        }
+    ]
+]
+------------------------------------------------------------
+
+
+******************************
+ CASE INIT 
+******************************
+
+['ONOScell', 'Mininet1']
+2020-07-30 23:43:52,130 - FUNCformCluster - INFO - Creating component Handle: ONOScell
+2020-07-30 23:43:52,140 - FUNCformCluster - INFO - ONOScell: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5', '192.168.171.14', '192.168.171.13', '192.168.171.7', '192.168.171.15'] ONOS IPs
+2020-07-30 23:43:52,140 - FUNCformCluster - INFO - ONOScell: Trying to connect to localhost
+2020-07-30 23:43:52,182 - FUNCformCluster - INFO - ssh key confirmation received, send yes
+2020-07-30 23:43:53,114 - FUNCformCluster - INFO - Password not required logged in
+[95m2020-07-30 23:43:53,421 - FUNCformCluster - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosCliDriver', 'host': 'localhost'}[0m
+2020-07-30 23:43:53,422 - FUNCformCluster - INFO - Creating component Handle: ONOScli1
+2020-07-30 23:43:53,434 - FUNCformCluster - INFO - ONOScli1: Trying to connect to localhost
+2020-07-30 23:43:54,307 - FUNCformCluster - INFO - Password not required logged in
+[95m2020-07-30 23:43:54,612 - FUNCformCluster - DEBUG - {'connect_order': '1', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosClusterDriver', 'host': 'localhost'}[0m
+[95m2020-07-30 23:43:54,613 - FUNCformCluster - DEBUG - {'connect_order': '2', 'user': 'onos', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosRestDriver', 'host': '192.168.171.28', 'port': '8181'}[0m
+2020-07-30 23:43:54,613 - FUNCformCluster - INFO - Creating component Handle: ONOSrest1
+2020-07-30 23:43:54,670 - FUNCformCluster - INFO - ONOSrest1: ip set to 192.168.171.28
+[95m2020-07-30 23:43:54,670 - FUNCformCluster - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': 'localhost'}[0m
+2020-07-30 23:43:54,670 - FUNCformCluster - INFO - Creating component Handle: ONOSbench1
+2020-07-30 23:43:54,678 - FUNCformCluster - INFO - ONOSbench1: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5', '192.168.171.14', '192.168.171.13', '192.168.171.7', '192.168.171.15'] ONOS IPs
+2020-07-30 23:43:54,678 - FUNCformCluster - INFO - ONOSbench1: Trying to connect to localhost
+2020-07-30 23:43:55,554 - FUNCformCluster - INFO - Password not required logged in
+[95m2020-07-30 23:43:55,860 - FUNCformCluster - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': '192.168.171.28'}[0m
+2020-07-30 23:43:55,860 - FUNCformCluster - INFO - Creating component Handle: ONOSserver1
+2020-07-30 23:43:55,869 - FUNCformCluster - INFO - ONOSserver1: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5', '192.168.171.14', '192.168.171.13', '192.168.171.7', '192.168.171.15'] ONOS IPs
+2020-07-30 23:43:55,870 - FUNCformCluster - INFO - ONOSserver1: Trying to connect to 192.168.171.28
+2020-07-30 23:43:55,917 - FUNCformCluster - INFO - ssh key confirmation received, send yes
+2020-07-30 23:43:56,756 - FUNCformCluster - INFO - Password not required logged in
+[95m2020-07-30 23:43:57,062 - FUNCformCluster - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosCliDriver', 'host': 'localhost'}[0m
+2020-07-30 23:43:57,062 - FUNCformCluster - INFO - Creating component Handle: ONOScli2
+2020-07-30 23:43:57,071 - FUNCformCluster - INFO - ONOScli2: Trying to connect to localhost
+2020-07-30 23:43:57,941 - FUNCformCluster - INFO - Password not required logged in
+[95m2020-07-30 23:43:58,247 - FUNCformCluster - DEBUG - {'connect_order': '1', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosClusterDriver', 'host': 'localhost'}[0m
+[95m2020-07-30 23:43:58,247 - FUNCformCluster - DEBUG - {'connect_order': '2', 'user': 'onos', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosRestDriver', 'host': '192.168.171.5', 'port': '8181'}[0m
+2020-07-30 23:43:58,247 - FUNCformCluster - INFO - Creating component Handle: ONOSrest2
+2020-07-30 23:43:58,255 - FUNCformCluster - INFO - ONOSrest2: ip set to 192.168.171.5
+[95m2020-07-30 23:43:58,256 - FUNCformCluster - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': 'localhost'}[0m
+2020-07-30 23:43:58,256 - FUNCformCluster - INFO - Creating component Handle: ONOSbench2
+2020-07-30 23:43:58,265 - FUNCformCluster - INFO - ONOSbench2: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5', '192.168.171.14', '192.168.171.13', '192.168.171.7', '192.168.171.15'] ONOS IPs
+2020-07-30 23:43:58,265 - FUNCformCluster - INFO - ONOSbench2: Trying to connect to localhost
+2020-07-30 23:43:59,148 - FUNCformCluster - INFO - Password not required logged in
+[95m2020-07-30 23:43:59,454 - FUNCformCluster - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': '192.168.171.5'}[0m
+2020-07-30 23:43:59,454 - FUNCformCluster - INFO - Creating component Handle: ONOSserver2
+2020-07-30 23:43:59,463 - FUNCformCluster - INFO - ONOSserver2: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5', '192.168.171.14', '192.168.171.13', '192.168.171.7', '192.168.171.15'] ONOS IPs
+2020-07-30 23:43:59,463 - FUNCformCluster - INFO - ONOSserver2: Trying to connect to 192.168.171.5
+2020-07-30 23:43:59,506 - FUNCformCluster - INFO - ssh key confirmation received, send yes
+2020-07-30 23:44:00,330 - FUNCformCluster - INFO - Password not required logged in
+[95m2020-07-30 23:44:00,636 - FUNCformCluster - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosCliDriver', 'host': 'localhost'}[0m
+2020-07-30 23:44:00,636 - FUNCformCluster - INFO - Creating component Handle: ONOScli3
+2020-07-30 23:44:00,644 - FUNCformCluster - INFO - ONOScli3: Trying to connect to localhost
+2020-07-30 23:44:01,534 - FUNCformCluster - INFO - Password not required logged in
+[95m2020-07-30 23:44:01,839 - FUNCformCluster - DEBUG - {'connect_order': '1', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosClusterDriver', 'host': 'localhost'}[0m
+[95m2020-07-30 23:44:01,839 - FUNCformCluster - DEBUG - {'connect_order': '2', 'user': 'onos', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosRestDriver', 'host': '192.168.171.24', 'port': '8181'}[0m
+2020-07-30 23:44:01,839 - FUNCformCluster - INFO - Creating component Handle: ONOSrest3
+2020-07-30 23:44:01,848 - FUNCformCluster - INFO - ONOSrest3: ip set to 192.168.171.24
+[95m2020-07-30 23:44:01,849 - FUNCformCluster - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': 'localhost'}[0m
+2020-07-30 23:44:01,849 - FUNCformCluster - INFO - Creating component Handle: ONOSbench3
+2020-07-30 23:44:01,857 - FUNCformCluster - INFO - ONOSbench3: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5', '192.168.171.14', '192.168.171.13', '192.168.171.7', '192.168.171.15'] ONOS IPs
+2020-07-30 23:44:01,858 - FUNCformCluster - INFO - ONOSbench3: Trying to connect to localhost
+2020-07-30 23:44:02,729 - FUNCformCluster - INFO - Password not required logged in
+[95m2020-07-30 23:44:03,034 - FUNCformCluster - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': '192.168.171.24'}[0m
+2020-07-30 23:44:03,035 - FUNCformCluster - INFO - Creating component Handle: ONOSserver3
+2020-07-30 23:44:03,043 - FUNCformCluster - INFO - ONOSserver3: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5', '192.168.171.14', '192.168.171.13', '192.168.171.7', '192.168.171.15'] ONOS IPs
+2020-07-30 23:44:03,043 - FUNCformCluster - INFO - ONOSserver3: Trying to connect to 192.168.171.24
+2020-07-30 23:44:03,081 - FUNCformCluster - INFO - ssh key confirmation received, send yes
+2020-07-30 23:44:03,925 - FUNCformCluster - INFO - Password not required logged in
+[95m2020-07-30 23:44:04,231 - FUNCformCluster - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosCliDriver', 'host': 'localhost'}[0m
+2020-07-30 23:44:04,232 - FUNCformCluster - INFO - Creating component Handle: ONOScli4
+2020-07-30 23:44:04,240 - FUNCformCluster - INFO - ONOScli4: Trying to connect to localhost
+2020-07-30 23:44:05,127 - FUNCformCluster - INFO - Password not required logged in
+[95m2020-07-30 23:44:05,432 - FUNCformCluster - DEBUG - {'connect_order': '1', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosClusterDriver', 'host': 'localhost'}[0m
+[95m2020-07-30 23:44:05,432 - FUNCformCluster - DEBUG - {'connect_order': '2', 'user': 'onos', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosRestDriver', 'host': '192.168.171.13', 'port': '8181'}[0m
+2020-07-30 23:44:05,433 - FUNCformCluster - INFO - Creating component Handle: ONOSrest4
+2020-07-30 23:44:05,441 - FUNCformCluster - INFO - ONOSrest4: ip set to 192.168.171.13
+[95m2020-07-30 23:44:05,442 - FUNCformCluster - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': 'localhost'}[0m
+2020-07-30 23:44:05,442 - FUNCformCluster - INFO - Creating component Handle: ONOSbench4
+2020-07-30 23:44:05,450 - FUNCformCluster - INFO - ONOSbench4: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5', '192.168.171.14', '192.168.171.13', '192.168.171.7', '192.168.171.15'] ONOS IPs
+2020-07-30 23:44:05,451 - FUNCformCluster - INFO - ONOSbench4: Trying to connect to localhost
+2020-07-30 23:44:06,330 - FUNCformCluster - INFO - Password not required logged in
+[95m2020-07-30 23:44:06,635 - FUNCformCluster - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': '192.168.171.13'}[0m
+2020-07-30 23:44:06,635 - FUNCformCluster - INFO - Creating component Handle: ONOSserver4
+2020-07-30 23:44:06,643 - FUNCformCluster - INFO - ONOSserver4: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5', '192.168.171.14', '192.168.171.13', '192.168.171.7', '192.168.171.15'] ONOS IPs
+2020-07-30 23:44:06,644 - FUNCformCluster - INFO - ONOSserver4: Trying to connect to 192.168.171.13
+2020-07-30 23:44:06,672 - FUNCformCluster - INFO - ssh key confirmation received, send yes
+2020-07-30 23:44:07,347 - FUNCformCluster - INFO - Password not required logged in
+[95m2020-07-30 23:44:07,652 - FUNCformCluster - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosCliDriver', 'host': 'localhost'}[0m
+2020-07-30 23:44:07,652 - FUNCformCluster - INFO - Creating component Handle: ONOScli5
+2020-07-30 23:44:07,660 - FUNCformCluster - INFO - ONOScli5: Trying to connect to localhost
+2020-07-30 23:44:08,532 - FUNCformCluster - INFO - Password not required logged in
+[95m2020-07-30 23:44:08,837 - FUNCformCluster - DEBUG - {'connect_order': '1', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosClusterDriver', 'host': 'localhost'}[0m
+[95m2020-07-30 23:44:08,838 - FUNCformCluster - DEBUG - {'connect_order': '2', 'user': 'onos', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosRestDriver', 'host': '192.168.171.14', 'port': '8181'}[0m
+2020-07-30 23:44:08,838 - FUNCformCluster - INFO - Creating component Handle: ONOSrest5
+2020-07-30 23:44:08,846 - FUNCformCluster - INFO - ONOSrest5: ip set to 192.168.171.14
+[95m2020-07-30 23:44:08,847 - FUNCformCluster - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': 'localhost'}[0m
+2020-07-30 23:44:08,847 - FUNCformCluster - INFO - Creating component Handle: ONOSbench5
+2020-07-30 23:44:08,856 - FUNCformCluster - INFO - ONOSbench5: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5', '192.168.171.14', '192.168.171.13', '192.168.171.7', '192.168.171.15'] ONOS IPs
+2020-07-30 23:44:08,856 - FUNCformCluster - INFO - ONOSbench5: Trying to connect to localhost
+2020-07-30 23:44:09,741 - FUNCformCluster - INFO - Password not required logged in
+[95m2020-07-30 23:44:10,047 - FUNCformCluster - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': '192.168.171.14'}[0m
+2020-07-30 23:44:10,047 - FUNCformCluster - INFO - Creating component Handle: ONOSserver5
+2020-07-30 23:44:10,055 - FUNCformCluster - INFO - ONOSserver5: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5', '192.168.171.14', '192.168.171.13', '192.168.171.7', '192.168.171.15'] ONOS IPs
+2020-07-30 23:44:10,056 - FUNCformCluster - INFO - ONOSserver5: Trying to connect to 192.168.171.14
+2020-07-30 23:44:10,097 - FUNCformCluster - INFO - ssh key confirmation received, send yes
+2020-07-30 23:44:11,444 - FUNCformCluster - INFO - Password not required logged in
+[95m2020-07-30 23:44:11,768 - FUNCformCluster - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosCliDriver', 'host': 'localhost'}[0m
+2020-07-30 23:44:11,769 - FUNCformCluster - INFO - Creating component Handle: ONOScli6
+2020-07-30 23:44:11,777 - FUNCformCluster - INFO - ONOScli6: Trying to connect to localhost
+2020-07-30 23:44:12,643 - FUNCformCluster - INFO - Password not required logged in
+[95m2020-07-30 23:44:12,947 - FUNCformCluster - DEBUG - {'connect_order': '1', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosClusterDriver', 'host': 'localhost'}[0m
+[95m2020-07-30 23:44:12,948 - FUNCformCluster - DEBUG - {'connect_order': '2', 'user': 'onos', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosRestDriver', 'host': '192.168.171.15', 'port': '8181'}[0m
+2020-07-30 23:44:12,948 - FUNCformCluster - INFO - Creating component Handle: ONOSrest6
+2020-07-30 23:44:12,956 - FUNCformCluster - INFO - ONOSrest6: ip set to 192.168.171.15
+[95m2020-07-30 23:44:12,957 - FUNCformCluster - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': 'localhost'}[0m
+2020-07-30 23:44:12,958 - FUNCformCluster - INFO - Creating component Handle: ONOSbench6
+2020-07-30 23:44:12,965 - FUNCformCluster - INFO - ONOSbench6: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5', '192.168.171.14', '192.168.171.13', '192.168.171.7', '192.168.171.15'] ONOS IPs
+2020-07-30 23:44:12,965 - FUNCformCluster - INFO - ONOSbench6: Trying to connect to localhost
+2020-07-30 23:44:13,860 - FUNCformCluster - INFO - Password not required logged in
+[95m2020-07-30 23:44:14,166 - FUNCformCluster - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': '192.168.171.15'}[0m
+2020-07-30 23:44:14,166 - FUNCformCluster - INFO - Creating component Handle: ONOSserver6
+2020-07-30 23:44:14,175 - FUNCformCluster - INFO - ONOSserver6: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5', '192.168.171.14', '192.168.171.13', '192.168.171.7', '192.168.171.15'] ONOS IPs
+2020-07-30 23:44:14,176 - FUNCformCluster - INFO - ONOSserver6: Trying to connect to 192.168.171.15
+2020-07-30 23:44:14,222 - FUNCformCluster - INFO - ssh key confirmation received, send yes
+2020-07-30 23:44:15,053 - FUNCformCluster - INFO - Password not required logged in
+[95m2020-07-30 23:44:15,359 - FUNCformCluster - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosCliDriver', 'host': 'localhost'}[0m
+2020-07-30 23:44:15,359 - FUNCformCluster - INFO - Creating component Handle: ONOScli7
+2020-07-30 23:44:15,368 - FUNCformCluster - INFO - ONOScli7: Trying to connect to localhost
+2020-07-30 23:44:16,228 - FUNCformCluster - INFO - Password not required logged in
+[95m2020-07-30 23:44:16,533 - FUNCformCluster - DEBUG - {'connect_order': '1', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosClusterDriver', 'host': 'localhost'}[0m
+[95m2020-07-30 23:44:16,534 - FUNCformCluster - DEBUG - {'connect_order': '2', 'user': 'onos', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosRestDriver', 'host': '192.168.171.7', 'port': '8181'}[0m
+2020-07-30 23:44:16,534 - FUNCformCluster - INFO - Creating component Handle: ONOSrest7
+2020-07-30 23:44:16,542 - FUNCformCluster - INFO - ONOSrest7: ip set to 192.168.171.7
+[95m2020-07-30 23:44:16,543 - FUNCformCluster - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': 'localhost'}[0m
+2020-07-30 23:44:16,544 - FUNCformCluster - INFO - Creating component Handle: ONOSbench7
+2020-07-30 23:44:16,552 - FUNCformCluster - INFO - ONOSbench7: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5', '192.168.171.14', '192.168.171.13', '192.168.171.7', '192.168.171.15'] ONOS IPs
+2020-07-30 23:44:16,553 - FUNCformCluster - INFO - ONOSbench7: Trying to connect to localhost
+2020-07-30 23:44:17,430 - FUNCformCluster - INFO - Password not required logged in
+[95m2020-07-30 23:44:17,735 - FUNCformCluster - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': '192.168.171.7'}[0m
+2020-07-30 23:44:17,735 - FUNCformCluster - INFO - Creating component Handle: ONOSserver7
+2020-07-30 23:44:17,744 - FUNCformCluster - INFO - ONOSserver7: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5', '192.168.171.14', '192.168.171.13', '192.168.171.7', '192.168.171.15'] ONOS IPs
+2020-07-30 23:44:17,744 - FUNCformCluster - INFO - ONOSserver7: Trying to connect to 192.168.171.7
+2020-07-30 23:44:17,777 - FUNCformCluster - INFO - ssh key confirmation received, send yes
+2020-07-30 23:44:18,511 - FUNCformCluster - INFO - Password not required logged in
+2020-07-30 23:44:18,817 - FUNCformCluster - INFO - Creating component Handle: Mininet1
+2020-07-30 23:44:18,896 - FUNCformCluster - INFO - ssh key confirmation received, send yes
+2020-07-30 23:44:20,082 - FUNCformCluster - INFO - Password not required logged in
+2020-07-30 23:44:20,291 - FUNCformCluster - INFO - Connection successful to the host sdn@192.168.171.17
+
+******************************
+ Result summary for Testcase0
+******************************
+
+[95m2020-07-30 23:44:20,451 - FUNCformCluster - DEBUG - Case Executed       : [0][0m
+[95m2020-07-30 23:44:20,451 - FUNCformCluster - DEBUG - Case to be executed : [1, 3, 2, 4, 5][0m
+[2020-07-30 23:44:20.453512] [FUNCformCluster] [CASE]  Constructing test variables and building ONOS package
+[2020-07-30 23:44:20.456112] [FUNCformCluster] [STEP]  0.1: Constructing test variables
+2020-07-30 23:44:20,458 - FUNCformCluster - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-07-30 23:44:20,459 - FUNCformCluster - INFO - Successfully construct test variables 
+2020-07-30 23:44:20,459 - FUNCformCluster - INFO - Assertion Passed
+2020-07-30 23:44:20,459 - FUNCformCluster - INFO - ONOSbench1 home is ~/onos
+ONOSbench1: 
+
+commit 12bfd3d32d808e9590d1d3d70bc0cbd4b320575c (HEAD -> master, origin/master, origin/HEAD)
+Author:     Parvathi MH <parvathi.mh@samsung.com>
+AuthorDate: Thu Jan 30 10:31:10 2020 +0530
+Commit:     Thomas Vachuska <tom@opennetworking.org>
+CommitDate: Tue Jul 28 18:17:54 2020 +0000
+
+    Fix to get onos pid in onos-jpenable
+sdn@manage:~/onos$
+
+*****************************
+ Result: Pass 
+*****************************
+
+
+******************************
+ Result summary for Testcase1
+******************************
+
+[95m2020-07-30 23:44:21,001 - FUNCformCluster - DEBUG - Case Executed       : [0, 1][0m
+[95m2020-07-30 23:44:21,001 - FUNCformCluster - DEBUG - Case to be executed : [3, 2, 4, 5][0m
+[2020-07-30 23:44:21.002735] [FUNCformCluster] [CASE]  Starting ONOS with indepenent configuration
+2020-07-30 23:44:21,004 - FUNCformCluster - INFO - Safety check, killing all ONOS processes
+2020-07-30 23:45:21,234 - FUNCformCluster - INFO - ONOS instance was not killed
+2020-07-30 23:45:21,268 - FUNCformCluster - INFO - ONOS instance was not killed
+2020-07-30 23:45:21,269 - FUNCformCluster - INFO - ONOS instance was not killed
+2020-07-30 23:45:21,269 - FUNCformCluster - INFO - ONOS instance was not killed
+2020-07-30 23:45:21,269 - FUNCformCluster - INFO - ONOS instance was not killed
+2020-07-30 23:45:21,271 - FUNCformCluster - INFO - ONOS instance was not killed
+2020-07-30 23:45:21,271 - FUNCformCluster - INFO - ONOS instance was not killed
+
+singleTemp6                                     0%    0     0.0KB/s   --:-- ETA
+singleTemp2                                     0%    0     0.0KB/s   --:-- ETA
+singleTemp6                                   100%  233   452.1KB/s   00:00    
+
+singleTemp2                                   100%  231   443.3KB/s   00:00    
+
+singleTemp7                                     0%    0     0.0KB/s   --:-- ETA
+singleTemp7                                   100%  231   455.0KB/s   00:00    
+
+singleTemp4                                     0%    0     0.0KB/s   --:-- ETA
+singleTemp5                                     0%    0     0.0KB/s   --:-- ETA
+singleTemp4                                   100%  233   409.6KB/s   00:00    
+
+singleTemp5                                   100%  233   399.4KB/s   00:00    
+
+singleTemp3                                     0%    0     0.0KB/s   --:-- ETA
+singleTemp3                                   100%  233   683.2KB/s   00:00    
+
+singleTemp1                                     0%    0     0.0KB/s   --:-- ETA
+singleTemp1                                   100%  233   292.4KB/s   00:00    
+[91m2020-07-30 23:45:32,208 - FUNCformCluster - ERROR - ONOSbench6: TIMEOUT exception found[0m
+[91m2020-07-30 23:45:32,209 - FUNCformCluster - ERROR - ONOSbench5: TIMEOUT exception found[0m
+[91m2020-07-30 23:45:32,209 - FUNCformCluster - ERROR - ONOSbench7: TIMEOUT exception found[0m
+[91m2020-07-30 23:45:32,210 - FUNCformCluster - ERROR - ONOSbench6:     
+
+Please type 'yes' or 'no': [0m
+
+*****************************
+ Result: Failed 
+*****************************
+
+[91m2020-07-30 23:45:32,210 - FUNCformCluster - ERROR - ONOSbench2: TIMEOUT exception found[0m
+[91m2020-07-30 23:45:32,211 - FUNCformCluster - ERROR - ONOSbench3: TIMEOUT exception found[0m
+[91m2020-07-30 23:45:32,211 - FUNCformCluster - ERROR - ONOSbench1: TIMEOUT exception found[0m
+[91m2020-07-30 23:45:32,208 - FUNCformCluster - ERROR - ONOSbench4: TIMEOUT exception found[0m
+[91m2020-07-30 23:45:32,211 - FUNCformCluster - ERROR - ONOSbench5:     
+
+Please type 'yes' or 'no': [0m
+
+
+*************************************
+	Test Execution Summary
+
+************************************* 
+
+ Test Start           : 30 Jul 2020 23:43:52
+ Test End             : 30 Jul 2020 23:45:32
+ Execution Time       : 0:01:40.084314
+ Total Tests Planned  : 6
+ Total Tests Run      : 2
+ Total Pass           : 1
+ Total Fail           : 1
+ Total No Result      : 0
+ Success Percentage   : 50%
+ Execution Percentage : 33%
+
+ Case Failed          : [1]
+ Case Executed        : [0, 1]
+[91m2020-07-30 23:45:32,212 - FUNCformCluster - ERROR - ONOSbench7:     
+
+Please type 'yes' or 'no': [0m
+ Case Not Executed    : [3, 2, 4, 5]
+[91m2020-07-30 23:45:32,213 - FUNCformCluster - ERROR - ONOSbench2:     
+
+Please type 'yes' or 'no': [0m
+[91m2020-07-30 23:45:32,213 - FUNCformCluster - ERROR - ONOSbench3:     
+
+Please type 'yes' or 'no': [0m
+[91m2020-07-30 23:45:32,214 - FUNCformCluster - ERROR - ONOSbench1:     
+
+Please type 'yes' or 'no': [0m
+[91m2020-07-30 23:45:32,215 - FUNCformCluster - ERROR - ONOSbench4:     
+
+Please type 'yes' or 'no': [0m
+Disconnecting from ONOSbench5: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+
+*****************************
+ Result: Failed 
+*****************************
+
+
+*****************************
+ Result: Failed 
+*****************************
+
+
+*****************************
+ Result: Failed 
+*****************************
+
+
+*****************************
+ Result: Failed 
+*****************************
+
+
+*****************************
+ Result: Failed 
+*****************************
+ThreadID:None, Name:set-cell- something went wrong with <class 'drivers.common.cli.onosdriver.OnosDriver'>.<function setCell at 0x7f6dee9ccd50> method: 
+
+close() called during concurrent operation on the same file object
+ 
+*****************************
+ Result: Failed 
+*****************************
+
+Disconnecting from ONOSbench4: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from ONOSbench7: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from ONOSbench6: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from ONOSbench1: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from ONOSbench3: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from ONOSbench2: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from ONOSserver3: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from ONOSserver2: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from ONOSserver1: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from Mininet1: <class 'drivers.common.cli.emulator.mininetclidriver.MininetCliDriver'>
+Disconnecting from ONOSserver7: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from ONOSserver6: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from ONOSserver5: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from ONOSserver4: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from ONOScli7: <class 'drivers.common.cli.onosclidriver.OnosCliDriver'>
+Disconnecting from ONOScli6: <class 'drivers.common.cli.onosclidriver.OnosCliDriver'>
+Disconnecting from ONOScli5: <class 'drivers.common.cli.onosclidriver.OnosCliDriver'>
+Disconnecting from ONOScli4: <class 'drivers.common.cli.onosclidriver.OnosCliDriver'>
+Disconnecting from ONOScli3: <class 'drivers.common.cli.onosclidriver.OnosCliDriver'>
+Disconnecting from ONOScli2: <class 'drivers.common.cli.onosclidriver.OnosCliDriver'>
+Disconnecting from ONOScli1: <class 'drivers.common.cli.onosclidriver.OnosCliDriver'>
+Disconnecting from ONOSrest4: <class 'drivers.common.api.controller.onosrestdriver.OnosRestDriver'>
+Disconnecting from ONOSrest5: <class 'drivers.common.api.controller.onosrestdriver.OnosRestDriver'>
+Disconnecting from ONOSrest6: <class 'drivers.common.api.controller.onosrestdriver.OnosRestDriver'>
+Disconnecting from ONOSrest7: <class 'drivers.common.api.controller.onosrestdriver.OnosRestDriver'>
+Disconnecting from ONOSrest1: <class 'drivers.common.api.controller.onosrestdriver.OnosRestDriver'>
+Disconnecting from ONOSrest2: <class 'drivers.common.api.controller.onosrestdriver.OnosRestDriver'>
+Disconnecting from ONOSrest3: <class 'drivers.common.api.controller.onosrestdriver.OnosRestDriver'>
+Disconnecting from ONOScell: <class 'drivers.common.cli.onosclusterdriver.OnosClusterDriver'>
+[91m2020-07-30 23:45:39,761 - FUNCformCluster - ERROR - ONOSbench1: Uncaught exception![0m
+Traceback (most recent call last):
+  File "/home/ubuntu/OnosSystemTest/TestON/drivers/common/cli/onosdriver.py", line 945, in verifyCell
+    self.handle.sendline( "" )
+  File "/usr/local/lib/python2.7/dist-packages/pexpect/__init__.py", line 1036, in sendline
+    n = self.send(s)
+  File "/usr/local/lib/python2.7/dist-packages/pexpect/__init__.py", line 1025, in send
+    self._log(s, 'send')
+  File "/usr/local/lib/python2.7/dist-packages/pexpect/__init__.py", line 847, in _log
+    self.logfile.write(s)
+ValueError: I/O operation on closed file
+[91m2020-07-30 23:45:39,761 - FUNCformCluster - ERROR - ONOSbench3: Uncaught exception![0m
+Traceback (most recent call last):
+  File "/home/ubuntu/OnosSystemTest/TestON/drivers/common/cli/onosdriver.py", line 945, in verifyCell
+    self.handle.sendline( "" )
+  File "/usr/local/lib/python2.7/dist-packages/pexpect/__init__.py", line 1036, in sendline
+    n = self.send(s)
+  File "/usr/local/lib/python2.7/dist-packages/pexpect/__init__.py", line 1025, in send
+    self._log(s, 'send')
+  File "/usr/local/lib/python2.7/dist-packages/pexpect/__init__.py", line 847, in _log
+    self.logfile.write(s)
+ValueError: I/O operation on closed file
+
+*****************************
+ Result: Failed 
+*****************************
+
+[91m2020-07-30 23:45:39,761 - FUNCformCluster - ERROR - ONOSbench2: Uncaught exception![0m
+Traceback (most recent call last):
+  File "/home/ubuntu/OnosSystemTest/TestON/drivers/common/cli/onosdriver.py", line 945, in verifyCell
+    self.handle.sendline( "" )
+  File "/usr/local/lib/python2.7/dist-packages/pexpect/__init__.py", line 1036, in sendline
+    n = self.send(s)
+  File "/usr/local/lib/python2.7/dist-packages/pexpect/__init__.py", line 1025, in send
+    self._log(s, 'send')
+  File "/usr/local/lib/python2.7/dist-packages/pexpect/__init__.py", line 847, in _log
+    self.logfile.write(s)
+ValueError: I/O operation on closed file
+[91m2020-07-30 23:45:39,762 - FUNCformCluster - ERROR - ONOSbench5: Uncaught exception![0m
+Traceback (most recent call last):
+  File "/home/ubuntu/OnosSystemTest/TestON/drivers/common/cli/onosdriver.py", line 945, in verifyCell
+    self.handle.sendline( "" )
+  File "/usr/local/lib/python2.7/dist-packages/pexpect/__init__.py", line 1036, in sendline
+    n = self.send(s)
+  File "/usr/local/lib/python2.7/dist-packages/pexpect/__init__.py", line 1025, in send
+    self._log(s, 'send')
+  File "/usr/local/lib/python2.7/dist-packages/pexpect/__init__.py", line 847, in _log
+    self.logfile.write(s)
+ValueError: I/O operation on closed file
+[91m2020-07-30 23:45:39,762 - FUNCformCluster - ERROR - ONOSbench4: Uncaught exception![0m
+Traceback (most recent call last):
+  File "/home/ubuntu/OnosSystemTest/TestON/drivers/common/cli/onosdriver.py", line 945, in verifyCell
+    self.handle.sendline( "" )
+  File "/usr/local/lib/python2.7/dist-packages/pexpect/__init__.py", line 1036, in sendline
+    n = self.send(s)
+  File "/usr/local/lib/python2.7/dist-packages/pexpect/__init__.py", line 1025, in send
+    self._log(s, 'send')
+  File "/usr/local/lib/python2.7/dist-packages/pexpect/__init__.py", line 847, in _log
+    self.logfile.write(s)
+ValueError: I/O operation on closed file
+
+*****************************
+ Result: Failed 
+*****************************
+
+
+*****************************
+ Result: Failed 
+*****************************
+
+[91m2020-07-30 23:45:39,762 - FUNCformCluster - ERROR - ONOSbench6: Uncaught exception![0m
+Traceback (most recent call last):
+  File "/home/ubuntu/OnosSystemTest/TestON/drivers/common/cli/onosdriver.py", line 945, in verifyCell
+    self.handle.sendline( "" )
+  File "/usr/local/lib/python2.7/dist-packages/pexpect/__init__.py", line 1036, in sendline
+    n = self.send(s)
+  File "/usr/local/lib/python2.7/dist-packages/pexpect/__init__.py", line 1025, in send
+    self._log(s, 'send')
+  File "/usr/local/lib/python2.7/dist-packages/pexpect/__init__.py", line 847, in _log
+    self.logfile.write(s)
+ValueError: I/O operation on closed file
+
+*****************************
+ Result: Failed 
+*****************************
+
+[91m2020-07-30 23:45:39,762 - FUNCformCluster - ERROR - ONOSbench7: Uncaught exception![0m
+Traceback (most recent call last):
+  File "/home/ubuntu/OnosSystemTest/TestON/drivers/common/cli/onosdriver.py", line 945, in verifyCell
+    self.handle.sendline( "" )
+  File "/usr/local/lib/python2.7/dist-packages/pexpect/__init__.py", line 1036, in sendline
+    n = self.send(s)
+  File "/usr/local/lib/python2.7/dist-packages/pexpect/__init__.py", line 1025, in send
+    self._log(s, 'send')
+  File "/usr/local/lib/python2.7/dist-packages/pexpect/__init__.py", line 847, in _log
+    self.logfile.write(s)
+ValueError: I/O operation on closed file
+
+*****************************
+ Result: Failed 
+*****************************
+
+
+*****************************
+ Result: Failed 
+*****************************
+[2020-07-30 23:45:39.777992] [FUNCformCluster] [STEP]  1.1: Uninstalling ONOS package
+
+No handlers could be found for logger "ONOSbench5"
+
+*****************************
+ Result: Failed 
+*****************************
+
+ubuntu@manage:~/OnosSystemTest/TestON/bin$ 
+ubuntu@manage:~/OnosSystemTest/TestON/bin$ exit
+logout

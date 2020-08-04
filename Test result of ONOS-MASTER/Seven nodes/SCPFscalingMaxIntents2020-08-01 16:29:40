@@ -1,0 +1,637 @@
+Last login: Sat Aug  1 20:29:36 2020 from 174.114.234.237
+
+cell sevenNodeDemo; cd ~/OnosSystemTest/TestON/bin/; ./cli.py run SCPFscalingMaxIntents
+
+exit
+
+ubuntu@manage:~$ cell sevenNodeDemo; cd ~/OnosSystemTest/TestON/bin/; ./cli.py ru
+un SCPFscalingMaxIntents
+[01;31m[KONOS_CELL[m[K=sevenNodeDemo
+OCC1=192.168.171.28
+OCC2=192.168.171.5
+OCC3=192.168.171.24
+OCC4=192.168.171.13
+OCC5=192.168.171.14
+OCC6=192.168.171.15
+OCC7=192.168.171.7
+OC1=192.168.171.28
+OC2=192.168.171.5
+OC3=192.168.171.24
+OC4=192.168.171.13
+OC5=192.168.171.14
+OC6=192.168.171.15
+OC7=192.168.171.7
+OCI=192.168.171.28
+OCN=192.168.171.17
+ONOS_APPS=gui,drivers,openflow,proxyarp
+ONOS_GROUP=sdn
+ONOS_MN_PY=/home/ubuntu/onos/tools/dev/mininet/onos.py
+ONOS_SCENARIOS=/home/ubuntu/onos/tools/test/scenarios
+ONOS_USER=sdn
+ONOS_WEB_PASS=rocks
+ONOS_WEB_USER=onos
+
+                                +----------------+
+------------------------------ { Script And Files }  ------------------------------
+                                +----------------+
+
+	Script Log File : /home/ubuntu/OnosSystemTest/TestON/logs/SCPFscalingMaxIntents_01_Aug_2020_20_29_40/SCPFscalingMaxIntents_01_Aug_2020_20_29_40.log
+	Report Log File : /home/ubuntu/OnosSystemTest/TestON/logs/SCPFscalingMaxIntents_01_Aug_2020_20_29_40/SCPFscalingMaxIntents_01_Aug_2020_20_29_40.rpt
+	Mininet1 Session Log : /home/ubuntu/OnosSystemTest/TestON/logs/SCPFscalingMaxIntents_01_Aug_2020_20_29_40/Mininet1.session
+	ONOScell Session Log : /home/ubuntu/OnosSystemTest/TestON/logs/SCPFscalingMaxIntents_01_Aug_2020_20_29_40/ONOScell.session
+	Test Script : /home/ubuntu/OnosSystemTest/TestON/tests/SCPF/SCPFscalingMaxIntents/SCPFscalingMaxIntents.py
+	Test Params : /home/ubuntu/OnosSystemTest/TestON/tests/SCPF/SCPFscalingMaxIntents/SCPFscalingMaxIntents.params
+	Topology : /home/ubuntu/OnosSystemTest/TestON/tests/SCPF/SCPFscalingMaxIntents/SCPFscalingMaxIntents.topo
+                              +------------------+
+---------------------------  { Script Exec Params }  ---------------------------
+                              +------------------+
+
+{
+    "ATTEMPTS": {
+        "push": "3", 
+        "verify": "3"
+    }, 
+    "CFG": {
+        "intentConfigRegi": "org.onosproject.net.intent.impl.compiler.IntentConfigurableRegistrator", 
+        "nullProvider": "org.onosproject.provider.nil.NullProviders"
+    }, 
+    "CTRL": {
+        "port": "6653"
+    }, 
+    "DATABASE": {
+        "dbFlowObj": "/tmp/ScalingMaxIntentDBWFO", 
+        "dbName": "/tmp/ScalingMaxIntentDB", 
+        "nic": "1gig", 
+        "node": "baremetal"
+    }, 
+    "DEPENDENCY": {
+        "path": "/tests/SCPF/SCPFscalingMaxIntents/dependencies/", 
+        "topology": "rerouteTopo.py", 
+        "wrapper1": "startUp"
+    }, 
+    "ENV": {
+        "cellApps": "drivers,openflow", 
+        "cellName": "productionCell"
+    }, 
+    "GIT": {
+        "branch": "master", 
+        "pull": "False"
+    }, 
+    "GRAPH": {
+        "builds": "20", 
+        "nodeCluster": "BM"
+    }, 
+    "LINK": {
+        "egress": "0000000000000007/5", 
+        "ingress": "0000000000000001/5"
+    }, 
+    "NULL": {
+        "PUSH": {
+            "batch_size": "500", 
+            "check_interval": "2500", 
+            "max_intents": "1000000", 
+            "min_intents": "2500"
+        }, 
+        "REROUTE": {
+            "batch_size": "1000", 
+            "check_interval": "100000", 
+            "max_intents": "1000000", 
+            "min_intents": "10000"
+        }
+    }, 
+    "OVS": {
+        "PUSH": {
+            "batch_size": "500", 
+            "check_interval": "2500", 
+            "max_intents": "1000000", 
+            "min_intents": "2500"
+        }, 
+        "REROUTE": {
+            "batch_size": "1000", 
+            "check_interval": "10000", 
+            "max_intents": "500000", 
+            "min_intents": "10000"
+        }
+    }, 
+    "SCALE": "1,3,5,7", 
+    "SLEEP": {
+        "install": "10", 
+        "reroute": "3", 
+        "startup": "10", 
+        "timeout": "300", 
+        "verify": "15"
+    }, 
+    "TEST": {
+        "flowObj": "False"
+    }, 
+    "reroute": "False", 
+    "testcases": "0,1,2,11,20,1,2,11,20,1,2,11,20,1,2,11,20"
+}
+
+                               +---------------+
+----------------------------- { Components Used }  -----------------------------
+                               +---------------+
+	Mininet1
+	ONOScell
+
+
+                              +--------+
+---------------------------- { Topology }  ----------------------------
+                              +--------+
+
+[
+    [
+        "ONOScell", 
+        {
+            "connect_order": "1", 
+            "host": "localhost", 
+            "user": "sdn", 
+            "COMPONENTS": {
+                "web_user": null, 
+                "diff_clihost": null, 
+                "web_pass": null, 
+                "prompt": null, 
+                "cluster_name": null, 
+                "onos_home": null, 
+                "nodes": "7", 
+                "karaf_password": null, 
+                "karaf_username": null, 
+                "rest_port": null
+            }, 
+            "home": null, 
+            "password": "rocks", 
+            "type": "OnosClusterDriver"
+        }
+    ], 
+    [
+        "Mininet1", 
+        {
+            "connect_order": "2", 
+            "host": "OCN", 
+            "user": "sdn", 
+            "COMPONENTS": {
+                "prompt": null
+            }, 
+            "password": "rocks", 
+            "type": "MininetCliDriver"
+        }
+    ]
+]
+------------------------------------------------------------
+
+
+******************************
+ CASE INIT 
+******************************
+
+['ONOScell', 'Mininet1']
+2020-08-01 20:29:40,953 - SCPFscalingMaxIntents - INFO - Creating component Handle: ONOScell
+2020-08-01 20:29:40,964 - SCPFscalingMaxIntents - INFO - ONOScell: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5', '192.168.171.14', '192.168.171.13', '192.168.171.7', '192.168.171.15'] ONOS IPs
+2020-08-01 20:29:40,964 - SCPFscalingMaxIntents - INFO - ONOScell: Trying to connect to localhost
+2020-08-01 20:29:41,007 - SCPFscalingMaxIntents - INFO - ssh key confirmation received, send yes
+2020-08-01 20:29:42,001 - SCPFscalingMaxIntents - INFO - Password not required logged in
+[95m2020-08-01 20:29:42,306 - SCPFscalingMaxIntents - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosCliDriver', 'host': 'localhost'}[0m
+2020-08-01 20:29:42,306 - SCPFscalingMaxIntents - INFO - Creating component Handle: ONOScli1
+2020-08-01 20:29:42,321 - SCPFscalingMaxIntents - INFO - ONOScli1: Trying to connect to localhost
+2020-08-01 20:29:43,234 - SCPFscalingMaxIntents - INFO - Password not required logged in
+[95m2020-08-01 20:29:43,539 - SCPFscalingMaxIntents - DEBUG - {'connect_order': '1', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosClusterDriver', 'host': 'localhost'}[0m
+[95m2020-08-01 20:29:43,540 - SCPFscalingMaxIntents - DEBUG - {'connect_order': '2', 'user': 'onos', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosRestDriver', 'host': '192.168.171.28', 'port': '8181'}[0m
+2020-08-01 20:29:43,540 - SCPFscalingMaxIntents - INFO - Creating component Handle: ONOSrest1
+2020-08-01 20:29:43,610 - SCPFscalingMaxIntents - INFO - ONOSrest1: ip set to 192.168.171.28
+[95m2020-08-01 20:29:43,610 - SCPFscalingMaxIntents - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': 'localhost'}[0m
+2020-08-01 20:29:43,610 - SCPFscalingMaxIntents - INFO - Creating component Handle: ONOSbench1
+2020-08-01 20:29:43,620 - SCPFscalingMaxIntents - INFO - ONOSbench1: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5', '192.168.171.14', '192.168.171.13', '192.168.171.7', '192.168.171.15'] ONOS IPs
+2020-08-01 20:29:43,620 - SCPFscalingMaxIntents - INFO - ONOSbench1: Trying to connect to localhost
+2020-08-01 20:29:44,538 - SCPFscalingMaxIntents - INFO - Password not required logged in
+[95m2020-08-01 20:29:44,844 - SCPFscalingMaxIntents - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': '192.168.171.28'}[0m
+2020-08-01 20:29:44,844 - SCPFscalingMaxIntents - INFO - Creating component Handle: ONOSserver1
+2020-08-01 20:29:44,855 - SCPFscalingMaxIntents - INFO - ONOSserver1: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5', '192.168.171.14', '192.168.171.13', '192.168.171.7', '192.168.171.15'] ONOS IPs
+2020-08-01 20:29:44,856 - SCPFscalingMaxIntents - INFO - ONOSserver1: Trying to connect to 192.168.171.28
+2020-08-01 20:29:44,903 - SCPFscalingMaxIntents - INFO - ssh key confirmation received, send yes
+2020-08-01 20:29:45,720 - SCPFscalingMaxIntents - INFO - Password not required logged in
+[95m2020-08-01 20:29:46,026 - SCPFscalingMaxIntents - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosCliDriver', 'host': 'localhost'}[0m
+2020-08-01 20:29:46,026 - SCPFscalingMaxIntents - INFO - Creating component Handle: ONOScli2
+2020-08-01 20:29:46,036 - SCPFscalingMaxIntents - INFO - ONOScli2: Trying to connect to localhost
+2020-08-01 20:29:46,953 - SCPFscalingMaxIntents - INFO - Password not required logged in
+[95m2020-08-01 20:29:47,258 - SCPFscalingMaxIntents - DEBUG - {'connect_order': '1', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosClusterDriver', 'host': 'localhost'}[0m
+[95m2020-08-01 20:29:47,258 - SCPFscalingMaxIntents - DEBUG - {'connect_order': '2', 'user': 'onos', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosRestDriver', 'host': '192.168.171.5', 'port': '8181'}[0m
+2020-08-01 20:29:47,259 - SCPFscalingMaxIntents - INFO - Creating component Handle: ONOSrest2
+2020-08-01 20:29:47,268 - SCPFscalingMaxIntents - INFO - ONOSrest2: ip set to 192.168.171.5
+[95m2020-08-01 20:29:47,269 - SCPFscalingMaxIntents - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': 'localhost'}[0m
+2020-08-01 20:29:47,269 - SCPFscalingMaxIntents - INFO - Creating component Handle: ONOSbench2
+2020-08-01 20:29:47,279 - SCPFscalingMaxIntents - INFO - ONOSbench2: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5', '192.168.171.14', '192.168.171.13', '192.168.171.7', '192.168.171.15'] ONOS IPs
+2020-08-01 20:29:47,279 - SCPFscalingMaxIntents - INFO - ONOSbench2: Trying to connect to localhost
+2020-08-01 20:29:48,191 - SCPFscalingMaxIntents - INFO - Password not required logged in
+[95m2020-08-01 20:29:48,496 - SCPFscalingMaxIntents - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': '192.168.171.5'}[0m
+2020-08-01 20:29:48,497 - SCPFscalingMaxIntents - INFO - Creating component Handle: ONOSserver2
+2020-08-01 20:29:48,506 - SCPFscalingMaxIntents - INFO - ONOSserver2: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5', '192.168.171.14', '192.168.171.13', '192.168.171.7', '192.168.171.15'] ONOS IPs
+2020-08-01 20:29:48,507 - SCPFscalingMaxIntents - INFO - ONOSserver2: Trying to connect to 192.168.171.5
+2020-08-01 20:29:48,556 - SCPFscalingMaxIntents - INFO - ssh key confirmation received, send yes
+2020-08-01 20:29:49,399 - SCPFscalingMaxIntents - INFO - Password not required logged in
+[95m2020-08-01 20:29:49,706 - SCPFscalingMaxIntents - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosCliDriver', 'host': 'localhost'}[0m
+2020-08-01 20:29:49,707 - SCPFscalingMaxIntents - INFO - Creating component Handle: ONOScli3
+2020-08-01 20:29:49,716 - SCPFscalingMaxIntents - INFO - ONOScli3: Trying to connect to localhost
+2020-08-01 20:29:50,631 - SCPFscalingMaxIntents - INFO - Password not required logged in
+[95m2020-08-01 20:29:50,936 - SCPFscalingMaxIntents - DEBUG - {'connect_order': '1', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosClusterDriver', 'host': 'localhost'}[0m
+[95m2020-08-01 20:29:50,937 - SCPFscalingMaxIntents - DEBUG - {'connect_order': '2', 'user': 'onos', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosRestDriver', 'host': '192.168.171.24', 'port': '8181'}[0m
+2020-08-01 20:29:50,937 - SCPFscalingMaxIntents - INFO - Creating component Handle: ONOSrest3
+2020-08-01 20:29:50,947 - SCPFscalingMaxIntents - INFO - ONOSrest3: ip set to 192.168.171.24
+[95m2020-08-01 20:29:50,948 - SCPFscalingMaxIntents - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': 'localhost'}[0m
+2020-08-01 20:29:50,948 - SCPFscalingMaxIntents - INFO - Creating component Handle: ONOSbench3
+2020-08-01 20:29:50,958 - SCPFscalingMaxIntents - INFO - ONOSbench3: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5', '192.168.171.14', '192.168.171.13', '192.168.171.7', '192.168.171.15'] ONOS IPs
+2020-08-01 20:29:50,958 - SCPFscalingMaxIntents - INFO - ONOSbench3: Trying to connect to localhost
+2020-08-01 20:29:51,868 - SCPFscalingMaxIntents - INFO - Password not required logged in
+[95m2020-08-01 20:29:52,174 - SCPFscalingMaxIntents - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': '192.168.171.24'}[0m
+2020-08-01 20:29:52,174 - SCPFscalingMaxIntents - INFO - Creating component Handle: ONOSserver3
+2020-08-01 20:29:52,184 - SCPFscalingMaxIntents - INFO - ONOSserver3: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5', '192.168.171.14', '192.168.171.13', '192.168.171.7', '192.168.171.15'] ONOS IPs
+2020-08-01 20:29:52,184 - SCPFscalingMaxIntents - INFO - ONOSserver3: Trying to connect to 192.168.171.24
+2020-08-01 20:29:52,218 - SCPFscalingMaxIntents - INFO - ssh key confirmation received, send yes
+2020-08-01 20:29:53,085 - SCPFscalingMaxIntents - INFO - Password not required logged in
+[95m2020-08-01 20:29:53,390 - SCPFscalingMaxIntents - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosCliDriver', 'host': 'localhost'}[0m
+2020-08-01 20:29:53,391 - SCPFscalingMaxIntents - INFO - Creating component Handle: ONOScli4
+2020-08-01 20:29:53,400 - SCPFscalingMaxIntents - INFO - ONOScli4: Trying to connect to localhost
+2020-08-01 20:29:54,347 - SCPFscalingMaxIntents - INFO - Password not required logged in
+[95m2020-08-01 20:29:54,653 - SCPFscalingMaxIntents - DEBUG - {'connect_order': '1', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosClusterDriver', 'host': 'localhost'}[0m
+[95m2020-08-01 20:29:54,653 - SCPFscalingMaxIntents - DEBUG - {'connect_order': '2', 'user': 'onos', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosRestDriver', 'host': '192.168.171.13', 'port': '8181'}[0m
+2020-08-01 20:29:54,653 - SCPFscalingMaxIntents - INFO - Creating component Handle: ONOSrest4
+2020-08-01 20:29:54,663 - SCPFscalingMaxIntents - INFO - ONOSrest4: ip set to 192.168.171.13
+[95m2020-08-01 20:29:54,664 - SCPFscalingMaxIntents - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': 'localhost'}[0m
+2020-08-01 20:29:54,664 - SCPFscalingMaxIntents - INFO - Creating component Handle: ONOSbench4
+2020-08-01 20:29:54,673 - SCPFscalingMaxIntents - INFO - ONOSbench4: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5', '192.168.171.14', '192.168.171.13', '192.168.171.7', '192.168.171.15'] ONOS IPs
+2020-08-01 20:29:54,674 - SCPFscalingMaxIntents - INFO - ONOSbench4: Trying to connect to localhost
+2020-08-01 20:29:55,592 - SCPFscalingMaxIntents - INFO - Password not required logged in
+[95m2020-08-01 20:29:55,897 - SCPFscalingMaxIntents - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': '192.168.171.13'}[0m
+2020-08-01 20:29:55,898 - SCPFscalingMaxIntents - INFO - Creating component Handle: ONOSserver4
+2020-08-01 20:29:55,907 - SCPFscalingMaxIntents - INFO - ONOSserver4: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5', '192.168.171.14', '192.168.171.13', '192.168.171.7', '192.168.171.15'] ONOS IPs
+2020-08-01 20:29:55,908 - SCPFscalingMaxIntents - INFO - ONOSserver4: Trying to connect to 192.168.171.13
+2020-08-01 20:29:55,986 - SCPFscalingMaxIntents - INFO - ssh key confirmation received, send yes
+2020-08-01 20:29:56,720 - SCPFscalingMaxIntents - INFO - Password not required logged in
+[95m2020-08-01 20:29:57,026 - SCPFscalingMaxIntents - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosCliDriver', 'host': 'localhost'}[0m
+2020-08-01 20:29:57,028 - SCPFscalingMaxIntents - INFO - Creating component Handle: ONOScli5
+2020-08-01 20:29:57,038 - SCPFscalingMaxIntents - INFO - ONOScli5: Trying to connect to localhost
+2020-08-01 20:29:57,946 - SCPFscalingMaxIntents - INFO - Password not required logged in
+[95m2020-08-01 20:29:58,252 - SCPFscalingMaxIntents - DEBUG - {'connect_order': '1', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosClusterDriver', 'host': 'localhost'}[0m
+[95m2020-08-01 20:29:58,252 - SCPFscalingMaxIntents - DEBUG - {'connect_order': '2', 'user': 'onos', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosRestDriver', 'host': '192.168.171.14', 'port': '8181'}[0m
+2020-08-01 20:29:58,252 - SCPFscalingMaxIntents - INFO - Creating component Handle: ONOSrest5
+2020-08-01 20:29:58,262 - SCPFscalingMaxIntents - INFO - ONOSrest5: ip set to 192.168.171.14
+[95m2020-08-01 20:29:58,264 - SCPFscalingMaxIntents - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': 'localhost'}[0m
+2020-08-01 20:29:58,264 - SCPFscalingMaxIntents - INFO - Creating component Handle: ONOSbench5
+2020-08-01 20:29:58,273 - SCPFscalingMaxIntents - INFO - ONOSbench5: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5', '192.168.171.14', '192.168.171.13', '192.168.171.7', '192.168.171.15'] ONOS IPs
+2020-08-01 20:29:58,274 - SCPFscalingMaxIntents - INFO - ONOSbench5: Trying to connect to localhost
+2020-08-01 20:29:59,174 - SCPFscalingMaxIntents - INFO - Password not required logged in
+[95m2020-08-01 20:29:59,480 - SCPFscalingMaxIntents - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': '192.168.171.14'}[0m
+2020-08-01 20:29:59,480 - SCPFscalingMaxIntents - INFO - Creating component Handle: ONOSserver5
+2020-08-01 20:29:59,490 - SCPFscalingMaxIntents - INFO - ONOSserver5: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5', '192.168.171.14', '192.168.171.13', '192.168.171.7', '192.168.171.15'] ONOS IPs
+2020-08-01 20:29:59,490 - SCPFscalingMaxIntents - INFO - ONOSserver5: Trying to connect to 192.168.171.14
+2020-08-01 20:29:59,531 - SCPFscalingMaxIntents - INFO - ssh key confirmation received, send yes
+2020-08-01 20:30:00,904 - SCPFscalingMaxIntents - INFO - Password not required logged in
+[95m2020-08-01 20:30:01,210 - SCPFscalingMaxIntents - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosCliDriver', 'host': 'localhost'}[0m
+2020-08-01 20:30:01,211 - SCPFscalingMaxIntents - INFO - Creating component Handle: ONOScli6
+2020-08-01 20:30:01,220 - SCPFscalingMaxIntents - INFO - ONOScli6: Trying to connect to localhost
+2020-08-01 20:30:02,150 - SCPFscalingMaxIntents - INFO - Password not required logged in
+[95m2020-08-01 20:30:02,455 - SCPFscalingMaxIntents - DEBUG - {'connect_order': '1', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosClusterDriver', 'host': 'localhost'}[0m
+[95m2020-08-01 20:30:02,456 - SCPFscalingMaxIntents - DEBUG - {'connect_order': '2', 'user': 'onos', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosRestDriver', 'host': '192.168.171.15', 'port': '8181'}[0m
+2020-08-01 20:30:02,456 - SCPFscalingMaxIntents - INFO - Creating component Handle: ONOSrest6
+2020-08-01 20:30:02,465 - SCPFscalingMaxIntents - INFO - ONOSrest6: ip set to 192.168.171.15
+[95m2020-08-01 20:30:02,466 - SCPFscalingMaxIntents - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': 'localhost'}[0m
+2020-08-01 20:30:02,466 - SCPFscalingMaxIntents - INFO - Creating component Handle: ONOSbench6
+2020-08-01 20:30:02,475 - SCPFscalingMaxIntents - INFO - ONOSbench6: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5', '192.168.171.14', '192.168.171.13', '192.168.171.7', '192.168.171.15'] ONOS IPs
+2020-08-01 20:30:02,476 - SCPFscalingMaxIntents - INFO - ONOSbench6: Trying to connect to localhost
+2020-08-01 20:30:03,387 - SCPFscalingMaxIntents - INFO - Password not required logged in
+[95m2020-08-01 20:30:03,693 - SCPFscalingMaxIntents - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': '192.168.171.15'}[0m
+2020-08-01 20:30:03,693 - SCPFscalingMaxIntents - INFO - Creating component Handle: ONOSserver6
+2020-08-01 20:30:03,702 - SCPFscalingMaxIntents - INFO - ONOSserver6: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5', '192.168.171.14', '192.168.171.13', '192.168.171.7', '192.168.171.15'] ONOS IPs
+2020-08-01 20:30:03,703 - SCPFscalingMaxIntents - INFO - ONOSserver6: Trying to connect to 192.168.171.15
+2020-08-01 20:30:03,741 - SCPFscalingMaxIntents - INFO - ssh key confirmation received, send yes
+2020-08-01 20:30:04,524 - SCPFscalingMaxIntents - INFO - Password not required logged in
+[95m2020-08-01 20:30:04,831 - SCPFscalingMaxIntents - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosCliDriver', 'host': 'localhost'}[0m
+2020-08-01 20:30:04,831 - SCPFscalingMaxIntents - INFO - Creating component Handle: ONOScli7
+2020-08-01 20:30:04,840 - SCPFscalingMaxIntents - INFO - ONOScli7: Trying to connect to localhost
+2020-08-01 20:30:05,788 - SCPFscalingMaxIntents - INFO - Password not required logged in
+[95m2020-08-01 20:30:06,093 - SCPFscalingMaxIntents - DEBUG - {'connect_order': '1', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosClusterDriver', 'host': 'localhost'}[0m
+[95m2020-08-01 20:30:06,094 - SCPFscalingMaxIntents - DEBUG - {'connect_order': '2', 'user': 'onos', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosRestDriver', 'host': '192.168.171.7', 'port': '8181'}[0m
+2020-08-01 20:30:06,094 - SCPFscalingMaxIntents - INFO - Creating component Handle: ONOSrest7
+2020-08-01 20:30:06,103 - SCPFscalingMaxIntents - INFO - ONOSrest7: ip set to 192.168.171.7
+[95m2020-08-01 20:30:06,104 - SCPFscalingMaxIntents - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': 'localhost'}[0m
+2020-08-01 20:30:06,104 - SCPFscalingMaxIntents - INFO - Creating component Handle: ONOSbench7
+2020-08-01 20:30:06,113 - SCPFscalingMaxIntents - INFO - ONOSbench7: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5', '192.168.171.14', '192.168.171.13', '192.168.171.7', '192.168.171.15'] ONOS IPs
+2020-08-01 20:30:06,114 - SCPFscalingMaxIntents - INFO - ONOSbench7: Trying to connect to localhost
+2020-08-01 20:30:07,025 - SCPFscalingMaxIntents - INFO - Password not required logged in
+[95m2020-08-01 20:30:07,331 - SCPFscalingMaxIntents - DEBUG - {'connect_order': '2', 'user': 'sdn', 'COMPONENTS': {'web_user': None, 'diff_clihost': None, 'web_pass': None, 'prompt': None, 'cluster_name': None, 'onos_home': None, 'nodes': '7', 'karaf_password': None, 'karaf_username': None, 'rest_port': None}, 'home': None, 'password': 'rocks', 'type': 'OnosDriver', 'host': '192.168.171.7'}[0m
+2020-08-01 20:30:07,331 - SCPFscalingMaxIntents - INFO - Creating component Handle: ONOSserver7
+2020-08-01 20:30:07,340 - SCPFscalingMaxIntents - INFO - ONOSserver7: Found ['192.168.171.28', '192.168.171.24', '192.168.171.5', '192.168.171.14', '192.168.171.13', '192.168.171.7', '192.168.171.15'] ONOS IPs
+2020-08-01 20:30:07,341 - SCPFscalingMaxIntents - INFO - ONOSserver7: Trying to connect to 192.168.171.7
+2020-08-01 20:30:07,376 - SCPFscalingMaxIntents - INFO - ssh key confirmation received, send yes
+2020-08-01 20:30:08,080 - SCPFscalingMaxIntents - INFO - Password not required logged in
+2020-08-01 20:30:08,386 - SCPFscalingMaxIntents - INFO - Creating component Handle: Mininet1
+2020-08-01 20:30:08,446 - SCPFscalingMaxIntents - INFO - ssh key confirmation received, send yes
+2020-08-01 20:30:09,222 - SCPFscalingMaxIntents - INFO - Password not required logged in
+2020-08-01 20:30:09,426 - SCPFscalingMaxIntents - INFO - Connection successful to the host sdn@192.168.171.17
+
+******************************
+ Result summary for Testcase0
+******************************
+
+[95m2020-08-01 20:30:09,580 - SCPFscalingMaxIntents - DEBUG - Case Executed       : [0][0m
+[95m2020-08-01 20:30:09,580 - SCPFscalingMaxIntents - DEBUG - Case to be executed : [1, 2, 11, 20, 1, 2, 11, 20, 1, 2, 11, 20, 1, 2, 11, 20][0m
+[2020-08-01 20:30:09.581908] [SCPFscalingMaxIntents] [CASE]  Constructing test variables and building ONOS package
+[2020-08-01 20:30:09.583129] [SCPFscalingMaxIntents] [STEP]  0.1: Constructing test variables
+[2020-08-01 20:30:09.584669] [SCPFscalingMaxIntents] [CASE]  Pull onos branch and build onos on Teststation.
+2020-08-01 20:30:09,585 - SCPFscalingMaxIntents - INFO - Skipped git checkout and pull as they are disabled in params file
+2020-08-01 20:30:09,585 - SCPFscalingMaxIntents - INFO - Cresting DB file
+2020-08-01 20:30:09,586 - SCPFscalingMaxIntents - INFO - Verifying the Expected is equal to the actual or not using assert_equal
+2020-08-01 20:30:09,586 - SCPFscalingMaxIntents - INFO - Successfully construct test variables 
+2020-08-01 20:30:09,586 - SCPFscalingMaxIntents - INFO - Assertion Passed
+2020-08-01 20:30:09,586 - SCPFscalingMaxIntents - INFO - ONOSbench1 home is ~/onos
+ONOSbench1: 
+
+commit 12bfd3d32d808e9590d1d3d70bc0cbd4b320575c (HEAD -> master, origin/master, origin/HEAD)
+Author:     Parvathi MH <parvathi.mh@samsung.com>
+AuthorDate: Thu Jan 30 10:31:10 2020 +0530
+Commit:     Thomas Vachuska <tom@opennetworking.org>
+CommitDate: Tue Jul 28 18:17:54 2020 +0000
+
+    Fix to get onos pid in onos-jpenable
+sdn@manage:~/onos$
+
+*****************************
+ Result: Pass 
+*****************************
+
+
+******************************
+ Result summary for Testcase1
+******************************
+
+[95m2020-08-01 20:30:10,134 - SCPFscalingMaxIntents - DEBUG - Case Executed       : [0, 1][0m
+[95m2020-08-01 20:30:10,134 - SCPFscalingMaxIntents - DEBUG - Case to be executed : [2, 11, 20, 1, 2, 11, 20, 1, 2, 11, 20, 1, 2, 11, 20][0m
+2020-08-01 20:30:10,236 - SCPFscalingMaxIntents - INFO - ONOSbench1: Execute: scp /home/ubuntu/OnosSystemTest/TestON/tests/SCPF/SCPFscalingMaxIntents/dependencies/rerouteTopo.py sdn@192.168.171.17:~/mininet/custom/rerouteTopo.py
+
+*****************************
+ Result: Pass 
+*****************************
+
+
+******************************
+ Result summary for Testcase2
+******************************
+
+[95m2020-08-01 20:31:10,406 - SCPFscalingMaxIntents - DEBUG - Case Executed       : [0, 1, 2][0m
+[95m2020-08-01 20:31:10,406 - SCPFscalingMaxIntents - DEBUG - Case to be executed : [11, 20, 1, 2, 11, 20, 1, 2, 11, 20, 1, 2, 11, 20][0m
+[2020-08-01 20:31:10.407111] [SCPFscalingMaxIntents] [CASE]  Starting up 1 node(s) ONOS cluster
+2020-08-01 20:31:10,410 - SCPFscalingMaxIntents - INFO - ONOS cluster size = 1
+[95m2020-08-01 20:31:10,410 - SCPFscalingMaxIntents - DEBUG - Apps: drivers,openflow[0m
+2020-08-01 20:31:10,410 - SCPFscalingMaxIntents - INFO - Atomix Cluster Size = 1 
+
+temp                                            0%    0     0.0KB/s   --:-- ETA
+temp                                          100%  233   353.5KB/s   00:00    
+[2020-08-01 20:31:11.251013] [SCPFscalingMaxIntents] [STEP]  2.1: Apply cell to environment
+2020-08-01 20:31:11,496 - SCPFscalingMaxIntents - INFO - ONOSbench3: Successfully set cell:  cell temp
+
+[01;31m[KONOS_CELL[m[K=temp
+
+OCC1=192.168.171.28
+
+OC1=192.168.171.28
+
+OCI=192.168.171.28
+
+OCN=192.168.171.17
+
+ONOS_APPS=drivers,openflow
+
+ONOS_GROUP=sdn
+
+ONOS_MN_PY=/home/sdn/onos/tools/dev/mininet/onos.py
+
+ONOS_NIC=192.168.171.*
+
+ONOS_SCENARIOS=/home/sdn/onos/tools/test/scenarios
+
+ONOS_USER=sdn
+
+ONOS_USE_SSH=true
+
+ONOS_WEB_PASS=rocks
+
+ONOS_WEB_USER=onos
+
+sdn@manage:~/onos$
+2020-08-01 20:31:11,496 - SCPFscalingMaxIntents - INFO - ONOSbench2: Successfully set cell:  cell temp
+
+[01;31m[KONOS_CELL[m[K=temp
+
+OCC1=192.168.171.28
+
+OC1=192.168.171.28
+
+OCI=192.168.171.28
+
+OCN=192.168.171.17
+
+ONOS_APPS=drivers,openflow
+
+ONOS_GROUP=sdn
+
+ONOS_MN_PY=/home/sdn/onos/tools/dev/mininet/onos.py
+
+ONOS_NIC=192.168.171.*
+
+ONOS_SCENARIOS=/home/sdn/onos/tools/test/scenarios
+
+ONOS_USER=sdn
+
+ONOS_USE_SSH=true
+
+ONOS_WEB_PASS=rocks
+
+ONOS_WEB_USER=onos
+
+sdn@manage:~/onos$
+2020-08-01 20:31:11,498 - SCPFscalingMaxIntents - INFO - ONOSbench7: Successfully set cell:  cell temp
+
+[01;31m[KONOS_CELL[m[K=temp
+
+OCC1=192.168.171.28
+
+OC1=192.168.171.28
+
+OCI=192.168.171.28
+
+OCN=192.168.171.17
+
+ONOS_APPS=drivers,openflow
+
+ONOS_GROUP=sdn
+
+ONOS_MN_PY=/home/sdn/onos/tools/dev/mininet/onos.py
+
+ONOS_NIC=192.168.171.*
+
+ONOS_SCENARIOS=/home/sdn/onos/tools/test/scenarios
+
+ONOS_USER=sdn
+
+ONOS_USE_SSH=true
+
+ONOS_WEB_PASS=rocks
+
+ONOS_WEB_USER=onos
+
+sdn@manage:~/onos$
+2020-08-01 20:31:11,499 - SCPFscalingMaxIntents - INFO - ONOSbench4: Successfully set cell:  cell temp
+
+[01;31m[KONOS_CELL[m[K=temp
+
+OCC1=192.168.171.28
+
+OC1=192.168.171.28
+
+OCI=192.168.171.28
+
+OCN=192.168.171.17
+
+ONOS_APPS=drivers,openflow
+
+ONOS_GROUP=sdn
+
+ONOS_MN_PY=/home/sdn/onos/tools/dev/mininet/onos.py
+
+ONOS_NIC=192.168.171.*
+
+ONOS_SCENARIOS=/home/sdn/onos/tools/test/scenarios
+
+ONOS_USER=sdn
+
+ONOS_USE_SSH=true
+
+ONOS_WEB_PASS=rocks
+
+ONOS_WEB_USER=onos
+
+sdn@manage:~/onos$
+2020-08-01 20:31:11,502 - SCPFscalingMaxIntents - INFO - ONOSbench5: Successfully set cell:  cell temp
+
+[01;31m[KONOS_CELL[m[K=temp
+
+OCC1=192.168.171.28
+
+OC1=192.168.171.28
+
+OCI=192.168.171.28
+
+OCN=192.168.171.17
+
+ONOS_APPS=drivers,openflow
+
+ONOS_GROUP=sdn
+
+ONOS_MN_PY=/home/sdn/onos/tools/dev/mininet/onos.py
+
+ONOS_NIC=192.168.171.*
+
+ONOS_SCENARIOS=/home/sdn/onos/tools/test/scenarios
+
+ONOS_USER=sdn
+
+ONOS_USE_SSH=true
+
+ONOS_WEB_PASS=rocks
+
+ONOS_WEB_USER=onos
+
+sdn@manage:~/onos$
+2020-08-01 20:31:11,516 - SCPFscalingMaxIntents - INFO - ONOSbench6: Successfully set cell:  cell temp
+
+[01;31m[KONOS_CELL[m[K=temp
+
+OCC1=192.168.171.28
+
+OC1=192.168.171.28
+
+OCI=192.168.171.28
+
+OCN=192.168.171.17
+
+ONOS_APPS=drivers,openflow
+
+ONOS_GROUP=sdn
+
+ONOS_MN_PY=/home/sdn/onos/tools/dev/mininet/onos.py
+
+ONOS_NIC=192.168.171.*
+
+ONOS_SCENARIOS=/home/sdn/onos/tools/test/scenarios
+
+ONOS_USER=sdn
+
+ONOS_USE_SSH=true
+
+ONOS_WEB_PASS=rocks
+
+ONOS_WEB_USER=onos
+
+sdn@manage:~/onos$
+[91m2020-08-01 20:31:21,377 - SCPFscalingMaxIntents - ERROR - ONOSbench1: TIMEOUT exception found[0m
+[91m2020-08-01 20:31:21,378 - SCPFscalingMaxIntents - ERROR - ONOSbench1:     
+
+Please type 'yes' or 'no': [0m
+
+*****************************
+ Result: Failed 
+*****************************
+
+
+
+*************************************
+	Test Execution Summary
+
+************************************* 
+
+ Test Start           : 01 Aug 2020 20:29:40
+ Test End             : 01 Aug 2020 20:31:21
+ Execution Time       : 0:01:40.427198
+ Total Tests Planned  : 17
+ Total Tests Run      : 3
+ Total Pass           : 2
+ Total Fail           : 1
+ Total No Result      : 0
+ Success Percentage   : 66%
+ Execution Percentage : 17%
+
+ Case Failed          : [2]
+ Case Executed        : [0, 1, 2]
+ Case Not Executed    : [11, 20, 1, 2, 11, 20, 1, 2, 11, 20, 1, 2, 11, 20]
+Disconnecting from ONOSbench5: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from ONOSbench4: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from ONOSbench7: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from ONOSbench6: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from ONOSbench1: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from ONOSbench3: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from ONOSbench2: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from ONOSserver3: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from ONOSserver2: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from ONOSserver1: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from Mininet1: <class 'drivers.common.cli.emulator.mininetclidriver.MininetCliDriver'>
+Disconnecting from ONOSserver7: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from ONOSserver6: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from ONOSserver5: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from ONOSserver4: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from ONOScli7: <class 'drivers.common.cli.onosclidriver.OnosCliDriver'>
+Disconnecting from ONOScli6: <class 'drivers.common.cli.onosclidriver.OnosCliDriver'>
+Disconnecting from ONOScli5: <class 'drivers.common.cli.onosclidriver.OnosCliDriver'>
+Disconnecting from ONOScli4: <class 'drivers.common.cli.onosclidriver.OnosCliDriver'>
+Disconnecting from ONOScli3: <class 'drivers.common.cli.onosclidriver.OnosCliDriver'>
+Disconnecting from ONOScli2: <class 'drivers.common.cli.onosclidriver.OnosCliDriver'>
+Disconnecting from ONOScli1: <class 'drivers.common.cli.onosclidriver.OnosCliDriver'>
+Disconnecting from ONOSrest4: <class 'drivers.common.api.controller.onosrestdriver.OnosRestDriver'>
+Disconnecting from ONOSrest5: <class 'drivers.common.api.controller.onosrestdriver.OnosRestDriver'>
+Disconnecting from ONOSrest6: <class 'drivers.common.api.controller.onosrestdriver.OnosRestDriver'>
+Disconnecting from ONOSrest7: <class 'drivers.common.api.controller.onosrestdriver.OnosRestDriver'>
+Disconnecting from ONOSrest1: <class 'drivers.common.api.controller.onosrestdriver.OnosRestDriver'>
+Disconnecting from ONOSrest2: <class 'drivers.common.api.controller.onosrestdriver.OnosRestDriver'>
+Disconnecting from ONOSrest3: <class 'drivers.common.api.controller.onosrestdriver.OnosRestDriver'>
+Disconnecting from ONOScell: <class 'drivers.common.cli.onosclusterdriver.OnosClusterDriver'>
+ubuntu@manage:~/OnosSystemTest/TestON/bin$ 
+ubuntu@manage:~/OnosSystemTest/TestON/bin$ exit
+logout
